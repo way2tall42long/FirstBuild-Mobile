@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B9EF0F419DEEE1000E8D9F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF0F319DEEE1000E8D9F1 /* main.m */; };
+		5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF0F619DEEE1000E8D9F1 /* AppDelegate.m */; };
+		5B9EF0FD19DEEE1000E8D9F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EF0FB19DEEE1000E8D9F1 /* Main.storyboard */; };
+		5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */; };
+		5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EF10019DEEE1000E8D9F1 /* LaunchScreen.xib */; };
+		5B9EF10E19DEEE1100E8D9F1 /* MobiUsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF10D19DEEE1100E8D9F1 /* MobiUsTests.m */; };
+		5B9EF11C19DEFAB500E8D9F1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF11B19DEFAB500E8D9F1 /* SWRevealViewController.m */; };
+		5B9EF11F19DEFEF000E8D9F1 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF11E19DEFEF000E8D9F1 /* MenuViewController.m */; };
+		5B9EF12219DF037B00E8D9F1 /* ChillHubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF12119DF037B00E8D9F1 /* ChillHubViewController.m */; };
+		5B9EF12919DF42ED00E8D9F1 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF12819DF42ED00E8D9F1 /* LandingViewController.m */; };
+		5BBFACF919E2E9BC00E42575 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9EF11719DEEE5100E8D9F1 /* Firebase.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B9EF10819DEEE1100E8D9F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B9EF0E619DEEE1000E8D9F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B9EF0ED19DEEE1000E8D9F1;
+			remoteInfo = MobiUs;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5B9EF0EE19DEEE1000E8D9F1 /* MobiUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobiUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9EF0F219DEEE1000E8D9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B9EF0F319DEEE1000E8D9F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5B9EF0F519DEEE1000E8D9F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5B9EF0F619DEEE1000E8D9F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5B9EF0FC19DEEE1000E8D9F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5B9EF10119DEEE1000E8D9F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5B9EF10719DEEE1100E8D9F1 /* MobiUsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobiUsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9EF10C19DEEE1100E8D9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B9EF10D19DEEE1100E8D9F1 /* MobiUsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobiUsTests.m; sourceTree = "<group>"; };
+		5B9EF11719DEEE5100E8D9F1 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		5B9EF11A19DEFAB500E8D9F1 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		5B9EF11B19DEFAB500E8D9F1 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		5B9EF11D19DEFEF000E8D9F1 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		5B9EF11E19DEFEF000E8D9F1 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		5B9EF12019DF037B00E8D9F1 /* ChillHubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChillHubViewController.h; sourceTree = "<group>"; };
+		5B9EF12119DF037B00E8D9F1 /* ChillHubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChillHubViewController.m; sourceTree = "<group>"; };
+		5B9EF12319DF08E700E8D9F1 /* MobiUs.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobiUs.pch; sourceTree = "<group>"; };
+		5B9EF12719DF42ED00E8D9F1 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
+		5B9EF12819DF42ED00E8D9F1 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B9EF0EB19DEEE1000E8D9F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BBFACF919E2E9BC00E42575 /* Firebase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9EF10419DEEE1100E8D9F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B9EF0E519DEEE1000E8D9F1 = {
+			isa = PBXGroup;
+			children = (
+				5B9EF0EF19DEEE1000E8D9F1 /* Products */,
+				5B9EF10A19DEEE1100E8D9F1 /* MobiUsTests */,
+				5B9EF0F019DEEE1000E8D9F1 /* MobiUs */,
+				5B9EF11919DEFAB500E8D9F1 /* SWRevealViewController */,
+			);
+			sourceTree = "<group>";
+		};
+		5B9EF0EF19DEEE1000E8D9F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B9EF0EE19DEEE1000E8D9F1 /* MobiUs.app */,
+				5B9EF10719DEEE1100E8D9F1 /* MobiUsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B9EF0F019DEEE1000E8D9F1 /* MobiUs */ = {
+			isa = PBXGroup;
+			children = (
+				5B9EF12719DF42ED00E8D9F1 /* LandingViewController.h */,
+				5B9EF12819DF42ED00E8D9F1 /* LandingViewController.m */,
+				5B9EF12019DF037B00E8D9F1 /* ChillHubViewController.h */,
+				5B9EF12119DF037B00E8D9F1 /* ChillHubViewController.m */,
+				5B9EF11D19DEFEF000E8D9F1 /* MenuViewController.h */,
+				5B9EF11E19DEFEF000E8D9F1 /* MenuViewController.m */,
+				5B9EF0F519DEEE1000E8D9F1 /* AppDelegate.h */,
+				5B9EF0F619DEEE1000E8D9F1 /* AppDelegate.m */,
+				5B9EF0FB19DEEE1000E8D9F1 /* Main.storyboard */,
+				5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */,
+				5B9EF10019DEEE1000E8D9F1 /* LaunchScreen.xib */,
+				5B9EF11719DEEE5100E8D9F1 /* Firebase.framework */,
+				5B9EF0F119DEEE1000E8D9F1 /* Supporting Files */,
+			);
+			path = MobiUs;
+			sourceTree = "<group>";
+		};
+		5B9EF0F119DEEE1000E8D9F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B9EF0F219DEEE1000E8D9F1 /* Info.plist */,
+				5B9EF0F319DEEE1000E8D9F1 /* main.m */,
+				5B9EF12319DF08E700E8D9F1 /* MobiUs.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B9EF10A19DEEE1100E8D9F1 /* MobiUsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B9EF10D19DEEE1100E8D9F1 /* MobiUsTests.m */,
+				5B9EF10B19DEEE1100E8D9F1 /* Supporting Files */,
+			);
+			path = MobiUsTests;
+			sourceTree = "<group>";
+		};
+		5B9EF10B19DEEE1100E8D9F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B9EF10C19DEEE1100E8D9F1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B9EF11919DEFAB500E8D9F1 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5B9EF11A19DEFAB500E8D9F1 /* SWRevealViewController.h */,
+				5B9EF11B19DEFAB500E8D9F1 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			path = MobiUs/SWRevealViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B9EF0ED19DEEE1000E8D9F1 /* MobiUs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B9EF11119DEEE1100E8D9F1 /* Build configuration list for PBXNativeTarget "MobiUs" */;
+			buildPhases = (
+				5B9EF0EA19DEEE1000E8D9F1 /* Sources */,
+				5B9EF0EB19DEEE1000E8D9F1 /* Frameworks */,
+				5B9EF0EC19DEEE1000E8D9F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MobiUs;
+			productName = MobiUs;
+			productReference = 5B9EF0EE19DEEE1000E8D9F1 /* MobiUs.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B9EF10619DEEE1100E8D9F1 /* MobiUsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B9EF11419DEEE1100E8D9F1 /* Build configuration list for PBXNativeTarget "MobiUsTests" */;
+			buildPhases = (
+				5B9EF10319DEEE1100E8D9F1 /* Sources */,
+				5B9EF10419DEEE1100E8D9F1 /* Frameworks */,
+				5B9EF10519DEEE1100E8D9F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B9EF10919DEEE1100E8D9F1 /* PBXTargetDependency */,
+			);
+			name = MobiUsTests;
+			productName = MobiUsTests;
+			productReference = 5B9EF10719DEEE1100E8D9F1 /* MobiUsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B9EF0E619DEEE1000E8D9F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = FirstBuild;
+				TargetAttributes = {
+					5B9EF0ED19DEEE1000E8D9F1 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					5B9EF10619DEEE1100E8D9F1 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 5B9EF0ED19DEEE1000E8D9F1;
+					};
+				};
+			};
+			buildConfigurationList = 5B9EF0E919DEEE1000E8D9F1 /* Build configuration list for PBXProject "MobiUs" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5B9EF0E519DEEE1000E8D9F1;
+			productRefGroup = 5B9EF0EF19DEEE1000E8D9F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B9EF0ED19DEEE1000E8D9F1 /* MobiUs */,
+				5B9EF10619DEEE1100E8D9F1 /* MobiUsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B9EF0EC19DEEE1000E8D9F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9EF0FD19DEEE1000E8D9F1 /* Main.storyboard in Resources */,
+				5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */,
+				5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9EF10519DEEE1100E8D9F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B9EF0EA19DEEE1000E8D9F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */,
+				5B9EF12219DF037B00E8D9F1 /* ChillHubViewController.m in Sources */,
+				5B9EF0F419DEEE1000E8D9F1 /* main.m in Sources */,
+				5B9EF11C19DEFAB500E8D9F1 /* SWRevealViewController.m in Sources */,
+				5B9EF12919DF42ED00E8D9F1 /* LandingViewController.m in Sources */,
+				5B9EF11F19DEFEF000E8D9F1 /* MenuViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9EF10319DEEE1100E8D9F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9EF10E19DEEE1100E8D9F1 /* MobiUsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B9EF10919DEEE1100E8D9F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B9EF0ED19DEEE1000E8D9F1 /* MobiUs */;
+			targetProxy = 5B9EF10819DEEE1100E8D9F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5B9EF0FB19DEEE1000E8D9F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B9EF0FC19DEEE1000E8D9F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5B9EF10019DEEE1000E8D9F1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B9EF10119DEEE1000E8D9F1 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B9EF10F19DEEE1100E8D9F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B9EF11019DEEE1100E8D9F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B9EF11219DEEE1100E8D9F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MobiUs",
+				);
+				GCC_PREFIX_HEADER = MobiUs/MobiUs.pch;
+				INFOPLIST_FILE = MobiUs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = MobiUs;
+			};
+			name = Debug;
+		};
+		5B9EF11319DEEE1100E8D9F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MobiUs",
+				);
+				GCC_PREFIX_HEADER = MobiUs/MobiUs.pch;
+				INFOPLIST_FILE = MobiUs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = MobiUs;
+			};
+			name = Release;
+		};
+		5B9EF11519DEEE1100E8D9F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MobiUsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = MobiUsTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobiUs.app/MobiUs";
+			};
+			name = Debug;
+		};
+		5B9EF11619DEEE1100E8D9F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MobiUsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = MobiUsTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobiUs.app/MobiUs";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B9EF0E919DEEE1000E8D9F1 /* Build configuration list for PBXProject "MobiUs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B9EF10F19DEEE1100E8D9F1 /* Debug */,
+				5B9EF11019DEEE1100E8D9F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B9EF11119DEEE1100E8D9F1 /* Build configuration list for PBXNativeTarget "MobiUs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B9EF11219DEEE1100E8D9F1 /* Debug */,
+				5B9EF11319DEEE1100E8D9F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B9EF11419DEEE1100E8D9F1 /* Build configuration list for PBXNativeTarget "MobiUsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B9EF11519DEEE1100E8D9F1 /* Debug */,
+				5B9EF11619DEEE1100E8D9F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B9EF0E619DEEE1000E8D9F1 /* Project object */;
+}

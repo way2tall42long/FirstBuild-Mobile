@@ -18,6 +18,7 @@
 		5B9EF12219DF037B00E8D9F1 /* ChillHubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF12119DF037B00E8D9F1 /* ChillHubViewController.m */; };
 		5B9EF12919DF42ED00E8D9F1 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF12819DF42ED00E8D9F1 /* LandingViewController.m */; };
 		5BBFACF919E2E9BC00E42575 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9EF11719DEEE5100E8D9F1 /* Firebase.framework */; };
+		6743AE1F19E30E46000D9CF3 /* MobiNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		5B9EF12319DF08E700E8D9F1 /* MobiUs.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobiUs.pch; sourceTree = "<group>"; };
 		5B9EF12719DF42ED00E8D9F1 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
 		5B9EF12819DF42ED00E8D9F1 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
+		6743AE1D19E30E46000D9CF3 /* MobiNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiNavigationController.h; sourceTree = "<group>"; };
+		6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobiNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,8 @@
 				5B9EF10019DEEE1000E8D9F1 /* LaunchScreen.xib */,
 				5B9EF11719DEEE5100E8D9F1 /* Firebase.framework */,
 				5B9EF0F119DEEE1000E8D9F1 /* Supporting Files */,
+				6743AE1D19E30E46000D9CF3 /* MobiNavigationController.h */,
+				6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */,
 			);
 			path = MobiUs;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 				5B9EF0F419DEEE1000E8D9F1 /* main.m in Sources */,
 				5B9EF11C19DEFAB500E8D9F1 /* SWRevealViewController.m in Sources */,
 				5B9EF12919DF42ED00E8D9F1 /* LandingViewController.m in Sources */,
+				6743AE1F19E30E46000D9CF3 /* MobiNavigationController.m in Sources */,
 				5B9EF11F19DEFEF000E8D9F1 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

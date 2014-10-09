@@ -16,8 +16,9 @@
 		5B9EF11C19DEFAB500E8D9F1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF11B19DEFAB500E8D9F1 /* SWRevealViewController.m */; };
 		5B9EF11F19DEFEF000E8D9F1 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF11E19DEFEF000E8D9F1 /* MenuViewController.m */; };
 		5B9EF12219DF037B00E8D9F1 /* ChillHubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF12119DF037B00E8D9F1 /* ChillHubViewController.m */; };
-		5B9EF12919DF42ED00E8D9F1 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF12819DF42ED00E8D9F1 /* LandingViewController.m */; };
 		5BBFACF919E2E9BC00E42575 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9EF11719DEEE5100E8D9F1 /* Firebase.framework */; };
+		5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */; };
+		5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */; };
 		6743AE1F19E30E46000D9CF3 /* MobiNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */; };
 /* End PBXBuildFile section */
 
@@ -51,8 +52,10 @@
 		5B9EF12019DF037B00E8D9F1 /* ChillHubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChillHubViewController.h; sourceTree = "<group>"; };
 		5B9EF12119DF037B00E8D9F1 /* ChillHubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChillHubViewController.m; sourceTree = "<group>"; };
 		5B9EF12319DF08E700E8D9F1 /* MobiUs.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobiUs.pch; sourceTree = "<group>"; };
-		5B9EF12719DF42ED00E8D9F1 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
-		5B9EF12819DF42ED00E8D9F1 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
+		5BBFACFD19E495FC00E42575 /* ProductCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewController.h; sourceTree = "<group>"; };
+		5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewController.m; sourceTree = "<group>"; };
+		5BBFAD0019E4965500E42575 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
+		5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
 		6743AE1D19E30E46000D9CF3 /* MobiNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiNavigationController.h; sourceTree = "<group>"; };
 		6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobiNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +79,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B4EFBF719E7014000516C2D /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		5B4EFBF819E7015A00516C2D /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		5B4EFBF919E7018900516C2D /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = xibs;
+			sourceTree = "<group>";
+		};
 		5B9EF0E519DEEE1000E8D9F1 = {
 			isa = PBXGroup;
 			children = (
@@ -98,8 +122,9 @@
 		5B9EF0F019DEEE1000E8D9F1 /* MobiUs */ = {
 			isa = PBXGroup;
 			children = (
-				5B9EF12719DF42ED00E8D9F1 /* LandingViewController.h */,
-				5B9EF12819DF42ED00E8D9F1 /* LandingViewController.m */,
+				5B4EFBF919E7018900516C2D /* xibs */,
+				5B4EFBF819E7015A00516C2D /* controllers */,
+				5B4EFBF719E7014000516C2D /* model */,
 				5B9EF12019DF037B00E8D9F1 /* ChillHubViewController.h */,
 				5B9EF12119DF037B00E8D9F1 /* ChillHubViewController.m */,
 				5B9EF11D19DEFEF000E8D9F1 /* MenuViewController.h */,
@@ -113,6 +138,10 @@
 				5B9EF0F119DEEE1000E8D9F1 /* Supporting Files */,
 				6743AE1D19E30E46000D9CF3 /* MobiNavigationController.h */,
 				6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */,
+				5BBFACFD19E495FC00E42575 /* ProductCollectionViewController.h */,
+				5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */,
+				5BBFAD0019E4965500E42575 /* ProductCollectionViewCell.h */,
+				5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */,
 			);
 			path = MobiUs;
 			sourceTree = "<group>";
@@ -254,11 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */,
+				5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */,
 				5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */,
 				5B9EF12219DF037B00E8D9F1 /* ChillHubViewController.m in Sources */,
 				5B9EF0F419DEEE1000E8D9F1 /* main.m in Sources */,
 				5B9EF11C19DEFAB500E8D9F1 /* SWRevealViewController.m in Sources */,
-				5B9EF12919DF42ED00E8D9F1 /* LandingViewController.m in Sources */,
 				6743AE1F19E30E46000D9CF3 /* MobiNavigationController.m in Sources */,
 				5B9EF11F19DEFEF000E8D9F1 /* MenuViewController.m in Sources */,
 			);

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Reveal View Controller-->
@@ -76,12 +75,11 @@
                 <navigationController toolbarHidden="NO" id="wIO-cl-fNE" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" barStyle="black" id="0bb-ro-byk">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="0bb-ro-byk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.93725496529999996" green="0.40000003579999999" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -97,53 +95,41 @@
             </objects>
             <point key="canvasLocation" x="51" y="840"/>
         </scene>
-        <!--Landing-->
+        <!--ProductCollectionViewController-->
         <scene sceneID="K6v-Wk-Vcm">
             <objects>
-                <collectionViewController id="vMY-F1-92f" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ClW-j0-bcq">
+                <collectionViewController id="vMY-F1-92f" userLabel="ProductCollectionViewController" customClass="ProductCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="h3X-C2-8Es">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fu0-dt-vA3">
-                            <size key="itemSize" width="150" height="150"/>
-                            <size key="headerReferenceSize" width="10" height="20"/>
-                            <size key="footerReferenceSize" width="20" height="20"/>
-                            <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bib-9u-WzR">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Launch EPK-2349" id="Q0G-N2-pT2">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="700" id="c5L-PJ-Gfd"/>
-                                <constraint firstAttribute="width" secondItem="Q0G-N2-pT2" secondAttribute="height" multiplier="3:2" id="wsT-o7-WFl"/>
-                            </constraints>
-                        </imageView>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ace-pN-Ew6">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="YJe-gN-EFX" customClass="ProductCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2nE-C0-ngl">
-                                            <rect key="frame" x="51" y="59" width="51" height="31"/>
-                                        </switch>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lM-ZD-uV3">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <outlet property="imageView" destination="1lM-ZD-uV3" id="lpN-Zq-5Vh"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Yjx-Qh-Bei">
-                            <rect key="frame" x="0.0" y="64" width="600" height="20"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </collectionReusableView>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aQQ-Pd-kJ2">
-                            <autoresizingMask key="autoresizingMask"/>
-                        </collectionReusableView>
                         <connections>
-                            <outlet property="dataSource" destination="vMY-F1-92f" id="sBg-lh-4VV"/>
-                            <outlet property="delegate" destination="vMY-F1-92f" id="e3Q-yN-OzQ"/>
+                            <outlet property="dataSource" destination="vMY-F1-92f" id="bCT-Mc-gul"/>
+                            <outlet property="delegate" destination="vMY-F1-92f" id="Uz1-DG-Xah"/>
                         </connections>
                     </collectionView>
                     <toolbarItems>
@@ -161,10 +147,13 @@
                         <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="h8V-Aq-wDG"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="revealButtonItem" destination="h8V-Aq-wDG" id="V1u-tl-B4u"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42e-Tx-aPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="840"/>
+            <point key="canvasLocation" x="856.5" y="839.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XcQ-sU-zKN">
@@ -210,10 +199,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Launch EPK-2349" width="2736" height="1824"/>
         <image name="reveal-icon" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MoZ-40-MKS"/>
+        <segue reference="3k7-m7-hLJ"/>
     </inferredMetricsTieBreakers>
 </document>

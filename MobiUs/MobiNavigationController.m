@@ -23,12 +23,6 @@
     self.navigationBar.alpha = .6f;
     self.navigationBar.translucent = YES;
     
-    
-    
-
-    
-    
-    
 
 }
 

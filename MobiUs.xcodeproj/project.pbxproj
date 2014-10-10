@@ -92,6 +92,68 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5B3F1C9919E8843900303242 /* ChillHub */ = {
+			isa = PBXGroup;
+			children = (
+				5B4EFBF919E7018900516C2D /* views */,
+				5B4EFBF819E7015A00516C2D /* controllers */,
+				5B4EFBF719E7014000516C2D /* model */,
+			);
+			name = ChillHub;
+			sourceTree = "<group>";
+		};
+		5B3F1C9A19E8845400303242 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5B3F1C9E19E885BB00303242 /* resources */,
+				5B3F1C9D19E8853500303242 /* model */,
+				5B3F1C9C19E8853000303242 /* views */,
+				5B3F1C9B19E8852A00303242 /* controllers */,
+				5B9EF0F519DEEE1000E8D9F1 /* AppDelegate.h */,
+				5B9EF0F619DEEE1000E8D9F1 /* AppDelegate.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		5B3F1C9B19E8852A00303242 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6743AE1D19E30E46000D9CF3 /* MobiNavigationController.h */,
+				6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */,
+				5BBFACFD19E495FC00E42575 /* ProductCollectionViewController.h */,
+				5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */,
+				5BBFAD0019E4965500E42575 /* ProductCollectionViewCell.h */,
+				5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */,
+				5B9EF11D19DEFEF000E8D9F1 /* MenuViewController.h */,
+				5B9EF11E19DEFEF000E8D9F1 /* MenuViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		5B3F1C9C19E8853000303242 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				5B9EF10019DEEE1000E8D9F1 /* LaunchScreen.xib */,
+				5B9EF0FB19DEEE1000E8D9F1 /* Main.storyboard */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		5B3F1C9D19E8853500303242 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		5B3F1C9E19E885BB00303242 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
 		5B4EFBF719E7014000516C2D /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,16 +164,18 @@
 		5B4EFBF819E7015A00516C2D /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5B9EF12019DF037B00E8D9F1 /* ChillHubViewController.h */,
+				5B9EF12119DF037B00E8D9F1 /* ChillHubViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
 		};
-		5B4EFBF919E7018900516C2D /* xibs */ = {
+		5B4EFBF919E7018900516C2D /* views */ = {
 			isa = PBXGroup;
 			children = (
 				5B4EFBFA19E70FCD00516C2D /* ChillHub.storyboard */,
 			);
-			name = xibs;
+			name = views;
 			sourceTree = "<group>";
 		};
 		5B9EF0E519DEEE1000E8D9F1 = {
@@ -138,25 +202,9 @@
 		5B9EF0F019DEEE1000E8D9F1 /* MobiUs */ = {
 			isa = PBXGroup;
 			children = (
-				5B4EFBF919E7018900516C2D /* xibs */,
-				5B4EFBF819E7015A00516C2D /* controllers */,
-				5B4EFBF719E7014000516C2D /* model */,
-				5B9EF12019DF037B00E8D9F1 /* ChillHubViewController.h */,
-				5B9EF12119DF037B00E8D9F1 /* ChillHubViewController.m */,
-				5B9EF11D19DEFEF000E8D9F1 /* MenuViewController.h */,
-				5B9EF11E19DEFEF000E8D9F1 /* MenuViewController.m */,
-				5B9EF0F519DEEE1000E8D9F1 /* AppDelegate.h */,
-				5B9EF0F619DEEE1000E8D9F1 /* AppDelegate.m */,
-				5B9EF0FB19DEEE1000E8D9F1 /* Main.storyboard */,
-				5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */,
-				5B9EF10019DEEE1000E8D9F1 /* LaunchScreen.xib */,
+				5B3F1C9A19E8845400303242 /* Main */,
+				5B3F1C9919E8843900303242 /* ChillHub */,
 				5B9EF0F119DEEE1000E8D9F1 /* Supporting Files */,
-				6743AE1D19E30E46000D9CF3 /* MobiNavigationController.h */,
-				6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */,
-				5BBFACFD19E495FC00E42575 /* ProductCollectionViewController.h */,
-				5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */,
-				5BBFAD0019E4965500E42575 /* ProductCollectionViewCell.h */,
-				5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */,
 			);
 			path = MobiUs;
 			sourceTree = "<group>";

@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="65" y="-255"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Mobi Navigation Controller-->
         <scene sceneID="sz5-Lr-6cD">
             <objects>
-                <navigationController toolbarHidden="NO" id="wIO-cl-fNE" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="wIO-cl-fNE" customClass="MobiNavigationController" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="0bb-ro-byk">
@@ -138,7 +138,8 @@
                                                     </imageView>
                                                 </subviews>
                                             </view>
-                                            <blurEffect style="dark"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.65000000000000002" colorSpace="calibratedWhite"/>
+                                            <blurEffect style="light"/>
                                         </visualEffectView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

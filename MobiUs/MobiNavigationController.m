@@ -19,12 +19,28 @@
     // Do any additional setup after loading the view.
     
    
-    self.navigationBar.backgroundColor = [UIColor colorWithHue:.3 saturation:.4 brightness:.5 alpha:.1];
-    self.navigationBar.alpha = .6f;
-    self.navigationBar.translucent = YES;
+    //[self.navigationBar setBackgroundImage:[UIImage imageNamed:@"OragneBar.png"]
+                             //forBarMetrics:UIBarMetricsDefault];
+    //self.navigationBar.shadowImage = [UIImage imageNamed:@"OragneBar.png"];
+    //self.navigationBar.translucent = YES;
     
-
+    UINavigationBar* navigationBar = self.navigationBar;
+    
+    //[navigationBar setBarTintColor:[UIColor colorWithRed:0.0f green:0.0f blue:30.0f/255.0f alpha:0.3]];
+    
+    const CGFloat statusBarHeight = 20;    //  Make this dynamic in your own code...
+    
+    UIView* underlayView = [[UIView alloc] initWithFrame:CGRectMake(0, -statusBarHeight, navigationBar.frame.size.width, navigationBar.frame.size.height + statusBarHeight)];
+    [underlayView setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
+    [underlayView setBackgroundColor:[UIColor colorWithRed:220.0f/255.0f green:40.0f/255.0f blue:0.0f/255.0f alpha:1.0f]];
+    [underlayView setAlpha:0.4f];
+    [navigationBar insertSubview:underlayView atIndex:1];
+    
+    
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

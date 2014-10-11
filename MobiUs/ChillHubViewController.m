@@ -52,9 +52,6 @@
         [self.revealButtonItem setAction: @selector( revealToggle: )];
         [self.navigationController.navigationBar addGestureRecognizer:revealViewController.panGestureRecognizer];
     }
-    
-    //_label.text = _text;
-    //_label.textColor = _color;
 }
 
 

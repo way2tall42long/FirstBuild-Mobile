@@ -8,6 +8,7 @@
 
 #import "ProductCollectionViewController.h"
 #import "ProductCollectionViewCell.h"
+#import <SWRevealViewController.h>
 
 @interface ProductCollectionViewController ()
 

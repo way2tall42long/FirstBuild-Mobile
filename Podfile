@@ -2,7 +2,10 @@
 # platform :ios, '8.0'
 
 source 'https://github.com/CocoaPods/Specs.git'
-pod 'RBStoryboardLink', '~> 0.1.0'
+pod 'RBStoryboardLink'
+pod 'Firebase'
+pod 'SWRevealViewController'
+
 target 'MobiUs' do
 
 end

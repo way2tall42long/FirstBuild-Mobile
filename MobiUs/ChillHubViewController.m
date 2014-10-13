@@ -29,6 +29,7 @@
 //
 
 #import "ChillHubViewController.h"
+#import <SWRevealViewController.h>
 
 @interface ChillHubViewController ()
 

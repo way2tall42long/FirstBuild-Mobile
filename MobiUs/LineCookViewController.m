@@ -7,6 +7,7 @@
 //
 
 #import "LineCookViewController.h"
+#import <SWRevealViewController.h>
 
 @interface LineCookViewController ()
 

@@ -12,7 +12,8 @@
 		5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */; };
 		5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EF10019DEEE1000E8D9F1 /* LaunchScreen.xib */; };
 		5B9EF10E19DEEE1100E8D9F1 /* MobiUsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF10D19DEEE1100E8D9F1 /* MobiUsTests.m */; };
-		5B9EF11C19DEFAB500E8D9F1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF11B19DEFAB500E8D9F1 /* SWRevealViewController.m */; };
+		5BACB21119EC5C1900349F16 /* FirebaseCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BACB20D19EC5C1900349F16 /* FirebaseCollection.m */; };
+		5BACB21219EC5C1900349F16 /* FirebaseConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BACB20F19EC5C1900349F16 /* FirebaseConnection.m */; };
 		5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */; };
 		5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */; };
 		5BF9482519EC155700CB8BCF /* LineCook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF9482419EC155700CB8BCF /* LineCook.storyboard */; };
@@ -47,10 +48,13 @@
 		5B9EF10719DEEE1100E8D9F1 /* MobiUsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobiUsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9EF10C19DEEE1100E8D9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B9EF10D19DEEE1100E8D9F1 /* MobiUsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobiUsTests.m; sourceTree = "<group>"; };
-		5B9EF11A19DEFAB500E8D9F1 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		5B9EF11B19DEFAB500E8D9F1 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		5B9EF11D19DEFEF000E8D9F1 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		5B9EF12319DF08E700E8D9F1 /* MobiUs.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobiUs.pch; sourceTree = "<group>"; };
+		5BACB20C19EC5C1900349F16 /* FirebaseCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseCollection.h; sourceTree = "<group>"; };
+		5BACB20D19EC5C1900349F16 /* FirebaseCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseCollection.m; sourceTree = "<group>"; };
+		5BACB20E19EC5C1900349F16 /* FirebaseConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseConnection.h; sourceTree = "<group>"; };
+		5BACB20F19EC5C1900349F16 /* FirebaseConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseConnection.m; sourceTree = "<group>"; };
+		5BACB21019EC5C1900349F16 /* Objectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Objectable.h; sourceTree = "<group>"; };
 		5BBFACFD19E495FC00E42575 /* ProductCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewController.h; sourceTree = "<group>"; };
 		5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewController.m; sourceTree = "<group>"; };
 		5BBFAD0019E4965500E42575 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
@@ -189,7 +193,6 @@
 				5B9EF0EF19DEEE1000E8D9F1 /* Products */,
 				5B9EF10A19DEEE1100E8D9F1 /* MobiUsTests */,
 				5B9EF0F019DEEE1000E8D9F1 /* MobiUs */,
-				5B9EF11919DEFAB500E8D9F1 /* SWRevealViewController */,
 				4B157123A66C0AD779C63B95 /* Pods */,
 				CBE251472FAFD71676539304 /* Frameworks */,
 			);
@@ -207,8 +210,9 @@
 		5B9EF0F019DEEE1000E8D9F1 /* MobiUs */ = {
 			isa = PBXGroup;
 			children = (
-				5BF9481E19EC152000CB8BCF /* LineCook */,
+				5BACB20A19EC5BDC00349F16 /* NonPodLibraries */,
 				5B3F1C9A19E8845400303242 /* Main */,
+				5BF9481E19EC152000CB8BCF /* LineCook */,
 				5B3F1C9919E8843900303242 /* ChillHub */,
 				5B9EF0F119DEEE1000E8D9F1 /* Supporting Files */,
 			);
@@ -242,14 +246,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5B9EF11919DEFAB500E8D9F1 /* SWRevealViewController */ = {
+		5BACB20A19EC5BDC00349F16 /* NonPodLibraries */ = {
 			isa = PBXGroup;
 			children = (
-				5B9EF11A19DEFAB500E8D9F1 /* SWRevealViewController.h */,
-				5B9EF11B19DEFAB500E8D9F1 /* SWRevealViewController.m */,
+				5BACB20B19EC5C1900349F16 /* FirebaseObjects */,
 			);
-			name = SWRevealViewController;
-			path = MobiUs/SWRevealViewController;
+			name = NonPodLibraries;
+			sourceTree = "<group>";
+		};
+		5BACB20B19EC5C1900349F16 /* FirebaseObjects */ = {
+			isa = PBXGroup;
+			children = (
+				5BACB20C19EC5C1900349F16 /* FirebaseCollection.h */,
+				5BACB20D19EC5C1900349F16 /* FirebaseCollection.m */,
+				5BACB20E19EC5C1900349F16 /* FirebaseConnection.h */,
+				5BACB20F19EC5C1900349F16 /* FirebaseConnection.m */,
+				5BACB21019EC5C1900349F16 /* Objectable.h */,
+			);
+			path = FirebaseObjects;
 			sourceTree = "<group>";
 		};
 		5BF9481E19EC152000CB8BCF /* LineCook */ = {
@@ -433,13 +447,14 @@
 			files = (
 				5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */,
 				5BF9482F19EC15E300CB8BCF /* MenuViewController.m in Sources */,
+				5BACB21219EC5C1900349F16 /* FirebaseConnection.m in Sources */,
 				5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */,
 				5BF9482819EC158100CB8BCF /* LineCookViewController.m in Sources */,
 				5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */,
 				5B9EF0F419DEEE1000E8D9F1 /* main.m in Sources */,
-				5B9EF11C19DEFAB500E8D9F1 /* SWRevealViewController.m in Sources */,
 				6743AE1F19E30E46000D9CF3 /* MobiNavigationController.m in Sources */,
 				5BF9482B19EC15A000CB8BCF /* ChillHubViewController.m in Sources */,
+				5BACB21119EC5C1900349F16 /* FirebaseCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +575,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/MobiUs",
+					"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks",
 				);
 				GCC_PREFIX_HEADER = MobiUs/MobiUs.pch;
 				INFOPLIST_FILE = MobiUs/Info.plist;
@@ -577,6 +593,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/MobiUs",
+					"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks",
 				);
 				GCC_PREFIX_HEADER = MobiUs/MobiUs.pch;
 				INFOPLIST_FILE = MobiUs/Info.plist;

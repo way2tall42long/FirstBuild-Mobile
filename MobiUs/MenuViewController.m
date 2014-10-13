@@ -51,7 +51,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,9 +61,12 @@
     switch ( indexPath.row )
     {
         case 0:
-            CellIdentifier = @"ChillHub";
+            CellIdentifier = @"Home";
             break;
         case 1:
+            CellIdentifier = @"ChillHub";
+            break;
+        case 2:
             CellIdentifier = @"LineCook";
             break;
 

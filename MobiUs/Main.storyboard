@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PT_Sans-Narrow-Web-Regular.ttf">
+            <string>PTSans-Narrow</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Reveal View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -134,14 +139,13 @@
         <scene sceneID="sz5-Lr-6cD">
             <objects>
                 <navigationController toolbarHidden="NO" id="wIO-cl-fNE" customClass="MobiNavigationController" sceneMemberID="viewController">
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="0bb-ro-byk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -164,10 +168,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bib-9u-WzR">
-                            <size key="itemSize" width="152" height="151"/>
+                            <size key="itemSize" width="140" height="140"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="0.0"/>
+                            <inset key="sectionInset" minX="15" minY="20" maxX="15" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch EPK-2349" id="nML-Pu-Brt">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -178,25 +182,32 @@
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="152" height="151"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAL-WQ-rjj">
-                                            <rect key="frame" x="8" y="8" width="136" height="135"/>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAL-WQ-rjj">
+                                            <rect key="frame" x="2" y="2" width="136" height="135"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tTn-aT-hj1">
                                                 <rect key="frame" x="0.0" y="0.0" width="136" height="135"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chill Hub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjw-Ad-FEk">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Chill Hub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjw-Ad-FEk">
                                                         <rect key="frame" x="33" y="106" width="71" height="21"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lM-ZD-uV3">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lM-ZD-uV3">
                                                         <rect key="frame" x="19" y="15" width="99" height="83"/>
                                                     </imageView>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="1lM-ZD-uV3" secondAttribute="bottom" constant="37" id="DdE-gC-Exz"/>
+                                                    <constraint firstAttribute="centerX" secondItem="1lM-ZD-uV3" secondAttribute="centerX" id="XKT-YX-Cam"/>
+                                                    <constraint firstAttribute="bottom" secondItem="jjw-Ad-FEk" secondAttribute="bottom" constant="8" id="i5Q-v4-hUM"/>
+                                                    <constraint firstItem="1lM-ZD-uV3" firstAttribute="top" secondItem="tTn-aT-hj1" secondAttribute="top" constant="15" id="lpI-F0-nBj"/>
+                                                    <constraint firstAttribute="centerX" secondItem="jjw-Ad-FEk" secondAttribute="centerX" id="vKN-po-PMo"/>
+                                                </constraints>
                                             </view>
                                             <color key="backgroundColor" white="0.0" alpha="0.65000000000000002" colorSpace="calibratedWhite"/>
                                             <blurEffect style="light"/>
@@ -205,11 +216,19 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="dAL-WQ-rjj" secondAttribute="bottom" constant="-5" id="P6B-54-ow3"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="dAL-WQ-rjj" secondAttribute="bottom" constant="-6" id="QkL-bW-3Lu"/>
                                     <constraint firstItem="dAL-WQ-rjj" firstAttribute="leading" secondItem="YJe-gN-EFX" secondAttribute="leadingMargin" id="jRB-7f-ppa"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="dAL-WQ-rjj" secondAttribute="trailing" id="oFe-ML-4QQ"/>
                                     <constraint firstItem="dAL-WQ-rjj" firstAttribute="top" secondItem="YJe-gN-EFX" secondAttribute="topMargin" id="reN-DJ-EPP"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="dAL-WQ-rjj" secondAttribute="bottom" id="wAu-R6-phN"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QkL-bW-3Lu"/>
+                                        <exclude reference="wAu-R6-phN"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="imageView" destination="1lM-ZD-uV3" id="lpN-Zq-5Vh"/>
                                 </connections>
@@ -222,17 +241,19 @@
                     </collectionView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="dKG-W7-d8L"/>
-                        <barButtonItem title="FirstBuild.com" id="gNq-33-523">
+                        <barButtonItem systemItem="add" id="gNq-33-523">
                             <color key="tintColor" red="0.93725496529999996" green="0.40000003579999999" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="uFY-5F-dkF"/>
-                        <barButtonItem title="Marketplace" id="Qd5-st-jmp">
+                        <barButtonItem systemItem="search" id="Qd5-st-jmp">
                             <color key="tintColor" red="0.93725496529999996" green="0.40000003579999999" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="sy4-5k-FuY"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Landing" id="SWf-iQ-ZyW">
-                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="h8V-Aq-wDG"/>
+                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="h8V-Aq-wDG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

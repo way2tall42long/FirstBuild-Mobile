@@ -19,12 +19,12 @@
     // Do any additional setup after loading the view.
     
     //self.navigationBar setBarTintColor:[UIColor colorWithRed:.3 green:.4 blue:.5 alpha:.2]
-    //[self.navigationBar setBackgroundImage:[UIImage imageNamed:@"Orange-01.png"]
-                             //forBarMetrics:UIBarMetricsDefault];
-    //self.navigationBar.shadowImage = [UIImage imageNamed:@"Shadow2-02.png"];
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"Orange-01.png"]
+                             forBarMetrics:UIBarMetricsDefault];
+    self.navigationBar.shadowImage = [UIImage imageNamed:@"Shadow2.png"];
     self.navigationBar.translucent = NO;
     [self.navigationBar setBarStyle:UIBarStyleBlack];
-    [self.navigationBar setBarTintColor:[UIColor colorWithRed:241.0f/255.0f green:93.0f/255.0f blue:34.0f/255.0f alpha:1.0f]];
+    //[self.navigationBar setBarTintColor:[UIColor colorWithRed:241.0f/255.0f green:93.0f/255.0f blue:34.0f/255.0f alpha:1.0f]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
   
     
@@ -33,6 +33,7 @@
                                                   NSFontAttributeName: [UIFont fontWithName:@"PTSans-NarrowBold" size:25.0f],
                                                  
                                                   }];
+    
     //UINavigationBar* navigationBar = self.navigationBar;
     
     //[navigationBar setBarTintColor:[UIColor colorWithRed:0.0f green:0.0f blue:30.0f/255.0f alpha:0.3]];

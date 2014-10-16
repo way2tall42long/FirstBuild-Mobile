@@ -21,7 +21,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _productImages = [@[@"Launch EPK-2349",@"Fridge Iconpng" ] mutableCopy];
+    _productImages = [@[@"linecook",@"Fridge Iconpng",@"sous vide icon" ] mutableCopy];
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {

@@ -28,6 +28,8 @@
 		5BF9482F19EC15E300CB8BCF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9482E19EC15E300CB8BCF /* MenuViewController.m */; };
 		5BF9483119EC15F900CB8BCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF9483019EC15F900CB8BCF /* Main.storyboard */; };
 		6743AE1F19E30E46000D9CF3 /* MobiNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */; };
+		67926FF319ED8BA000E346C2 /* PT_Sans-Narrow-Web-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67926FF119ED8BA000E346C2 /* PT_Sans-Narrow-Web-Regular.ttf */; };
+		67926FF919EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67926FF819EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf */; };
 		F260351313DF1394D6FCA9DD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B446C5B84ADBDC6A8F7CC7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		5BF9483019EC15F900CB8BCF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6743AE1D19E30E46000D9CF3 /* MobiNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiNavigationController.h; sourceTree = "<group>"; };
 		6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobiNavigationController.m; sourceTree = "<group>"; };
+		67926FF119ED8BA000E346C2 /* PT_Sans-Narrow-Web-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Narrow-Web-Regular.ttf"; sourceTree = "<group>"; };
+		67926FF819EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Narrow-Web-Bold.ttf"; sourceTree = "<group>"; };
 		7C32915B6E0C4545E2A923B7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8E41CC8E45B35A1D2EC877B4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,8 +145,6 @@
 		5B3F1C9B19E8852A00303242 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6743AE1D19E30E46000D9CF3 /* MobiNavigationController.h */,
-				6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */,
 				5BBFACFD19E495FC00E42575 /* ProductCollectionViewController.h */,
 				5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */,
 				5BBFAD0019E4965500E42575 /* ProductCollectionViewCell.h */,
@@ -241,6 +243,8 @@
 		5B9EF0F119DEEE1000E8D9F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				67926FF119ED8BA000E346C2 /* PT_Sans-Narrow-Web-Regular.ttf */,
+				67926FF819EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf */,
 				5B9EF0F219DEEE1000E8D9F1 /* Info.plist */,
 				5B9EF0F319DEEE1000E8D9F1 /* main.m */,
 				5B9EF12319DF08E700E8D9F1 /* MobiUs.pch */,
@@ -329,6 +333,15 @@
 				5BF9482419EC155700CB8BCF /* LineCook.storyboard */,
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		67926FFA19EDDA4B00E346C2 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6743AE1D19E30E46000D9CF3 /* MobiNavigationController.h */,
+				6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 		CBE251472FAFD71676539304 /* Frameworks */ = {
@@ -429,6 +442,7 @@
 				5BF9482519EC155700CB8BCF /* LineCook.storyboard in Resources */,
 				5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */,
 				5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */,
+				67926FF919EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

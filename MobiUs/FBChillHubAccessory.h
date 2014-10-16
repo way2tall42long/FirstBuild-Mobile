@@ -20,17 +20,10 @@
  * THE SOFTWARE.
  */
 
-//
-//  ColorViewController.h
-//  RevealControllerStoryboardExample
-//
-//  Created by Nick Hodapp on 1/9/13.
-//  Copyright (c) 2013 CoDeveloper. All rights reserved.
-//
+#import <Foundation/Foundation.h>
 
-#import <UIKit/UIKit.h>
-
-@interface ChillHubViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UISwitch *dummyToggle;
+@interface FBChillHubAccessory : NSObject
+//@property (strong,nonatomic) NSString * key;
+//@property (strong,nonatomic) NSString * prettyName;
 
 @end

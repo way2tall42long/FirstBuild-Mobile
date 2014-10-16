@@ -20,17 +20,14 @@
  * THE SOFTWARE.
  */
 
-//
-//  ColorViewController.h
-//  RevealControllerStoryboardExample
-//
-//  Created by Nick Hodapp on 1/9/13.
-//  Copyright (c) 2013 CoDeveloper. All rights reserved.
-//
+#import "FBChillHubAccessoryQuickChill.h"
 
-#import <UIKit/UIKit.h>
+@implementation FBChillHubAccessoryQuickChill
 
-@interface ChillHubViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UISwitch *dummyToggle;
+-(NSDictionary*)toObject {
+    
+    return [self dictionaryWithValuesForKeys:@[@"isOn"]];
+}
+
 
 @end

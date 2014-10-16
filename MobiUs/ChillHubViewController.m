@@ -30,6 +30,9 @@
 
 #import "ChillHubViewController.h"
 #import <SWRevealViewController.h>
+#import "FirebaseCollection.h"
+#import <Firebase/Firebase.h>
+#import "FBChillHubAccessoryQuickChill.h"
 
 @interface ChillHubViewController ()
 
@@ -37,10 +40,85 @@
 
 @implementation ChillHubViewController
 
+FirebaseCollection * collection;
+Firebase * firebase ;
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    firebase = [[Firebase alloc] initWithUrl:@"https://mobius-firstbuild.firebaseio.com/homes/home-1/devices/device-1/accessories/accessory-1"];
+    NSMutableDictionary * dictionary = [[NSMutableDictionary dictionary] init];
+    collection = [[FirebaseCollection alloc] initWithNode:firebase dictionary:dictionary type:[FBChillHubAccessoryQuickChill class]];
+
+  
+//
+//    [firebase observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//        NSLog(@"stuff");
+////        id obj = [self.objects objectForKey:snapshot.name];
+////        if (!obj) {
+////            NSAssert(false, @"Object not found locally! %@", snapshot.name);
+////        }
+////        [obj setValuesForKeysWithDictionary:snapshot.value];
+////        self.updateCb(obj);
+//    }];
+//
+//    
+//    
+//    [collection didAddChild:^(FBChillHubAccessoryQuickChill * accessory) {
+//        // created remotely or locally, it is called here
+//        NSLog(@"add of isOn %@", accessory);
+//        if ([accessory.isOn isEqual:@"on"])
+//        {
+//            self.dummyToggle.on = true;
+//        }
+//        else
+//        {
+//            self.dummyToggle.on = false;
+//
+//        }
+//    }];
+//    [collection didRemoveChild:^(FBChillHubAccessoryQuickChill * accessory) {
+//        NSLog(@"remove of isOn %@", accessory);
+//
+//    
+//    }];
+//    [collection didUpdateChild:^(FBChillHubAccessoryQuickChill * accessory) {
+//        NSLog(@"change of isOn %@", accessory);
+//        if ([accessory.isOn isEqual: @"on"])
+//        {
+//            self.dummyToggle.on = true;
+//        }
+//        else
+//        {
+//            self.dummyToggle.on = false;
+//            
+//        }
+//    
+//    }];
+    
+    
 }
+- (IBAction)dummyToggleValueChanged:(id)sender {
+    NSLog(@"switch clicked");
+    FBChillHubAccessoryQuickChill * accessory = [FBChillHubAccessoryQuickChill new];
+    UISwitch * myswitch = (UISwitch *) sender;
+    
+    if (myswitch.on == true)
+    {
+        accessory.isOn = @"true";
+    }
+    else
+    {
+        accessory.isOn = @"false";
+        
+    }
+   [collection addObject:accessory];
+
+}
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {

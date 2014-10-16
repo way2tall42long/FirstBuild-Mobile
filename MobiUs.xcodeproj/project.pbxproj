@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B1C894119EDB31D002A9EE2 /* FBChillHubAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C894019EDB31D002A9EE2 /* FBChillHubAccessory.m */; };
+		5B1C894419EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C894319EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.m */; };
 		5B9EF0F419DEEE1000E8D9F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF0F319DEEE1000E8D9F1 /* main.m */; };
 		5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF0F619DEEE1000E8D9F1 /* AppDelegate.m */; };
 		5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */; };
@@ -16,6 +18,9 @@
 		5BACB21219EC5C1900349F16 /* FirebaseConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BACB20F19EC5C1900349F16 /* FirebaseConnection.m */; };
 		5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */; };
 		5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */; };
+		5BC5A1C219EF5E79009C93B1 /* FBTAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1BE19EF5E79009C93B1 /* FBTAuthenticationViewController.m */; };
+		5BC5A1C319EF5E79009C93B1 /* FBTAuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC5A1BF19EF5E79009C93B1 /* FBTAuthenticationViewController.xib */; };
+		5BC5A1C419EF5E79009C93B1 /* AuthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1C119EF5E79009C93B1 /* AuthManager.m */; };
 		5BF9482519EC155700CB8BCF /* LineCook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF9482419EC155700CB8BCF /* LineCook.storyboard */; };
 		5BF9482819EC158100CB8BCF /* LineCookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9482719EC158100CB8BCF /* LineCookViewController.m */; };
 		5BF9482B19EC15A000CB8BCF /* ChillHubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9482A19EC15A000CB8BCF /* ChillHubViewController.m */; };
@@ -38,6 +43,10 @@
 
 /* Begin PBXFileReference section */
 		18B446C5B84ADBDC6A8F7CC7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B1C893F19EDB31D002A9EE2 /* FBChillHubAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBChillHubAccessory.h; sourceTree = "<group>"; };
+		5B1C894019EDB31D002A9EE2 /* FBChillHubAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBChillHubAccessory.m; sourceTree = "<group>"; };
+		5B1C894219EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBChillHubAccessoryQuickChill.h; sourceTree = "<group>"; };
+		5B1C894319EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBChillHubAccessoryQuickChill.m; sourceTree = "<group>"; };
 		5B9EF0EE19DEEE1000E8D9F1 /* MobiUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobiUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9EF0F219DEEE1000E8D9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B9EF0F319DEEE1000E8D9F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,6 +68,11 @@
 		5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewController.m; sourceTree = "<group>"; };
 		5BBFAD0019E4965500E42575 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
 		5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
+		5BC5A1BD19EF5E79009C93B1 /* FBTAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTAuthenticationViewController.h; sourceTree = "<group>"; };
+		5BC5A1BE19EF5E79009C93B1 /* FBTAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTAuthenticationViewController.m; sourceTree = "<group>"; };
+		5BC5A1BF19EF5E79009C93B1 /* FBTAuthenticationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBTAuthenticationViewController.xib; sourceTree = "<group>"; };
+		5BC5A1C019EF5E79009C93B1 /* AuthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthManager.h; sourceTree = "<group>"; };
+		5BC5A1C119EF5E79009C93B1 /* AuthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthManager.m; sourceTree = "<group>"; };
 		5BF9482419EC155700CB8BCF /* LineCook.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LineCook.storyboard; sourceTree = "<group>"; };
 		5BF9482619EC158100CB8BCF /* LineCookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineCookViewController.h; sourceTree = "<group>"; };
 		5BF9482719EC158100CB8BCF /* LineCookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineCookViewController.m; sourceTree = "<group>"; };
@@ -166,6 +180,10 @@
 		5B4EFBF719E7014000516C2D /* model */ = {
 			isa = PBXGroup;
 			children = (
+				5B1C893F19EDB31D002A9EE2 /* FBChillHubAccessory.h */,
+				5B1C894019EDB31D002A9EE2 /* FBChillHubAccessory.m */,
+				5B1C894219EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.h */,
+				5B1C894319EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -210,6 +228,7 @@
 		5B9EF0F019DEEE1000E8D9F1 /* MobiUs */ = {
 			isa = PBXGroup;
 			children = (
+				5BC5A1BC19EF5E6B009C93B1 /* Authentication */,
 				5BACB20A19EC5BDC00349F16 /* NonPodLibraries */,
 				5B3F1C9A19E8845400303242 /* Main */,
 				5BF9481E19EC152000CB8BCF /* LineCook */,
@@ -264,6 +283,18 @@
 				5BACB21019EC5C1900349F16 /* Objectable.h */,
 			);
 			path = FirebaseObjects;
+			sourceTree = "<group>";
+		};
+		5BC5A1BC19EF5E6B009C93B1 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5BC5A1BD19EF5E79009C93B1 /* FBTAuthenticationViewController.h */,
+				5BC5A1BE19EF5E79009C93B1 /* FBTAuthenticationViewController.m */,
+				5BC5A1BF19EF5E79009C93B1 /* FBTAuthenticationViewController.xib */,
+				5BC5A1C019EF5E79009C93B1 /* AuthManager.h */,
+				5BC5A1C119EF5E79009C93B1 /* AuthManager.m */,
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 		5BF9481E19EC152000CB8BCF /* LineCook */ = {
@@ -393,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BF9482D19EC15BB00CB8BCF /* ChillHub.storyboard in Resources */,
+				5BC5A1C319EF5E79009C93B1 /* FBTAuthenticationViewController.xib in Resources */,
 				5BF9483119EC15F900CB8BCF /* Main.storyboard in Resources */,
 				5BF9482519EC155700CB8BCF /* LineCook.storyboard in Resources */,
 				5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */,
@@ -450,8 +482,12 @@
 				5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */,
 				5BF9482F19EC15E300CB8BCF /* MenuViewController.m in Sources */,
 				5BACB21219EC5C1900349F16 /* FirebaseConnection.m in Sources */,
+				5BC5A1C419EF5E79009C93B1 /* AuthManager.m in Sources */,
+				5BC5A1C219EF5E79009C93B1 /* FBTAuthenticationViewController.m in Sources */,
+				5B1C894119EDB31D002A9EE2 /* FBChillHubAccessory.m in Sources */,
 				5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */,
 				5BF9482819EC158100CB8BCF /* LineCookViewController.m in Sources */,
+				5B1C894419EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.m in Sources */,
 				5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */,
 				5B9EF0F419DEEE1000E8D9F1 /* main.m in Sources */,
 				6743AE1F19E30E46000D9CF3 /* MobiNavigationController.m in Sources */,
@@ -589,7 +625,7 @@
 				INFOPLIST_FILE = MobiUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MobiUs;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "776807e1-3601-4783-b21b-cd3a4244337d";
 			};
 			name = Debug;
 		};
@@ -610,7 +646,7 @@
 				INFOPLIST_FILE = MobiUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MobiUs;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "776807e1-3601-4783-b21b-cd3a4244337d";
 			};
 			name = Release;
 		};

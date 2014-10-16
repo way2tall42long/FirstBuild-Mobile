@@ -48,11 +48,11 @@ Firebase * firebase ;
 {
     [super viewDidLoad];
     
-    firebase = [[Firebase alloc] initWithUrl:@"https://mobius-firstbuild.firebaseio.com/homes/home-1/devices/device-1/accessories/accessory-1"];
-    NSMutableDictionary * dictionary = [[NSMutableDictionary dictionary] init];
-    collection = [[FirebaseCollection alloc] initWithNode:firebase dictionary:dictionary type:[FBChillHubAccessoryQuickChill class]];
-
-  
+//    firebase = [[Firebase alloc] initWithUrl:@"https://mobius-firstbuild.firebaseio.com/homes/home-1/devices/device-1/accessories/accessory-1"];
+//    NSMutableDictionary * dictionary = [[NSMutableDictionary dictionary] init];
+//    collection = [[FirebaseCollection alloc] initWithNode:firebase dictionary:dictionary type:[FBChillHubAccessoryQuickChill class]];
+//
+//  
 //
 //    [firebase observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
 //        NSLog(@"stuff");

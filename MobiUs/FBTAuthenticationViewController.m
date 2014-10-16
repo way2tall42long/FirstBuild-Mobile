@@ -44,7 +44,7 @@
     [self.passwordTextField resignFirstResponder];
     [self.loginActivityIndicator startAnimating];
     
-    Firebase *authRef = [[Firebase alloc] initWithUrl:@"https://iostemplate.firebaseio.com"];
+    Firebase *authRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
     [authRef authUser:self.usernameTextField.text  password:self.passwordTextField.text withCompletionBlock:^(NSError *error,  FAuthData *authData) {
         if (error != nil) {
             // Error, error
@@ -66,31 +66,42 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+
 - (IBAction)registerButtonPressed:(id)sender;
 {
     [self.usernameTextField resignFirstResponder];
     [self.passwordTextField resignFirstResponder];
     [self.loginActivityIndicator startAnimating];
     
-    Firebase *authRef = [[Firebase alloc] initWithUrl:@"https://iostemplate.firebaseio.com"];
+    Firebase *authRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
     Firebase *userRef = [authRef childByAppendingPath:@"users"];
-    FirebaseSimpleLogin *authClient = [[FirebaseSimpleLogin alloc] initWithRef:authRef];
-    [authClient createUserWithEmail:self.usernameTextField.text password:self.passwordTextField.text
-                 andCompletionBlock:^(NSError* error, FAUser* user) {
+
+    [authRef createUser:self.usernameTextField.text  password:self.passwordTextField.text withCompletionBlock:^(NSError *error) {
+             if (error != nil) {
+                 // There was an error creating the account
+                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Failed!" message:@"Please check your email and password, and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                 [alert show];
+                 [self.loginActivityIndicator stopAnimating];
+             } else {
+                 [authRef authUser:self.usernameTextField.text  password:self.passwordTextField.text withCompletionBlock:^(NSError *error,  FAuthData *authData) {
                      if (error != nil) {
-                         // There was an error creating the account
-                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Failed!" message:@"Please check your email and password, and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                         // Error, error
+                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed!" message:@"Please check your email and password, and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                          [alert show];
-                         [self.loginActivityIndicator stopAnimating];
-                     } else {
-                         // We created a new user account
-                         Firebase *newUserRef = [userRef childByAppendingPath:user.uid];
-                         FBTUser *newUser = [[FBTUser alloc] initWithUsername:user.email];
+                     }
+                     else {
+                         Firebase *newUserRef = [userRef childByAppendingPath:authData.uid];
+                         FBTUser *newUser = [[FBTUser alloc] initWithUsername:self.usernameTextField.text];
                          [newUserRef setValue:[newUser toDictionary]];
-                         [self.loginActivityIndicator stopAnimating];
+                         Firebase *connectedRef = [[authRef childByAppendingPath:@"connections"] childByAppendingPath:authData.uid];
+                         [connectedRef setValue:@YES];
+                         [connectedRef onDisconnectRemoveValue];
                          [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
                      }
+                     [self.loginActivityIndicator stopAnimating];
                  }];
+             }
+         }];
 
 }
 

@@ -29,25 +29,36 @@
 //
 
 #import "ChillHubViewController.h"
-#import <SWRevealViewController.h>
-#import "FirebaseCollection.h"
-#import <Firebase/Firebase.h>
 #import "FBChillHubAccessoryQuickChill.h"
+#import <SWRevealViewController.h>
+#import <Firebase/Firebase.h>
 
 @interface ChillHubViewController ()
+@property (nonatomic, strong) CFShareCircleView *shareCircleView;
 
 @end
 
 @implementation ChillHubViewController
 
-FirebaseCollection * collection;
-Firebase * firebase ;
+- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
+    NSLog(@"Selected sharer: %@", sharer.name);
+}
 
+- (void)shareCircleCanceled:(NSNotification *)notification{
+    NSLog(@"Share circle view was canceled.");
+}
+
+- (IBAction)shareButtonClicked:(id)sender {
+    [self.shareCircleView showAnimated:YES];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.shareCircleView = [[CFShareCircleView alloc] init];
+    self.shareCircleView.delegate = self;
     
+    [self.shareCircleView showAnimated:true];
 //    firebase = [[Firebase alloc] initWithUrl:@"https://mobius-firstbuild.firebaseio.com/homes/home-1/devices/device-1/accessories/accessory-1"];
 //    NSMutableDictionary * dictionary = [[NSMutableDictionary dictionary] init];
 //    collection = [[FirebaseCollection alloc] initWithNode:firebase dictionary:dictionary type:[FBChillHubAccessoryQuickChill class]];
@@ -100,23 +111,23 @@ Firebase * firebase ;
     
     
 }
-- (IBAction)dummyToggleValueChanged:(id)sender {
-    NSLog(@"switch clicked");
-    FBChillHubAccessoryQuickChill * accessory = [FBChillHubAccessoryQuickChill new];
-    UISwitch * myswitch = (UISwitch *) sender;
-    
-    if (myswitch.on == true)
-    {
-        accessory.isOn = @"true";
-    }
-    else
-    {
-        accessory.isOn = @"false";
-        
-    }
-   [collection addObject:accessory];
-
-}
+//- (IBAction)dummyToggleValueChanged:(id)sender {
+//    NSLog(@"switch clicked");
+//    FBChillHubAccessoryQuickChill * accessory = [FBChillHubAccessoryQuickChill new];
+//    UISwitch * myswitch = (UISwitch *) sender;
+//    
+//    if (myswitch.on == true)
+//    {
+//        accessory.isOn = @"true";
+//    }
+//    else
+//    {
+//        accessory.isOn = @"false";
+//        
+//    }
+//   [collection addObject:accessory];
+//
+//}
 
 
 

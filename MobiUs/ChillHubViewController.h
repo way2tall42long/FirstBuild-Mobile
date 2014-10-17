@@ -29,8 +29,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CFShareCircleView.h"
 
-@interface ChillHubViewController : UIViewController
+@interface ChillHubViewController : UIViewController  <CFShareCircleViewDelegate>
 @property (strong, nonatomic) IBOutlet UISwitch *dummyToggle;
 
 @end

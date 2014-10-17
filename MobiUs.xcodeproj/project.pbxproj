@@ -16,6 +16,8 @@
 		5B9EF10E19DEEE1100E8D9F1 /* MobiUsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF10D19DEEE1100E8D9F1 /* MobiUsTests.m */; };
 		5BACB21119EC5C1900349F16 /* FirebaseCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BACB20D19EC5C1900349F16 /* FirebaseCollection.m */; };
 		5BACB21219EC5C1900349F16 /* FirebaseConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BACB20F19EC5C1900349F16 /* FirebaseConnection.m */; };
+		5BBB0B8A19F1CC5D001D5DF1 /* CFShareCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B8719F1CC5D001D5DF1 /* CFShareCircleView.m */; };
+		5BBB0B8B19F1CC5D001D5DF1 /* CFSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B8919F1CC5D001D5DF1 /* CFSharer.m */; };
 		5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */; };
 		5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */; };
 		5BC5A1C219EF5E79009C93B1 /* FBTAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1BE19EF5E79009C93B1 /* FBTAuthenticationViewController.m */; };
@@ -66,6 +68,10 @@
 		5BACB20E19EC5C1900349F16 /* FirebaseConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseConnection.h; sourceTree = "<group>"; };
 		5BACB20F19EC5C1900349F16 /* FirebaseConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseConnection.m; sourceTree = "<group>"; };
 		5BACB21019EC5C1900349F16 /* Objectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Objectable.h; sourceTree = "<group>"; };
+		5BBB0B8619F1CC5D001D5DF1 /* CFShareCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFShareCircleView.h; sourceTree = "<group>"; };
+		5BBB0B8719F1CC5D001D5DF1 /* CFShareCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFShareCircleView.m; sourceTree = "<group>"; };
+		5BBB0B8819F1CC5D001D5DF1 /* CFSharer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFSharer.h; sourceTree = "<group>"; };
+		5BBB0B8919F1CC5D001D5DF1 /* CFSharer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFSharer.m; sourceTree = "<group>"; };
 		5BBFACFD19E495FC00E42575 /* ProductCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewController.h; sourceTree = "<group>"; };
 		5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewController.m; sourceTree = "<group>"; };
 		5BBFAD0019E4965500E42575 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
@@ -135,7 +141,6 @@
 		5B3F1C9A19E8845400303242 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				5B3F1C9E19E885BB00303242 /* resources */,
 				5B3F1C9D19E8853500303242 /* model */,
 				5B3F1C9C19E8853000303242 /* views */,
 				5B3F1C9B19E8852A00303242 /* controllers */,
@@ -174,14 +179,6 @@
 			name = model;
 			sourceTree = "<group>";
 		};
-		5B3F1C9E19E885BB00303242 /* resources */ = {
-			isa = PBXGroup;
-			children = (
-				5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */,
-			);
-			name = resources;
-			sourceTree = "<group>";
-		};
 		5B4EFBF719E7014000516C2D /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +202,10 @@
 		5B4EFBF919E7018900516C2D /* views */ = {
 			isa = PBXGroup;
 			children = (
+				5BBB0B8619F1CC5D001D5DF1 /* CFShareCircleView.h */,
+				5BBB0B8719F1CC5D001D5DF1 /* CFShareCircleView.m */,
+				5BBB0B8819F1CC5D001D5DF1 /* CFSharer.h */,
+				5BBB0B8919F1CC5D001D5DF1 /* CFSharer.m */,
 				5BF9482C19EC15BB00CB8BCF /* ChillHub.storyboard */,
 			);
 			name = views;
@@ -247,6 +248,7 @@
 		5B9EF0F119DEEE1000E8D9F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */,
 				67926FF119ED8BA000E346C2 /* PT_Sans-Narrow-Web-Regular.ttf */,
 				67926FF819EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf */,
 				5B9EF0F219DEEE1000E8D9F1 /* Info.plist */,
@@ -531,8 +533,10 @@
 				5BACB21219EC5C1900349F16 /* FirebaseConnection.m in Sources */,
 				5BC5A1C219EF5E79009C93B1 /* FBTAuthenticationViewController.m in Sources */,
 				5B1C894119EDB31D002A9EE2 /* FBChillHubAccessory.m in Sources */,
+				5BBB0B8A19F1CC5D001D5DF1 /* CFShareCircleView.m in Sources */,
 				5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */,
 				5BF9482819EC158100CB8BCF /* LineCookViewController.m in Sources */,
+				5BBB0B8B19F1CC5D001D5DF1 /* CFSharer.m in Sources */,
 				5B1C894419EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.m in Sources */,
 				5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */,
 				5B9EF0F419DEEE1000E8D9F1 /* main.m in Sources */,

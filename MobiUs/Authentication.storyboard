@@ -77,7 +77,6 @@
                                         </state>
                                         <connections>
                                             <action selector="signInButtonPressed:" destination="91T-Df-jik" eventType="touchUpInside" id="8iu-os-FtU"/>
-                                            <segue destination="DcP-Cs-3CM" kind="showDetail" id="h3I-nI-bPu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -99,6 +98,7 @@
                         <outlet property="registerButton" destination="sKx-wM-cpf" id="z5o-Zb-kcA"/>
                         <outlet property="signInButton" destination="nR0-Aa-Mjn" id="2Y1-nm-yIn"/>
                         <outlet property="usernameTextField" destination="bra-IL-lw6" id="HZF-kI-4Et"/>
+                        <segue destination="DcP-Cs-3CM" kind="showDetail" identifier="main" id="HTj-6K-evd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBy-CE-U9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pO-fl-VFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="388"/>
+            <point key="canvasLocation" x="1210" y="388"/>
         </scene>
     </scenes>
 </document>

@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // TODO: need to load cached credentials
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -38,32 +39,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)cancelButtonPressed:(id)sender;
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)signInButtonPressed:(id)sender;
 {
     [self.usernameTextField resignFirstResponder];
     [self.passwordTextField resignFirstResponder];
     [self.loginActivityIndicator startAnimating];
     
-    Firebase *authRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
-    [authRef authUser:self.usernameTextField.text  password:self.passwordTextField.text withCompletionBlock:^(NSError *error,  FAuthData *authData) {
-        if (error != nil) {
-            // Error, error
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed!" message:@"Please check your email and password, and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            [alert show];
-        }
-        else {
-            Firebase *connectedRef = [[authRef childByAppendingPath:@"connections"] childByAppendingPath:authData.uid];
-            [connectedRef setValue:@YES];
-            [connectedRef onDisconnectRemoveValue];
-            [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-        }
-        [self.loginActivityIndicator stopAnimating];
-    }];
-}
-
-- (IBAction)cancelButtonPressed:(id)sender;
-{
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self loginWithUsernameAndLoadMainApp:self.usernameTextField.text havingPassword:self.passwordTextField.text];
 }
 
 
@@ -74,34 +62,47 @@
     [self.loginActivityIndicator startAnimating];
     
     Firebase *authRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
-    Firebase *userRef = [authRef childByAppendingPath:@"users"];
-
+    
     [authRef createUser:self.usernameTextField.text  password:self.passwordTextField.text withCompletionBlock:^(NSError *error) {
-             if (error != nil) {
-                 // There was an error creating the account
-                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Failed!" message:@"Please check your email and password, and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                 [alert show];
-                 [self.loginActivityIndicator stopAnimating];
-             } else {
-                 [authRef authUser:self.usernameTextField.text  password:self.passwordTextField.text withCompletionBlock:^(NSError *error,  FAuthData *authData) {
-                     if (error != nil) {
-                         // Error, error
-                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed!" message:@"Please check your email and password, and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                         [alert show];
-                     }
-                     else {
-                         Firebase *newUserRef = [userRef childByAppendingPath:authData.uid];
-                         FBTUser *newUser = [[FBTUser alloc] initWithUsername:self.usernameTextField.text];
-                         [newUserRef setValue:[newUser toDictionary]];
-                         Firebase *connectedRef = [[authRef childByAppendingPath:@"connections"] childByAppendingPath:authData.uid];
-                         [connectedRef setValue:@YES];
-                         [connectedRef onDisconnectRemoveValue];
-                         [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-                     }
-                     [self.loginActivityIndicator stopAnimating];
-                 }];
-             }
-         }];
+         if (error != nil) {
+             // There was an error creating the account
+             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Failed!" message:@"Please check your email and password, and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+             [alert show];
+             [self.loginActivityIndicator stopAnimating];
+         }
+         else
+         {
+             [self loginWithUsernameAndLoadMainApp:self.usernameTextField.text havingPassword:self.passwordTextField.text];
+         }
+    }];
+}
+
+- (void) loginWithUsernameAndLoadMainApp:(NSString*)username havingPassword:(NSString*)password
+{
+    // TODO: save cached credentials after successful login
+    // TODO: remove cached credentials after failure
+    Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
+        [baseRef authUser:username  password:password withCompletionBlock:^(NSError *error,  FAuthData *authData) {
+        if (error == nil)
+        {
+            Firebase *connectedRef = [[baseRef childByAppendingPath:@"connections"] childByAppendingPath:authData.uid];
+            Firebase *userRef = [baseRef childByAppendingPath:@"users"];
+            Firebase *newUserRef = [userRef childByAppendingPath:authData.uid];
+            FBTUser *newUser = [[FBTUser alloc] initWithUsername:username];
+           
+            [newUserRef setValue:[newUser toDictionary]];
+            [connectedRef setValue:@YES];
+            [connectedRef onDisconnectRemoveValue];
+            [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+            [self performSegueWithIdentifier:@"main" sender:self];
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed!" message:@"Please check your email and password, and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+        }
+        [self.loginActivityIndicator stopAnimating];
+    }];
 
 }
 

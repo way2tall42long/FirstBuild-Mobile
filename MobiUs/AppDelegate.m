@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Firebase/Firebase.h>
-#import "Objectable.h"
+
 
 @interface AppDelegate ()
 

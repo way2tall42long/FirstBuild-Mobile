@@ -42,14 +42,25 @@
 
 - (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
     NSLog(@"Selected sharer: %@", sharer.name);
+    
+    if ([sharer.name isEqualToString:@"Beer Tracker"])
+    {
+        [self performSegueWithIdentifier:@"beerminder" sender:self];
+    }
+    else if ([sharer.name isEqualToString:@"QuickChill"])
+    {
+        [self performSegueWithIdentifier:@"quickchill" sender:self];
+    }
+    else if ([sharer.name isEqualToString:@"Milk Minder"])
+    {
+        [self performSegueWithIdentifier:@"scale" sender:self];
+    }
+    
 }
 
-- (void)shareCircleCanceled:(NSNotification *)notification{
+- (void)shareCircleView:(CFShareCircleView *)shareCircleView didCancelSharer:(CFSharer *)sharer {
     NSLog(@"Share circle view was canceled.");
-}
-
-- (IBAction)shareButtonClicked:(id)sender {
-    [self.shareCircleView showAnimated:YES];
+    [self.revealViewController revealToggle:self];
 }
 
 - (void)viewDidLoad
@@ -58,7 +69,7 @@
     self.shareCircleView = [[CFShareCircleView alloc] init];
     self.shareCircleView.delegate = self;
     
-    [self.shareCircleView showAnimated:true];
+    //[self.shareCircleView showAnimated:YES];
 //    firebase = [[Firebase alloc] initWithUrl:@"https://mobius-firstbuild.firebaseio.com/homes/home-1/devices/device-1/accessories/accessory-1"];
 //    NSMutableDictionary * dictionary = [[NSMutableDictionary dictionary] init];
 //    collection = [[FirebaseCollection alloc] initWithNode:firebase dictionary:dictionary type:[FBChillHubAccessoryQuickChill class]];
@@ -134,6 +145,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.shareCircleView showAnimated:true];
     [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 

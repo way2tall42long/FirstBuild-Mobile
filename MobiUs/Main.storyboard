@@ -86,6 +86,24 @@
                                     <segue destination="vaO-fO-Ux5" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Bsz-el-Z88"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SousVide" textLabel="rQE-VE-I6B" style="IBUITableViewCellStyleDefault" id="i8c-WC-2FF" userLabel="SousVide" customClass="SWUITableViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i8c-WC-2FF" id="p0B-SN-d7V">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="SousVide" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rQE-VE-I6B">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="hOp-cz-dqd" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="1od-ur-bxX"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                     </tableView>
                 </viewController>
@@ -113,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M38-qo-hbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="-607"/>
+            <point key="canvasLocation" x="1084" y="-615"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="9TK-5Z-5P5">
@@ -232,6 +250,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <outlet property="imageLabel" destination="jjw-Ad-FEk" id="dIZ-2A-i11"/>
                                     <outlet property="imageView" destination="1lM-ZD-uV3" id="lpN-Zq-5Vh"/>
                                 </connections>
                             </collectionViewCell>
@@ -267,12 +286,34 @@
             </objects>
             <point key="canvasLocation" x="856.5" y="839.5"/>
         </scene>
+        <!--Storyboard Link-->
+        <scene sceneID="VvR-oi-QvF">
+            <objects>
+                <viewController id="hOp-cz-dqd" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0ES-K2-5Aj"/>
+                        <viewControllerLayoutGuide type="bottom" id="4BY-uW-41W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FvL-c3-inj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="SousVide"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="needsTopLayoutGuide" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Apw-1b-b5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765" y="-1105"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Launch EPK-2349" width="2736" height="1824"/>
         <image name="reveal-icon" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MoZ-40-MKS"/>
+        <segue reference="3k7-m7-hLJ"/>
     </inferredMetricsTieBreakers>
 </document>

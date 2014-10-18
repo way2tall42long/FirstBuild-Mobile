@@ -21,7 +21,7 @@
  */
 
 #import "FBChillHubAccessory.h"
-#import "Objectable.h"
+
 
 @interface FBChillHubAccessoryQuickChill : NSObject
 @property (strong,nonatomic) NSString * isOn;

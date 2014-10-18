@@ -51,7 +51,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,6 +68,9 @@
             break;
         case 2:
             CellIdentifier = @"LineCook";
+            break;
+        case 3:
+            CellIdentifier = @"SousVide";
             break;
 
     }

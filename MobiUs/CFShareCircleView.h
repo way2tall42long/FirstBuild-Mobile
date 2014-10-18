@@ -14,6 +14,8 @@
 
 @protocol CFShareCircleViewDelegate
 - (void)shareCircleView:(CFShareCircleView *)aShareCircleView didSelectSharer:(CFSharer *)sharer;
+- (void)shareCircleView:(CFShareCircleView *)aShareCircleView didCancelSharer:(CFSharer *)sharer;
+
 @end
 
 @interface CFShareCircleView : UIView

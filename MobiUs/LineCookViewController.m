@@ -26,7 +26,6 @@
     [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
-
 #pragma mark state preservation / restoration
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder

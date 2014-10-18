@@ -22,6 +22,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
     [super viewDidLoad];
     
     _productImages = [@[@"linecook",@"Fridge Iconpng",@"sous vide icon" ] mutableCopy];
+    _productLabels = [@[@"Line Cook",@"ChillHub",@"SousVide" ] mutableCopy];
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -68,6 +69,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
     
     image = [UIImage imageNamed:_productImages[row]];
     productCell.imageView.image = image;
+    productCell.imageLabel.text = _productLabels[row];
 
     return productCell;
 }

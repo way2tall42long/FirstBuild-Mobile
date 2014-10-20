@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Mobi Navigation Controller-->
         <scene sceneID="S7K-wb-Xi7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VIX-hJ-imH" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VIX-hJ-imH" customClass="MobiNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Crw-Y2-QAq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -38,6 +38,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="ChillHub" id="r80-gY-9Up">
                         <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="XEM-wa-k8G">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="revealToggle:" destination="qoT-VR-agl" id="5gu-Hl-hlU"/>
                             </connections>

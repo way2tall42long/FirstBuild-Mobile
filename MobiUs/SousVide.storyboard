@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Mobi Navigation Controller-->
         <scene sceneID="6h9-Ob-0HO">
             <objects>
-                <navigationController id="9tK-hh-drO" sceneMemberID="viewController">
+                <navigationController id="9tK-hh-drO" customClass="MobiNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WeZ-bb-HxB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -47,6 +47,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="SousVide" id="o5y-7e-kUM">
                         <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="6Cx-d3-6da">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="revealToggle:" destination="ifO-U3-sHL" id="6SF-i8-KjD"/>
                             </connections>

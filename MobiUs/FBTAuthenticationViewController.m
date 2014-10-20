@@ -81,6 +81,8 @@
 {
     // TODO: save cached credentials after successful login
     // TODO: remove cached credentials after failure
+    // TODO: use setValue with completion block for the creation of the new user
+    // TODO: better error checking
     Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
         [baseRef authUser:username  password:password withCompletionBlock:^(NSError *error,  FAuthData *authData) {
         if (error == nil)

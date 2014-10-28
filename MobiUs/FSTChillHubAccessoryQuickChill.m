@@ -20,9 +20,14 @@
  * THE SOFTWARE.
  */
 
-#import "FBChillHubAccessory.h"
+#import "FSTChillHubAccessoryQuickChill.h"
+
+@implementation FSTChillHubAccessoryQuickChill
+
+-(NSDictionary*)toObject {
+    
+    return [self dictionaryWithValuesForKeys:@[@"isOn"]];
+}
 
 
-@interface FBChillHubAccessoryQuickChill : NSObject
-@property (strong,nonatomic) NSString * isOn;
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STKSpinnerView.h"
 
 @interface ScaleViewController : UIViewController
+@property (strong, nonatomic) IBOutlet STKSpinnerView *spinnerView;
 
 @end

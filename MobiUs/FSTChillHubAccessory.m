@@ -20,10 +20,8 @@
  * THE SOFTWARE.
  */
 
-#import <Foundation/Foundation.h>
+#import "FSTChillHubAccessory.h"
 
-@interface FBChillHubAccessory : NSObject
-//@property (strong,nonatomic) NSString * key;
-//@property (strong,nonatomic) NSString * prettyName;
+@implementation FSTChillHubAccessory
 
 @end

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B1C894119EDB31D002A9EE2 /* FBChillHubAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C894019EDB31D002A9EE2 /* FBChillHubAccessory.m */; };
-		5B1C894419EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C894319EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.m */; };
+		5B1C894119EDB31D002A9EE2 /* FSTChillHubAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C894019EDB31D002A9EE2 /* FSTChillHubAccessory.m */; };
+		5B1C894419EDB479002A9EE2 /* FSTChillHubAccessoryQuickChill.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C894319EDB479002A9EE2 /* FSTChillHubAccessoryQuickChill.m */; };
 		5B25211219FFF32C00148D67 /* FSTContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B25211119FFF32C00148D67 /* FSTContainer.m */; };
+		5B2521151A001A6300148D67 /* STKSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2521141A001A6300148D67 /* STKSpinnerView.m */; };
 		5B9EF0F419DEEE1000E8D9F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF0F319DEEE1000E8D9F1 /* main.m */; };
 		5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF0F619DEEE1000E8D9F1 /* AppDelegate.m */; };
 		5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */; };
@@ -51,12 +52,14 @@
 
 /* Begin PBXFileReference section */
 		18B446C5B84ADBDC6A8F7CC7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B1C893F19EDB31D002A9EE2 /* FBChillHubAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBChillHubAccessory.h; sourceTree = "<group>"; };
-		5B1C894019EDB31D002A9EE2 /* FBChillHubAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBChillHubAccessory.m; sourceTree = "<group>"; };
-		5B1C894219EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBChillHubAccessoryQuickChill.h; sourceTree = "<group>"; };
-		5B1C894319EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBChillHubAccessoryQuickChill.m; sourceTree = "<group>"; };
+		5B1C893F19EDB31D002A9EE2 /* FSTChillHubAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTChillHubAccessory.h; sourceTree = "<group>"; };
+		5B1C894019EDB31D002A9EE2 /* FSTChillHubAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTChillHubAccessory.m; sourceTree = "<group>"; };
+		5B1C894219EDB479002A9EE2 /* FSTChillHubAccessoryQuickChill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTChillHubAccessoryQuickChill.h; sourceTree = "<group>"; };
+		5B1C894319EDB479002A9EE2 /* FSTChillHubAccessoryQuickChill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTChillHubAccessoryQuickChill.m; sourceTree = "<group>"; };
 		5B25211019FFF32C00148D67 /* FSTContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTContainer.h; sourceTree = "<group>"; };
 		5B25211119FFF32C00148D67 /* FSTContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTContainer.m; sourceTree = "<group>"; };
+		5B2521131A001A6300148D67 /* STKSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKSpinnerView.h; sourceTree = "<group>"; };
+		5B2521141A001A6300148D67 /* STKSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKSpinnerView.m; sourceTree = "<group>"; };
 		5B9EF0EE19DEEE1000E8D9F1 /* MobiUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobiUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9EF0F219DEEE1000E8D9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B9EF0F319DEEE1000E8D9F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -192,10 +195,10 @@
 		5B4EFBF719E7014000516C2D /* model */ = {
 			isa = PBXGroup;
 			children = (
-				5B1C893F19EDB31D002A9EE2 /* FBChillHubAccessory.h */,
-				5B1C894019EDB31D002A9EE2 /* FBChillHubAccessory.m */,
-				5B1C894219EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.h */,
-				5B1C894319EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.m */,
+				5B1C893F19EDB31D002A9EE2 /* FSTChillHubAccessory.h */,
+				5B1C894019EDB31D002A9EE2 /* FSTChillHubAccessory.m */,
+				5B1C894219EDB479002A9EE2 /* FSTChillHubAccessoryQuickChill.h */,
+				5B1C894319EDB479002A9EE2 /* FSTChillHubAccessoryQuickChill.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -400,6 +403,8 @@
 		67926FFA19EDDA4B00E346C2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5B2521131A001A6300148D67 /* STKSpinnerView.h */,
+				5B2521141A001A6300148D67 /* STKSpinnerView.m */,
 				5BC5A1CA19EF6570009C93B1 /* FirebaseProtocol.h */,
 				6743AE1D19E30E46000D9CF3 /* MobiNavigationController.h */,
 				6743AE1E19E30E46000D9CF3 /* MobiNavigationController.m */,
@@ -566,13 +571,14 @@
 				5BC5A1D019EF6638009C93B1 /* Constants.m in Sources */,
 				5B25211219FFF32C00148D67 /* FSTContainer.m in Sources */,
 				5BC5A1C219EF5E79009C93B1 /* FBTAuthenticationViewController.m in Sources */,
-				5B1C894119EDB31D002A9EE2 /* FBChillHubAccessory.m in Sources */,
+				5B1C894119EDB31D002A9EE2 /* FSTChillHubAccessory.m in Sources */,
 				5BBB0B8A19F1CC5D001D5DF1 /* CFShareCircleView.m in Sources */,
 				5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */,
 				5BF9482819EC158100CB8BCF /* LineCookViewController.m in Sources */,
 				5BBB0B9A19F1DE8C001D5DF1 /* ScaleViewController.m in Sources */,
+				5B2521151A001A6300148D67 /* STKSpinnerView.m in Sources */,
 				5BBB0B8B19F1CC5D001D5DF1 /* CFSharer.m in Sources */,
-				5B1C894419EDB479002A9EE2 /* FBChillHubAccessoryQuickChill.m in Sources */,
+				5B1C894419EDB479002A9EE2 /* FSTChillHubAccessoryQuickChill.m in Sources */,
 				5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */,
 				5BBB0B9419F1D315001D5DF1 /* QuickChillViewController.m in Sources */,
 				5BBB0BA119F1E8D7001D5DF1 /* SousVideViewController.m in Sources */,

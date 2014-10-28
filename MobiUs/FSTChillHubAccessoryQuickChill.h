@@ -20,8 +20,9 @@
  * THE SOFTWARE.
  */
 
-#import "FBChillHubAccessory.h"
+#import "FSTChillHubAccessory.h"
 
-@implementation FBChillHubAccessory
 
+@interface FSTChillHubAccessoryQuickChill : NSObject
+@property (strong,nonatomic) NSString * isOn;
 @end

@@ -29,7 +29,7 @@
 //
 
 #import "ChillHubViewController.h"
-#import "FBChillHubAccessoryQuickChill.h"
+#import "FSTChillHubAccessoryQuickChill.h"
 #import <SWRevealViewController.h>
 #import <Firebase/Firebase.h>
 

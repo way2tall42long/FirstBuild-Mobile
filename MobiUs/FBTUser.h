@@ -11,12 +11,10 @@
 
 @interface FBTUser : NSObject <FirebaseProtocol>
 
-@property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *firstname;
-@property (strong, nonatomic) NSString *uid;
+@property (strong, nonatomic) NSString *displayName;
+@property (strong, nonatomic) NSString *rootContainer;
+@property (strong, nonatomic) NSString *email;
 
-- (id) init;
-- (id) initWithUsername:(NSString *)username;
 - (id) initWithDictionary:(NSDictionary *)dict;
 - (NSDictionary *)toDictionary;
 

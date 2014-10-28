@@ -10,33 +10,25 @@
 
 @implementation FBTUser
 
-- (id) init;
-{
-    return [self initWithUsername:@""];
-}
-
-- (id) initWithUsername:(NSString *)username;
-{
-    self = [super init];
-    if (self) {
-        self.username = username;
-        self.firstname = @"";
-    }
-    return self;
-}
-
 - (id) initWithDictionary:(NSDictionary *)dict;
 {
-    NSString *username = [dict objectForKey:@"username"];
-    NSString *firstname = [dict objectForKey:@"firstname"];
-    return [self initWithUsername:username];
+    if ((self = [super init]))
+    {
+        _displayName  = [dict valueForKey:@"displayName"];
+        _email   = [dict valueForKey:@"email"];
+        _rootContainer = [dict valueForKey:@"rootContainer"];
+    }
+    
+    return self;
 }
 
 - (NSDictionary *)toDictionary;
 {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    [dict setObject:self.username forKey:@"username"];
-    [dict setObject:self.firstname forKey:@"firstname"];
+    [dict setObject:self.email forKey:@"email"];
+    [dict setObject:self.displayName forKey:@"displayName"];
+    [dict setObject:self.rootContainer forKey:@"rootContainer"];
+
     return dict;
 }
 
@@ -51,11 +43,10 @@
 - (BOOL)isEqualToUser:(FBTUser *)user {
     if (self == user)
         return YES;
-    if (!([self.uid isEqualToString:user.uid]))
+    if (!([self.rootContainer isEqualToString:user.rootContainer]))
         return NO;
     return YES;
 }
-
 
 
 @end

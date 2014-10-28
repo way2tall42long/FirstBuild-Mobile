@@ -9,6 +9,7 @@
 #import "FBTAuthenticationViewController.h"
 #import <Firebase/Firebase.h>
 #import "FBTUser.h"
+#import "FSTContainer.h"
 
 @interface FBTAuthenticationViewController ()
 
@@ -84,15 +85,19 @@
     // TODO: use setValue with completion block for the creation of the new user
     // TODO: better error checking
     Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
-        [baseRef authUser:username  password:password withCompletionBlock:^(NSError *error,  FAuthData *authData) {
+    [baseRef authUser:username  password:password withCompletionBlock:^(NSError *error,  FAuthData *authData) {
         if (error == nil)
         {
             Firebase *connectedRef = [[baseRef childByAppendingPath:@"connections"] childByAppendingPath:authData.uid];
-            Firebase *userRef = [baseRef childByAppendingPath:@"users"];
-            Firebase *newUserRef = [userRef childByAppendingPath:authData.uid];
-            FBTUser *newUser = [[FBTUser alloc] initWithUsername:username];
-           
+            Firebase *newUserRef = [[baseRef childByAppendingPath:@"users"] childByAppendingPath:authData.uid];
+            Firebase *userRootContainerRef = [[baseRef childByAppendingPath:@"containers"] childByAutoId];
+            NSDictionary *userDict = [[NSDictionary alloc] initWithObjectsAndKeys:userRootContainerRef.name,@"rootContainer",username,@"email",@"notvalid",@"displayName", nil];
+            NSDictionary *containerDict = [[NSDictionary alloc] initWithObjectsAndKeys:@"tbd",@"description",@"tbd",@"name",authData.uid,@"owner", nil];
+            FBTUser *newUser = [[FBTUser alloc] initWithDictionary:userDict];
+            FSTContainer *newUserContainer = [[FSTContainer alloc]initWithDictionary:containerDict];
+            
             [newUserRef setValue:[newUser toDictionary]];
+            [userRootContainerRef setValue:[newUserContainer toDictionary]];
             [connectedRef setValue:@YES];
             [connectedRef onDisconnectRemoveValue];
             [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];

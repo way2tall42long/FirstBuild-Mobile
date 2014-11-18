@@ -5,6 +5,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod 'RBStoryboardLink'
 pod 'Firebase'
 pod 'SWRevealViewController'
+pod 'RestKit'
+pod 'SSKeychain'
+pod 'ActionSheetPicker-3.0'
 
 target 'MobiUs' do
 

@@ -9,9 +9,20 @@
 #import "ScaleViewController.h"
 #import <Firebase/Firebase.h>
 
+@implementation UIView (ScaleViewController)
+
+- (void)centerizeInWidth:(CGFloat)width
+{
+    self.frame = CGRectMake((width - self.frame.size.width)/2.0,
+                            self.frame.origin.y,
+                            self.frame.size.width,
+                            self.frame.size.height);
+}
+@end
+
 @implementation ScaleViewController
 
-NSString *const dummyurl = @"https://mobius-firstbuild.firebaseio.com/objects/-JUAwerASDvas-1g12j";
+NSString *const dummyurl = @"https://mobius-firstbuild.firebaseio.com/objects/-J_M7uoN2pjqP8I7LD3T";
 
 - (IBAction)backButton:(id)sender
 {
@@ -28,10 +39,12 @@ NSString *const dummyurl = @"https://mobius-firstbuild.firebaseio.com/objects/-J
         if (rawVal != [NSNull null])
         {
             NSDictionary* val = rawVal;
-            [[self spinnerView] setProgress:[(NSNumber *)[val objectForKey:@"percent"] doubleValue]/100 animated:YES];
+            float percentageLeft = [(NSNumber *)[val objectForKey:@"weight"] doubleValue];
+            [[self spinnerView] setProgress:percentageLeft/100 animated:YES];
         }
         NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
-        
     }];
 }
+
+
 @end

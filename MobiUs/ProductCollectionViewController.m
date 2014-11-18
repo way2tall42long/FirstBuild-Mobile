@@ -9,6 +9,7 @@
 #import "ProductCollectionViewController.h"
 #import "ProductCollectionViewCell.h"
 #import <SWRevealViewController.h>
+#import <ActionSheetStringPicker.h>
 
 @interface ProductCollectionViewController ()
 
@@ -18,11 +19,31 @@
 
 static NSString * const reuseIdentifier = @"ProductCell";
 
+- (IBAction)addProductSelector:(id)sender {
+    
+    NSArray *products = [NSArray arrayWithObjects:@"ChillHub", @"SousVide", @"LineCook", @"MicroKitchen", nil];
+    
+    [ActionSheetStringPicker showPickerWithTitle:@"Add Device" rows:products initialSelection:0
+                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           NSLog(@"Picker: %@", picker);
+                                           NSLog(@"Selected Index: %tu", selectedIndex);
+                                           NSLog(@"Selected Value: %@", selectedValue);
+                                           if ([selectedValue isEqualToString:@"ChillHub"])
+                                           {
+                                               [self performSegueWithIdentifier:@"segueWifiCommissioning" sender:self];
+                                           }
+                                       }
+                                     cancelBlock:^(ActionSheetStringPicker *picker) {
+                                         NSLog(@"Block Picker Canceled");
+                                     }
+                                          origin:sender];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _productImages = [@[@"linecook",@"Fridge Iconpng",@"sous vide icon" ] mutableCopy];
-    _productLabels = [@[@"Line Cook",@"ChillHub",@"SousVide" ] mutableCopy];
+    self.productImages = [@[@"linecook",@"Fridge Iconpng",@"sous vide icon" ] mutableCopy];
+    self.productLabels = [@[@"Line Cook",@"ChillHub",@"SousVide" ] mutableCopy];
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -56,7 +77,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _productImages.count;
+    return self.productImages.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

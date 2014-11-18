@@ -143,33 +143,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uaw-Kr-ZPK" customClass="STKSpinnerView">
-                                <rect key="frame" x="76" y="158" width="464" height="400"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCT-hO-IOb">
-                                        <rect key="frame" x="211" y="190" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="milk" translatesAutoresizingMaskIntoConstraints="NO" id="N4g-99-Uds">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uaw-Kr-ZPK" customClass="STKSpinnerView">
+                                <rect key="frame" x="175" y="175" width="250" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="vCT-hO-IOb" secondAttribute="centerX" id="IdR-bg-OVd"/>
-                                    <constraint firstAttribute="width" constant="135" id="VUO-vv-GkL"/>
-                                    <constraint firstAttribute="height" constant="135" id="f2F-Vv-hIm"/>
-                                    <constraint firstAttribute="centerY" secondItem="vCT-hO-IOb" secondAttribute="centerY" constant="-0.5" id="fMW-IC-j26"/>
+                                    <constraint firstAttribute="height" constant="250" id="fEC-6p-DFg"/>
+                                    <constraint firstAttribute="width" constant="250" id="g1F-mB-N7i"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES" image="YES"/>
+                        </accessibility>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="Uaw-Kr-ZPK" secondAttribute="centerY" id="BdY-JO-QE0"/>
-                            <constraint firstAttribute="centerX" secondItem="Uaw-Kr-ZPK" secondAttribute="centerX" id="Kum-4p-OWH"/>
+                            <constraint firstItem="Uaw-Kr-ZPK" firstAttribute="top" secondItem="IfV-oB-mWP" secondAttribute="bottom" constant="111" id="DG6-bp-ccg"/>
+                            <constraint firstAttribute="centerX" secondItem="Uaw-Kr-ZPK" secondAttribute="centerX" id="VFe-Qr-cxf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Scale" id="2rQ-Ow-qVw">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="Xmj-cG-Gl0">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="Xmj-cG-Gl0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backButton:" destination="7kU-RS-hOR" id="cgs-pf-90y"/>
                             </connections>
@@ -182,10 +179,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qh-lU-JHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1463" y="507"/>
+            <point key="canvasLocation" x="1489" y="553"/>
         </scene>
     </scenes>
     <resources>
+        <image name="milk" width="1117" height="1681"/>
         <image name="reveal-icon" width="22" height="17"/>
     </resources>
 </document>

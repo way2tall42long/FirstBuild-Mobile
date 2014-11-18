@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Firebase/Firebase.h>
+#import <SSKeychain.h>
 
 
 @interface AppDelegate ()
@@ -19,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
     return YES;
 }
 

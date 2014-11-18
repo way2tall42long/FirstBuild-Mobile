@@ -73,6 +73,7 @@
          }
          else
          {
+          //   [SSKeychain setPassword:instagramToken forService:@"FirstBuildFirebaseAuthService" account:@"com.firstbuild.keychain"];
              [self loginWithUsernameAndLoadMainApp:self.usernameTextField.text havingPassword:self.passwordTextField.text];
          }
     }];

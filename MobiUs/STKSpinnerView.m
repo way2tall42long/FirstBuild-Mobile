@@ -49,8 +49,10 @@
 
     [self setBackgroundColor:[UIColor clearColor]];
     
-    [self setWellThickness:18.0];
-    [self setColor:[UIColor colorWithRed:0.2 green:0.5 blue:0.8 alpha:1]];
+    [self setWellThickness:25.0];
+    
+    //[self setColor: UIColorFromRGB(0x909090)];
+    [self setColor:[UIColor colorWithRed:241.0f/255.0f green:93.0f/255.0f blue:34.0f/255.0f alpha:1]];
     [self setProgress:0.0];
     
     [self addSubview:_label];
@@ -105,7 +107,7 @@
     [CATransaction begin];
     if(animated) {
         float delta = fabs(_progress - currentProgress);
-        [CATransaction setAnimationDuration:MAX(0.2, delta * 1.0)];
+        [CATransaction setAnimationDuration:MAX(1.4, delta * 1.0)];
     } else {
         [CATransaction setDisableActions:YES];
     }

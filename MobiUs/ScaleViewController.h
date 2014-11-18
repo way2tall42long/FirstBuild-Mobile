@@ -11,5 +11,4 @@
 
 @interface ScaleViewController : UIViewController
 @property (strong, nonatomic) IBOutlet STKSpinnerView *spinnerView;
-
 @end

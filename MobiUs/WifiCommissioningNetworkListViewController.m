@@ -41,39 +41,39 @@
     [objectManager addResponseDescriptor:responseDescriptor];
 }
 
+- (IBAction)buttonRefreshNetworksClick:(id)sender {
+    [self loadNetworks];
+}
+
+- (IBAction)buttonCancel:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:true];
+}
+
 - (void)loadNetworks
 {
-//    NSString *latLon = @"37.33,-122.03"; // approximate latLon of The Mothership (a.k.a Apple headquarters)
-//    NSString *clientID = kCLIENTID;
-//    NSString *clientSecret = kCLIENTSECRET;
-//    
-//    NSDictionary *queryParams = @{@"ll" : latLon,
-//                                  @"client_id" : clientID,
-//                                  @"client_secret" : clientSecret,
-//                                  @"categoryId" : @"4bf58dd8d48988d1e0931735",
-//                                  @"v" : @"20140118"};
-    
+
     [[RKObjectManager sharedManager] getObjectsAtPath:@"/networks"
                                            parameters:nil
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   _networks = mappingResult.array;
                                                   [_networkListPickerView reloadAllComponents];
-                                                  //[self.tableView reloadData];
                                               }
                                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                  NSLog(@"What do you mean by 'there is no coffee?': %@", error);
+                                                  [self performSegueWithIdentifier:@"segueError" sender:self];
                                               }];
 }
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    _networkListPickerView.dataSource = self;
-    _networkListPickerView.delegate = self;
     [self configureRestKit];
+    //[self loadNetworks];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     [self loadNetworks];
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,6 +90,7 @@
     }
     return @"";
 }
+
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     if (pickerView == _networkListPickerView)
@@ -98,22 +99,11 @@
     }
     return 0;
 }
+
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
 }
-//- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-//{
-//    textField.text = [dataArray objectAtIndex:row];
-//}
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

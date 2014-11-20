@@ -11,4 +11,5 @@
 @interface WifiCommissioningNetworkListViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 @property (strong, nonatomic) IBOutlet UIPickerView *networkListPickerView;
 @property (nonatomic, strong) NSArray *networks;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonRefreshNetworkList;
 @end

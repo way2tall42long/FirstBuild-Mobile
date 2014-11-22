@@ -16,31 +16,6 @@
 
 @implementation WifiCommissioningNetworkListViewController
 
-- (void)configureRestKit
-{
-    // initialize AFNetworking HTTPClient
-    NSURL *baseURL = [NSURL URLWithString:@"http://127.0.0.1:3001"];
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
-    
-    // initialize RestKit
-    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
-    
-    // setup object mappings
-    RKObjectMapping *networkMapping = [RKObjectMapping mappingForClass:[FSTNetwork class]];
-    [networkMapping addAttributeMappingsFromArray:@[@"ssid"]];
-    [networkMapping addAttributeMappingsFromArray:@[@"security_mode"]];
-    
-    // register mappings with the provider using a response descriptor
-    RKResponseDescriptor *responseDescriptor =
-    [RKResponseDescriptor responseDescriptorWithMapping:networkMapping
-                                                 method:RKRequestMethodGET
-                                            pathPattern:@"/networks"
-                                                keyPath:@""
-                                            statusCodes:[NSIndexSet indexSetWithIndex:200]];
-    
-    [objectManager addResponseDescriptor:responseDescriptor];
-}
-
 - (IBAction)buttonRefreshNetworksClick:(id)sender {
     [self loadNetworks];
 }
@@ -51,7 +26,6 @@
 
 - (void)loadNetworks
 {
-
     [[RKObjectManager sharedManager] getObjectsAtPath:@"/networks"
                                            parameters:nil
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
@@ -59,15 +33,12 @@
                                                   [_networkListPickerView reloadAllComponents];
                                               }
                                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                  [self performSegueWithIdentifier:@"segueError" sender:self];
+                                                  [self performSegueWithIdentifier:@"segueErrorNetworks" sender:self];
                                               }];
 }
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
-    [self configureRestKit];
-    //[self loadNetworks];
 }
 
 - (void)viewDidAppear:(BOOL)animated

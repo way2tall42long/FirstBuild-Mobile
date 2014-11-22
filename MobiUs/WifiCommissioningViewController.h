@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WifiCommissioningViewController : UIViewController
-
+@property NSInteger checkForAPTries;
 @end

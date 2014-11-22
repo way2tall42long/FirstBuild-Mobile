@@ -7,6 +7,8 @@
 //
 
 #import "WifiCommissioningViewController.h"
+#import <RestKit.h>
+#import "FSTNetwork.h"
 
 @interface WifiCommissioningViewController ()
 
@@ -14,9 +16,18 @@
 
 @implementation WifiCommissioningViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configureRestKit];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.checkForAPTries = 0;
+    [self checkForConnectivity];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +35,50 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)configureRestKit
+{
+    // initialize AFNetworking HTTPClient
+    NSURL *baseURL = [NSURL URLWithString:@"http://127.0.0.1:3001"];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    RKObjectMapping *networkMapping = [RKObjectMapping mappingForClass:[FSTNetwork class]];
+    [networkMapping addAttributeMappingsFromArray:@[@"ssid"]];
+    [networkMapping addAttributeMappingsFromArray:@[@"security_mode"]];
+    RKResponseDescriptor *responseDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:networkMapping
+                                                 method:RKRequestMethodGET
+                                            pathPattern:@"/networks"
+                                                keyPath:@""
+                                            statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    [objectManager addResponseDescriptor:responseDescriptor];
 }
-*/
+
+
+- (void)checkForConnectivity
+{
+    [[RKObjectManager sharedManager] getObjectsAtPath:@"/networks"
+                                           parameters:nil
+                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                  [self performSegueWithIdentifier:@"segueDisplayList" sender:self];
+                                              }
+                                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                  //try again
+                                                  if (self.checkForAPTries < 5)
+                                                  {
+                                                      NSLog(@"attempting search again...");
+                                                      [NSTimer scheduledTimerWithTimeInterval:3.0
+                                                                                       target:self
+                                                                                     selector:@selector(checkForConnectivity)
+                                                                                     userInfo:nil
+                                                                                      repeats:NO];
+                                                  }
+                                                  else
+                                                  {
+                                                      [self performSegueWithIdentifier:@"segueSearchTimeout" sender:self];
+                                                  }
+                                                  self.checkForAPTries++;
+                                              }];
+}
 
 @end

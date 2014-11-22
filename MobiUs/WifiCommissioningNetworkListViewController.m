@@ -31,6 +31,10 @@
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   _networks = mappingResult.array;
                                                   [_networkListPickerView reloadAllComponents];
+                                                  if (_networks.count==0)
+                                                  {
+                                                      [self performSegueWithIdentifier:@"segueErrorNetworks" sender:self];
+                                                  }
                                               }
                                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                                   [self performSegueWithIdentifier:@"segueErrorNetworks" sender:self];

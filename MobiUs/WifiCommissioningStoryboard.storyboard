@@ -16,17 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="searchingforchillhub" translatesAutoresizingMaskIntoConstraints="NO" id="lwY-Fw-3xU">
-                                <rect key="frame" x="155" y="114" width="264" height="158"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="searchingforchillhub" translatesAutoresizingMaskIntoConstraints="NO" id="lwY-Fw-3xU">
+                                <rect key="frame" x="155" y="114" width="308" height="199"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="264" id="Ubb-Of-5KI"/>
-                                    <constraint firstAttribute="height" constant="158" id="nK6-fc-4As"/>
+                                    <constraint firstAttribute="height" constant="179" id="2MV-yj-Gb3"/>
+                                    <constraint firstAttribute="width" constant="262" id="o4m-BH-zCl"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lwY-Fw-3xU" firstAttribute="top" secondItem="EUc-dZ-wRV" secondAttribute="bottom" constant="50" id="73f-f4-Sj5"/>
+                            <constraint firstAttribute="centerY" secondItem="lwY-Fw-3xU" secondAttribute="centerY" id="e0I-Al-omC"/>
                             <constraint firstAttribute="centerX" secondItem="lwY-Fw-3xU" secondAttribute="centerX" id="lbu-Pe-2if"/>
                         </constraints>
                     </view>
@@ -127,18 +127,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifierror" translatesAutoresizingMaskIntoConstraints="NO" id="lHM-Ly-sEg">
-                                <rect key="frame" x="155" y="114" width="291" height="218"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="errorconnectingtowifi" translatesAutoresizingMaskIntoConstraints="NO" id="lHM-Ly-sEg">
+                                <rect key="frame" x="155" y="114" width="295" height="218"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="291" id="Q4S-jh-NDi"/>
-                                    <constraint firstAttribute="height" constant="218" id="Wib-Fo-C7y"/>
+                                    <constraint firstAttribute="height" constant="179" id="V4o-1P-lNT"/>
+                                    <constraint firstAttribute="width" constant="262" id="yWr-nX-KjI"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="lHM-Ly-sEg" secondAttribute="centerX" id="H4y-5h-p9p"/>
-                            <constraint firstItem="lHM-Ly-sEg" firstAttribute="top" secondItem="vek-aU-qx2" secondAttribute="bottom" constant="50" id="VxE-40-Pn4"/>
+                            <constraint firstAttribute="centerY" secondItem="lHM-Ly-sEg" secondAttribute="centerY" id="QNS-ne-1NX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Error" id="ldo-nz-R80">
@@ -165,18 +165,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nowifi" translatesAutoresizingMaskIntoConstraints="NO" id="YPw-KS-eaW">
-                                <rect key="frame" x="37" y="98" width="291" height="218"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nowifinetworksfound" translatesAutoresizingMaskIntoConstraints="NO" id="YPw-KS-eaW">
+                                <rect key="frame" x="37" y="98" width="262" height="179"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="218" id="F9m-o6-6mF"/>
-                                    <constraint firstAttribute="width" constant="291" id="Td8-8g-9uE"/>
+                                    <constraint firstAttribute="height" constant="179" id="kMA-8X-dsa"/>
+                                    <constraint firstAttribute="width" constant="262" id="nan-nc-eKk"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="YPw-KS-eaW" secondAttribute="centerX" id="8ry-vr-hM7"/>
-                            <constraint firstItem="YPw-KS-eaW" firstAttribute="top" secondItem="sBT-Sq-ba6" secondAttribute="bottom" constant="50" id="FSC-sK-eB9"/>
+                            <constraint firstAttribute="centerY" secondItem="YPw-KS-eaW" secondAttribute="centerY" id="dpw-cP-Qzo"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -205,17 +205,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="chillhubnotfound" translatesAutoresizingMaskIntoConstraints="NO" id="EBX-bo-qnH">
-                                <rect key="frame" x="194" y="116" width="287" height="171"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="chillhubnotlocated" translatesAutoresizingMaskIntoConstraints="NO" id="EBX-bo-qnH">
+                                <rect key="frame" x="194" y="116" width="334" height="249"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="171" id="2xB-Uy-C76"/>
-                                    <constraint firstAttribute="width" constant="287" id="ujz-At-y79"/>
+                                    <constraint firstAttribute="height" constant="179" id="1fM-po-sed"/>
+                                    <constraint firstAttribute="width" constant="262" id="pGl-G8-3ui"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="EBX-bo-qnH" firstAttribute="top" secondItem="Qao-lW-i31" secondAttribute="bottom" constant="50" id="SjP-U8-Vlh"/>
+                            <constraint firstAttribute="centerY" secondItem="EBX-bo-qnH" secondAttribute="centerY" id="QUN-tU-HAM"/>
                             <constraint firstAttribute="centerX" secondItem="EBX-bo-qnH" secondAttribute="centerX" id="uhh-2a-ybu"/>
                         </constraints>
                     </view>
@@ -226,9 +226,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chillhubnotfound" width="652" height="385"/>
-        <image name="nowifi" width="368" height="291"/>
-        <image name="searchingforchillhub" width="760" height="516"/>
-        <image name="wifierror" width="342" height="252"/>
+        <image name="chillhubnotlocated" width="586" height="434"/>
+        <image name="errorconnectingtowifi" width="666" height="436"/>
+        <image name="nowifinetworksfound" width="632" height="438"/>
+        <image name="searchingforchillhub" width="681" height="445"/>
     </resources>
 </document>

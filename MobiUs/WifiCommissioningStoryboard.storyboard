@@ -100,7 +100,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Connect" id="tOO-os-XXY">
                             <connections>
-                                <segue destination="lvq-08-gEy" kind="show" identifier="segueErrorConnectingWifi" id="ErF-zz-G1H"/>
+                                <action selector="buttonConnectClick:" destination="HA7-R5-9d8" id="d8y-Yb-Bqz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -109,11 +109,45 @@
                         <outlet property="buttonRefreshNetworkList" destination="gLc-E5-iPp" id="89Y-zn-p0x"/>
                         <outlet property="networkListPickerView" destination="UUE-xb-kDJ" id="JVO-J6-Odv"/>
                         <segue destination="9wz-r5-Sgs" kind="show" identifier="segueErrorNetworks" id="GLQ-mp-bcO"/>
+                        <segue destination="aEa-QT-KIG" kind="show" identifier="segueConnectingToChillHub" id="gdH-C3-56U"/>
+                        <segue destination="lvq-08-gEy" kind="show" identifier="segueErrorConnectingWifi" id="i0A-mz-GRj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVc-LX-ePA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1149" y="129"/>
+        </scene>
+        <!--Connecting-->
+        <scene sceneID="kKw-4o-GoP">
+            <objects>
+                <viewController id="aEa-QT-KIG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zaF-HW-WrC"/>
+                        <viewControllerLayoutGuide type="bottom" id="5n3-X3-b7O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KFY-Zu-5zC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="chillhubisconnecting" translatesAutoresizingMaskIntoConstraints="NO" id="16X-Nh-iX4">
+                                <rect key="frame" x="159" y="122" width="262" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="UKl-0P-nBd"/>
+                                    <constraint firstAttribute="height" constant="179" id="Xmd-zU-vxb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="16X-Nh-iX4" secondAttribute="centerX" id="MBT-Q4-5aN"/>
+                            <constraint firstAttribute="centerY" secondItem="16X-Nh-iX4" secondAttribute="centerY" id="wj9-Uu-77Y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Connecting" id="xvQ-1R-evJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfl-mN-BFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1811" y="-826"/>
         </scene>
         <!--Error-->
         <scene sceneID="INq-pP-dDp">
@@ -151,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWa-NZ-18i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="-361"/>
+            <point key="canvasLocation" x="2560" y="-397"/>
         </scene>
         <!--Error-->
         <scene sceneID="5DZ-Se-h7N">
@@ -226,6 +260,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chillhubisconnecting" width="699" height="450"/>
         <image name="chillhubnotlocated" width="586" height="434"/>
         <image name="errorconnectingtowifi" width="666" height="436"/>
         <image name="nowifinetworksfound" width="632" height="438"/>

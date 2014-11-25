@@ -37,21 +37,26 @@
 
 - (void)configureRestKit
 {
-    // initialize AFNetworking HTTPClient
-    NSURL *baseURL = [NSURL URLWithString:@"http://127.0.0.1:3001"];
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
-    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
-    RKObjectMapping *networkMapping = [RKObjectMapping mappingForClass:[FSTNetwork class]];
-    [networkMapping addAttributeMappingsFromArray:@[@"ssid"]];
-    [networkMapping addAttributeMappingsFromArray:@[@"security_mode"]];
+    RKObjectMapping *networkResponseMapping = [RKObjectMapping mappingForClass:[FSTNetwork class]];
+    [networkResponseMapping addAttributeMappingsFromArray:@[@"ssid",@"security_mode",@"state"]];
     RKResponseDescriptor *responseDescriptor =
-    [RKResponseDescriptor responseDescriptorWithMapping:networkMapping
-                                                 method:RKRequestMethodGET
+    [RKResponseDescriptor responseDescriptorWithMapping:networkResponseMapping
+                                                 method:RKRequestMethodAny
                                             pathPattern:@"/networks"
-                                                keyPath:@""
+                                                keyPath:nil
                                             statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
-    [objectManager addResponseDescriptor:responseDescriptor];
+    RKObjectMapping *networkRequestMapping = [RKObjectMapping requestMapping]; // objectClass == NSMutableDictionary
+    [networkRequestMapping addAttributeMappingsFromArray:@[@"ssid",@"security_mode",@"state"]];
+    RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor
+                                              requestDescriptorWithMapping:networkRequestMapping
+                                              objectClass:[FSTNetwork class]
+                                              rootKeyPath:nil
+                                              method:RKRequestMethodPOST];
+    
+    [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
+    [[RKObjectManager sharedManager] addRequestDescriptor:requestDescriptor];
+
 }
 
 

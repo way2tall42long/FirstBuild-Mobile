@@ -11,5 +11,6 @@
 @interface FSTNetwork : NSObject
 @property (nonatomic, strong) NSString *ssid;
 @property (nonatomic, strong) NSString *security_mode;
+@property (nonatomic, strong) NSString *state;
 
 @end

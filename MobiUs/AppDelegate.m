@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Firebase/Firebase.h>
 #import <SSKeychain.h>
+#import <RKObjectManager.h>
 
 
 @interface AppDelegate ()
@@ -21,6 +22,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
+    
+    //setup restkit, by default the first object manager is the shared singleton accessible everywhere
+    // initialize AFNetworking HTTPClient and setup shared object manager
+    NSURL *baseURL = [NSURL URLWithString:@"http://127.0.0.1:3001"];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    
     return YES;
 }
 

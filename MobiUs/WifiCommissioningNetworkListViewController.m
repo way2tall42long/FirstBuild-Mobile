@@ -23,6 +23,26 @@
 - (IBAction)buttonCancel:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:true];
 }
+- (IBAction)buttonConnectClick:(id)sender {
+    NSInteger row;
+    FSTNetwork* networkToJoin = [FSTNetwork new];
+    
+    row = [self.networkListPickerView selectedRowInComponent:0];
+    networkToJoin= [self.networks objectAtIndex:row];
+    networkToJoin.state = @"client";
+    
+    [[RKObjectManager sharedManager] postObject:networkToJoin path:@"/networks"
+                                     parameters:nil
+                                        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                            NSLog(@"stuff");
+                                            [self performSegueWithIdentifier:@"segueConnectingToChillHub" sender:self];
+
+                                        }
+                                        failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                            NSLog(@"stuff2");
+                                            [self performSegueWithIdentifier:@"segueErrorConnectingWifi" sender:self];
+                                        }];
+}
 
 - (void)loadNetworks
 {

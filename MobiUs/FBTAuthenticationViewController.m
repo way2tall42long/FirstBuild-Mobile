@@ -8,6 +8,7 @@
 
 #import "FBTAuthenticationViewController.h"
 #import <Firebase/Firebase.h>
+#import <SSKeychain.h>
 #import "FBTUser.h"
 #import "FSTContainer.h"
 
@@ -30,7 +31,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // TODO: need to load cached credentials
+    NSArray *accounts;
+ 
+    [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
+    
+    accounts = [SSKeychain accountsForService:@"firebase"];
+    
+    if (accounts.count == 1)
+    {
+        //NSDictionary* account = accounts[0];
+        NSString* account = [accounts[0] objectForKey:@"acct"];
+        NSString* password = [SSKeychain passwordForService:@"firebase" account:account];
+        [self loginWithUsernameAndLoadMainApp:account havingPassword:password];
+    }
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -101,6 +115,8 @@
             [userRootContainerRef setValue:[newUserContainer toDictionary]];
             [connectedRef setValue:@YES];
             [connectedRef onDisconnectRemoveValue];
+            
+            [SSKeychain setPassword:password forService:@"firebase" account:username];
             [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
             [self performSegueWithIdentifier:@"main" sender:self];
         }

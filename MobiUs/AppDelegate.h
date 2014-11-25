@@ -28,11 +28,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RKObjectManager.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) RKObjectManager *objectManager;
 
 @end
 

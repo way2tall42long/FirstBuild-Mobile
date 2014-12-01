@@ -18,24 +18,16 @@
 
 @implementation FBTAuthenticationViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-    
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     NSArray *accounts;
+    
  
     [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
     
-    accounts = [SSKeychain accountsForService:@"firebase"];
+    //accounts = [SSKeychain accountsForService:@"firebase"];
     
     if (accounts.count == 1)
     {
@@ -44,8 +36,20 @@
         NSString* password = [SSKeychain passwordForService:@"firebase" account:account];
         [self loginWithUsernameAndLoadMainApp:account havingPassword:password];
     }
+    else
+    {
+        self.backgroundMovie = [[MPMoviePlayerController alloc] initWithContentURL:
+                                [NSURL fileURLWithPath: [[NSBundle mainBundle]
+                                                         pathForResource:@"splashvideo" ofType:@"m4v"]]];
+        
+        self.backgroundMovie.scalingMode = MPMovieScalingModeAspectFill;
+        [self.backgroundMovie.view setFrame:[[UIScreen mainScreen] bounds]];
+        [self.backgroundMovie setControlStyle:MPMovieControlStyleNone];
+        [self.view addSubview:self.backgroundMovie.view];
+        [self.view sendSubviewToBack:self.backgroundMovie.view];
+        [self.backgroundMovie play];
+    }
 
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,7 +91,6 @@
          }
          else
          {
-          //   [SSKeychain setPassword:instagramToken forService:@"FirstBuildFirebaseAuthService" account:@"com.firstbuild.keychain"];
              [self loginWithUsernameAndLoadMainApp:self.usernameTextField.text havingPassword:self.passwordTextField.text];
          }
     }];
@@ -95,8 +98,6 @@
 
 - (void) loginWithUsernameAndLoadMainApp:(NSString*)username havingPassword:(NSString*)password
 {
-    // TODO: save cached credentials after successful login
-    // TODO: remove cached credentials after failure
     // TODO: use setValue with completion block for the creation of the new user
     // TODO: better error checking
     Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
@@ -147,30 +148,30 @@
 }
 
 # pragma mark - Keyboard will show/hide notifications to scroll the view properly
-- (void)viewWillAppear:(BOOL)animated;
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-}
-
-- (void)viewWillDisappear:(BOOL)animated;
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-}
-
-- (void)keyboardWillShow:(NSNotification *)notification
-{
-    [UIView animateWithDuration:0.3f animations:^{
-        [self.view setFrame:CGRectMake(0,-30,320,460)];
-    }];
-}
-
--(void)keyboardWillHide:(NSNotification *)notification
-{
-    [UIView animateWithDuration:0.3f animations:^{
-        [self.view setFrame:CGRectMake(0,0,320,460)];
-    }];
-}
+//- (void)viewWillAppear:(BOOL)animated;
+//{
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated;
+//{
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+//}
+//
+//- (void)keyboardWillShow:(NSNotification *)notification
+//{
+//    [UIView animateWithDuration:0.3f animations:^{
+//        [self.view setFrame:[[UIScreen mainScreen] bounds]];
+//    }];
+//}
+//
+//-(void)keyboardWillHide:(NSNotification *)notification
+//{
+//    [UIView animateWithDuration:0.3f animations:^{
+//        [self.view setFrame:[[UIScreen mainScreen] bounds]];
+//    }];
+//}
 
 @end

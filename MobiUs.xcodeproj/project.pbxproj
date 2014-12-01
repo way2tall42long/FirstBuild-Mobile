@@ -30,6 +30,7 @@
 		5BBB0BA319F1E96B001D5DF1 /* SousVide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBB0BA219F1E96B001D5DF1 /* SousVide.storyboard */; };
 		5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */; };
 		5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */; };
+		5BC364791A2D019300D03B9C /* splashvideo.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 5BC364761A2CF9EF00D03B9C /* splashvideo.m4v */; };
 		5BC5A1C219EF5E79009C93B1 /* FBTAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1BE19EF5E79009C93B1 /* FBTAuthenticationViewController.m */; };
 		5BC5A1C619EF6314009C93B1 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC5A1C519EF6314009C93B1 /* Authentication.storyboard */; };
 		5BC5A1CD19EF6584009C93B1 /* FBTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1CC19EF6584009C93B1 /* FBTUser.m */; };
@@ -103,6 +104,7 @@
 		5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewController.m; sourceTree = "<group>"; };
 		5BBFAD0019E4965500E42575 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
 		5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
+		5BC364761A2CF9EF00D03B9C /* splashvideo.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashvideo.m4v; sourceTree = "<group>"; };
 		5BC5A1BD19EF5E79009C93B1 /* FBTAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTAuthenticationViewController.h; sourceTree = "<group>"; };
 		5BC5A1BE19EF5E79009C93B1 /* FBTAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTAuthenticationViewController.m; sourceTree = "<group>"; };
 		5BC5A1C519EF6314009C93B1 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */,
+				5BC364761A2CF9EF00D03B9C /* splashvideo.m4v */,
 				67926FF119ED8BA000E346C2 /* PT_Sans-Narrow-Web-Regular.ttf */,
 				67926FF819EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf */,
 				5B9EF0F219DEEE1000E8D9F1 /* Info.plist */,
@@ -568,6 +571,7 @@
 				5BBB0BA319F1E96B001D5DF1 /* SousVide.storyboard in Resources */,
 				5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */,
 				5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */,
+				5BC364791A2D019300D03B9C /* splashvideo.m4v in Resources */,
 				67926FF919EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf in Resources */,
 				5B99E07E1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard in Resources */,
 			);

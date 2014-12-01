@@ -28,14 +28,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="DmV-Fb-645">
-                                <rect key="frame" x="180" y="28" width="240" height="128"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ti-5E-beY" customClass="UIControl">
-                                <rect key="frame" x="140" y="16" width="320" height="568"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ti-5E-beY" customClass="UIControl">
+                                <rect key="frame" x="140" y="140" width="320" height="176"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHu-Ds-cLe">
-                                        <rect key="frame" x="79" y="355" width="46" height="30"/>
+                                        <rect key="frame" x="79" y="180" width="46" height="30"/>
                                         <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="14"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -46,11 +43,11 @@
                                         </connections>
                                     </button>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="miw-gV-7qZ">
-                                        <rect key="frame" x="240" y="187" width="20" height="20"/>
+                                        <rect key="frame" x="240" y="12" width="20" height="20"/>
                                         <color key="color" red="0.21884934911408147" green="0.81241462756233451" blue="0.8833705357142857" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48O-gH-8do">
-                                        <rect key="frame" x="60" y="272" width="200" height="30"/>
+                                        <rect key="frame" x="60" y="97" width="200" height="30"/>
                                         <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
@@ -58,7 +55,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username@domain.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bra-IL-lw6">
-                                        <rect key="frame" x="60" y="227" width="200" height="30"/>
+                                        <rect key="frame" x="60" y="52" width="200" height="30"/>
                                         <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -66,13 +63,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign in with email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWV-5D-cwh">
-                                        <rect key="frame" x="60" y="183" width="177" height="27"/>
+                                        <rect key="frame" x="60" y="8" width="177" height="27"/>
                                         <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="20"/>
                                         <color key="textColor" red="0.93725496529999996" green="0.40000003579999999" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKx-wM-cpf">
-                                        <rect key="frame" x="160" y="355" width="77" height="30"/>
+                                        <rect key="frame" x="160" y="180" width="77" height="30"/>
                                         <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="14"/>
                                         <state key="normal" title="Register">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,7 +80,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nR0-Aa-Mjn">
-                                        <rect key="frame" x="60" y="317" width="200" height="30"/>
+                                        <rect key="frame" x="60" y="142" width="200" height="30"/>
                                         <color key="backgroundColor" red="0.93725496529999996" green="0.40000003579999999" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="20"/>
                                         <state key="normal" title="Sign in">
@@ -103,10 +100,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="0ti-5E-beY" secondAttribute="centerY" id="0gZ-uJ-WND"/>
-                            <constraint firstAttribute="centerX" secondItem="DmV-Fb-645" secondAttribute="centerX" id="ALg-Yg-Te7"/>
-                            <constraint firstAttribute="centerY" secondItem="DmV-Fb-645" secondAttribute="centerY" id="aP5-5o-yPy"/>
-                            <constraint firstAttribute="centerX" secondItem="0ti-5E-beY" secondAttribute="centerX" id="hdl-x1-sZ4"/>
+                            <constraint firstAttribute="centerX" secondItem="0ti-5E-beY" secondAttribute="centerX" id="2I5-hZ-pek"/>
+                            <constraint firstItem="0ti-5E-beY" firstAttribute="leading" secondItem="b1i-QC-OU2" secondAttribute="leading" constant="140" id="lAL-Qp-IBz"/>
+                            <constraint firstItem="KW2-sg-8WR" firstAttribute="top" secondItem="0ti-5E-beY" secondAttribute="bottom" constant="284" id="sfa-nc-fe5"/>
+                            <constraint firstItem="0ti-5E-beY" firstAttribute="top" secondItem="369-aZ-WOU" secondAttribute="bottom" constant="120" id="uNO-C7-65o"/>
                         </constraints>
                     </view>
                     <connections>
@@ -145,7 +142,4 @@
             <point key="canvasLocation" x="1210" y="388"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Background" width="375" height="667"/>
-    </resources>
 </document>

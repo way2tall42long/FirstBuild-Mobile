@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface FBTAuthenticationViewController : UIViewController
 
@@ -16,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *cancelButton;
 @property (strong, nonatomic) IBOutlet UIButton *registerButton;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loginActivityIndicator;
+@property (strong, nonatomic) MPMoviePlayerController *backgroundMovie;
 
 - (IBAction)signInButtonPressed:(id)sender;
 - (IBAction)cancelButtonPressed:(id)sender;

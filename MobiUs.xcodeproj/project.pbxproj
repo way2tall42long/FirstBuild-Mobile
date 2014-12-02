@@ -31,6 +31,7 @@
 		5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */; };
 		5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */; };
 		5BC364791A2D019300D03B9C /* splashvideo.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 5BC364761A2CF9EF00D03B9C /* splashvideo.m4v */; };
+		5BC3647B1A2E25A800D03B9C /* splashvideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = 5BC3647A1A2E25A800D03B9C /* splashvideo.mov */; };
 		5BC5A1C219EF5E79009C93B1 /* FBTAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1BE19EF5E79009C93B1 /* FBTAuthenticationViewController.m */; };
 		5BC5A1C619EF6314009C93B1 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC5A1C519EF6314009C93B1 /* Authentication.storyboard */; };
 		5BC5A1CD19EF6584009C93B1 /* FBTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1CC19EF6584009C93B1 /* FBTUser.m */; };
@@ -105,6 +106,7 @@
 		5BBFAD0019E4965500E42575 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
 		5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
 		5BC364761A2CF9EF00D03B9C /* splashvideo.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashvideo.m4v; sourceTree = "<group>"; };
+		5BC3647A1A2E25A800D03B9C /* splashvideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = splashvideo.mov; sourceTree = "<group>"; };
 		5BC5A1BD19EF5E79009C93B1 /* FBTAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTAuthenticationViewController.h; sourceTree = "<group>"; };
 		5BC5A1BE19EF5E79009C93B1 /* FBTAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTAuthenticationViewController.m; sourceTree = "<group>"; };
 		5BC5A1C519EF6314009C93B1 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			children = (
 				5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */,
 				5BC364761A2CF9EF00D03B9C /* splashvideo.m4v */,
+				5BC3647A1A2E25A800D03B9C /* splashvideo.mov */,
 				67926FF119ED8BA000E346C2 /* PT_Sans-Narrow-Web-Regular.ttf */,
 				67926FF819EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf */,
 				5B9EF0F219DEEE1000E8D9F1 /* Info.plist */,
@@ -568,6 +571,7 @@
 				5BF9482D19EC15BB00CB8BCF /* ChillHub.storyboard in Resources */,
 				5BF9483119EC15F900CB8BCF /* Main.storyboard in Resources */,
 				5BF9482519EC155700CB8BCF /* LineCook.storyboard in Resources */,
+				5BC3647B1A2E25A800D03B9C /* splashvideo.mov in Resources */,
 				5BBB0BA319F1E96B001D5DF1 /* SousVide.storyboard in Resources */,
 				5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */,
 				5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */,

@@ -28,7 +28,7 @@
     
     accounts = [SSKeychain accountsForService:@"firebase"];
     
-    if (accounts.count == 1)
+    if (accounts.count == 2)
     {
         NSString* account = [accounts[0] objectForKey:@"acct"];
         NSString* password = [SSKeychain passwordForService:@"firebase" account:account];
@@ -57,6 +57,16 @@
     [self.view sendSubviewToBack:self.backgroundMovie.view];
     [self.backgroundMovie play];
     
+    //TODO: switch to https://github.com/ivoleko/ILTranslucentView for a non hacked version, also allows you to change translucency alpha
+    UIToolbar *translucentUnderlayment = [[UIToolbar alloc] init];
+    [translucentUnderlayment setFrame:self.controlView.bounds];
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        [translucentUnderlayment setAlpha:0.9];
+    }
+    translucentUnderlayment.layer.cornerRadius = 5;
+    translucentUnderlayment.layer.masksToBounds = YES;
+    [self.controlView addSubview:translucentUnderlayment];
+    [self.controlView sendSubviewToBack:translucentUnderlayment];
 
 }
 

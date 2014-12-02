@@ -12,7 +12,6 @@
             <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
-            <string>PTSans-Narrow</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -28,60 +27,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ti-5E-beY" customClass="UIControl">
-                                <rect key="frame" x="140" y="140" width="320" height="230"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ti-5E-beY" customClass="UIControl">
+                                <rect key="frame" x="175" y="140" width="250" height="230"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHu-Ds-cLe">
-                                        <rect key="frame" x="79" y="180" width="46" height="30"/>
-                                        <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="14"/>
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancelButtonPressed:" destination="91T-Df-jik" eventType="touchUpInside" id="0g6-Bp-oD2"/>
-                                        </connections>
-                                    </button>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="miw-gV-7qZ">
                                         <rect key="frame" x="240" y="12" width="20" height="20"/>
                                         <color key="color" red="0.21884934911408147" green="0.81241462756233451" blue="0.8833705357142857" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48O-gH-8do">
-                                        <rect key="frame" x="60" y="97" width="200" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48O-gH-8do">
+                                        <rect key="frame" x="26" y="97" width="200" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="sYQ-wS-ZlB"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
                                             <action selector="passwordDoneEditing:" destination="91T-Df-jik" eventType="editingDidEndOnExit" id="5iE-9D-rf9"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username@domain.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bra-IL-lw6">
-                                        <rect key="frame" x="60" y="52" width="200" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username@domain.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bra-IL-lw6">
+                                        <rect key="frame" x="26" y="52" width="200" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="IoQ-m2-jvq"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="usernameDoneEditing:" destination="91T-Df-jik" eventType="editingDidEndOnExit" id="Qfq-CL-l41"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign in with email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWV-5D-cwh">
-                                        <rect key="frame" x="60" y="8" width="177" height="27"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sign in with email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWV-5D-cwh">
+                                        <rect key="frame" x="26" y="8" width="177" height="27"/>
                                         <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="20"/>
                                         <color key="textColor" red="0.93725496529999996" green="0.40000003579999999" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKx-wM-cpf">
-                                        <rect key="frame" x="160" y="180" width="77" height="30"/>
-                                        <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="14"/>
-                                        <state key="normal" title="Register">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="registerButtonPressed:" destination="91T-Df-jik" eventType="touchUpInside" id="se9-77-1PI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nR0-Aa-Mjn">
-                                        <rect key="frame" x="60" y="142" width="200" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nR0-Aa-Mjn">
+                                        <rect key="frame" x="26" y="142" width="200" height="30"/>
                                         <color key="backgroundColor" red="0.93725496529999996" green="0.40000003579999999" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="kNk-pY-crL"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="20"/>
                                         <state key="normal" title="Sign in">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -93,19 +80,47 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="B54-Zh-Kfq"/>
+                                    <constraint firstItem="bra-IL-lw6" firstAttribute="top" secondItem="NWV-5D-cwh" secondAttribute="bottom" constant="17" id="IRT-8e-6x0"/>
+                                    <constraint firstItem="NWV-5D-cwh" firstAttribute="leading" secondItem="0ti-5E-beY" secondAttribute="leading" constant="26" id="Wfj-L1-Hxk"/>
+                                    <constraint firstItem="48O-gH-8do" firstAttribute="leading" secondItem="0ti-5E-beY" secondAttribute="leading" constant="26" id="mdx-HS-LWW"/>
+                                    <constraint firstItem="bra-IL-lw6" firstAttribute="leading" secondItem="0ti-5E-beY" secondAttribute="leading" constant="26" id="n4d-yF-HwO"/>
+                                    <constraint firstItem="NWV-5D-cwh" firstAttribute="top" secondItem="0ti-5E-beY" secondAttribute="top" constant="8" id="nBd-0J-4d1"/>
+                                    <constraint firstItem="nR0-Aa-Mjn" firstAttribute="top" secondItem="48O-gH-8do" secondAttribute="bottom" constant="15" id="uS7-np-hMy"/>
+                                    <constraint firstItem="48O-gH-8do" firstAttribute="top" secondItem="bra-IL-lw6" secondAttribute="bottom" constant="15" id="x8O-rR-fkb"/>
+                                    <constraint firstAttribute="height" constant="230" id="ysC-LB-rmI"/>
+                                    <constraint firstItem="nR0-Aa-Mjn" firstAttribute="leading" secondItem="0ti-5E-beY" secondAttribute="leading" constant="26" id="zp1-il-ebj"/>
+                                </constraints>
                                 <connections>
                                     <action selector="backgroundTap:" destination="91T-Df-jik" eventType="touchDown" id="krZ-jf-Cip"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKx-wM-cpf">
+                                <rect key="frame" x="262" y="321" width="77" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="KE2-ol-M0g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="14"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="91T-Df-jik" eventType="touchUpInside" id="se9-77-1PI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="0ti-5E-beY" secondAttribute="centerX" id="2I5-hZ-pek"/>
+                            <constraint firstItem="sKx-wM-cpf" firstAttribute="centerX" secondItem="0ti-5E-beY" secondAttribute="centerX" id="HoK-Pv-0FJ"/>
+                            <constraint firstItem="sKx-wM-cpf" firstAttribute="top" secondItem="nR0-Aa-Mjn" secondAttribute="bottom" constant="9" id="u3W-CH-I0s"/>
                             <constraint firstItem="0ti-5E-beY" firstAttribute="top" secondItem="369-aZ-WOU" secondAttribute="bottom" constant="120" id="uNO-C7-65o"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="FHu-Ds-cLe" id="NAl-pW-Lkl"/>
+                        <outlet property="controlView" destination="0ti-5E-beY" id="BJp-cI-drT"/>
                         <outlet property="passwordTextField" destination="48O-gH-8do" id="UeV-N4-xGh"/>
                         <outlet property="registerButton" destination="sKx-wM-cpf" id="z5o-Zb-kcA"/>
                         <outlet property="signInButton" destination="nR0-Aa-Mjn" id="2Y1-nm-yIn"/>

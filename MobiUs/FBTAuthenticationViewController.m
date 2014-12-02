@@ -24,38 +24,45 @@
     [super viewDidLoad];
     NSArray *accounts;
     
- 
     [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
     
-    //accounts = [SSKeychain accountsForService:@"firebase"];
+    accounts = [SSKeychain accountsForService:@"firebase"];
     
     if (accounts.count == 1)
     {
-        //NSDictionary* account = accounts[0];
         NSString* account = [accounts[0] objectForKey:@"acct"];
         NSString* password = [SSKeychain passwordForService:@"firebase" account:account];
-        [self loginWithUsernameAndLoadMainApp:account havingPassword:password];
+       
+        //if we have an account already stored in the keychain but this is the first launch
+        //then lets erase it
+        if (![[NSUserDefaults standardUserDefaults] objectForKey:@"isFirstLaunch"]) {
+            [SSKeychain deletePasswordForService:@"firebase" account:account];
+            [[NSUserDefaults standardUserDefaults] setValue:@"true" forKey:@"isFirstLaunch"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+        else
+        {
+            [self loginWithUsernameAndLoadMainApp:account havingPassword:password];
+        }
     }
-    else
-    {
-        self.backgroundMovie = [[MPMoviePlayerController alloc] initWithContentURL:
-                                [NSURL fileURLWithPath: [[NSBundle mainBundle]
-                                                         pathForResource:@"splashvideo" ofType:@"m4v"]]];
-        
-        self.backgroundMovie.scalingMode = MPMovieScalingModeAspectFill;
-        [self.backgroundMovie.view setFrame:[[UIScreen mainScreen] bounds]];
-        [self.backgroundMovie setControlStyle:MPMovieControlStyleNone];
-        [self.view addSubview:self.backgroundMovie.view];
-        [self.view sendSubviewToBack:self.backgroundMovie.view];
-        [self.backgroundMovie play];
-    }
+
+    self.backgroundMovie = [[MPMoviePlayerController alloc] initWithContentURL:
+                            [NSURL fileURLWithPath: [[NSBundle mainBundle]
+                                                     pathForResource:@"splashvideo" ofType:@"m4v"]]];
+    
+    self.backgroundMovie.scalingMode = MPMovieScalingModeAspectFill;
+    [self.backgroundMovie.view setFrame:[[UIScreen mainScreen] bounds]];
+    [self.backgroundMovie setControlStyle:MPMovieControlStyleNone];
+    [self.view addSubview:self.backgroundMovie.view];
+    [self.view sendSubviewToBack:self.backgroundMovie.view];
+    [self.backgroundMovie play];
+    
 
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -118,7 +125,7 @@
             [connectedRef onDisconnectRemoveValue];
             
             [SSKeychain setPassword:password forService:@"firebase" account:username];
-            [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+            [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
             [self performSegueWithIdentifier:@"main" sender:self];
         }
         else

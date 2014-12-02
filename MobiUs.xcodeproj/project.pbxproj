@@ -781,7 +781,7 @@
 				INFOPLIST_FILE = MobiUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MobiUs;
-				PROVISIONING_PROFILE = "776807e1-3601-4783-b21b-cd3a4244337d";
+				PROVISIONING_PROFILE = "d01f68fe-5f05-460e-9aad-f3899d63d145";
 			};
 			name = Debug;
 		};
@@ -802,7 +802,7 @@
 				INFOPLIST_FILE = MobiUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MobiUs;
-				PROVISIONING_PROFILE = "776807e1-3601-4783-b21b-cd3a4244337d";
+				PROVISIONING_PROFILE = "d01f68fe-5f05-460e-9aad-f3899d63d145";
 			};
 			name = Release;
 		};

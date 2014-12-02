@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ti-5E-beY" customClass="UIControl">
-                                <rect key="frame" x="140" y="140" width="320" height="176"/>
+                                <rect key="frame" x="140" y="140" width="320" height="230"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHu-Ds-cLe">
                                         <rect key="frame" x="79" y="180" width="46" height="30"/>

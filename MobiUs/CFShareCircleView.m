@@ -46,65 +46,14 @@
 
 @end
 
-//#pragma mark - CFShareCircleViewController
-//
-//@interface CFShareCircleViewController : UIViewController
-//
-//@property (nonatomic, strong) CFShareCircleView *shareCircleView;
-//
-//@end
-//
-//@implementation CFShareCircleViewController
-//
-//#pragma mark - View life cycle
-//
-//- (void)loadView {
-//    self.view = self.shareCircleView;
-//}
-//
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    [self.shareCircleView setup];
-//}
-//
-//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-//    [self.shareCircleView invalidateLayout];
-//}
-//
-//- (NSUInteger)supportedInterfaceOrientations {
-//    return UIInterfaceOrientationMaskAll;
-//}
-//
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-//    return YES;
-//}
-//
-//- (BOOL)shouldAutorotate {
-//    return YES;
-//}
-//
-//@end
-
 #pragma mark - CFShareCircleView
 
 @implementation CFShareCircleView
-//
-//
-//- (id)init {
-//    self = [super init];
-//    if(self) {
-//        _sharers = [NSMutableArray alloc];
-//
-//        self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-//        [self setup];
-//    }
-//    return self;
-//}
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _sharers = [NSMutableArray alloc] ;
+        _sharers = [[NSMutableArray alloc]init] ;
         self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     }
     return self;
@@ -121,12 +70,34 @@
 
 #pragma mark - Public methods
 
-- (void)addSharerWithId:(NSString*)id forSharer:(CFSharer*)sharer
+- (void)addAccessoryWithId: (NSString*)accessoryId withType:(CFSharerType)type 
 {
-    [_sharers addObject:sharer];
+    CFSharer* item;
+    
+    switch (type) {
+        case CFSharerTypeMilkScale:
+            item = [[CFSharer alloc] initWithName:@"Milky Weigh" imageName:@"scale.png" withId:accessoryId havingType:type];
+            break;
+            
+        default:
+            break;
+    }
+    
+    [_sharers addObject:item];
     [self refreshView];
 }
 
+- (void)removeAccessoryWithId: (NSString*)accessoryId
+{
+    for (int i=_sharers.count-1; i>-1; i--) {
+        CFSharer *item = [_sharers objectAtIndex:i];
+        if (item.accessoryId == accessoryId)
+        {
+            [_sharers removeObject:item];
+        }
+    }
+    [self refreshView];
+}
 
 - (void)refreshView
 {

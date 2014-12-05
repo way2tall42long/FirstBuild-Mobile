@@ -22,10 +22,8 @@
 
 @property (assign) id <CFShareCircleViewDelegate> delegate;
 
-//- (id)initWithSharers:(NSArray *)sharers;
 - (void)refreshView;
-- (void)addSharerWithId:(NSString*)id forSharer:(CFSharer*)sharer;
-//- (void)showAnimated:- (void)addSharerWithName:(NSString*)name;(BOOL)animated;
-//- (void)dismissAnimated:(BOOL)animated;
+- (void)addAccessoryWithId: (NSString*)id withType:(CFSharerType)type;
+- (void)removeAccessoryWithId: (NSString*)id;
 
 @end

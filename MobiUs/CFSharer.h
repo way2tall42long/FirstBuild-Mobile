@@ -12,18 +12,25 @@
 
 @interface CFSharer : NSObject
 
+typedef NS_ENUM(NSInteger, CFSharerType)
+{
+    CFSharerTypeMilkScale
+};
+
 @property NSString *name;
 @property UIImage *image;
-@property NSString* id;
+@property NSString* accessoryId;
+@property CFSharerType type;
+
 
 /**
  Initialize a custom sharer with the name that will be presented when hovering over and the name of the image.
  */
-- (id)initWithName:(NSString *)name imageName:(NSString *)imageName ;
+- (id)initWithName:(NSString *)name imageName:(NSString *)imageName withId:(NSString *)accessoryId havingType:(CFSharerType)type;
 
-+ (CFSharer *)beer;
-+ (CFSharer *)scale;
-+ (CFSharer *)quickchill;
+//+ (CFSharer *)beer;
+//+ (CFSharer *)scale;
+//+ (CFSharer *)quickchill;
 
 
 @end

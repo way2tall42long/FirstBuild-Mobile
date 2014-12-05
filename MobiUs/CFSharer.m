@@ -10,29 +10,27 @@
 
 @implementation CFSharer
 
-@synthesize name = _name;
-@synthesize image = _image;
-
-- (id)initWithName:(NSString *)name imageName:(NSString *)imageName {
+- (id)initWithName:(NSString *)name imageName:(NSString *)imageName withId:(NSString *)accessoryId havingType:(CFSharerType)type{
     self = [super init];
     if (self) {
         _name = name;
         _image = [UIImage imageNamed:imageName];
+        _accessoryId = accessoryId;
     }
     return self;    
 }
 
-+ (CFSharer *)beer {
-    return [[CFSharer alloc] initWithName:@"Beer Tracker" imageName:@"beer.png"];
-}
-
-+ (CFSharer *)scale {
-    return [[CFSharer alloc] initWithName:@"Milk Minder" imageName:@"scale.png"];
-}
-
-+ (CFSharer *)quickchill {
-    return [[CFSharer alloc] initWithName:@"QuickChill" imageName:@"quickchill.png"];
-}
+//+ (CFSharer *)beer {
+//    return [[CFSharer alloc] initWithName:@"Beer Tracker" imageName:@"beer.png"];
+//}
+//
+//+ (CFSharer *)scale {
+//    return [[CFSharer alloc] initWithName:@"Milk Minder" imageName:@"scale.png"];
+//}
+//
+//+ (CFSharer *)quickchill {
+//    return [[CFSharer alloc] initWithName:@"QuickChill" imageName:@"quickchill.png"];
+//}
 
 
 

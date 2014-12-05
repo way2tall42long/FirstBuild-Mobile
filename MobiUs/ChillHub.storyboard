@@ -37,10 +37,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="ChillHub" id="r80-gY-9Up">
-                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="XEM-wa-k8G">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="QlD-4w-H0W">
                             <connections>
-                                <action selector="revealToggle:" destination="qoT-VR-agl" id="5gu-Hl-hlU"/>
+                                <action selector="throwmeawaytoo:" destination="qoT-VR-agl" id="23R-R1-ewH"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="oUb-UM-yby">
@@ -51,90 +50,12 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="vWo-W4-7R3" kind="show" identifier="quickchill" id="fQV-zY-313"/>
                         <segue destination="7kU-RS-hOR" kind="show" identifier="scale" id="VqH-I0-e7F"/>
-                        <segue destination="DqK-qI-edq" kind="show" identifier="beerminder" id="hMG-ym-LZI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbt-am-upD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="631" y="507"/>
-        </scene>
-        <!--QuickChill-->
-        <scene sceneID="2mZ-j9-eAd">
-            <objects>
-                <viewController id="vWo-W4-7R3" customClass="QuickChillViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="u7x-EE-lW9"/>
-                        <viewControllerLayoutGuide type="bottom" id="tmj-Bw-vB5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oDL-ls-l8M">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QuickChill Contents" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je9-mM-2lD">
-                                <rect key="frame" x="194" y="308" width="153" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Je9-mM-2lD" secondAttribute="centerX" constant="29" id="dff-ga-toC"/>
-                            <constraint firstAttribute="centerY" secondItem="Je9-mM-2lD" secondAttribute="centerY" constant="-18.5" id="q4l-Q5-W0X"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="QuickChill" id="ZYV-87-tc7">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="pcG-GZ-bqR">
-                            <connections>
-                                <action selector="backButton:" destination="vWo-W4-7R3" id="HVp-gx-Py5"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B69-nL-Sgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1425" y="-285"/>
-        </scene>
-        <!--Beer Minder-->
-        <scene sceneID="Dfm-Ba-ejD">
-            <objects>
-                <viewController id="DqK-qI-edq" userLabel="Beer Minder" customClass="BeerMinderViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9BC-qz-Sx3"/>
-                        <viewControllerLayoutGuide type="bottom" id="cAI-6f-lkG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TxX-Ls-caD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beer Minder Contents" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZY-FY-COg">
-                                <rect key="frame" x="186" y="308" width="169" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="PZY-FY-COg" secondAttribute="centerX" constant="29" id="tUl-sl-knD"/>
-                            <constraint firstAttribute="centerY" secondItem="PZY-FY-COg" secondAttribute="centerY" constant="-18.5" id="u5p-L5-6gz"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Beer Minder" id="U9P-Dm-vL7">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="Jgl-jn-U8u">
-                            <connections>
-                                <action selector="backButton:" destination="DqK-qI-edq" id="NMZ-Bh-Vbq"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vZV-8z-8H8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1493" y="1291"/>
         </scene>
         <!--Scale-->
         <scene sceneID="dCd-G4-RCU">
@@ -189,6 +110,5 @@
     </scenes>
     <resources>
         <image name="milk" width="1117" height="1681"/>
-        <image name="reveal-icon" width="22" height="17"/>
     </resources>
 </document>

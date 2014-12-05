@@ -42,25 +42,19 @@
 @implementation ChillHubViewController
 - (IBAction)throwmeaway:(id)sender {
     
-    [self.shareCircleView addSharerWithId:@"bogus" forSharer:[CFSharer scale]];
+    [self.shareCircleView addAccessoryWithId:@"butts" withType:CFSharerTypeMilkScale];
+}
+- (IBAction)throwmeawaytoo:(id)sender {
+    [self.shareCircleView removeAccessoryWithId:@"butts"];
 }
 
 - (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
     NSLog(@"Selected sharer: %@", sharer.name);
     
-    if ([sharer.name isEqualToString:@"Beer Tracker"])
-    {
-        [self performSegueWithIdentifier:@"beerminder" sender:self];
-    }
-    else if ([sharer.name isEqualToString:@"QuickChill"])
-    {
-        [self performSegueWithIdentifier:@"quickchill" sender:self];
-    }
-    else if ([sharer.name isEqualToString:@"Milk Minder"])
+    if (sharer.type==CFSharerTypeMilkScale)
     {
         [self performSegueWithIdentifier:@"scale" sender:self];
     }
-    
 }
 
 - (void)shareCircleView:(CFShareCircleView *)shareCircleView didCancelSharer:(CFSharer *)sharer {

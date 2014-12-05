@@ -23,8 +23,6 @@
 		5B9EF10E19DEEE1100E8D9F1 /* MobiUsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF10D19DEEE1100E8D9F1 /* MobiUsTests.m */; };
 		5BBB0B8A19F1CC5D001D5DF1 /* CFShareCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B8719F1CC5D001D5DF1 /* CFShareCircleView.m */; };
 		5BBB0B8B19F1CC5D001D5DF1 /* CFSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B8919F1CC5D001D5DF1 /* CFSharer.m */; };
-		5BBB0B9419F1D315001D5DF1 /* QuickChillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B9319F1D315001D5DF1 /* QuickChillViewController.m */; };
-		5BBB0B9719F1DE75001D5DF1 /* BeerMinderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B9619F1DE75001D5DF1 /* BeerMinderViewController.m */; };
 		5BBB0B9A19F1DE8C001D5DF1 /* ScaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B9919F1DE8C001D5DF1 /* ScaleViewController.m */; };
 		5BBB0BA119F1E8D7001D5DF1 /* SousVideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0BA019F1E8D7001D5DF1 /* SousVideViewController.m */; };
 		5BBB0BA319F1E96B001D5DF1 /* SousVide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBB0BA219F1E96B001D5DF1 /* SousVide.storyboard */; };
@@ -97,10 +95,6 @@
 		5BBB0B8719F1CC5D001D5DF1 /* CFShareCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFShareCircleView.m; sourceTree = "<group>"; };
 		5BBB0B8819F1CC5D001D5DF1 /* CFSharer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFSharer.h; sourceTree = "<group>"; };
 		5BBB0B8919F1CC5D001D5DF1 /* CFSharer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFSharer.m; sourceTree = "<group>"; };
-		5BBB0B9219F1D315001D5DF1 /* QuickChillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickChillViewController.h; sourceTree = "<group>"; };
-		5BBB0B9319F1D315001D5DF1 /* QuickChillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickChillViewController.m; sourceTree = "<group>"; };
-		5BBB0B9519F1DE75001D5DF1 /* BeerMinderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeerMinderViewController.h; sourceTree = "<group>"; };
-		5BBB0B9619F1DE75001D5DF1 /* BeerMinderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeerMinderViewController.m; sourceTree = "<group>"; };
 		5BBB0B9819F1DE8C001D5DF1 /* ScaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleViewController.h; sourceTree = "<group>"; };
 		5BBB0B9919F1DE8C001D5DF1 /* ScaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleViewController.m; sourceTree = "<group>"; };
 		5BBB0B9F19F1E8D7001D5DF1 /* SousVideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SousVideViewController.h; sourceTree = "<group>"; };
@@ -243,10 +237,6 @@
 			children = (
 				5BF9482919EC15A000CB8BCF /* ChillHubViewController.h */,
 				5BF9482A19EC15A000CB8BCF /* ChillHubViewController.m */,
-				5BBB0B9219F1D315001D5DF1 /* QuickChillViewController.h */,
-				5BBB0B9319F1D315001D5DF1 /* QuickChillViewController.m */,
-				5BBB0B9519F1DE75001D5DF1 /* BeerMinderViewController.h */,
-				5BBB0B9619F1DE75001D5DF1 /* BeerMinderViewController.m */,
 				5BBB0B9819F1DE8C001D5DF1 /* ScaleViewController.h */,
 				5BBB0B9919F1DE8C001D5DF1 /* ScaleViewController.m */,
 			);
@@ -658,7 +648,6 @@
 				5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */,
 				5BC3647E1A2F637800D03B9C /* FSTDevice.m in Sources */,
 				5B99E0841A1AA63F005FB881 /* WifiCommissioningNetworkListViewController.m in Sources */,
-				5BBB0B9719F1DE75001D5DF1 /* BeerMinderViewController.m in Sources */,
 				5BC364811A2F63C200D03B9C /* FSTToken.m in Sources */,
 				5BF9482F19EC15E300CB8BCF /* MenuViewController.m in Sources */,
 				5BC5A1CD19EF6584009C93B1 /* FBTUser.m in Sources */,
@@ -678,7 +667,6 @@
 				5BBB0B8B19F1CC5D001D5DF1 /* CFSharer.m in Sources */,
 				5B1C894419EDB479002A9EE2 /* FSTChillHubAccessoryQuickChill.m in Sources */,
 				5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */,
-				5BBB0B9419F1D315001D5DF1 /* QuickChillViewController.m in Sources */,
 				5BBB0BA119F1E8D7001D5DF1 /* SousVideViewController.m in Sources */,
 				5B9EF0F419DEEE1000E8D9F1 /* main.m in Sources */,
 				6743AE1F19E30E46000D9CF3 /* MobiNavigationController.m in Sources */,

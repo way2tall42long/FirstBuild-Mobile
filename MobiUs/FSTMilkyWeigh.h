@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FSTChillHubDevice.h"
 
-@interface FSTMilkyWeigh : NSObject
+@interface FSTMilkyWeigh : FSTChillHubDevice
+
+@property (strong, nonatomic) NSString* weight_gal;
+@property (strong, nonatomic) NSString* weight_l;
 
 @end

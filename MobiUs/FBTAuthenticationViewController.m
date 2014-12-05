@@ -114,10 +114,12 @@
 
 - (void) loginWithUsernameAndLoadMainApp:(NSString*)username havingPassword:(NSString*)password
 {
-    FBTUser *user = [FBTUser sharedInstance];
+    
     // TODO: use setValue with completion block for the creation of the new user
     // TODO: better error checking
     Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
+    FBTUser *user = [FBTUser sharedInstance];
+    
     [baseRef authUser:username  password:password withCompletionBlock:^(NSError *error,  FAuthData *authData) {
         if (error == nil)
         {

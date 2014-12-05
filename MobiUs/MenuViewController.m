@@ -30,12 +30,22 @@
 
 #import "MenuViewController.h"
 #import "ChillHubViewController.h"
+#import "FSTProduct.h"
 
 @implementation SWUITableViewCell
 @end
 
 @implementation MenuViewController
 
+
+- (void) viewDidLoad
+{
+    FSTProduct* product = [FSTProduct new];
+    product.identifier = @"himom";
+    
+    [self.products addObject:product];
+    
+}
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
@@ -51,29 +61,30 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return self.products.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-
-    switch ( indexPath.row )
-    {
-        case 0:
-            CellIdentifier = @"Home";
-            break;
-        case 1:
-            CellIdentifier = @"ChillHub";
-            break;
-        case 2:
-            CellIdentifier = @"LineCook";
-            break;
-        case 3:
-            CellIdentifier = @"SousVide";
-            break;
-
-    }
+    FSTProduct * product = self.products[indexPath.row];
+    CellIdentifier = product.identifier;
+//    switch ( indexPath.row )
+//    {
+//        case 0:
+//            CellIdentifier = @"Home";
+//            break;
+//        case 1:
+//            
+//            break;
+//        case 2:
+//            CellIdentifier = @"LineCook";
+//            break;
+//        case 3:
+//            CellIdentifier = @"SousVide";
+//            break;
+//
+//    }
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
  

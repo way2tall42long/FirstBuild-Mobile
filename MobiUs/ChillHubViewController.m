@@ -29,8 +29,9 @@
 //
 
 #import "ChillHubViewController.h"
-#import "FSTChillHubAccessoryQuickChill.h"
 #import "CFSharer.h"
+#import "FBTUser.h"
+
 #import <SWRevealViewController.h>
 #import <Firebase/Firebase.h>
 
@@ -69,7 +70,11 @@
     self.shareCircleView.delegate = self;
     [self.view addSubview:self.shareCircleView];
     
-    Firebase * firebase = [[Firebase alloc] initWithUrl:@"https://mobius-firstbuild.firebaseio.com/homes/home-1/devices/device-1/accessories/accessory-1"]; ;
+    FBTUser *user = [FBTUser sharedInstance];
+    
+    Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
+    Firebase *attachmentsRef = [[baseRef childByAppendingPath:user.rootContainer] childByAppendingPath:@"devices"];
+    
     
     //[self.shareCircleView showAnimated:YES];
 //    firebase = [[Firebase alloc] initWithUrl:@"https://mobius-firstbuild.firebaseio.com/homes/home-1/devices/device-1/accessories/accessory-1"];

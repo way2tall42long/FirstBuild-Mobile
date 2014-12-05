@@ -10,6 +10,21 @@
 
 @implementation FBTUser
 
++ (id) sharedInstance
+{
+    static FBTUser *sharedSingletonInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedSingletonInstance = [[self alloc] init];
+    });
+    return sharedSingletonInstance;
+}
+
+- (id) init {
+    self = [super init];
+    return self;
+}
+
 - (id) initWithDictionary:(NSDictionary *)dict;
 {
     if ((self = [super init]))
@@ -17,6 +32,7 @@
         _displayName  = [dict valueForKey:@"displayName"];
         _email   = [dict valueForKey:@"email"];
         _rootContainer = [dict valueForKey:@"rootContainer"];
+        _token = [dict valueForKey:@"token"];
     }
     
     return self;
@@ -28,6 +44,7 @@
     [dict setObject:self.email forKey:@"email"];
     [dict setObject:self.displayName forKey:@"displayName"];
     [dict setObject:self.rootContainer forKey:@"rootContainer"];
+    [dict setObject:self.rootContainer forKey:@"token"];
 
     return dict;
 }

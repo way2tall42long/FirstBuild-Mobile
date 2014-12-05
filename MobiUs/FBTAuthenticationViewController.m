@@ -10,7 +10,6 @@
 #import <Firebase/Firebase.h>
 #import <SSKeychain.h>
 #import "FBTUser.h"
-#import "FSTContainer.h"
 
 @interface FBTAuthenticationViewController ()
 
@@ -115,27 +114,20 @@
 
 - (void) loginWithUsernameAndLoadMainApp:(NSString*)username havingPassword:(NSString*)password
 {
+    FBTUser *user = [FBTUser sharedInstance];
     // TODO: use setValue with completion block for the creation of the new user
     // TODO: better error checking
     Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
     [baseRef authUser:username  password:password withCompletionBlock:^(NSError *error,  FAuthData *authData) {
         if (error == nil)
         {
-            Firebase *connectedRef = [[baseRef childByAppendingPath:@"connections"] childByAppendingPath:authData.uid];
-            Firebase *newUserRef = [[baseRef childByAppendingPath:@"users"] childByAppendingPath:authData.uid];
-            Firebase *userRootContainerRef = [[baseRef childByAppendingPath:@"containers"] childByAutoId];
-            NSDictionary *userDict = [[NSDictionary alloc] initWithObjectsAndKeys:userRootContainerRef.name,@"rootContainer",username,@"email",@"notvalid",@"displayName", nil];
-            NSDictionary *containerDict = [[NSDictionary alloc] initWithObjectsAndKeys:@"tbd",@"description",@"tbd",@"name",authData.uid,@"owner", nil];
-            FBTUser *newUser = [[FBTUser alloc] initWithDictionary:userDict];
-            FSTContainer *newUserContainer = [[FSTContainer alloc]initWithDictionary:containerDict];
+            user.rootContainer = [@"/users/" stringByAppendingString:authData.uid];
+            user.token = authData.token;
+            user.email = username;
             
-            [[NSUserDefaults standardUserDefaults] setValue:authData.token forKey:@"firebaseClientToken"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            [newUserRef setValue:[newUser toDictionary]];
-            [userRootContainerRef setValue:[newUserContainer toDictionary]];
-            [connectedRef setValue:@YES];
-            [connectedRef onDisconnectRemoveValue];
+            Firebase *userConnectedRef = [[baseRef childByAppendingPath:user.rootContainer] childByAppendingPath:@"connected"];
+            [userConnectedRef setValue:@YES];
+            [userConnectedRef onDisconnectRemoveValue];
             
             [SSKeychain setPassword:password forService:@"firebase" account:username];
             [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];

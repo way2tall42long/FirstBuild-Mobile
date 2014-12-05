@@ -69,6 +69,8 @@
     self.shareCircleView.delegate = self;
     [self.view addSubview:self.shareCircleView];
     
+    Firebase * firebase = [[Firebase alloc] initWithUrl:@"https://mobius-firstbuild.firebaseio.com/homes/home-1/devices/device-1/accessories/accessory-1"]; ;
+    
     //[self.shareCircleView showAnimated:YES];
 //    firebase = [[Firebase alloc] initWithUrl:@"https://mobius-firstbuild.firebaseio.com/homes/home-1/devices/device-1/accessories/accessory-1"];
 //    NSMutableDictionary * dictionary = [[NSMutableDictionary dictionary] init];

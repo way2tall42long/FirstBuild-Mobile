@@ -20,7 +20,6 @@
 @property (strong, nonatomic) IBOutlet UIControl *controlView;
 
 - (IBAction)signInButtonPressed:(id)sender;
-- (IBAction)cancelButtonPressed:(id)sender;
 - (IBAction)registerButtonPressed:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
 - (IBAction)usernameDoneEditing:(id)sender;

@@ -14,8 +14,12 @@
 @property (strong, nonatomic) NSString *displayName;
 @property (strong, nonatomic) NSString *rootContainer;
 @property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic) NSString *token;
+
 
 - (id) initWithDictionary:(NSDictionary *)dict;
 - (NSDictionary *)toDictionary;
+
++(id) sharedInstance;
 
 @end

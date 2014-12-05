@@ -11,6 +11,7 @@
 #import "FSTNetwork.h"
 #import "FSTToken.h"
 #import "FSTDevice.h"
+#import "FBTUser.h"
 
 @interface WifiCommissioningViewController ()
 
@@ -131,9 +132,10 @@
 - (void)segueToNetworks
 {
     FSTToken* token = [FSTToken new];
+    FBTUser *user = [FBTUser sharedInstance];
     
-    //token.token = [[NSUserDefaults standardUserDefaults] objectForKey:@"firebaseClientToken"];
-    token.token = @"BUTTS";
+    token.token = user.token;
+    
     [[RKObjectManager sharedManager] postObject:token path:@"/token"
                                      parameters:nil
                                         success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {

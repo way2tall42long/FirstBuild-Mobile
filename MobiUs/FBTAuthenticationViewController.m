@@ -25,7 +25,6 @@
     NSArray *accounts;
     
     [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
-    
     accounts = [SSKeychain accountsForService:@"firebase"];
     
     if (accounts)
@@ -46,10 +45,14 @@
         }
         else
         {
+            self.usernameTextField.text = account;
+            self.passwordTextField.text = password;
+            [self.loginActivityIndicator startAnimating];
             [self loginWithUsernameAndLoadMainApp:account havingPassword:password];
         }
     }
 
+    //TODO: don't play the movie if we are auto logging in
     self.backgroundMovie = [[MPMoviePlayerController alloc] initWithContentURL:
                             [NSURL fileURLWithPath: [[NSBundle mainBundle]
                                                      pathForResource:@"splashvideo" ofType:@"m4v"]]];
@@ -79,18 +82,11 @@
     [super didReceiveMemoryWarning];
 }
 
-
-- (IBAction)cancelButtonPressed:(id)sender;
-{
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (IBAction)signInButtonPressed:(id)sender;
 {
     [self.usernameTextField resignFirstResponder];
     [self.passwordTextField resignFirstResponder];
     [self.loginActivityIndicator startAnimating];
-    
     [self loginWithUsernameAndLoadMainApp:self.usernameTextField.text havingPassword:self.passwordTextField.text];
 }
 

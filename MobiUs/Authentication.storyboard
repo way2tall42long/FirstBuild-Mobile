@@ -30,10 +30,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ti-5E-beY" customClass="UIControl">
                                 <rect key="frame" x="175" y="140" width="250" height="230"/>
                                 <subviews>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="miw-gV-7qZ">
-                                        <rect key="frame" x="240" y="12" width="20" height="20"/>
-                                        <color key="color" red="0.21884934911408147" green="0.81241462756233451" blue="0.8833705357142857" alpha="1" colorSpace="calibratedRGB"/>
-                                    </activityIndicatorView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48O-gH-8do">
                                         <rect key="frame" x="26" y="97" width="200" height="30"/>
                                         <constraints>
@@ -110,17 +106,24 @@
                                     <action selector="registerButtonPressed:" destination="91T-Df-jik" eventType="touchUpInside" id="se9-77-1PI"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="miw-gV-7qZ">
+                                <rect key="frame" x="290" y="245" width="20" height="20"/>
+                                <color key="color" red="0.89803928136825562" green="0.27058824896812439" blue="0.14509804546833038" alpha="1" colorSpace="deviceRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="miw-gV-7qZ" secondAttribute="centerY" constant="45" id="23O-vL-oZb"/>
                             <constraint firstAttribute="centerX" secondItem="0ti-5E-beY" secondAttribute="centerX" id="2I5-hZ-pek"/>
                             <constraint firstItem="sKx-wM-cpf" firstAttribute="centerX" secondItem="0ti-5E-beY" secondAttribute="centerX" id="HoK-Pv-0FJ"/>
+                            <constraint firstAttribute="centerX" secondItem="miw-gV-7qZ" secondAttribute="centerX" id="T1D-3u-zPF"/>
                             <constraint firstItem="sKx-wM-cpf" firstAttribute="top" secondItem="nR0-Aa-Mjn" secondAttribute="bottom" constant="9" id="u3W-CH-I0s"/>
                             <constraint firstItem="0ti-5E-beY" firstAttribute="top" secondItem="369-aZ-WOU" secondAttribute="bottom" constant="120" id="uNO-C7-65o"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="controlView" destination="0ti-5E-beY" id="BJp-cI-drT"/>
+                        <outlet property="loginActivityIndicator" destination="miw-gV-7qZ" id="fy4-SX-Onb"/>
                         <outlet property="passwordTextField" destination="48O-gH-8do" id="UeV-N4-xGh"/>
                         <outlet property="registerButton" destination="sKx-wM-cpf" id="z5o-Zb-kcA"/>
                         <outlet property="signInButton" destination="nR0-Aa-Mjn" id="2Y1-nm-yIn"/>

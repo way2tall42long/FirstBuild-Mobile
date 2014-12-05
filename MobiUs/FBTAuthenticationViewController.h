@@ -14,7 +14,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (strong, nonatomic) IBOutlet UIButton *signInButton;
-@property (strong, nonatomic) IBOutlet UIButton *cancelButton;
 @property (strong, nonatomic) IBOutlet UIButton *registerButton;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loginActivityIndicator;
 @property (strong, nonatomic) MPMoviePlayerController *backgroundMovie;

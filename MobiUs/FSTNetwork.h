@@ -12,5 +12,6 @@
 @property (nonatomic, strong) NSString *ssid;
 @property (nonatomic, strong) NSString *security_mode;
 @property (nonatomic, strong) NSString *state;
+@property (nonatomic, strong) NSString *passphrase;
 
 @end

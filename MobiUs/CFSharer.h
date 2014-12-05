@@ -14,11 +14,12 @@
 
 @property NSString *name;
 @property UIImage *image;
+@property NSString* id;
 
 /**
  Initialize a custom sharer with the name that will be presented when hovering over and the name of the image.
  */
-- (id)initWithName:(NSString *)name imageName:(NSString *)imageName;
+- (id)initWithName:(NSString *)name imageName:(NSString *)imageName ;
 
 + (CFSharer *)beer;
 + (CFSharer *)scale;

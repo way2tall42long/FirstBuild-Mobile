@@ -7,6 +7,7 @@
 //
 
 #import "CFShareCircleView.h"
+#import "FSTBackgroundLayer.h"
 
 #define IS_OS_7_OR_LATER (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)
 
@@ -15,8 +16,6 @@
 #define IMAGE_SIZE 45
 #define TOUCH_SIZE 70
 #define MAX_VISIBLE_SHARERS 6
-
-static const UIWindowLevel UIWindowLevelCFShareCircle = 1999.0;  // Don't overlap system's alert.
 
 @interface CFShareCircleView()
 
@@ -37,7 +36,7 @@ static const UIWindowLevel UIWindowLevelCFShareCircle = 1999.0;  // Don't overla
 @property (nonatomic, strong) CAShapeLayer *touchLayer;
 @property (nonatomic, strong) CATextLayer *introTextLayer;
 @property (nonatomic, strong) CATextLayer *shareTitleLayer;
-@property (nonatomic, strong) NSArray *sharers;
+@property (nonatomic, strong) NSMutableArray *sharers;
 @property (nonatomic, strong) NSMutableArray *sharerLayers;
 @property (nonatomic, strong) UIView *shareCircleContainerView;
 @property (nonatomic, strong) UIWindow *oldKeyWindow;
@@ -47,91 +46,78 @@ static const UIWindowLevel UIWindowLevelCFShareCircle = 1999.0;  // Don't overla
 
 @end
 
-#pragma mark - CFShareCircleViewController
-
-@interface CFShareCircleViewController : UIViewController
-
-@property (nonatomic, strong) CFShareCircleView *shareCircleView;
-
-@end
-
-@implementation CFShareCircleViewController
-
-#pragma mark - View life cycle
-
-- (void)loadView {
-    self.view = self.shareCircleView;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.shareCircleView setup];
-}
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    [self.shareCircleView invalidateLayout];
-}
-
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    return YES;
-}
-
-- (BOOL)shouldAutorotate {
-    return YES;
-}
-
-@end
-
-#pragma mark - CFShareCircleBackgroundWindow
-
-@interface CFShareCircleBackgroundWindow : UIWindow
-
-@end
-
-@interface CFShareCircleBackgroundWindow ()
-
-@end
-
-@implementation CFShareCircleBackgroundWindow
-
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        self.opaque = NO;
-        self.windowLevel = UIWindowLevelCFShareCircle;
-        self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.45];
-    }
-    return self;
-}
-
-@end
+//#pragma mark - CFShareCircleViewController
+//
+//@interface CFShareCircleViewController : UIViewController
+//
+//@property (nonatomic, strong) CFShareCircleView *shareCircleView;
+//
+//@end
+//
+//@implementation CFShareCircleViewController
+//
+//#pragma mark - View life cycle
+//
+//- (void)loadView {
+//    self.view = self.shareCircleView;
+//}
+//
+//- (void)viewDidLoad {
+//    [super viewDidLoad];
+//    [self.shareCircleView setup];
+//}
+//
+//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+//    [self.shareCircleView invalidateLayout];
+//}
+//
+//- (NSUInteger)supportedInterfaceOrientations {
+//    return UIInterfaceOrientationMaskAll;
+//}
+//
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+//    return YES;
+//}
+//
+//- (BOOL)shouldAutorotate {
+//    return YES;
+//}
+//
+//@end
 
 #pragma mark - CFShareCircleView
 
 @implementation CFShareCircleView
 
+
 - (id)init {
     self = [super init];
     if(self) {
-        _sharers = @[[CFSharer beer], [CFSharer scale], [CFSharer quickchill]];
+        _sharers = [[NSMutableArray alloc] initWithArray:@[[CFSharer beer], [CFSharer scale], [CFSharer quickchill]]];
+
+        self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        [self setup];
+    }
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        _sharers = [[NSMutableArray alloc] initWithArray:@[[CFSharer beer], [CFSharer scale], [CFSharer quickchill]]];
         self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     }
     return self;
 }
 
-- (id)initWithSharers:(NSArray *)sharers {
-    self = [super init];
-    if (self) {
-        _sharers = [[NSArray alloc] initWithArray:sharers];
-        self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    }
-    return self;
-}
+//- (id)initWithSharers:(NSArray *)sharers {
+//    self = [super init];
+//    if (self) {
+//        _sharers = [[NSMuArray alloc] initWithArray:sharers];
+//        self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//    }
+//    return self;
+//}
 
 - (int)numberOfVisibleSharers {
     if(self.sharers.count > MAX_VISIBLE_SHARERS) {
@@ -144,81 +130,86 @@ static const UIWindowLevel UIWindowLevelCFShareCircle = 1999.0;  // Don't overla
 
 #pragma mark - Public methods
 
-- (void)showAnimated:(BOOL)animated {
-    self.oldKeyWindow = [[UIApplication sharedApplication] keyWindow];
-    
-    CFShareCircleViewController *viewController = [[CFShareCircleViewController alloc] initWithNibName:nil bundle:nil];
-    viewController.shareCircleView = self;
-    
-    // Set up new window to be presented over the application window.
-    if (!self.shareCircleWindow) {
-        CFShareCircleBackgroundWindow *window = [[CFShareCircleBackgroundWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        window.rootViewController = viewController;
-        self.shareCircleWindow = window;
-    }
-    [self.shareCircleWindow makeKeyAndVisible];
-    
-    // Ensure layout is correct before presenting to user.
-    [self validateLayout];
-    
-    // Create the starting point.
-    self.shareCircleContainerView.center = CGPointMake(CGRectGetMidX(self.bounds), 0 - CIRCLE_SIZE/2.0f);
-    
-    // Create the block for the animation.
-    void(^animationBlock)(void) = ^{
-        CGPoint center = self.shareCircleContainerView.center;
-        center.y = CGRectGetMidY(self.bounds);
-        self.shareCircleContainerView.center = center;
-    };
-    
-    // Create the completion block for the animaiton.
-    void(^completionBlock)(BOOL) = ^(BOOL finished){
-        self.animating = NO;
-    };
-    
-    if(animated) {
-        self.animating = YES;
-        if(IS_OS_7_OR_LATER) {
-            [UIView animateWithDuration:1.0f delay:0.5f usingSpringWithDamping:0.6f initialSpringVelocity:0.5f options:UIViewAnimationCurveLinear animations:animationBlock completion:completionBlock];
-        }
-        else {
-            [UIView animateWithDuration:0.4f animations:animationBlock completion:completionBlock];
-        }
-    }
-    else {
-        animationBlock();
-    }
+- (void)addSharerWithId:(NSString*)id forSharer:(CFSharer*)sharer
+{
+    [_sharers addObject:sharer];
+    [self refreshView];
 }
 
-- (void)dismissAnimated:(BOOL)animated {
-    if(self.animating) {
-        return;
-    }
-    
-    // Create the block for the animation.
-    void(^animationBlock)(void) = ^{
-        CGPoint center = self.shareCircleContainerView.center;
-        center.y = CGRectGetMaxY(self.bounds) + CIRCLE_SIZE/2.0f;
-        self.shareCircleContainerView.center = center;
-    };
-    
-    // Create the completion block for the animaiton.
-    void(^completionBlock)(BOOL) = ^(BOOL finished){
-        [self teardown];
-    };
-    
-    if(animated) {
-        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:animationBlock completion:completionBlock];
-    }
-    else {
-        animationBlock();
-        completionBlock(YES);
-    }
-        
-    // Replace the original application window.
-    [self.oldKeyWindow makeKeyWindow];
-    self.oldKeyWindow.hidden = NO;
+
+- (void)refreshView
+{
+    [self teardown];
+    [self setup];
+    [self validateLayout];
 }
+//- (void)showAnimated:(BOOL)animated {
+//    self.oldKeyWindow = [[UIApplication sharedApplication] keyWindow];
+//    
+//    CFShareCircleViewController *viewController = [[CFShareCircleViewController alloc] initWithNibName:nil bundle:nil];
+//    viewController.shareCircleView = self;
+//    
+//    // Ensure layout is correct before presenting to user.
+//    [self validateLayout];
+//    
+//    // Create the starting point.
+//    self.shareCircleContainerView.center = CGPointMake(CGRectGetMidX(self.bounds), 0 - CIRCLE_SIZE/2.0f);
+//    
+//    // Create the block for the animation.
+//    void(^animationBlock)(void) = ^{
+//        CGPoint center = self.shareCircleContainerView.center;
+//        center.y = CGRectGetMidY(self.bounds);
+//        self.shareCircleContainerView.center = center;
+//    };
+//    
+//    // Create the completion block for the animaiton.
+//    void(^completionBlock)(BOOL) = ^(BOOL finished){
+//        self.animating = NO;
+//    };
+//    
+//    if(animated) {
+//        self.animating = YES;
+//        if(IS_OS_7_OR_LATER) {
+//            [UIView animateWithDuration:1.0f delay:0.5f usingSpringWithDamping:0.6f initialSpringVelocity:0.5f options:UIViewAnimationCurveLinear animations:animationBlock completion:completionBlock];
+//        }
+//        else {
+//            [UIView animateWithDuration:0.4f animations:animationBlock completion:completionBlock];
+//        }
+//    }
+//    else {
+//        animationBlock();
+//    }
+//}
+
+//- (void)dismissAnimated:(BOOL)animated {
+//    if(self.animating) {
+//        return;
+//    }
+//    
+//    // Create the block for the animation.
+//    void(^animationBlock)(void) = ^{
+//        CGPoint center = self.shareCircleContainerView.center;
+//        center.y = CGRectGetMaxY(self.bounds) + CIRCLE_SIZE/2.0f;
+//        self.shareCircleContainerView.center = center;
+//    };
+//    
+//    // Create the completion block for the animaiton.
+//    void(^completionBlock)(BOOL) = ^(BOOL finished){
+//        [self teardown];
+//    };
+//    
+//    if(animated) {
+//        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:animationBlock completion:completionBlock];
+//    }
+//    else {
+//        animationBlock();
+//        completionBlock(YES);
+//    }
+//        
+//    // Replace the original application window.
+//    [self.oldKeyWindow makeKeyWindow];
+//    self.oldKeyWindow.hidden = NO;
+//}
 
 #pragma mark - Layout
 
@@ -240,6 +231,13 @@ static const UIWindowLevel UIWindowLevelCFShareCircle = 1999.0;  // Don't overla
     
     self.shareCircleContainerView.frame = CGRectMake(CGRectGetMidX(self.bounds) - CIRCLE_SIZE/2.0, CGRectGetMidY(self.bounds) - CIRCLE_SIZE/2.0, CIRCLE_SIZE, CIRCLE_SIZE);
     self.shareCircleContainerView.layer.cornerRadius = CGRectGetWidth(self.shareCircleContainerView.frame) / 2.0;
+    
+    self.shareCircleContainerView.layer.borderColor = UIColorFromRGB(0xf15c22).CGColor;
+    self.shareCircleContainerView.layer.borderWidth = 6.0f;
+    
+    CAGradientLayer *bgLayer = [FSTBackgroundLayer greyGradient];
+    bgLayer.frame = self.bounds;
+    [self.layer insertSublayer:bgLayer atIndex:0];
     
     CGPoint center = CGPointMake(CGRectGetMidX(self.shareCircleContainerView.bounds), CGRectGetMidY(self.shareCircleContainerView.bounds));
     self.introTextLayer.position = center;
@@ -318,7 +316,7 @@ static const UIWindowLevel UIWindowLevelCFShareCircle = 1999.0;  // Don't overla
 
 - (void)setupShareCircleContainerView {
     self.shareCircleContainerView = [[UIView alloc] initWithFrame:self.bounds];
-    self.shareCircleContainerView.backgroundColor = [UIColor whiteColor];
+    self.shareCircleContainerView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
     [self addSubview:self.shareCircleContainerView];
 }
 
@@ -412,7 +410,7 @@ static const UIWindowLevel UIWindowLevelCFShareCircle = 1999.0;  // Don't overla
         [self invalidateLayout];
     }
     else {
-        [self dismissAnimated:YES];
+        //[self dismissAnimated:YES];
         [_delegate shareCircleView:self didCancelSharer:nil];
     }
 }
@@ -433,9 +431,10 @@ static const UIWindowLevel UIWindowLevelCFShareCircle = 1999.0;  // Don't overla
     
     if(self.isDragging) {
         if(sharerLayer) {
+            self.dragging = NO;
             [_delegate shareCircleView:self didSelectSharer:[self.sharers objectAtIndex:[self.sharerLayers indexOfObject:sharerLayer]]];
             self.currentPosition = CGPointMake(CGRectGetMidX(self.shareCircleContainerView.bounds), CGRectGetMidY(self.shareCircleContainerView.bounds));
-            [self dismissAnimated:YES];
+           // [self dismissAnimated:YES];
         }
         else {
             self.currentPosition = CGPointMake(CGRectGetMidX(self.shareCircleContainerView.bounds), CGRectGetMidY(self.shareCircleContainerView.bounds));

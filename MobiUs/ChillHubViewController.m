@@ -30,6 +30,7 @@
 
 #import "ChillHubViewController.h"
 #import "FSTChillHubAccessoryQuickChill.h"
+#import "CFSharer.h"
 #import <SWRevealViewController.h>
 #import <Firebase/Firebase.h>
 
@@ -39,6 +40,10 @@
 @end
 
 @implementation ChillHubViewController
+- (IBAction)throwmeaway:(id)sender {
+    
+    [self.shareCircleView addSharerWithId:@"bogus" forSharer:[CFSharer scale]];
+}
 
 - (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
     NSLog(@"Selected sharer: %@", sharer.name);
@@ -66,8 +71,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.shareCircleView = [[CFShareCircleView alloc] init];
+    self.shareCircleView = [[CFShareCircleView alloc] initWithFrame:self.view.bounds];
     self.shareCircleView.delegate = self;
+    [self.view addSubview:self.shareCircleView];
     
     //[self.shareCircleView showAnimated:YES];
 //    firebase = [[Firebase alloc] initWithUrl:@"https://mobius-firstbuild.firebaseio.com/homes/home-1/devices/device-1/accessories/accessory-1"];
@@ -145,7 +151,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.shareCircleView showAnimated:true];
+    [self.shareCircleView refreshView];
     [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 

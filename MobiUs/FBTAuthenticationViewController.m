@@ -28,15 +28,19 @@
     
     accounts = [SSKeychain accountsForService:@"firebase"];
     
-    if (accounts.count == 2)
+    if (accounts)
     {
         NSString* account = [accounts[0] objectForKey:@"acct"];
         NSString* password = [SSKeychain passwordForService:@"firebase" account:account];
        
         //if we have an account already stored in the keychain but this is the first launch
-        //then lets erase it
-        if (![[NSUserDefaults standardUserDefaults] objectForKey:@"isFirstLaunch"]) {
-            [SSKeychain deletePasswordForService:@"firebase" account:account];
+        //then lets erase all
+        if (![[NSUserDefaults standardUserDefaults] objectForKey:@"isFirstLaunch"])
+        {
+            [accounts enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [SSKeychain deletePasswordForService:@"firebase" account:obj];
+            }];
+            
             [[NSUserDefaults standardUserDefaults] setValue:@"true" forKey:@"isFirstLaunch"];
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
@@ -129,6 +133,9 @@
             FBTUser *newUser = [[FBTUser alloc] initWithDictionary:userDict];
             FSTContainer *newUserContainer = [[FSTContainer alloc]initWithDictionary:containerDict];
             
+            [[NSUserDefaults standardUserDefaults] setValue:authData.token forKey:@"firebaseClientToken"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
             [newUserRef setValue:[newUser toDictionary]];
             [userRootContainerRef setValue:[newUserContainer toDictionary]];
             [connectedRef setValue:@YES];
@@ -137,6 +144,7 @@
             [SSKeychain setPassword:password forService:@"firebase" account:username];
             [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
             [self performSegueWithIdentifier:@"main" sender:self];
+            
         }
         else
         {

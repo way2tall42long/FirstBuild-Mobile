@@ -43,6 +43,11 @@
                                 <action selector="revealToggle:" destination="qoT-VR-agl" id="5gu-Hl-hlU"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="oUb-UM-yby">
+                            <connections>
+                                <action selector="throwmeaway:" destination="qoT-VR-agl" id="qJx-kL-wi7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>

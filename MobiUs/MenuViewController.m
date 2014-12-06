@@ -43,16 +43,8 @@
 
 - (void) viewDidLoad
 {
-    
-//    FSTProduct* product = [FSTProduct new];
-//    product.identifier = @"himom";
-//    product.friendlyName = @"GOOD STUFF!";
-    
     self.products = [[NSMutableArray alloc] init];
-//    [self.products addObject:product];
-//     [self loadProducts];
     self.productsTableView.delegate = self;
-    
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -67,9 +59,7 @@
     
     [self.products removeAllObjects];
     Firebase *devicesRef = [[baseRef childByAppendingPath:user.rootContainer] childByAppendingPath:@"devices"];
-    [devicesRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-        NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
-        
+    [devicesRef observeSingleEventOfType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         if ([snapshot.key isEqualToString:@"chillhubs"])
         {
             for (FDataSnapshot* device in snapshot.children) {

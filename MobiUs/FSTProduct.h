@@ -11,4 +11,6 @@
 @interface FSTProduct : NSObject
 @property (strong, nonatomic) NSString* identifier;
 @property (strong, nonatomic) NSString* created;
+@property (strong, nonatomic) NSString* friendlyName;
+
 @end

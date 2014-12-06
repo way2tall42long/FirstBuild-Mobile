@@ -42,7 +42,7 @@ NSString *const dummyurl = @"https://mobius-firstbuild.firebaseio.com/objects/-J
             float percentageLeft = [(NSNumber *)[val objectForKey:@"weight"] doubleValue];
             [[self spinnerView] setProgress:percentageLeft/100 animated:YES];
         }
-        NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
+        NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
     }];
 }
 

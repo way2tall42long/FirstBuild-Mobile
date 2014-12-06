@@ -31,6 +31,9 @@
 #import "MenuViewController.h"
 #import "ChillHubViewController.h"
 #import "FSTProduct.h"
+#import "FSTChillHub.h"
+#import "FBTuser.h"
+#import <Firebase/Firebase.h>
 
 @implementation SWUITableViewCell
 @end
@@ -40,11 +43,45 @@
 
 - (void) viewDidLoad
 {
-    FSTProduct* product = [FSTProduct new];
-    product.identifier = @"himom";
     
-    [self.products addObject:product];
+//    FSTProduct* product = [FSTProduct new];
+//    product.identifier = @"himom";
+//    product.friendlyName = @"GOOD STUFF!";
     
+    self.products = [[NSMutableArray alloc] init];
+//    [self.products addObject:product];
+//     [self loadProducts];
+    self.productsTableView.delegate = self;
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [self loadProducts];
+}
+
+- (void) loadProducts
+{
+    Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
+    FBTUser *user = [FBTUser sharedInstance];
+    
+    [self.products removeAllObjects];
+    Firebase *devicesRef = [[baseRef childByAppendingPath:user.rootContainer] childByAppendingPath:@"devices"];
+    [devicesRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
+        
+        if ([snapshot.key isEqualToString:@"chillhubs"])
+        {
+            for (FDataSnapshot* device in snapshot.children) {
+                FSTChillHub* chillhub = [FSTChillHub new];
+                chillhub.identifier = device.key;
+                chillhub.friendlyName = @"My ChillHub";
+                [self.products addObject:chillhub];
+            }
+        }
+        [self.tableView reloadData];
+        
+    }];
 }
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
@@ -53,6 +90,8 @@
 
 
 #pragma mark - Table view data source
+
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -64,30 +103,17 @@
     return self.products.count;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FSTProduct * product = self.products[indexPath.row];
+    NSLog(@"selected %@", product.identifier);
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
     FSTProduct * product = self.products[indexPath.row];
-    CellIdentifier = product.identifier;
-//    switch ( indexPath.row )
-//    {
-//        case 0:
-//            CellIdentifier = @"Home";
-//            break;
-//        case 1:
-//            
-//            break;
-//        case 2:
-//            CellIdentifier = @"LineCook";
-//            break;
-//        case 3:
-//            CellIdentifier = @"SousVide";
-//            break;
-//
-//    }
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
- 
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"reusableIdentifier"];
+    cell.textLabel.text = product.friendlyName;
     return cell;
 }
 

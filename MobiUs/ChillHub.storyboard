@@ -36,18 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ChillHub" id="r80-gY-9Up">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="QlD-4w-H0W">
-                            <connections>
-                                <action selector="throwmeawaytoo:" destination="qoT-VR-agl" id="23R-R1-ewH"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="oUb-UM-yby">
-                            <connections>
-                                <action selector="throwmeaway:" destination="qoT-VR-agl" id="qJx-kL-wi7"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="ChillHub" id="r80-gY-9Up"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="7kU-RS-hOR" kind="show" identifier="scale" id="VqH-I0-e7F"/>

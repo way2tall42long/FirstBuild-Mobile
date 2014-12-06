@@ -25,5 +25,6 @@
 - (void)refreshView;
 - (void)addAccessoryWithId: (NSString*)id withType:(CFSharerType)type;
 - (void)removeAccessoryWithId: (NSString*)id;
+- (void)removeAllAccessories;
 
 @end

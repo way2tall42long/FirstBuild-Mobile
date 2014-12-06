@@ -31,6 +31,7 @@
 #import "ChillHubViewController.h"
 #import "CFSharer.h"
 #import "FBTUser.h"
+#import "FSTMilkyWeigh.h"
 
 #import <SWRevealViewController.h>
 #import <Firebase/Firebase.h>
@@ -42,14 +43,6 @@
 
 @implementation ChillHubViewController
 
-
-- (IBAction)throwmeaway:(id)sender {
-    
-    [self.shareCircleView addAccessoryWithId:@"butts" withType:CFSharerTypeMilkScale];
-}
-- (IBAction)throwmeawaytoo:(id)sender {
-    [self.shareCircleView removeAccessoryWithId:@"butts"];
-}
 
 - (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
     NSLog(@"Selected sharer: %@", sharer.name);
@@ -153,9 +146,32 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    //TODO: put refs in the data objects
+    //TODO: figure out whats going on with the observers -- it isn't correct
+    
+    NSLog(@"productid: %@", self.product.identifier);
     [super viewWillAppear:animated];
-    [self.shareCircleView refreshView];
+    [self.shareCircleView removeAllAccessories];
+    
     [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    FBTUser *user = [FBTUser sharedInstance];
+
+    Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
+    Firebase *attachmentsRef = [[[[baseRef childByAppendingPath:user.rootContainer] childByAppendingPath:@"devices/chillhubs"] childByAppendingPath:self.product.identifier] childByAppendingPath:@"attachments"];
+    
+    [attachmentsRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        if ([snapshot.key isEqualToString:@"milkscales"])
+        {
+            for (FDataSnapshot* scale in snapshot.children) {
+                FSTMilkyWeigh* scaleData = [FSTMilkyWeigh new];
+                scaleData.identifier = scale.key;
+                [self.shareCircleView addAccessoryWithId:scaleData.identifier withType:CFSharerTypeMilkScale];
+            }
+        }
+
+    }];
+    
 }
 
 

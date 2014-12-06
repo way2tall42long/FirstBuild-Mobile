@@ -87,6 +87,11 @@
     [self refreshView];
 }
 
+- (void)removeAllAccessories
+{
+    [_sharers removeAllObjects];
+}
+
 - (void)removeAccessoryWithId: (NSString*)accessoryId
 {
     for (int i=_sharers.count-1; i>-1; i--) {

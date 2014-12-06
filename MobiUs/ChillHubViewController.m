@@ -41,6 +41,8 @@
 @end
 
 @implementation ChillHubViewController
+
+
 - (IBAction)throwmeaway:(id)sender {
     
     [self.shareCircleView addAccessoryWithId:@"butts" withType:CFSharerTypeMilkScale];
@@ -70,12 +72,12 @@
     self.shareCircleView.delegate = self;
     [self.view addSubview:self.shareCircleView];
     
-    FBTUser *user = [FBTUser sharedInstance];
-    
-    Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
-    Firebase *attachmentsRef = [[baseRef childByAppendingPath:user.rootContainer] childByAppendingPath:@"devices"];
-    
-    
+//    FBTUser *user = [FBTUser sharedInstance];
+//    
+//    Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
+//    Firebase *attachmentsRef = [[baseRef childByAppendingPath:user.rootContainer] childByAppendingPath:@"devices"];
+//    
+//    NSLog(@"ID %@", self.product.identifier);
     //[self.shareCircleView showAnimated:YES];
 //    firebase = [[Firebase alloc] initWithUrl:@"https://mobius-firstbuild.firebaseio.com/homes/home-1/devices/device-1/accessories/accessory-1"];
 //    NSMutableDictionary * dictionary = [[NSMutableDictionary dictionary] init];

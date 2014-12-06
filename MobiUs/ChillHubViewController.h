@@ -30,8 +30,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CFShareCircleView.h"
+#import "FSTChillHub.h"
 
 @interface ChillHubViewController : UIViewController  <CFShareCircleViewDelegate>
-@property (strong, nonatomic) IBOutlet UISwitch *dummyToggle;
+@property (strong, nonatomic) FSTChillHub* product;
 
 @end

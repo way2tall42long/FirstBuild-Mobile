@@ -33,10 +33,9 @@
 
 @interface SWUITableViewCell : UITableViewCell
 @property (nonatomic) IBOutlet UILabel *label;
-
 @end
 
-@interface MenuViewController : UITableViewController
+@interface MenuViewController : UITableViewController 
 @property (strong, nonatomic) IBOutlet SWUITableViewCell *reusableCell;
 @property (strong, nonatomic) NSMutableArray *products;
 @property (strong, nonatomic) IBOutlet UITableView *productsTableView;

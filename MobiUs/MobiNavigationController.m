@@ -25,6 +25,7 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
   
     
+    
     [self.navigationBar setTitleTextAttributes: @{
                                                   NSForegroundColorAttributeName: [UIColor whiteColor],
                                                   NSFontAttributeName: [UIFont fontWithName:@"PTSans-NarrowBold" size:25.0f],

@@ -29,11 +29,13 @@
 //
 
 #import "MenuViewController.h"
+#import "MobiNavigationController.h"
 #import "ChillHubViewController.h"
 #import "FSTProduct.h"
 #import "FSTChillHub.h"
 #import "FBTuser.h"
 #import <Firebase/Firebase.h>
+#import <RBStoryboardLink.h>
 
 @implementation SWUITableViewCell
 @end
@@ -74,13 +76,8 @@
     }];
 }
 
-- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
-{
-}
-
 
 #pragma mark - Table view data source
-
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -97,6 +94,20 @@
 {
     FSTProduct * product = self.products[indexPath.row];
     NSLog(@"selected %@", product.identifier);
+    
+    if ([product isKindOfClass:[FSTChillHub class]])
+    {
+        [self performSegueWithIdentifier:@"segueChillHub" sender:product];
+    }
+    
+}
+
+- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
+{
+    RBStoryboardLink *destination = segue.destinationViewController;
+    MobiNavigationController *rvc = (MobiNavigationController *)destination.scene;
+    ChillHubViewController *vc = (ChillHubViewController*)rvc.topViewController;
+    vc.product = sender;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

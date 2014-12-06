@@ -40,10 +40,14 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RBl-RV-zfF" id="ynC-HU-JP6"/>
+                            <outlet property="delegate" destination="RBl-RV-zfF" id="MMl-a5-vxQ"/>
+                        </connections>
                     </tableView>
                     <connections>
                         <outlet property="productsTableView" destination="xjW-t2-umO" id="qbY-HY-RKA"/>
-                        <segue destination="sZO-RU-ozf" kind="custom" identifier="segueChillHub" customClass="SWRevealViewControllerSeguePushController" id="NGZ-TF-LoH"/>
+                        <segue destination="sZO-RU-ozf" kind="custom" identifier="segueChillHub" customClass="SWRevealViewControllerSeguePushController" id="RuA-lz-gPB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xm0-Rp-QOA" userLabel="First Responder" sceneMemberID="firstResponder"/>

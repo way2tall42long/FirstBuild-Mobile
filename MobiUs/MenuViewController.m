@@ -35,6 +35,7 @@
 #import "FSTChillHub.h"
 #import "FBTuser.h"
 #import <Firebase/Firebase.h>
+#import "FirebaseShared.h"
 #import <RBStoryboardLink.h>
 
 @implementation SWUITableViewCell
@@ -56,11 +57,8 @@
 
 - (void) loadProducts
 {
-    Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
-    FBTUser *user = [FBTUser sharedInstance];
-    
     [self.products removeAllObjects];
-    Firebase *devicesRef = [[baseRef childByAppendingPath:user.rootContainer] childByAppendingPath:@"devices"];
+    Firebase *devicesRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices"];
     [devicesRef observeSingleEventOfType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         if ([snapshot.key isEqualToString:@"chillhubs"])
         {

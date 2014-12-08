@@ -32,6 +32,8 @@
 #import "CFSharer.h"
 #import "FBTUser.h"
 #import "FSTMilkyWeigh.h"
+#import "ScaleViewController.h"
+#import "FirebaseShared.h"
 
 #import <SWRevealViewController.h>
 #import <Firebase/Firebase.h>
@@ -43,13 +45,18 @@
 
 @implementation ChillHubViewController
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ScaleViewController* scale = (ScaleViewController*) segue.destinationViewController;
+    scale.identifier = ((CFSharer*) sender).accessoryId;
+}
 
 - (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
     NSLog(@"Selected sharer: %@", sharer.name);
     
     if (sharer.type==CFSharerTypeMilkScale)
     {
-        [self performSegueWithIdentifier:@"scale" sender:self];
+        [self performSegueWithIdentifier:@"scale" sender:sharer];
     }
 }
 
@@ -167,6 +174,7 @@
                 FSTMilkyWeigh* scaleData = [FSTMilkyWeigh new];
                 scaleData.identifier = scale.key;
                 [self.shareCircleView addAccessoryWithId:scaleData.identifier withType:CFSharerTypeMilkScale];
+                [[FirebaseShared sharedInstance] setCurrentReference:attachmentsRef];
             }
         }
 

@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "STKSpinnerView.h"
+#import "FSTMilkyWeigh.h"
 
 @interface ScaleViewController : UIViewController
 @property (strong, nonatomic) IBOutlet STKSpinnerView *spinnerView;
+@property (strong, nonatomic) NSString * identifier;
 @end

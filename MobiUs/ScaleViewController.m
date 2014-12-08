@@ -7,6 +7,7 @@
 //
 
 #import "ScaleViewController.h"
+#import "FirebaseShared.h"
 #import <Firebase/Firebase.h>
 
 @implementation UIView (ScaleViewController)
@@ -22,8 +23,6 @@
 
 @implementation ScaleViewController
 
-NSString *const dummyurl = @"https://mobius-firstbuild.firebaseio.com/objects/-J_M7uoN2pjqP8I7LD3T";
-
 - (IBAction)backButton:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -32,19 +31,27 @@ NSString *const dummyurl = @"https://mobius-firstbuild.firebaseio.com/objects/-J
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    Firebase *ref = [[Firebase alloc] initWithUrl:dummyurl];
+    
+}
 
-    [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+- (void) viewWillAppear:(BOOL)animated
+{
+    Firebase *scaleRef = [[FirebaseShared sharedInstance] currentReference];
+    
+    
+    scaleRef  = [[[[FirebaseShared sharedInstance] currentReference] childByAppendingPath:@"milkscales"] childByAppendingPath:self.identifier];
+    
+    //https://mobius-firstbuild.firebaseio.com/users/simplelogin%3A42/devices/chillhubs/f90d08d9-734c-49bd-89d4-afbd480452ee/attachments/milkscales/1e5010b6-dd87-42b0-9b21-a6facd925ceb
+    [scaleRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         id rawVal = snapshot.value;
         if (rawVal != [NSNull null])
         {
             NSDictionary* val = rawVal;
-            float percentageLeft = [(NSNumber *)[val objectForKey:@"weight"] doubleValue];
-            [[self spinnerView] setProgress:percentageLeft/100 animated:YES];
+            float percentageLeft = [(NSNumber *)[val objectForKey:@"weight_gal"] doubleValue];
+            [[self spinnerView] setProgress:percentageLeft animated:YES];
         }
         NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
     }];
 }
-
 
 @end

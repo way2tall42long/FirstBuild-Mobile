@@ -9,6 +9,7 @@
 #import "FBTAuthenticationViewController.h"
 #import <Firebase/Firebase.h>
 #import <SSKeychain.h>
+#import "FirebaseShared.h"
 #import "FBTUser.h"
 
 @interface FBTAuthenticationViewController ()
@@ -96,7 +97,7 @@
     [self.passwordTextField resignFirstResponder];
     [self.loginActivityIndicator startAnimating];
     
-    Firebase *authRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
+    Firebase *authRef = [FirebaseShared sharedInstance];
     
     [authRef createUser:self.usernameTextField.text  password:self.passwordTextField.text withCompletionBlock:^(NSError *error) {
          if (error != nil) {
@@ -117,17 +118,19 @@
     
     // TODO: use setValue with completion block for the creation of the new user
     // TODO: better error checking
-    Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
+    Firebase *authRef = [[FirebaseShared sharedInstance] firebaseRootReference];
     FBTUser *user = [FBTUser sharedInstance];
     
-    [baseRef authUser:username  password:password withCompletionBlock:^(NSError *error,  FAuthData *authData) {
+    [authRef authUser:username  password:password withCompletionBlock:^(NSError *error,  FAuthData *authData) {
         if (error == nil)
         {
             user.rootContainer = [@"/users/" stringByAppendingString:authData.uid];
+            [[FirebaseShared sharedInstance] setUserBaseReference:[authRef childByAppendingPath:user.rootContainer]];
+           
             user.token = authData.token;
             user.email = username;
             
-            Firebase *userConnectedRef = [[baseRef childByAppendingPath:user.rootContainer] childByAppendingPath:@"connected"];
+            Firebase *userConnectedRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"connected"];
             [userConnectedRef setValue:@YES];
             [userConnectedRef onDisconnectRemoveValue];
             

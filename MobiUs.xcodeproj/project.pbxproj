@@ -39,6 +39,7 @@
 		5BC5A1C619EF6314009C93B1 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC5A1C519EF6314009C93B1 /* Authentication.storyboard */; };
 		5BC5A1CD19EF6584009C93B1 /* FBTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1CC19EF6584009C93B1 /* FBTUser.m */; };
 		5BC5A1D019EF6638009C93B1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1CF19EF6638009C93B1 /* Constants.m */; };
+		5BD467CD1A35ED54009BAC36 /* FirebaseShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD467CC1A35ED54009BAC36 /* FirebaseShared.m */; };
 		5BF9482519EC155700CB8BCF /* LineCook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF9482419EC155700CB8BCF /* LineCook.storyboard */; };
 		5BF9482819EC158100CB8BCF /* LineCookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9482719EC158100CB8BCF /* LineCookViewController.m */; };
 		5BF9482B19EC15A000CB8BCF /* ChillHubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9482A19EC15A000CB8BCF /* ChillHubViewController.m */; };
@@ -124,6 +125,8 @@
 		5BC5A1CC19EF6584009C93B1 /* FBTUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTUser.m; sourceTree = "<group>"; };
 		5BC5A1CE19EF65C3009C93B1 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		5BC5A1CF19EF6638009C93B1 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		5BD467CB1A35ED54009BAC36 /* FirebaseShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseShared.h; sourceTree = "<group>"; };
+		5BD467CC1A35ED54009BAC36 /* FirebaseShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseShared.m; sourceTree = "<group>"; };
 		5BF9482419EC155700CB8BCF /* LineCook.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LineCook.storyboard; sourceTree = "<group>"; };
 		5BF9482619EC158100CB8BCF /* LineCookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineCookViewController.h; sourceTree = "<group>"; };
 		5BF9482719EC158100CB8BCF /* LineCookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineCookViewController.m; sourceTree = "<group>"; };
@@ -430,6 +433,8 @@
 				5BC5A1CA19EF6570009C93B1 /* FirebaseProtocol.h */,
 				5BC3649B1A32661B00D03B9C /* FSTProduct.h */,
 				5BC3649C1A32661B00D03B9C /* FSTProduct.m */,
+				5BD467CB1A35ED54009BAC36 /* FirebaseShared.h */,
+				5BD467CC1A35ED54009BAC36 /* FirebaseShared.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -673,6 +678,7 @@
 				5BC3647E1A2F637800D03B9C /* FSTDevice.m in Sources */,
 				5BC364971A3260E200D03B9C /* FSTChillHub.m in Sources */,
 				5B99E0841A1AA63F005FB881 /* WifiCommissioningNetworkListViewController.m in Sources */,
+				5BD467CD1A35ED54009BAC36 /* FirebaseShared.m in Sources */,
 				5BC364811A2F63C200D03B9C /* FSTToken.m in Sources */,
 				5BF9482F19EC15E300CB8BCF /* MenuViewController.m in Sources */,
 				5BC5A1CD19EF6584009C93B1 /* FBTUser.m in Sources */,

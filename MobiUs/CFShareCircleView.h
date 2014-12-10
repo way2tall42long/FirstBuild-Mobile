@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "CFSharer.h"
+#import "FSTProduct.h"
 
 @class CFShareCircleView;
 
@@ -23,7 +24,7 @@
 @property (assign) id <CFShareCircleViewDelegate> delegate;
 
 - (void)refreshView;
-- (void)addAccessoryWithId: (NSString*)id withType:(CFSharerType)type;
+- (void)addAccessoryWithDevice: (FSTProduct*)device withType:(CFSharerType)type;
 - (void)removeAccessoryWithId: (NSString*)id;
 - (void)removeAllAccessories;
 

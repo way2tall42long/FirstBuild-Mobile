@@ -36,18 +36,12 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    Firebase *scaleRef = [[FirebaseShared sharedInstance] currentReference];
-    
-    
-    scaleRef  = [[[[FirebaseShared sharedInstance] currentReference] childByAppendingPath:@"milkscales"] childByAppendingPath:self.identifier];
-    
-    //https://mobius-firstbuild.firebaseio.com/users/simplelogin%3A42/devices/chillhubs/f90d08d9-734c-49bd-89d4-afbd480452ee/attachments/milkscales/1e5010b6-dd87-42b0-9b21-a6facd925ceb
-    [scaleRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+    [self.milkyWeigh.firebaseRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         id rawVal = snapshot.value;
         if (rawVal != [NSNull null])
         {
             NSDictionary* val = rawVal;
-            float percentageLeft = [(NSNumber *)[val objectForKey:@"weight_gal"] doubleValue];
+            float percentageLeft = [(NSNumber *)[val objectForKey:@"weight"] doubleValue];
             [[self spinnerView] setProgress:percentageLeft animated:YES];
         }
         NSLog(@"%@ -> %@", snapshot.key, snapshot.value);

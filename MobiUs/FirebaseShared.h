@@ -13,7 +13,6 @@
 
 @property (strong, nonatomic) Firebase * firebaseRootReference;
 @property (strong, nonatomic) Firebase * userBaseReference;
-@property (strong, nonatomic) Firebase * currentReference;
 
 +(id) sharedInstance;
 

@@ -10,12 +10,13 @@
 
 @implementation CFSharer
 
-- (id)initWithName:(NSString *)name imageName:(NSString *)imageName withId:(NSString *)accessoryId havingType:(CFSharerType)type{
+- (id)initWithName:(NSString *)name imageName:(NSString *)imageName withDevice:(FSTProduct *)device havingType:(CFSharerType)type
+{
     self = [super init];
     if (self) {
         _name = name;
         _image = [UIImage imageNamed:imageName];
-        _accessoryId = accessoryId;
+        _product = device;
     }
     return self;    
 }

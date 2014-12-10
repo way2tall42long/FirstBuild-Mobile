@@ -9,5 +9,6 @@
 #import "FSTMilkyWeigh.h"
 
 @implementation FSTMilkyWeigh
+NSString *const DATAMAPPING_MILKY_WEIGH = @"milkyWeighs";
 
 @end

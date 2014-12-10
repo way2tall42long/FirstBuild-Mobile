@@ -70,13 +70,13 @@
 
 #pragma mark - Public methods
 
-- (void)addAccessoryWithId: (NSString*)accessoryId withType:(CFSharerType)type 
+- (void)addAccessoryWithDevice: (FSTProduct*)device withType:(CFSharerType)type
 {
     CFSharer* item;
     
     switch (type) {
         case CFSharerTypeMilkScale:
-            item = [[CFSharer alloc] initWithName:@"Milky Weigh" imageName:@"scale.png" withId:accessoryId havingType:type];
+            item = [[CFSharer alloc] initWithName:@"Milky Weigh" imageName:@"scale.png" withDevice:device havingType:type];
             break;
             
         default:
@@ -94,7 +94,7 @@
 
 - (void)removeAccessoryWithId: (NSString*)accessoryId
 {
-    for (int i=_sharers.count-1; i>-1; i--) {
+    for (unsigned long i=_sharers.count-1; i>-1; i--) {
         CFSharer *item = [_sharers objectAtIndex:i];
         if (item.accessoryId == accessoryId)
         {

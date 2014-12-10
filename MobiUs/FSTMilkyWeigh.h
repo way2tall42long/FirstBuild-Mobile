@@ -11,6 +11,8 @@
 
 @interface FSTMilkyWeigh : FSTChillHubDevice
 
+extern NSString *const DATAMAPPING_MILKY_WEIGH;
+
 @property (strong, nonatomic) NSString* weight_gal;
 @property (strong, nonatomic) NSString* weight_l;
 

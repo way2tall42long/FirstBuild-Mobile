@@ -12,5 +12,5 @@
 
 @interface ScaleViewController : UIViewController
 @property (strong, nonatomic) IBOutlet STKSpinnerView *spinnerView;
-@property (strong, nonatomic) NSString * identifier;
+@property (strong, nonatomic) FSTMilkyWeigh *milkyWeigh;
 @end

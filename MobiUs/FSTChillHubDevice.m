@@ -9,5 +9,4 @@
 #import "FSTChillHubDevice.h"
 
 @implementation FSTChillHubDevice
-
 @end

@@ -64,6 +64,7 @@
         {
             for (FDataSnapshot* device in snapshot.children) {
                 FSTChillHub* chillhub = [FSTChillHub new];
+                chillhub.firebaseRef = device.ref ;
                 chillhub.identifier = device.key;
                 chillhub.friendlyName = @"My ChillHub";
                 [self.products addObject:chillhub];

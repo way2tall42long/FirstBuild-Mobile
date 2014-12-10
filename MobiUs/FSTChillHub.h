@@ -11,6 +11,9 @@
 
 @interface FSTChillHub : FSTChillHubDevice
 
+extern NSString* const DATAMAPPING_ATTACHMENTS ;
+
+
 @property (strong, nonatomic) NSString* temperature_c;
 @property (strong, nonatomic) NSString* temperature_f;
 

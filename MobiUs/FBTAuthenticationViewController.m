@@ -45,10 +45,10 @@
         }
         else
         {
-            self.usernameTextField.text = account;
-            self.passwordTextField.text = password;
-            [self.loginActivityIndicator startAnimating];
-            [self loginWithUsernameAndLoadMainApp:account havingPassword:password];
+            self.usernameTextField.text = @"hi@hi.com";
+            self.passwordTextField.text = @"hi";
+            //[self.loginActivityIndicator startAnimating];
+            //[self loginWithUsernameAndLoadMainApp:account havingPassword:password];
         }
     }
 

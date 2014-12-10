@@ -47,8 +47,12 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ScaleViewController* scale = (ScaleViewController*) segue.destinationViewController;
-    scale.identifier = ((CFSharer*) sender).accessoryId;
+    if ([segue.destinationViewController isKindOfClass:[ScaleViewController class]] )
+    {
+        ScaleViewController* scale = (ScaleViewController*) segue.destinationViewController;
+        scale.milkyWeigh = (FSTMilkyWeigh*)((CFSharer*) sender).product;
+    }
+   
 }
 
 - (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
@@ -71,115 +75,30 @@
     self.shareCircleView = [[CFShareCircleView alloc] initWithFrame:self.view.bounds];
     self.shareCircleView.delegate = self;
     [self.view addSubview:self.shareCircleView];
-    
-//    FBTUser *user = [FBTUser sharedInstance];
-//    
-//    Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
-//    Firebase *attachmentsRef = [[baseRef childByAppendingPath:user.rootContainer] childByAppendingPath:@"devices"];
-//    
-//    NSLog(@"ID %@", self.product.identifier);
-    //[self.shareCircleView showAnimated:YES];
-//    firebase = [[Firebase alloc] initWithUrl:@"https://mobius-firstbuild.firebaseio.com/homes/home-1/devices/device-1/accessories/accessory-1"];
-//    NSMutableDictionary * dictionary = [[NSMutableDictionary dictionary] init];
-//    collection = [[FirebaseCollection alloc] initWithNode:firebase dictionary:dictionary type:[FBChillHubAccessoryQuickChill class]];
-//
-//  
-//
-//    [firebase observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-//        NSLog(@"stuff");
-////        id obj = [self.objects objectForKey:snapshot.name];
-////        if (!obj) {
-////            NSAssert(false, @"Object not found locally! %@", snapshot.name);
-////        }
-////        [obj setValuesForKeysWithDictionary:snapshot.value];
-////        self.updateCb(obj);
-//    }];
-//
-//    
-//    
-//    [collection didAddChild:^(FBChillHubAccessoryQuickChill * accessory) {
-//        // created remotely or locally, it is called here
-//        NSLog(@"add of isOn %@", accessory);
-//        if ([accessory.isOn isEqual:@"on"])
-//        {
-//            self.dummyToggle.on = true;
-//        }
-//        else
-//        {
-//            self.dummyToggle.on = false;
-//
-//        }
-//    }];
-//    [collection didRemoveChild:^(FBChillHubAccessoryQuickChill * accessory) {
-//        NSLog(@"remove of isOn %@", accessory);
-//
-//    
-//    }];
-//    [collection didUpdateChild:^(FBChillHubAccessoryQuickChill * accessory) {
-//        NSLog(@"change of isOn %@", accessory);
-//        if ([accessory.isOn isEqual: @"on"])
-//        {
-//            self.dummyToggle.on = true;
-//        }
-//        else
-//        {
-//            self.dummyToggle.on = false;
-//            
-//        }
-//    
-//    }];
-    
-    
 }
-//- (IBAction)dummyToggleValueChanged:(id)sender {
-//    NSLog(@"switch clicked");
-//    FBChillHubAccessoryQuickChill * accessory = [FBChillHubAccessoryQuickChill new];
-//    UISwitch * myswitch = (UISwitch *) sender;
-//    
-//    if (myswitch.on == true)
-//    {
-//        accessory.isOn = @"true";
-//    }
-//    else
-//    {
-//        accessory.isOn = @"false";
-//        
-//    }
-//   [collection addObject:accessory];
-//
-//}
-
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //TODO: put refs in the data objects
     //TODO: figure out whats going on with the observers -- it isn't correct
-    
-    NSLog(@"productid: %@", self.product.identifier);
     [super viewWillAppear:animated];
     [self.shareCircleView removeAllAccessories];
     
     [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    FBTUser *user = [FBTUser sharedInstance];
-
-    Firebase *baseRef = [[Firebase alloc] initWithUrl:FirebaseUrl];
-    Firebase *attachmentsRef = [[[[baseRef childByAppendingPath:user.rootContainer] childByAppendingPath:@"devices/chillhubs"] childByAppendingPath:self.product.identifier] childByAppendingPath:@"attachments"];
+    Firebase *attachmentsRef = [self.product.firebaseRef childByAppendingPath:DATAMAPPING_ATTACHMENTS];
     
     [attachmentsRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-        if ([snapshot.key isEqualToString:@"milkscales"])
+        if ([snapshot.key isEqualToString:DATAMAPPING_MILKY_WEIGH])
         {
             for (FDataSnapshot* scale in snapshot.children) {
                 FSTMilkyWeigh* scaleData = [FSTMilkyWeigh new];
                 scaleData.identifier = scale.key;
-                [self.shareCircleView addAccessoryWithId:scaleData.identifier withType:CFSharerTypeMilkScale];
-                [[FirebaseShared sharedInstance] setCurrentReference:attachmentsRef];
+                scaleData.firebaseRef = scale.ref;
+                [self.shareCircleView addAccessoryWithDevice:scaleData withType:CFSharerTypeMilkScale];
             }
         }
 
     }];
-    
 }
 
 

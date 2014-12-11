@@ -65,8 +65,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="milk" translatesAutoresizingMaskIntoConstraints="NO" id="N4g-99-Uds">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="milk-background" translatesAutoresizingMaskIntoConstraints="NO" id="N4g-99-Uds">
+                                <rect key="frame" x="238" y="238" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="kOI-SL-HyX"/>
+                                    <constraint firstAttribute="height" constant="125" id="ntd-Md-tCg"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uaw-Kr-ZPK" customClass="STKSpinnerView">
                                 <rect key="frame" x="175" y="175" width="250" height="250"/>
@@ -82,8 +86,10 @@
                             <accessibilityTraits key="traits" none="YES" image="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstItem="Uaw-Kr-ZPK" firstAttribute="top" secondItem="IfV-oB-mWP" secondAttribute="bottom" constant="111" id="DG6-bp-ccg"/>
+                            <constraint firstAttribute="centerY" secondItem="N4g-99-Uds" secondAttribute="centerY" id="N0S-vH-vkN"/>
                             <constraint firstAttribute="centerX" secondItem="Uaw-Kr-ZPK" secondAttribute="centerX" id="VFe-Qr-cxf"/>
+                            <constraint firstAttribute="centerY" secondItem="Uaw-Kr-ZPK" secondAttribute="centerY" id="YA7-qU-Lxz"/>
+                            <constraint firstAttribute="centerX" secondItem="N4g-99-Uds" secondAttribute="centerX" id="wXQ-3k-Ace"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2rQ-Ow-qVw">
@@ -105,7 +111,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="milk" width="1117" height="1681"/>
+        <image name="milk-background" width="658" height="728"/>
         <image name="reveal-icon" width="22" height="17"/>
     </resources>
 </document>

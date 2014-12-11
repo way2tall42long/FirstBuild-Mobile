@@ -118,7 +118,7 @@
         <!--Storyboard Link-->
         <scene sceneID="enf-Dr-59R">
             <objects>
-                <viewController id="sZO-RU-ozf" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="sZO-RU-ozf" customClass="RBStoryboardLink" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6g1-Kz-rO7"/>
                         <viewControllerLayoutGuide type="bottom" id="zno-5t-uMx"/>

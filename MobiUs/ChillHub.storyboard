@@ -8,7 +8,7 @@
         <scene sceneID="S7K-wb-Xi7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VIX-hJ-imH" customClass="MobiNavigationController" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Crw-Y2-QAq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Crw-Y2-QAq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-105" y="515"/>
         </scene>
-        <!--ChillHub-->
+        <!--Chill Hub View Controller-->
         <scene sceneID="NSR-3o-z3g">
             <objects>
                 <viewController id="qoT-VR-agl" customClass="ChillHubViewController" sceneMemberID="viewController">
@@ -32,11 +32,18 @@
                         <viewControllerLayoutGuide type="bottom" id="1R5-yY-vgi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kLN-dV-h28">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ChillHub" id="r80-gY-9Up"/>
+                    <navigationItem key="navigationItem" id="r80-gY-9Up">
+                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="DOG-QV-963">
+                            <color key="tintColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="revealToggle:" destination="qoT-VR-agl" id="eFy-X6-zz2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="7kU-RS-hOR" kind="show" identifier="scale" id="VqH-I0-e7F"/>
@@ -99,5 +106,6 @@
     </scenes>
     <resources>
         <image name="milk" width="1117" height="1681"/>
+        <image name="reveal-icon" width="22" height="17"/>
     </resources>
 </document>

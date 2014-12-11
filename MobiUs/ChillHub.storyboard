@@ -86,9 +86,9 @@
                             <constraint firstAttribute="centerX" secondItem="Uaw-Kr-ZPK" secondAttribute="centerX" id="VFe-Qr-cxf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Scale" id="2rQ-Ow-qVw">
+                    <navigationItem key="navigationItem" id="2rQ-Ow-qVw">
                         <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="Xmj-cG-Gl0">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="backButton:" destination="7kU-RS-hOR" id="cgs-pf-90y"/>
                             </connections>

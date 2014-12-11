@@ -132,12 +132,12 @@
     self.shareCircleContainerView.frame = CGRectMake(CGRectGetMidX(self.bounds) - CIRCLE_SIZE/2.0, CGRectGetMidY(self.bounds) - CIRCLE_SIZE/2.0, CIRCLE_SIZE, CIRCLE_SIZE);
     self.shareCircleContainerView.layer.cornerRadius = CGRectGetWidth(self.shareCircleContainerView.frame) / 2.0;
     
-    self.shareCircleContainerView.layer.borderColor = UIColorFromRGB(0xf15c22).CGColor;
+    self.shareCircleContainerView.layer.borderColor = UIColorFromRGB(0x00B5CC).CGColor;
     self.shareCircleContainerView.layer.borderWidth = 6.0f;
     
-    CAGradientLayer *bgLayer = [FSTBackgroundLayer greyGradient];
-    bgLayer.frame = self.bounds;
-    [self.layer insertSublayer:bgLayer atIndex:0];
+//    CAGradientLayer *bgLayer = [FSTBackgroundLayer greyGradient];
+//    bgLayer.frame = self.bounds;
+//    [self.layer insertSublayer:bgLayer atIndex:0];
     
     CGPoint center = CGPointMake(CGRectGetMidX(self.shareCircleContainerView.bounds), CGRectGetMidY(self.shareCircleContainerView.bounds));
     self.introTextLayer.position = center;

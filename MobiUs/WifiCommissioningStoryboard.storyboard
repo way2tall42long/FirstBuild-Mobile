@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sGM-DW-oHT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbV-3f-Ecf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Detecting Device-->
+        <!--Wifi Commissioning View Controller-->
         <scene sceneID="8RY-Kd-egb">
             <objects>
                 <viewController id="y2k-4c-Ymt" customClass="WifiCommissioningViewController" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detecting Device" id="lzj-p0-gE1"/>
+                    <navigationItem key="navigationItem" id="lzj-p0-gE1"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -43,7 +43,23 @@
             </objects>
             <point key="canvasLocation" x="417" y="351"/>
         </scene>
-        <!--Change Networks-->
+        <!--Mobi Navigation Controller-->
+        <scene sceneID="gIb-Cs-8Wd">
+            <objects>
+                <navigationController id="TbV-3f-Ecf" customClass="MobiNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hbQ-Jo-5Xz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sGM-DW-oHT" kind="relationship" relationship="rootViewController" id="Unc-6m-cJr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Xp-KA-kiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2243" y="327"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="8Gl-oc-rQX">
             <objects>
                 <viewController id="sGM-DW-oHT" sceneMemberID="viewController">
@@ -52,22 +68,38 @@
                         <viewControllerLayoutGuide type="bottom" id="THa-CY-uhP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Kho-Cg-gDa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="94" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv8-2a-BDl">
+                                <rect key="frame" x="279" y="27" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="YdQ-sI-3m7"/>
+                                    <constraint firstAttribute="height" constant="21" id="bRt-VM-9Ak"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hv8-2a-BDl" firstAttribute="top" secondItem="8S0-W1-6xv" secondAttribute="bottom" constant="27" id="Glh-dd-vlS"/>
+                            <constraint firstAttribute="centerX" secondItem="hv8-2a-BDl" secondAttribute="centerX" id="wDX-gK-1Ct"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Change Networks" id="WSe-8j-snZ">
+                    <navigationItem key="navigationItem" id="WSe-8j-snZ">
                         <barButtonItem key="rightBarButtonItem" title="Continue" id="Vit-jr-emX">
+                            <color key="tintColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <segue destination="y2k-4c-Ymt" kind="show" id="d5T-xP-RX7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oie-Xb-3mS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-875" y="351"/>
+            <point key="canvasLocation" x="-1436" y="327"/>
         </scene>
         <!--Select Network-->
         <scene sceneID="m4M-8R-lqQ">

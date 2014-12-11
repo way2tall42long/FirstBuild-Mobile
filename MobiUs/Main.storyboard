@@ -2,8 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="PT_Sans-Narrow-Web-Bold.ttf">
+            <string>PTSans-NarrowBold</string>
+            <string>PTSans-NarrowBold</string>
+        </mutableArray>
         <mutableArray key="PT_Sans-Narrow-Web-Regular.ttf">
             <string>PTSans-Narrow</string>
         </mutableArray>
@@ -31,14 +36,49 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reusableIdentifier" id="981-sZ-xjd">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addNewProduct" id="981-sZ-xjd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="981-sZ-xjd" id="EFz-ie-kB6">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="981-sZ-xjd" id="EFz-ie-kB6">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJD-qF-2Rr">
+                                            <rect key="frame" x="16" y="4" width="164" height="35"/>
+                                            <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="27"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SJD-qF-2Rr" firstAttribute="leading" secondItem="EFz-ie-kB6" secondAttribute="leadingMargin" constant="8" id="AyV-fg-gkx"/>
+                                        <constraint firstAttribute="centerY" secondItem="SJD-qF-2Rr" secondAttribute="centerY" id="j4Y-id-10N"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cXR-UM-Ibc" kind="custom" identifier="segueWifiCommissioning" customClass="SWRevealViewControllerSeguePushController" id="jbL-1w-D6b"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settings" id="oBq-zc-eN5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oBq-zc-eN5" id="omd-MH-Pq0">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqS-Tx-NsA">
+                                            <rect key="frame" x="16" y="4" width="79" height="35"/>
+                                            <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="27"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nqS-Tx-NsA" firstAttribute="leading" secondItem="omd-MH-Pq0" secondAttribute="leadingMargin" constant="8" id="VRA-0I-rbw"/>
+                                        <constraint firstAttribute="centerY" secondItem="nqS-Tx-NsA" secondAttribute="centerY" id="gsh-W4-NWK"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="RBl-RV-zfF" id="ynC-HU-JP6"/>
                             <outlet property="delegate" destination="RBl-RV-zfF" id="MMl-a5-vxQ"/>
@@ -46,7 +86,6 @@
                     </tableView>
                     <connections>
                         <outlet property="productsTableView" destination="xjW-t2-umO" id="qbY-HY-RKA"/>
-                        <segue destination="sZO-RU-ozf" kind="custom" identifier="segueChillHub" customClass="SWRevealViewControllerSeguePushController" id="RuA-lz-gPB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xm0-Rp-QOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -73,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M38-qo-hbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="-615"/>
+            <point key="canvasLocation" x="1852" y="617"/>
         </scene>
         <!--Mobi Navigation Controller-->
         <scene sceneID="sz5-Lr-6cD">
@@ -187,7 +226,6 @@
                         <outlet property="addProductButton" destination="gNq-33-523" id="h4F-GK-ZF8"/>
                         <outlet property="productCollection" destination="h3X-C2-8Es" id="qsO-XY-k8R"/>
                         <outlet property="revealButtonItem" destination="h8V-Aq-wDG" id="V1u-tl-B4u"/>
-                        <segue destination="cXR-UM-Ibc" kind="push" identifier="segueWifiCommissioning" id="RYd-jM-D3N"/>
                         <segue destination="sZO-RU-ozf" kind="custom" identifier="segueChillHub" customClass="SWRevealViewControllerSeguePushController" id="1Dx-g3-3f3"/>
                     </connections>
                 </collectionViewController>
@@ -204,18 +242,19 @@
                         <viewControllerLayoutGuide type="bottom" id="UBs-M1-EYQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Uwb-Ae-fEZ">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1w1-hY-FfN"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="WifiCommissioningStoryboard"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="needsTopLayoutGuide" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EiV-CA-Qd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1575" y="904"/>
+            <point key="canvasLocation" x="924" y="-421"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="VvR-oi-QvF">
@@ -237,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Apw-1b-b5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="-1105"/>
+            <point key="canvasLocation" x="2009" y="-953"/>
         </scene>
     </scenes>
     <resources>
@@ -245,7 +284,4 @@
         <image name="icon_chillhub_circle_with_label_stacked" width="431" height="521"/>
         <image name="reveal-icon" width="22" height="17"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="1Dx-g3-3f3"/>
-    </inferredMetricsTieBreakers>
 </document>

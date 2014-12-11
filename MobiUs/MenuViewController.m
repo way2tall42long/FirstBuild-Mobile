@@ -46,33 +46,33 @@
 
 - (void) viewDidLoad
 {
-    self.products = [[NSMutableArray alloc] init];
-    self.productsTableView.delegate = self;
+//    self.products = [[NSMutableArray alloc] init];
+//    self.productsTableView.delegate = self;
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    [self loadProducts];
+    //[self loadProducts];
 }
 
 - (void) loadProducts
 {
-    [self.products removeAllObjects];
-    Firebase *devicesRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices"];
-    [devicesRef observeSingleEventOfType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-        if ([snapshot.key isEqualToString:@"chillhubs"])
-        {
-            for (FDataSnapshot* device in snapshot.children) {
-                FSTChillHub* chillhub = [FSTChillHub new];
-                chillhub.firebaseRef = device.ref ;
-                chillhub.identifier = device.key;
-                chillhub.friendlyName = @"My ChillHub";
-                [self.products addObject:chillhub];
-            }
-        }
-        [self.tableView reloadData];
-        
-    }];
+//    [self.products removeAllObjects];
+//    Firebase *devicesRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices"];
+//    [devicesRef observeSingleEventOfType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+//        if ([snapshot.key isEqualToString:@"chillhubs"])
+//        {
+//            for (FDataSnapshot* device in snapshot.children) {
+//                FSTChillHub* chillhub = [FSTChillHub new];
+//                chillhub.firebaseRef = device.ref ;
+//                chillhub.identifier = device.key;
+//                chillhub.friendlyName = @"My ChillHub";
+//                [self.products addObject:chillhub];
+//            }
+//        }
+//        [self.tableView reloadData];
+//        
+//    }];
 }
 
 
@@ -86,36 +86,54 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.products.count;
+    return 2;
+    //return self.products.count;
 }
-
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    FSTProduct * product = self.products[indexPath.row];
-    NSLog(@"selected %@", product.identifier);
-    
-    if ([product isKindOfClass:[FSTChillHub class]])
-    {
-        [self performSegueWithIdentifier:@"segueChillHub" sender:product];
-    }
-    
-}
+//
+//- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+////    FSTProduct * product = self.products[indexPath.row];
+////    NSLog(@"selected %@", product.identifier);
+////    
+////    if ([product isKindOfClass:[FSTChillHub class]])
+////    {
+////        [self performSegueWithIdentifier:@"segueChillHub" sender:product];
+////    }
+//    
+//}
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
     //TODO: clean up for other controllers
-    RBStoryboardLink *destination = segue.destinationViewController;
-    MobiNavigationController *rvc = (MobiNavigationController *)destination.scene;
-    ChillHubViewController *vc = (ChillHubViewController*)rvc.topViewController;
-    vc.product = sender;
+//    RBStoryboardLink *destination = segue.destinationViewController;
+//    MobiNavigationController *rvc = (MobiNavigationController *)destination.scene;
+//    ChillHubViewController *vc = (ChillHubViewController*)rvc.topViewController;
+//    vc.product = sender;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FSTProduct * product = self.products[indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"reusableIdentifier"];
-    cell.textLabel.text = product.friendlyName;
+    static NSString *CellIdentifier = @"Cell";
+    switch (indexPath.row) {
+        case 0:
+            CellIdentifier = @"addNewProduct";
+            break;
+        
+        case 1:
+            CellIdentifier = @"settings";
+            break;
+            
+        default:
+            break;
+    }
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
+    
     return cell;
+//    FSTProduct * product = self.products[indexPath.row];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"reusableIdentifier"];
+//    cell.textLabel.text = product.friendlyName;
+//    return cell;
 }
 
 #pragma mark state preservation / restoration

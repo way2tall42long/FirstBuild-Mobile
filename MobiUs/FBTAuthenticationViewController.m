@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad
 {
+    //TODO: this needs major help
     [super viewDidLoad];
     NSArray *accounts;
     

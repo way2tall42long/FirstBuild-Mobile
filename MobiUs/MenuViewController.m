@@ -103,6 +103,7 @@
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
+    //TODO: clean up for other controllers
     RBStoryboardLink *destination = segue.destinationViewController;
     MobiNavigationController *rvc = (MobiNavigationController *)destination.scene;
     ChillHubViewController *vc = (ChillHubViewController*)rvc.topViewController;

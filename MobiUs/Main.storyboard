@@ -12,6 +12,9 @@
         </mutableArray>
         <mutableArray key="PT_Sans-Narrow-Web-Regular.ttf">
             <string>PTSans-Narrow</string>
+            <string>PTSans-Narrow</string>
+            <string>PTSans-Narrow</string>
+            <string>PTSans-Narrow</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -78,7 +81,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="cXR-UM-Ibc" kind="custom" identifier="segueWifiCommissioning" customClass="SWRevealViewControllerSeguePushController" id="jbL-1w-D6b"/>
+                                    <segue destination="L2E-QF-ZY6" kind="custom" identifier="" customClass="SWRevealViewControllerSeguePushController" id="rgb-oc-q5V"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settings" id="oBq-zc-eN5">
@@ -113,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xm0-Rp-QOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="-255"/>
+            <point key="canvasLocation" x="-147" y="-483"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="enf-Dr-59R">
@@ -277,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EiV-CA-Qd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="-421"/>
+            <point key="canvasLocation" x="1631" y="-372"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="VvR-oi-QvF">
@@ -301,11 +304,129 @@
             </objects>
             <point key="canvasLocation" x="2009" y="-953"/>
         </scene>
+        <!--Product Add View Controller-->
+        <scene sceneID="fqg-0B-fS7">
+            <objects>
+                <viewController id="L2E-QF-ZY6" customClass="ProductAddViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pTU-mx-P3Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="gxt-fO-BV3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W5c-U7-5jE">
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MY PRODUCTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm5-sB-geR">
+                                <rect key="frame" x="21" y="26" width="236" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="H3P-KM-bgg"/>
+                                    <constraint firstAttribute="height" constant="21" id="Rn4-Hv-ILs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="19"/>
+                                <color key="textColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add your FirstBuild products here to stay connected." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXj-BV-efR">
+                                <rect key="frame" x="21" y="47" width="324" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="324" id="Ken-rC-1eQ"/>
+                                    <constraint firstAttribute="height" constant="21" id="NLj-Cb-xoD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="10"/>
+                                <color key="textColor" red="0.53725492949999998" green="0.53333336109999996" blue="0.54901963470000004" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Shop for products on FirstBuild.com  >" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NS-Hj-Imq">
+                                <rect key="frame" x="160" y="199" width="281" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="iLk-fp-i5M"/>
+                                    <constraint firstAttribute="width" constant="281" id="nrh-6O-S7X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="15"/>
+                                <color key="textColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgO-zu-yfL">
+                                <rect key="frame" x="188" y="374" width="224" height="226"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad-robot-50_percent_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="jDa-WU-gdb">
+                                        <rect key="frame" x="42" y="98" width="141" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="141" id="h2R-f4-Tk9"/>
+                                            <constraint firstAttribute="height" constant="128" id="mK3-rJ-j08"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no products" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6t-t7-oNr">
+                                        <rect key="frame" x="19" y="13" width="186" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="186" id="bgZ-AL-1IH"/>
+                                            <constraint firstAttribute="height" constant="21" id="msy-4c-6mW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.53725492949999998" green="0.53333336109999996" blue="0.54901963470000004" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="54q-SR-diR"/>
+                                    <constraint firstAttribute="bottom" secondItem="jDa-WU-gdb" secondAttribute="bottom" id="71z-ny-y4n"/>
+                                    <constraint firstAttribute="centerX" secondItem="u6t-t7-oNr" secondAttribute="centerX" id="exD-Nh-vv0"/>
+                                    <constraint firstAttribute="centerX" secondItem="jDa-WU-gdb" secondAttribute="centerX" id="h5B-uT-vZu"/>
+                                    <constraint firstAttribute="height" constant="226" id="msl-md-1Qm"/>
+                                    <constraint firstItem="u6t-t7-oNr" firstAttribute="top" secondItem="cgO-zu-yfL" secondAttribute="top" constant="13" id="sfS-RD-vKr"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyM-Qm-Udl">
+                                <rect key="frame" x="0.0" y="76" width="600" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="jOM-qK-dqc"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="btn_blue_large_with_field_plus_add_product">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cXR-UM-Ibc" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="qY2-Bn-Jxr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EyM-Qm-Udl" firstAttribute="leading" secondItem="W5c-U7-5jE" secondAttribute="leading" id="1cj-nk-wI8"/>
+                            <constraint firstAttribute="trailing" secondItem="EyM-Qm-Udl" secondAttribute="trailing" id="6DK-Rr-ws4"/>
+                            <constraint firstAttribute="centerX" secondItem="cgO-zu-yfL" secondAttribute="centerX" id="FGO-F8-2tK"/>
+                            <constraint firstItem="EyM-Qm-Udl" firstAttribute="top" secondItem="pXj-BV-efR" secondAttribute="bottom" constant="8" id="KhS-1o-bVi"/>
+                            <constraint firstItem="pXj-BV-efR" firstAttribute="top" secondItem="Gm5-sB-geR" secondAttribute="bottom" id="LAk-xq-oBZ"/>
+                            <constraint firstItem="gxt-fO-BV3" firstAttribute="top" secondItem="cgO-zu-yfL" secondAttribute="bottom" id="Mfo-fd-h01"/>
+                            <constraint firstItem="pXj-BV-efR" firstAttribute="leading" secondItem="W5c-U7-5jE" secondAttribute="leadingMargin" constant="5" id="P9N-2K-Arn"/>
+                            <constraint firstAttribute="centerX" secondItem="5NS-Hj-Imq" secondAttribute="centerX" id="QVM-4H-6Q8"/>
+                            <constraint firstItem="Gm5-sB-geR" firstAttribute="leading" secondItem="W5c-U7-5jE" secondAttribute="leadingMargin" constant="5" id="ZRV-Tg-IUG"/>
+                            <constraint firstItem="5NS-Hj-Imq" firstAttribute="top" secondItem="EyM-Qm-Udl" secondAttribute="bottom" constant="8" id="alw-od-UG7"/>
+                            <constraint firstItem="Gm5-sB-geR" firstAttribute="top" secondItem="pTU-mx-P3Z" secondAttribute="bottom" constant="26" id="m4x-kZ-dHm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cdo-kD-Iao">
+                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="g3R-ys-YaI">
+                            <color key="tintColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="revealToggle:" destination="L2E-QF-ZY6" id="fKc-iw-6sh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="noProductsNoticeView" destination="cgO-zu-yfL" id="HDo-Gc-0VX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cy1-Nv-JC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="679" y="-508"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="btn_blue_large_with_field_plus_add_product" width="1315" height="431"/>
         <image name="icon_chevron_blue" width="28" height="47"/>
         <image name="icon_chillhub_circle_with_label_stacked" width="431" height="521"/>
         <image name="reveal-icon" width="22" height="17"/>
+        <image name="sad-robot-50_percent_transparent" width="180" height="307"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IRJ-Qz-t2I"/>

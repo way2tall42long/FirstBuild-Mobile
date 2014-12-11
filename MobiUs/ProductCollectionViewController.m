@@ -44,6 +44,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
     
     self.productImages = [@[@"linecook",@"Fridge Iconpng",@"sous vide icon" ] mutableCopy];
     self.productLabels = [@[@"Line Cook",@"ChillHub",@"SousVide" ] mutableCopy];
+    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -77,7 +78,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.productImages.count;
+    return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -89,9 +90,13 @@ static NSString * const reuseIdentifier = @"ProductCell";
     long row = [indexPath row];
     
     image = [UIImage imageNamed:_productImages[row]];
-    productCell.imageView.image = image;
-    productCell.imageLabel.text = _productLabels[row];
-
+    //productCell.imageView.image = image;
+    //productCell.imageLabel.text = _productLabels[row];
+    productCell.layer.cornerRadius = 10;
+    productCell.layer.masksToBounds = YES;
+//    productCell.containerView.clipsToBounds = YES;
+//    productCell.containerView.layer.opaque = NO;
+ 
     return productCell;
 }
 

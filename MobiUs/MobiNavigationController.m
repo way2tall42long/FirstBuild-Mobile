@@ -16,24 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"Orange-01.png"]
-                             forBarMetrics:UIBarMetricsDefault];
-    self.navigationBar.shadowImage = [UIImage imageNamed:@"shadow3.png"];
-    self.navigationBar.translucent = NO;
-    [self.navigationBar setBarStyle:UIBarStyleBlack];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-  
     
-    
-    [self.navigationBar setTitleTextAttributes: @{
-                                                  NSForegroundColorAttributeName: [UIColor whiteColor],
-                                                  NSFontAttributeName: [UIFont fontWithName:@"PTSans-NarrowBold" size:25.0f],
-                                                 
-                                                  }];
+    //add the custom logo at the top. using a subview unfortunately because I spent
+    //way too much time screwing around with titleView, which centers automagically between
+    //the leftbarbutton item and right
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstbuild-header-logo"]];
+    [imageView setFrame:CGRectMake(0, 0, 40, 33)];
+    CGPoint superCenter = CGPointMake(CGRectGetMidX(self.navigationBar.frame), CGRectGetMidY(self.navigationBar.frame));
+
+    [imageView setCenter:superCenter];
+    [self.navigationBar addSubview:imageView];
+
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

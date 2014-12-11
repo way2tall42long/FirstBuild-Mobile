@@ -65,6 +65,7 @@
 		18B446C5B84ADBDC6A8F7CC7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2521131A001A6300148D67 /* STKSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKSpinnerView.h; sourceTree = "<group>"; };
 		5B2521141A001A6300148D67 /* STKSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKSpinnerView.m; sourceTree = "<group>"; };
+		5B8C10871A39324C00F481E6 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		5B99E07D1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WifiCommissioningStoryboard.storyboard; sourceTree = "<group>"; };
 		5B99E07F1A1A5D10005FB881 /* WifiCommissioningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiCommissioningViewController.h; sourceTree = "<group>"; };
 		5B99E0801A1A5D10005FB881 /* WifiCommissioningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiCommissioningViewController.m; sourceTree = "<group>"; };
@@ -346,6 +347,7 @@
 				5BC364761A2CF9EF00D03B9C /* splashvideo.m4v */,
 				5BC3647A1A2E25A800D03B9C /* splashvideo.mov */,
 				67926FF119ED8BA000E346C2 /* PT_Sans-Narrow-Web-Regular.ttf */,
+				5B8C10871A39324C00F481E6 /* fontawesome-webfont.ttf */,
 				67926FF819EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf */,
 				5B9EF0F219DEEE1000E8D9F1 /* Info.plist */,
 				5B9EF0F319DEEE1000E8D9F1 /* main.m */,

@@ -10,5 +10,4 @@
 
 @interface ProductAddViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIView *noProductsNoticeView;
-@property (atomic) BOOL hasProducts;
 @end

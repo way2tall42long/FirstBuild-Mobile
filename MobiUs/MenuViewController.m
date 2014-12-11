@@ -44,39 +44,6 @@
 
 @implementation MenuViewController
 
-
-- (void) viewDidLoad
-{
-//    self.products = [[NSMutableArray alloc] init];
-//    self.productsTableView.delegate = self;
-}
-
-- (void) viewDidAppear:(BOOL)animated
-{
-    //[self loadProducts];
-}
-
-- (void) loadProducts
-{
-//    [self.products removeAllObjects];
-//    Firebase *devicesRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices"];
-//    [devicesRef observeSingleEventOfType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-//        if ([snapshot.key isEqualToString:@"chillhubs"])
-//        {
-//            for (FDataSnapshot* device in snapshot.children) {
-//                FSTChillHub* chillhub = [FSTChillHub new];
-//                chillhub.firebaseRef = device.ref ;
-//                chillhub.identifier = device.key;
-//                chillhub.friendlyName = @"My ChillHub";
-//                [self.products addObject:chillhub];
-//            }
-//        }
-//        [self.tableView reloadData];
-//        
-//    }];
-}
-
-
 #pragma mark - Table view data source
 
 
@@ -88,45 +55,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 3;
-    //return self.products.count;
-}
-//
-//- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-////    FSTProduct * product = self.products[indexPath.row];
-////    NSLog(@"selected %@", product.identifier);
-////    
-////    if ([product isKindOfClass:[FSTChillHub class]])
-////    {
-////        [self performSegueWithIdentifier:@"segueChillHub" sender:product];
-////    }
-//    
-//}
-
-- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
-{
-    //TODO: this is not right
-    RBStoryboardLink *destination = segue.destinationViewController;
-   
-    if ([destination respondsToSelector:@selector(scene)])
-    {
-         MobiNavigationController *rvc = (MobiNavigationController *)destination.scene;
-        if ([rvc.topViewController isKindOfClass:[ProductAddViewController class]] )
-        {
-            ProductAddViewController *controller = (ProductAddViewController*)rvc.topViewController;
-            controller.hasProducts = NO;
-            //        if (self.products.count == 0)
-            //        {
-            //            controller.hasProducts = YES;
-            //        }
-        }
-    }
-    
-    //TODO: clean up for other controllers
-//    RBStoryboardLink *destination = segue.destinationViewController;
-//    MobiNavigationController *rvc = (MobiNavigationController *)destination.scene;
-//    ChillHubViewController *vc = (ChillHubViewController*)rvc.topViewController;
-//    vc.product = sender;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -152,10 +80,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
     
     return cell;
-//    FSTProduct * product = self.products[indexPath.row];
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"reusableIdentifier"];
-//    cell.textLabel.text = product.friendlyName;
-//    return cell;
+
 }
 
 #pragma mark state preservation / restoration

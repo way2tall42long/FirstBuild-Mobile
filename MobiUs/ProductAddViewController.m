@@ -8,6 +8,8 @@
 
 #import "ProductAddViewController.h"
 #import <SWRevealViewController.h>
+#import <Firebase/Firebase.h>
+#import "FirebaseShared.h"
 
 @interface ProductAddViewController ()
 
@@ -17,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self.noProductsNoticeView setHidden:YES];
-    // Do any additional setup after loading the view.
+    [self.noProductsNoticeView setHidden:NO];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,24 +30,14 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if (!self.hasProducts)
-    {
-        [self.noProductsNoticeView setHidden:NO];
-    }
+    Firebase * ref = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices"];
+    [ref observeSingleEventOfType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        [self.noProductsNoticeView setHidden:YES];
+    }];
 }
 
 - (IBAction)revealToggle:(id)sender {
          [self.revealViewController revealToggle:sender];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

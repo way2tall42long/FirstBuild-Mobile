@@ -10,6 +10,11 @@
 #import "ProductCollectionViewCell.h"
 #import <SWRevealViewController.h>
 #import <ActionSheetStringPicker.h>
+#import <RBStoryboardLink.h>
+#import "FirebaseShared.h"
+#import "FSTChillHub.h"
+#import "ChillHubViewController.h"
+#import "MobiNavigationController.h"
 
 @interface ProductCollectionViewController ()
 
@@ -21,30 +26,28 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 - (IBAction)addProductSelector:(id)sender {
     
-    NSArray *products = [NSArray arrayWithObjects:@"ChillHub", @"SousVide", @"LineCook", @"MicroKitchen", nil];
-    
-    [ActionSheetStringPicker showPickerWithTitle:@"Add Device" rows:products initialSelection:0
-                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-                                           NSLog(@"Picker: %@", picker);
-                                           NSLog(@"Selected Index: %tu", selectedIndex);
-                                           NSLog(@"Selected Value: %@", selectedValue);
-                                           if ([selectedValue isEqualToString:@"ChillHub"])
-                                           {
-                                               [self performSegueWithIdentifier:@"segueWifiCommissioning" sender:self];
-                                           }
-                                       }
-                                     cancelBlock:^(ActionSheetStringPicker *picker) {
-                                         NSLog(@"Block Picker Canceled");
-                                     }
-                                          origin:sender];
+//    NSArray *productsToAdd = [NSArray arrayWithObjects:@"ChillHub", @"SousVide", @"LineCook", @"MicroKitchen", nil];
+//    
+//    [ActionSheetStringPicker showPickerWithTitle:@"Add Device" rows:productsToAdd initialSelection:0
+//                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+//                                           NSLog(@"Picker: %@", picker);
+//                                           NSLog(@"Selected Index: %tu", selectedIndex);
+//                                           NSLog(@"Selected Value: %@", selectedValue);
+//                                           if ([selectedValue isEqualToString:@"ChillHub"])
+//                                           {
+//                                               [self performSegueWithIdentifier:@"segueWifiCommissioning" sender:self];
+//                                           }
+//                                       }
+//                                     cancelBlock:^(ActionSheetStringPicker *picker) {
+//                                         NSLog(@"Block Picker Canceled");
+//                                     }
+//                                          origin:sender];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.productImages = [@[@"linecook",@"Fridge Iconpng",@"sous vide icon" ] mutableCopy];
-    self.productLabels = [@[@"Line Cook",@"ChillHub",@"SousVide" ] mutableCopy];
-    
+    self.products = [[NSMutableArray alloc] init];
+
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -52,13 +55,45 @@ static NSString * const reuseIdentifier = @"ProductCell";
         [self.revealButtonItem setAction: @selector( revealToggle: )];
         [self.navigationController.navigationBar addGestureRecognizer:revealViewController.panGestureRecognizer];
     }
+   
+   
+    Firebase *chillhubsAddRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices/chillhubs"];
+    [chillhubsAddRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+                FSTChillHub* chillhub = [FSTChillHub new];
+                chillhub.firebaseRef = snapshot.ref ;
+                chillhub.identifier = snapshot.key;
+                chillhub.friendlyName = @"My ChillHub";
+                [self.products addObject:chillhub];
+                [self.productCollection reloadData];
+    }];
     
-    
+    Firebase *chillhubsRemRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices/chillhubs"];
+    [chillhubsRemRef observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
+        for (int i=self.products.count-1; i>-1; i--)
+        {
+            FSTChillHub *chillhub = [self.products objectAtIndex:i];
+            if ([chillhub.identifier isEqualToString:snapshot.key])
+            {
+                [self.products removeObject:chillhub];
+                [self.productCollection reloadData];
+                break;
+            }
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
+{
+    //TODO: clean up for other controllers
+    RBStoryboardLink *destination = segue.destinationViewController;
+    MobiNavigationController *rvc = (MobiNavigationController *)destination.scene;
+    ChillHubViewController *vc = (ChillHubViewController*)rvc.topViewController;
+    vc.product = sender;
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -70,7 +105,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    return self.products.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -78,12 +113,6 @@ static NSString * const reuseIdentifier = @"ProductCell";
     ProductCollectionViewCell *productCell =
         [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
-    UIImage *image;
-    long row = [indexPath row];
-    
-    image = [UIImage imageNamed:_productImages[row]];
-    //productCell.imageView.image = image;
-    //productCell.imageLabel.text = _productLabels[row];
     productCell.layer.cornerRadius = 10;
     productCell.layer.masksToBounds = YES;
  
@@ -92,6 +121,17 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 #pragma mark <UICollectionViewDelegate>
 
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    FSTProduct * product = self.products[indexPath.row];
+    NSLog(@"selected %@", product.identifier);
+    
+    if ([product isKindOfClass:[FSTChillHub class]])
+    {
+        [self performSegueWithIdentifier:@"segueChillHub" sender:product];
+    }
+
+}
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {

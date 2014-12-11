@@ -13,5 +13,7 @@
 @property (strong, nonatomic) NSMutableArray *productImages;
 @property (strong, nonatomic) NSMutableArray *productLabels;
 @property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;
+@property (strong, nonatomic) IBOutlet UICollectionView *productCollection;
+@property (strong, nonatomic) NSMutableArray *products;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addProductButton;
 @end

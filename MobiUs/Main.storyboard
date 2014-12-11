@@ -75,28 +75,6 @@
             </objects>
             <point key="canvasLocation" x="1084" y="-615"/>
         </scene>
-        <!--Storyboard Link-->
-        <scene sceneID="9TK-5Z-5P5">
-            <objects>
-                <viewController id="vaO-fO-Ux5" customClass="RBStoryboardLink" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L02-Aa-fbV"/>
-                        <viewControllerLayoutGuide type="bottom" id="f7Q-S6-THK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="J0V-pw-Thd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="LineCook"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="needsTopLayoutGuide" value="NO"/>
-                    </userDefinedRuntimeAttributes>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="APg-bg-2e1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="924" y="93"/>
-        </scene>
         <!--Mobi Navigation Controller-->
         <scene sceneID="sz5-Lr-6cD">
             <objects>
@@ -207,8 +185,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addProductButton" destination="gNq-33-523" id="h4F-GK-ZF8"/>
+                        <outlet property="productCollection" destination="h3X-C2-8Es" id="qsO-XY-k8R"/>
                         <outlet property="revealButtonItem" destination="h8V-Aq-wDG" id="V1u-tl-B4u"/>
                         <segue destination="cXR-UM-Ibc" kind="push" identifier="segueWifiCommissioning" id="RYd-jM-D3N"/>
+                        <segue destination="sZO-RU-ozf" kind="custom" identifier="segueChillHub" customClass="SWRevealViewControllerSeguePushController" id="1Dx-g3-3f3"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42e-Tx-aPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -265,4 +245,7 @@
         <image name="icon_chillhub_circle_with_label_stacked" width="431" height="521"/>
         <image name="reveal-icon" width="22" height="17"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1Dx-g3-3f3"/>
+    </inferredMetricsTieBreakers>
 </document>

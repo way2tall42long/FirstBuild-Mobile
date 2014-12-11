@@ -1,0 +1,14 @@
+//
+//  ProductAddViewController.h
+//  MobiUs
+//
+//  Created by Myles Caley on 12/11/14.
+//  Copyright (c) 2014 FirstBuild. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ProductAddViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIView *noProductsNoticeView;
+@property (atomic) BOOL hasProducts;
+@end

@@ -2,7 +2,15 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbV-3f-Ecf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PT_Sans-Narrow-Web-Regular.ttf">
+            <string>PTSans-Narrow</string>
+            <string>PTSans-Narrow</string>
+            <string>PTSans-Narrow</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Wifi Commissioning View Controller-->
         <scene sceneID="8RY-Kd-egb">
@@ -57,12 +65,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xp-KA-kiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2243" y="327"/>
+            <point key="canvasLocation" x="-1355" y="311"/>
         </scene>
-        <!--View Controller-->
+        <!--Product Add View Controller-->
         <scene sceneID="8Gl-oc-rQX">
             <objects>
-                <viewController id="sGM-DW-oHT" sceneMemberID="viewController">
+                <viewController id="sGM-DW-oHT" customClass="ProductAddViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8S0-W1-6xv"/>
                         <viewControllerLayoutGuide type="bottom" id="THa-CY-uhP"/>
@@ -71,35 +79,109 @@
                         <rect key="frame" x="0.0" y="94" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv8-2a-BDl">
-                                <rect key="frame" x="279" y="27" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY PRODUCTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uw4-IH-kzz">
+                                <rect key="frame" x="21" y="26" width="236" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="YdQ-sI-3m7"/>
-                                    <constraint firstAttribute="height" constant="21" id="bRt-VM-9Ak"/>
+                                    <constraint firstAttribute="height" constant="21" id="Jlx-dE-Uzu"/>
+                                    <constraint firstAttribute="width" constant="236" id="hmU-lz-qy2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="19"/>
+                                <color key="textColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your FirstBuild products here to stay connected." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2e-06-D2W">
+                                <rect key="frame" x="21" y="47" width="324" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="05E-HG-jKP"/>
+                                    <constraint firstAttribute="width" constant="324" id="cOB-k7-3cJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="10"/>
+                                <color key="textColor" red="0.5372549295425415" green="0.53333336114883423" blue="0.54901963472366333" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop for products on FirstBuild.com  >" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsK-fK-l7M">
+                                <rect key="frame" x="160" y="199" width="281" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="aPR-3e-aCy"/>
+                                    <constraint firstAttribute="width" constant="281" id="lug-7U-rLF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="15"/>
+                                <color key="textColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dwm-h9-QfM">
+                                <rect key="frame" x="188" y="310" width="224" height="226"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad-robot-50_percent_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="Whq-YT-4bN">
+                                        <rect key="frame" x="42" y="98" width="141" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="MTk-bH-tXk"/>
+                                            <constraint firstAttribute="width" constant="141" id="W3U-Cj-40h"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no products" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQD-bA-h9R">
+                                        <rect key="frame" x="19" y="13" width="186" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="186" id="JIU-zP-WXZ"/>
+                                            <constraint firstAttribute="height" constant="21" id="cX4-IK-FNQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.53725492949999998" green="0.53333336109999996" blue="0.54901963470000004" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="226" id="8j3-9C-CgK"/>
+                                    <constraint firstAttribute="bottom" secondItem="Whq-YT-4bN" secondAttribute="bottom" id="HfJ-de-I1o"/>
+                                    <constraint firstAttribute="centerX" secondItem="uQD-bA-h9R" secondAttribute="centerX" id="Zjc-MA-JqO"/>
+                                    <constraint firstItem="uQD-bA-h9R" firstAttribute="top" secondItem="Dwm-h9-QfM" secondAttribute="top" constant="13" id="iPs-rv-KN6"/>
+                                    <constraint firstAttribute="centerX" secondItem="Whq-YT-4bN" secondAttribute="centerX" id="wcg-M5-ltT"/>
+                                    <constraint firstAttribute="width" constant="224" id="yxL-dm-crc"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mw8-YW-p1y">
+                                <rect key="frame" x="0.0" y="76" width="600" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="ea7-ge-dRn"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="btn_blue_large_with_field_plus_add_product">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="y2k-4c-Ymt" kind="show" id="aTP-31-rBI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hv8-2a-BDl" firstAttribute="top" secondItem="8S0-W1-6xv" secondAttribute="bottom" constant="27" id="Glh-dd-vlS"/>
-                            <constraint firstAttribute="centerX" secondItem="hv8-2a-BDl" secondAttribute="centerX" id="wDX-gK-1Ct"/>
+                            <constraint firstItem="Mw8-YW-p1y" firstAttribute="top" secondItem="x2e-06-D2W" secondAttribute="bottom" constant="8" id="3Cu-aa-QqY"/>
+                            <constraint firstAttribute="centerX" secondItem="WsK-fK-l7M" secondAttribute="centerX" id="6ur-uq-DHu"/>
+                            <constraint firstItem="Mw8-YW-p1y" firstAttribute="leading" secondItem="Kho-Cg-gDa" secondAttribute="leading" id="9aH-sG-LmX"/>
+                            <constraint firstAttribute="centerX" secondItem="Dwm-h9-QfM" secondAttribute="centerX" id="CbB-HC-ziY"/>
+                            <constraint firstAttribute="trailing" secondItem="Mw8-YW-p1y" secondAttribute="trailing" id="Ccl-BP-3Ui"/>
+                            <constraint firstItem="WsK-fK-l7M" firstAttribute="top" secondItem="Mw8-YW-p1y" secondAttribute="bottom" constant="8" id="CyE-Rf-dIQ"/>
+                            <constraint firstItem="x2e-06-D2W" firstAttribute="leading" secondItem="Kho-Cg-gDa" secondAttribute="leadingMargin" constant="5" id="IPi-1l-5sH"/>
+                            <constraint firstItem="x2e-06-D2W" firstAttribute="top" secondItem="Uw4-IH-kzz" secondAttribute="bottom" id="Jiy-6N-227"/>
+                            <constraint firstItem="Uw4-IH-kzz" firstAttribute="leading" secondItem="Kho-Cg-gDa" secondAttribute="leadingMargin" constant="5" id="UcM-nX-YIj"/>
+                            <constraint firstItem="Uw4-IH-kzz" firstAttribute="top" secondItem="8S0-W1-6xv" secondAttribute="bottom" constant="26" id="WAz-y2-4HZ"/>
+                            <constraint firstItem="THa-CY-uhP" firstAttribute="top" secondItem="Dwm-h9-QfM" secondAttribute="bottom" id="aXA-M2-0RS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WSe-8j-snZ">
-                        <barButtonItem key="rightBarButtonItem" title="Continue" id="Vit-jr-emX">
+                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="ROU-4r-RAP">
                             <color key="tintColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
-                                <segue destination="y2k-4c-Ymt" kind="show" id="d5T-xP-RX7"/>
+                                <action selector="revealToggle:" destination="sGM-DW-oHT" id="nRI-8n-i93"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="noProductsNoticeView" destination="Dwm-h9-QfM" id="sho-rS-hNb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oie-Xb-3mS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1436" y="327"/>
+            <point key="canvasLocation" x="-458" y="343"/>
         </scene>
         <!--Select Network-->
         <scene sceneID="m4M-8R-lqQ">
@@ -319,10 +401,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn_blue_large_with_field_plus_add_product" width="1315" height="431"/>
         <image name="chillhubisconnecting" width="699" height="450"/>
         <image name="chillhubnotlocated" width="586" height="434"/>
         <image name="errorconnectingtowifi" width="666" height="436"/>
         <image name="nowifinetworksfound" width="632" height="438"/>
+        <image name="reveal-icon" width="22" height="17"/>
+        <image name="sad-robot-50_percent_transparent" width="180" height="307"/>
         <image name="searchingforchillhub" width="681" height="445"/>
     </resources>
 </document>

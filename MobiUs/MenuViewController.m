@@ -37,6 +37,7 @@
 #import <Firebase/Firebase.h>
 #import "FirebaseShared.h"
 #import <RBStoryboardLink.h>
+#import "ProductAddViewController.h"
 
 @implementation SWUITableViewCell
 @end
@@ -86,7 +87,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
     //return self.products.count;
 }
 //
@@ -104,6 +105,23 @@
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
+    //TODO: this is not right
+    RBStoryboardLink *destination = segue.destinationViewController;
+   
+    if ([destination respondsToSelector:@selector(scene)])
+    {
+         MobiNavigationController *rvc = (MobiNavigationController *)destination.scene;
+        if ([rvc.topViewController isKindOfClass:[ProductAddViewController class]] )
+        {
+            ProductAddViewController *controller = (ProductAddViewController*)rvc.topViewController;
+            controller.hasProducts = NO;
+            //        if (self.products.count == 0)
+            //        {
+            //            controller.hasProducts = YES;
+            //        }
+        }
+    }
+    
     //TODO: clean up for other controllers
 //    RBStoryboardLink *destination = segue.destinationViewController;
 //    MobiNavigationController *rvc = (MobiNavigationController *)destination.scene;
@@ -116,10 +134,14 @@
     static NSString *CellIdentifier = @"Cell";
     switch (indexPath.row) {
         case 0:
+            CellIdentifier = @"home";
+            break;
+            
+        case 1:
             CellIdentifier = @"addNewProduct";
             break;
         
-        case 1:
+        case 2:
             CellIdentifier = @"settings";
             break;
             

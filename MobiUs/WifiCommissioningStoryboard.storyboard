@@ -2,11 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbV-3f-Ecf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="PT_Sans-Narrow-Web-Regular.ttf">
-            <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
         </mutableArray>
@@ -24,18 +22,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="searchingforchillhub" translatesAutoresizingMaskIntoConstraints="NO" id="lwY-Fw-3xU">
-                                <rect key="frame" x="155" y="114" width="308" height="199"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner_arrows_circle_bg_pulse_vfx_orange" translatesAutoresizingMaskIntoConstraints="NO" id="HGx-kp-sFe">
+                                <rect key="frame" x="180" y="97" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="2MV-yj-Gb3"/>
-                                    <constraint firstAttribute="width" constant="262" id="o4m-BH-zCl"/>
+                                    <constraint firstAttribute="height" constant="128" id="Lt6-1R-cgv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="166" id="efJ-Hl-wXD"/>
+                                    <constraint firstAttribute="width" constant="240" id="m3r-vb-tvd"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for your ChillHUB,  One moment please..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxg-gB-1B4">
+                                <rect key="frame" x="180" y="253" width="243" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="AeY-id-2AK"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="42" id="QOJ-AM-64K"/>
+                                    <constraint firstAttribute="width" constant="243" id="cLx-mu-V52"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="243" id="dYL-ft-Oin"/>
+                                    <constraint firstAttribute="height" constant="42" id="xYT-s5-Jq3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="12"/>
+                                <color key="textColor" red="0.53725492949999998" green="0.53333336109999996" blue="0.54901963470000004" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="lwY-Fw-3xU" secondAttribute="centerY" id="e0I-Al-omC"/>
-                            <constraint firstAttribute="centerX" secondItem="lwY-Fw-3xU" secondAttribute="centerX" id="lbu-Pe-2if"/>
+                            <constraint firstAttribute="centerX" secondItem="rxg-gB-1B4" secondAttribute="centerX" constant="-1.5" id="W2S-10-frF"/>
+                            <constraint firstItem="rxg-gB-1B4" firstAttribute="top" secondItem="HGx-kp-sFe" secondAttribute="bottom" constant="28" id="piw-cH-D5e"/>
+                            <constraint firstAttribute="centerX" secondItem="HGx-kp-sFe" secondAttribute="centerX" id="qvV-yd-nNb"/>
+                            <constraint firstItem="HGx-kp-sFe" firstAttribute="top" secondItem="EUc-dZ-wRV" secondAttribute="bottom" constant="33" id="t5X-XV-0Rs"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -79,44 +93,46 @@
                         <rect key="frame" x="0.0" y="94" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Switch to ChillHub Network" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uw4-IH-kzz">
-                                <rect key="frame" x="21" y="26" width="236" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Jlx-dE-Uzu"/>
-                                    <constraint firstAttribute="width" constant="236" id="hmU-lz-qy2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="19"/>
-                                <color key="textColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Shop for products on FirstBuild.com  >" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsK-fK-l7M">
-                                <rect key="frame" x="160" y="203" width="281" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="aPR-3e-aCy"/>
-                                    <constraint firstAttribute="width" constant="281" id="lug-7U-rLF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="15"/>
-                                <color key="textColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please switch networks to ChillHub in your device settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2e-06-D2W">
-                                <rect key="frame" x="165" y="161" width="324" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please switch networks to ChillHub in your device settings. A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2e-06-D2W">
+                                <rect key="frame" x="177" y="177" width="246" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="05E-HG-jKP"/>
-                                    <constraint firstAttribute="width" constant="324" id="cOB-k7-3cJ"/>
+                                    <constraint firstAttribute="width" constant="246" id="Pp5-bJ-MAy"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="oau-vP-ZyK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="12"/>
                                 <color key="textColor" red="0.5372549295425415" green="0.53333336114883423" blue="0.54901963472366333" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slD-nl-YOC">
+                                <rect key="frame" x="202" y="224" width="196" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Od0-UO-tmM"/>
+                                    <constraint firstAttribute="width" constant="196" id="plO-xs-rZO"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="btn_blue_large_connect">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="y2k-4c-Ymt" kind="show" id="3bW-ts-Aml"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_chillhub_circle_with_label_stacked" translatesAutoresizingMaskIntoConstraints="NO" id="Br5-yj-tJg">
+                                <rect key="frame" x="180" y="33" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="4B6-8U-qzD"/>
+                                    <constraint firstAttribute="width" constant="240" id="jgn-DA-Ujc"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="WsK-fK-l7M" secondAttribute="centerX" id="6ur-uq-DHu"/>
-                            <constraint firstItem="x2e-06-D2W" firstAttribute="leading" secondItem="Kho-Cg-gDa" secondAttribute="leadingMargin" constant="5" id="IPi-1l-5sH"/>
-                            <constraint firstItem="x2e-06-D2W" firstAttribute="top" secondItem="Uw4-IH-kzz" secondAttribute="bottom" id="Jiy-6N-227"/>
-                            <constraint firstItem="Uw4-IH-kzz" firstAttribute="leading" secondItem="Kho-Cg-gDa" secondAttribute="leadingMargin" constant="5" id="UcM-nX-YIj"/>
-                            <constraint firstItem="Uw4-IH-kzz" firstAttribute="top" secondItem="8S0-W1-6xv" secondAttribute="bottom" constant="26" id="WAz-y2-4HZ"/>
+                            <constraint firstAttribute="centerX" secondItem="slD-nl-YOC" secondAttribute="centerX" id="9JF-If-hgV"/>
+                            <constraint firstItem="slD-nl-YOC" firstAttribute="top" secondItem="x2e-06-D2W" secondAttribute="bottom" constant="26" id="HEu-7k-oBm"/>
+                            <constraint firstItem="x2e-06-D2W" firstAttribute="top" secondItem="Br5-yj-tJg" secondAttribute="bottom" constant="16" id="Lzt-sX-NAE"/>
+                            <constraint firstAttribute="centerX" secondItem="x2e-06-D2W" secondAttribute="centerX" id="XKX-jb-QHT"/>
+                            <constraint firstAttribute="centerX" secondItem="Br5-yj-tJg" secondAttribute="centerX" id="cOw-Bg-OdH"/>
+                            <constraint firstItem="Br5-yj-tJg" firstAttribute="top" secondItem="8S0-W1-6xv" secondAttribute="bottom" constant="33" id="nMo-4q-zzu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WSe-8j-snZ">
@@ -350,11 +366,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn_blue_large_connect" width="1137" height="241"/>
         <image name="chillhubisconnecting" width="699" height="450"/>
         <image name="chillhubnotlocated" width="586" height="434"/>
         <image name="errorconnectingtowifi" width="666" height="436"/>
+        <image name="icon_chillhub_circle_with_label_stacked" width="431" height="521"/>
         <image name="nowifinetworksfound" width="632" height="438"/>
         <image name="reveal-icon" width="22" height="17"/>
-        <image name="searchingforchillhub" width="681" height="445"/>
+        <image name="spinner_arrows_circle_bg_pulse_vfx_orange" width="736" height="714"/>
     </resources>
 </document>

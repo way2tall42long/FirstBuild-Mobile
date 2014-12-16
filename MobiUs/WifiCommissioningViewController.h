@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface WifiCommissioningViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIImageView *searchingIcon;
 @property NSInteger checkForAPTries;
 @end

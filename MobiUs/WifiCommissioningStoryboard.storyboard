@@ -57,6 +57,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="searchingIcon" destination="HGx-kp-sFe" id="cEX-G6-2Xp"/>
                         <segue destination="d1J-l3-I4c" kind="show" identifier="segueSearchTimeout" id="xfo-fr-DxU"/>
                         <segue destination="HA7-R5-9d8" kind="show" identifier="segueDisplayList" id="T7d-6o-Mon"/>
                     </connections>

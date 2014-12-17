@@ -14,5 +14,6 @@
 @property (strong, nonatomic) IBOutlet UIView *productsCollectionView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 @property (strong, nonatomic) IBOutlet UIButton *buttonAddProduct;
+@property (strong, nonatomic) IBOutlet UIImageView *teardropImage;
 
 @end

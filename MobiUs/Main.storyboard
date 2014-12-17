@@ -195,17 +195,23 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad-robot" translatesAutoresizingMaskIntoConstraints="NO" id="sET-fH-K4D">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad-robot-no-tear" translatesAutoresizingMaskIntoConstraints="NO" id="sET-fH-K4D">
                                         <rect key="frame" x="180" y="357" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="b8x-m4-X6c"/>
                                             <constraint firstAttribute="height" constant="128" id="rhF-39-shx"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no products" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-rU-8hw">
-                                        <rect key="frame" x="236" y="278" width="128" height="21"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teardrop" translatesAutoresizingMaskIntoConstraints="NO" id="8d7-sW-YGV">
+                                        <rect key="frame" x="268" y="413" width="88" height="16"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="128" id="IOx-19-LVS"/>
+                                            <constraint firstAttribute="width" constant="88" id="0gJ-gF-czh"/>
+                                            <constraint firstAttribute="height" constant="16" id="d79-MW-wVY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no products" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-rU-8hw">
+                                        <rect key="frame" x="238" y="278" width="126" height="21"/>
+                                        <constraints>
                                             <constraint firstAttribute="height" constant="21" id="QDh-wX-wWe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="17"/>
@@ -217,7 +223,9 @@
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="Jgl-rU-8hw" secondAttribute="centerX" id="55f-S8-IdQ"/>
                                     <constraint firstItem="sET-fH-K4D" firstAttribute="top" secondItem="Jgl-rU-8hw" secondAttribute="bottom" constant="58" id="6gP-3H-uck"/>
+                                    <constraint firstItem="sET-fH-K4D" firstAttribute="top" secondItem="8d7-sW-YGV" secondAttribute="bottom" constant="-72" id="Nmy-Xy-2wj"/>
                                     <constraint firstAttribute="centerX" secondItem="sET-fH-K4D" secondAttribute="centerX" id="TSR-xT-FRN"/>
+                                    <constraint firstItem="8d7-sW-YGV" firstAttribute="leading" secondItem="sET-fH-K4D" secondAttribute="trailing" constant="-152" id="ieM-Ls-my2"/>
                                     <constraint firstAttribute="bottom" secondItem="sET-fH-K4D" secondAttribute="bottom" id="jhL-CR-cCT"/>
                                     <constraint firstItem="9wt-fe-RKf" firstAttribute="leading" secondItem="2x5-UL-K7c" secondAttribute="leading" id="pQ9-Av-Nbu"/>
                                     <constraint firstAttribute="trailing" secondItem="9wt-fe-RKf" secondAttribute="trailing" id="qso-Hh-If7"/>
@@ -273,11 +281,12 @@
                         <outlet property="loadingIndicator" destination="wtl-TS-6Zk" id="A1c-fM-4AO"/>
                         <outlet property="noProductsView" destination="2x5-UL-K7c" id="z7j-xS-SrB"/>
                         <outlet property="productsCollectionView" destination="wPv-AA-6k8" id="x1a-8M-Adv"/>
+                        <outlet property="teardropImage" destination="8d7-sW-YGV" id="Q4d-PH-w45"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zc-uB-pe6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="575" y="718"/>
+            <point key="canvasLocation" x="616" y="718"/>
         </scene>
         <!--ProductCollectionViewController-->
         <scene sceneID="K6v-Wk-Vcm">
@@ -460,7 +469,8 @@
         <image name="icon_chevron_blue" width="28" height="47"/>
         <image name="icon_chillhub_circle_with_label_stacked" width="431" height="521"/>
         <image name="reveal-icon" width="22" height="17"/>
-        <image name="sad-robot" width="180" height="307"/>
+        <image name="sad-robot-no-tear" width="751" height="1281"/>
+        <image name="teardrop" width="33" height="97"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MoZ-40-MKS"/>

@@ -51,10 +51,26 @@
         [self.noProductsView setHidden:YES];
     }];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.loadingIndicator stopAnimating];
         [self.productsCollectionView setHidden:YES];
         [self.noProductsView setHidden:NO];
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:1.5];
+        [UIView setAnimationDelay:1];
+        [UIView setAnimationRepeatCount:HUGE_VAL];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        
+        // The transform matrix
+        CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 80);
+        CGAffineTransform transform2 = CGAffineTransformMakeScale(.7,.7);
+        CGAffineTransform final = CGAffineTransformConcat(transform, transform2);
+        self.teardropImage.transform = final;
+        
+        // Commit the changes
+        [UIView commitAnimations];
     });
 
 }

@@ -35,6 +35,7 @@
     //API then am not sure what the correct method is for detecting a network error.
     
     Firebase * ref = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices"];
+    BOOL __block hasProducts = NO;
     
     [self.productsCollectionView setHidden:YES];
     [self.noProductsView setHidden:YES];
@@ -44,6 +45,7 @@
         [self.loadingIndicator stopAnimating];
         [self.productsCollectionView setHidden:NO];
         [self.noProductsView setHidden:YES];
+        hasProducts = YES;
     } withCancelBlock:^(NSError *error) {
         //TODO: if its really a permission error then we need to handle this differently
         NSLog(@"%@",error.localizedDescription);
@@ -52,25 +54,29 @@
     }];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.loadingIndicator stopAnimating];
-        [self.productsCollectionView setHidden:YES];
-        [self.noProductsView setHidden:NO];
         
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:1.5];
-        [UIView setAnimationDelay:1];
-        [UIView setAnimationRepeatCount:HUGE_VAL];
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-        [UIView setAnimationBeginsFromCurrentState:YES];
-        
-        // The transform matrix
-        CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 80);
-        CGAffineTransform transform2 = CGAffineTransformMakeScale(.7,.7);
-        CGAffineTransform final = CGAffineTransformConcat(transform, transform2);
-        self.teardropImage.transform = final;
-        
-        // Commit the changes
-        [UIView commitAnimations];
+        if (!hasProducts)
+        {
+            [self.loadingIndicator stopAnimating];
+            [self.productsCollectionView setHidden:YES];
+            [self.noProductsView setHidden:NO];
+            
+            [UIView beginAnimations:nil context:NULL];
+            [UIView setAnimationDuration:1.5];
+            [UIView setAnimationDelay:1];
+            [UIView setAnimationRepeatCount:HUGE_VAL];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+            [UIView setAnimationBeginsFromCurrentState:YES];
+            
+            // The transform matrix
+            CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 80);
+            CGAffineTransform transform2 = CGAffineTransformMakeScale(.7,.7);
+            CGAffineTransform final = CGAffineTransformConcat(transform, transform2);
+            self.teardropImage.transform = final;
+            
+            // Commit the changes
+            [UIView commitAnimations];
+        }
     });
 
 }

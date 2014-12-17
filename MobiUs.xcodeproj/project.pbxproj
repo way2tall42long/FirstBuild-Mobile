@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B2521151A001A6300148D67 /* STKSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2521141A001A6300148D67 /* STKSpinnerView.m */; };
+		5B3E180B1A41CC76004F1FA0 /* ProductMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E180A1A41CC76004F1FA0 /* ProductMainViewController.m */; };
 		5B8C108A1A39EC2A00F481E6 /* ProductAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C10891A39EC2A00F481E6 /* ProductAddViewController.m */; };
 		5B99E07E1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B99E07D1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard */; };
 		5B99E0811A1A5D10005FB881 /* WifiCommissioningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99E0801A1A5D10005FB881 /* WifiCommissioningViewController.m */; };
@@ -66,6 +67,8 @@
 		18B446C5B84ADBDC6A8F7CC7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2521131A001A6300148D67 /* STKSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKSpinnerView.h; sourceTree = "<group>"; };
 		5B2521141A001A6300148D67 /* STKSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKSpinnerView.m; sourceTree = "<group>"; };
+		5B3E18091A41CC76004F1FA0 /* ProductMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductMainViewController.h; sourceTree = "<group>"; };
+		5B3E180A1A41CC76004F1FA0 /* ProductMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductMainViewController.m; sourceTree = "<group>"; };
 		5B8C10871A39324C00F481E6 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		5B8C10881A39EC2A00F481E6 /* ProductAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductAddViewController.h; sourceTree = "<group>"; };
 		5B8C10891A39EC2A00F481E6 /* ProductAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductAddViewController.m; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 				5BF9482E19EC15E300CB8BCF /* MenuViewController.m */,
 				5B8C10881A39EC2A00F481E6 /* ProductAddViewController.h */,
 				5B8C10891A39EC2A00F481E6 /* ProductAddViewController.m */,
+				5B3E18091A41CC76004F1FA0 /* ProductMainViewController.h */,
+				5B3E180A1A41CC76004F1FA0 /* ProductMainViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -684,6 +689,7 @@
 				5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */,
 				5BC3647E1A2F637800D03B9C /* FSTDevice.m in Sources */,
 				5BC364971A3260E200D03B9C /* FSTChillHub.m in Sources */,
+				5B3E180B1A41CC76004F1FA0 /* ProductMainViewController.m in Sources */,
 				5B99E0841A1AA63F005FB881 /* WifiCommissioningNetworkListViewController.m in Sources */,
 				5BD467CD1A35ED54009BAC36 /* FirebaseShared.m in Sources */,
 				5BC364811A2F63C200D03B9C /* FSTToken.m in Sources */,

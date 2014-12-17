@@ -30,10 +30,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    Firebase * ref = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices"];
-    [ref observeSingleEventOfType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-        [self.noProductsNoticeView setHidden:YES];
-    }];
+  
 }
 
 - (IBAction)revealToggle:(id)sender {

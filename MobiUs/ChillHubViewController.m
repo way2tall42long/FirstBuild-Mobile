@@ -39,7 +39,7 @@
 #import <Firebase/Firebase.h>
 
 @interface ChillHubViewController ()
-@property (nonatomic, strong) CFShareCircleView *shareCircleView;
+//@property (nonatomic, strong) CFShareCircleView *shareCircleView;
 
 @end
 
@@ -55,33 +55,33 @@
    
 }
 
-- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
-    NSLog(@"Selected sharer: %@", sharer.name);
-    
-    if (sharer.type==CFSharerTypeMilkScale)
-    {
-        [self performSegueWithIdentifier:@"scale" sender:sharer];
-    }
-}
-
-- (void)shareCircleView:(CFShareCircleView *)shareCircleView didCancelSharer:(CFSharer *)sharer {
-    NSLog(@"Share circle view was canceled.");
-    [self.revealViewController revealToggle:self];
-}
+//- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
+//    NSLog(@"Selected sharer: %@", sharer.name);
+//    
+//    if (sharer.type==CFSharerTypeMilkScale)
+//    {
+//        [self performSegueWithIdentifier:@"scale" sender:sharer];
+//    }
+//}
+//
+//- (void)shareCircleView:(CFShareCircleView *)shareCircleView didCancelSharer:(CFSharer *)sharer {
+//    NSLog(@"Share circle view was canceled.");
+//    [self.revealViewController revealToggle:self];
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.shareCircleView = [[CFShareCircleView alloc] initWithFrame:self.view.bounds];
-    self.shareCircleView.delegate = self;
-    [self.view addSubview:self.shareCircleView];
+//    self.shareCircleView = [[CFShareCircleView alloc] initWithFrame:self.view.bounds];
+//    self.shareCircleView.delegate = self;
+//    [self.view addSubview:self.shareCircleView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     //TODO: figure out whats going on with the observers -- it isn't correct
     [super viewWillAppear:animated];
-    [self.shareCircleView removeAllAccessories];
+    //[self.shareCircleView removeAllAccessories];
     
     [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
@@ -94,7 +94,7 @@
                 FSTMilkyWeigh* scaleData = [FSTMilkyWeigh new];
                 scaleData.identifier = scale.key;
                 scaleData.firebaseRef = scale.ref;
-                [self.shareCircleView addAccessoryWithDevice:scaleData withType:CFSharerTypeMilkScale];
+                //[self.shareCircleView addAccessoryWithDevice:scaleData withType:CFSharerTypeMilkScale];
             }
         }
 

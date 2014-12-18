@@ -32,7 +32,7 @@
 #import "CFShareCircleView.h"
 #import "FSTChillHub.h"
 
-@interface ChillHubViewController : UIViewController  <CFShareCircleViewDelegate>
+@interface ChillHubViewController : UIViewController  
 @property (strong, nonatomic) FSTChillHub* product;
 
 @end

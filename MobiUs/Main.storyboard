@@ -138,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M38-qo-hbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2576" y="645"/>
+            <point key="canvasLocation" x="2536" y="873"/>
         </scene>
         <!--Mobi Navigation Controller-->
         <scene sceneID="sz5-Lr-6cD">
@@ -285,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zc-uB-pe6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="605" y="356"/>
+            <point key="canvasLocation" x="549" y="868"/>
         </scene>
         <!--ProductCollectionViewController-->
         <scene sceneID="K6v-Wk-Vcm">
@@ -385,7 +385,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1440" y="512.5"/>
+            <point key="canvasLocation" x="1520" y="828.5"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="wPy-96-W5c">
@@ -396,7 +396,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UBs-M1-EYQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Uwb-Ae-fEZ">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="568" height="485"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -408,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EiV-CA-Qd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3058" y="-527"/>
+            <point key="canvasLocation" x="2946" y="-477"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2z4-mr-q5p">
@@ -424,20 +424,20 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5e-vO-iBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="-505"/>
+            <point key="canvasLocation" x="923" y="-477"/>
         </scene>
         <!--Product Add View Controller-->
         <scene sceneID="fqg-0B-fS7">
             <objects>
                 <viewController id="L2E-QF-ZY6" customClass="ProductAddViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hJS-bR-voH">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="568" height="485"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="2rf-Dw-gvB">
-                            <rect key="frame" x="0.0" y="66" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="66" width="568" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                         </view>
@@ -453,7 +453,7 @@
                                                 <constraint firstAttribute="width" constant="46" id="wwX-Ee-mre"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ChillHub" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOY-Ay-6O7">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ChillHub" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOY-Ay-6O7">
                                             <rect key="frame" x="52" y="11" width="508" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="djV-HG-SbX"/>
@@ -491,7 +491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cy1-Nv-JC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2136" y="-431.5"/>
+            <point key="canvasLocation" x="2008" y="-477"/>
         </scene>
     </scenes>
     <resources>
@@ -505,6 +505,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IRJ-Qz-t2I"/>
-        <segue reference="oc9-3H-qI6"/>
+        <segue reference="npd-rX-YGc"/>
     </inferredMetricsTieBreakers>
 </document>

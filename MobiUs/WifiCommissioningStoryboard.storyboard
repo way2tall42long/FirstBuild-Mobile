@@ -2,9 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbV-3f-Ecf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="PT_Sans-Narrow-Web-Regular.ttf">
+            <string>PTSans-Narrow</string>
+            <string>PTSans-Narrow</string>
+            <string>PTSans-Narrow</string>
+            <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
         </mutableArray>
@@ -64,7 +69,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beR-cm-Arf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="417" y="351"/>
+            <point key="canvasLocation" x="423" y="343"/>
+        </scene>
+        <!--Wifi Commissioning Connecting View Controller-->
+        <scene sceneID="CUS-TQ-lLM">
+            <objects>
+                <viewController id="l9F-Za-k3K" customClass="WifiCommissioningConnectingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Zo-Vy-1ZX"/>
+                        <viewControllerLayoutGuide type="bottom" id="I3L-h8-Xg1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SbM-Py-sSl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Hix-KM-2po">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <color key="color" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting ChillHub to your WiFi" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcU-2M-5BB">
+                                <rect key="frame" x="180" y="224" width="243" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="hQp-HF-Fdy"/>
+                                    <constraint firstAttribute="width" constant="243" id="lwd-80-LUb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="17"/>
+                                <color key="textColor" red="0.53725492949999998" green="0.53333336109999996" blue="0.54901963470000004" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hix-KM-2po" firstAttribute="top" secondItem="JcU-2M-5BB" secondAttribute="bottom" constant="24" id="IVA-sb-nCd"/>
+                            <constraint firstAttribute="centerX" secondItem="Hix-KM-2po" secondAttribute="centerX" id="LyO-dG-QhT"/>
+                            <constraint firstAttribute="centerX" secondItem="JcU-2M-5BB" secondAttribute="centerX" constant="-1.5" id="qfE-3Q-Jjp"/>
+                            <constraint firstAttribute="centerY" secondItem="Hix-KM-2po" secondAttribute="centerY" id="r6a-Zj-aa7"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="bZ6-lE-oWD"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mB8-7D-iwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2281" y="343"/>
         </scene>
         <!--Mobi Navigation Controller-->
         <scene sceneID="gIb-Cs-8Wd">
@@ -201,6 +250,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Connect" id="tOO-os-XXY">
                             <connections>
                                 <action selector="buttonConnectClick:" destination="HA7-R5-9d8" id="d8y-Yb-Bqz"/>
+                                <segue destination="l9F-Za-k3K" kind="show" identifier="segueConnectingToChillHub" id="Ubl-XG-WdW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -209,129 +259,18 @@
                         <outlet property="buttonRefreshNetworkList" destination="gLc-E5-iPp" id="89Y-zn-p0x"/>
                         <outlet property="networkListPickerView" destination="UUE-xb-kDJ" id="JVO-J6-Odv"/>
                         <outlet property="passwordInput" destination="OeO-7H-1GV" id="nw2-yB-0gT"/>
-                        <segue destination="9wz-r5-Sgs" kind="show" identifier="segueErrorNetworks" id="GLQ-mp-bcO"/>
-                        <segue destination="aEa-QT-KIG" kind="show" identifier="segueConnectingToChillHub" id="gdH-C3-56U"/>
-                        <segue destination="lvq-08-gEy" kind="show" identifier="segueErrorConnectingWifi" id="i0A-mz-GRj"/>
+                        <segue destination="win-8B-cbK" kind="show" identifier="segueErrorNetworks" id="bSn-Ac-lvd"/>
+                        <segue destination="l7O-cQ-qgb" kind="show" identifier="segueErrorConnectingWifi" id="MgO-R0-9eK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVc-LX-ePA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="336"/>
+            <point key="canvasLocation" x="1313" y="343"/>
         </scene>
-        <!--Connecting-->
-        <scene sceneID="kKw-4o-GoP">
-            <objects>
-                <viewController id="aEa-QT-KIG" customClass="WifiCommissioningWaitForChillHubViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zaF-HW-WrC"/>
-                        <viewControllerLayoutGuide type="bottom" id="5n3-X3-b7O"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KFY-Zu-5zC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="chillhubisconnecting" translatesAutoresizingMaskIntoConstraints="NO" id="16X-Nh-iX4">
-                                <rect key="frame" x="159" y="122" width="262" height="179"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="262" id="UKl-0P-nBd"/>
-                                    <constraint firstAttribute="height" constant="179" id="Xmd-zU-vxb"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="16X-Nh-iX4" secondAttribute="centerX" id="MBT-Q4-5aN"/>
-                            <constraint firstAttribute="centerY" secondItem="16X-Nh-iX4" secondAttribute="centerY" id="wj9-Uu-77Y"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Connecting" id="xvQ-1R-evJ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sfl-mN-BFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1599" y="-831"/>
-        </scene>
-        <!--Error-->
-        <scene sceneID="INq-pP-dDp">
-            <objects>
-                <viewController id="lvq-08-gEy" customClass="WifiCommissioningErrorViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vek-aU-qx2"/>
-                        <viewControllerLayoutGuide type="bottom" id="J6j-g8-HsY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6p5-V8-xdG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="errorconnectingtowifi" translatesAutoresizingMaskIntoConstraints="NO" id="lHM-Ly-sEg">
-                                <rect key="frame" x="155" y="114" width="295" height="218"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="V4o-1P-lNT"/>
-                                    <constraint firstAttribute="width" constant="262" id="yWr-nX-KjI"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="lHM-Ly-sEg" secondAttribute="centerX" id="H4y-5h-p9p"/>
-                            <constraint firstAttribute="centerY" secondItem="lHM-Ly-sEg" secondAttribute="centerY" id="QNS-ne-1NX"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Error" id="ldo-nz-R80">
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="E6Q-eq-O5E">
-                            <connections>
-                                <action selector="buttonCancel:" destination="lvq-08-gEy" id="cdR-EX-uow"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LWa-NZ-18i" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2560" y="-397"/>
-        </scene>
-        <!--Error-->
-        <scene sceneID="5DZ-Se-h7N">
-            <objects>
-                <viewController id="9wz-r5-Sgs" customClass="WifiCommissioningErrorViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sBT-Sq-ba6"/>
-                        <viewControllerLayoutGuide type="bottom" id="1BR-ec-oD5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PBK-Y6-ivQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nowifinetworksfound" translatesAutoresizingMaskIntoConstraints="NO" id="YPw-KS-eaW">
-                                <rect key="frame" x="37" y="98" width="262" height="179"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="kMA-8X-dsa"/>
-                                    <constraint firstAttribute="width" constant="262" id="nan-nc-eKk"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="YPw-KS-eaW" secondAttribute="centerX" id="8ry-vr-hM7"/>
-                            <constraint firstAttribute="centerY" secondItem="YPw-KS-eaW" secondAttribute="centerY" id="dpw-cP-Qzo"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Error" id="pl2-J5-aj1">
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="JSd-4Q-2CR">
-                            <connections>
-                                <action selector="buttonCancel:" destination="9wz-r5-Sgs" id="pET-CX-Z47"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b8i-le-LHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2180" y="390"/>
-        </scene>
-        <!--View Controller-->
+        <!--Wifi Commissioning Error View Controller-->
         <scene sceneID="vxu-TO-hNe">
             <objects>
-                <viewController id="d1J-l3-I4c" sceneMemberID="viewController">
+                <viewController id="d1J-l3-I4c" customClass="WifiCommissioningErrorViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qao-lW-i31"/>
                         <viewControllerLayoutGuide type="bottom" id="EjR-rg-Mrf"/>
@@ -340,33 +279,203 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="chillhubnotlocated" translatesAutoresizingMaskIntoConstraints="NO" id="EBX-bo-qnH">
-                                <rect key="frame" x="194" y="116" width="334" height="249"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_wifi_error_not_found" translatesAutoresizingMaskIntoConstraints="NO" id="rWo-0T-7qc">
+                                <rect key="frame" x="250" y="92" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="1fM-po-sed"/>
-                                    <constraint firstAttribute="width" constant="262" id="pGl-G8-3ui"/>
+                                    <constraint firstAttribute="height" constant="100" id="9Ao-8P-Set"/>
+                                    <constraint firstAttribute="width" constant="100" id="Pff-HG-Hcp"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTw-o9-QpE">
+                                <rect key="frame" x="16" y="234" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="uAl-Fa-RVg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="19"/>
+                                <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCQ-0h-EYt">
+                                <rect key="frame" x="16" y="263" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ioo-3y-7k0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.49803924560546875" green="0.49411767721176147" blue="0.5058823823928833" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzn-yE-QLu">
+                                <rect key="frame" x="190" y="321" width="221" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="cpl-rB-DUR"/>
+                                    <constraint firstAttribute="width" constant="221" id="gSA-cv-caZ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="btn_try_again">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="EBX-bo-qnH" secondAttribute="centerY" id="QUN-tU-HAM"/>
-                            <constraint firstAttribute="centerX" secondItem="EBX-bo-qnH" secondAttribute="centerX" id="uhh-2a-ybu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jCQ-0h-EYt" secondAttribute="trailing" id="1MB-Bp-yAm"/>
+                            <constraint firstAttribute="centerX" secondItem="rWo-0T-7qc" secondAttribute="centerX" id="Dvj-cF-9cv"/>
+                            <constraint firstItem="jTw-o9-QpE" firstAttribute="leading" secondItem="4w2-yp-XZF" secondAttribute="leadingMargin" id="ELW-FT-Eww"/>
+                            <constraint firstItem="fzn-yE-QLu" firstAttribute="top" secondItem="jCQ-0h-EYt" secondAttribute="bottom" constant="37" id="I2N-ES-KDM"/>
+                            <constraint firstAttribute="centerX" secondItem="jCQ-0h-EYt" secondAttribute="centerX" id="Tjl-Cz-pxa"/>
+                            <constraint firstItem="rWo-0T-7qc" firstAttribute="top" secondItem="Qao-lW-i31" secondAttribute="bottom" constant="28" id="biZ-Wp-DCP"/>
+                            <constraint firstAttribute="centerX" secondItem="jTw-o9-QpE" secondAttribute="centerX" id="d5j-if-BmF"/>
+                            <constraint firstItem="jTw-o9-QpE" firstAttribute="top" secondItem="rWo-0T-7qc" secondAttribute="bottom" constant="42" id="l67-Xd-Zs8"/>
+                            <constraint firstAttribute="centerX" secondItem="fzn-yE-QLu" secondAttribute="centerX" id="sJI-pB-yeG"/>
+                            <constraint firstItem="jCQ-0h-EYt" firstAttribute="top" secondItem="jTw-o9-QpE" secondAttribute="bottom" constant="8" id="u2T-co-Jcs"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tV-jb-2Q0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1285" y="1147"/>
+            <point key="canvasLocation" x="423" y="1241"/>
+        </scene>
+        <!--Wifi Commissioning Error View Controller-->
+        <scene sceneID="9CG-G9-ien">
+            <objects>
+                <viewController id="win-8B-cbK" customClass="WifiCommissioningErrorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MbK-HS-kvm"/>
+                        <viewControllerLayoutGuide type="bottom" id="X8u-CO-eb4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zZa-Ff-srE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_wifi_error_somethingwentwrong" translatesAutoresizingMaskIntoConstraints="NO" id="OjC-LH-1cL">
+                                <rect key="frame" x="250" y="92" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="O9V-n9-rb5"/>
+                                    <constraint firstAttribute="height" constant="100" id="mu5-zl-h0m"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ais-pj-MYg">
+                                <rect key="frame" x="16" y="234" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="h2C-4m-lL9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="19"/>
+                                <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCW-G1-12Y">
+                                <rect key="frame" x="16" y="263" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Hwn-Nb-0Lb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.49803924560000001" green="0.49411767719999999" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8f-hS-i1c">
+                                <rect key="frame" x="190" y="321" width="221" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="221" id="5YO-MX-JRd"/>
+                                    <constraint firstAttribute="height" constant="45" id="yoc-fw-li0"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="btn_try_again">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ais-pj-MYg" firstAttribute="leading" secondItem="zZa-Ff-srE" secondAttribute="leadingMargin" id="1OK-UD-QTQ"/>
+                            <constraint firstItem="SCW-G1-12Y" firstAttribute="top" secondItem="ais-pj-MYg" secondAttribute="bottom" constant="8" id="Hae-z9-6TA"/>
+                            <constraint firstItem="o8f-hS-i1c" firstAttribute="top" secondItem="SCW-G1-12Y" secondAttribute="bottom" constant="37" id="JPK-OH-mGS"/>
+                            <constraint firstItem="ais-pj-MYg" firstAttribute="top" secondItem="OjC-LH-1cL" secondAttribute="bottom" constant="42" id="Kqf-4m-NxG"/>
+                            <constraint firstAttribute="centerX" secondItem="ais-pj-MYg" secondAttribute="centerX" id="O6g-TN-Ncu"/>
+                            <constraint firstAttribute="centerX" secondItem="o8f-hS-i1c" secondAttribute="centerX" id="QJ2-MR-NWE"/>
+                            <constraint firstItem="OjC-LH-1cL" firstAttribute="top" secondItem="MbK-HS-kvm" secondAttribute="bottom" constant="28" id="TRG-N4-GD5"/>
+                            <constraint firstAttribute="centerX" secondItem="OjC-LH-1cL" secondAttribute="centerX" id="ZVe-T7-cef"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SCW-G1-12Y" secondAttribute="trailing" id="bju-Ny-KIa"/>
+                            <constraint firstAttribute="centerX" secondItem="SCW-G1-12Y" secondAttribute="centerX" id="tfZ-hC-LIn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="84J-kq-lnr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313" y="1209"/>
+        </scene>
+        <!--Wifi Commissioning Error View Controller-->
+        <scene sceneID="aB4-y7-nDq">
+            <objects>
+                <viewController id="l7O-cQ-qgb" customClass="WifiCommissioningErrorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bVj-af-nB7"/>
+                        <viewControllerLayoutGuide type="bottom" id="dzY-nm-xdX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zqP-cg-V6K">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_wifi_error_troubleconnecting" translatesAutoresizingMaskIntoConstraints="NO" id="eU0-xe-v8F">
+                                <rect key="frame" x="250" y="92" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Q56-ju-5Ek"/>
+                                    <constraint firstAttribute="height" constant="100" id="uDx-hz-NnT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQx-Ky-WMD">
+                                <rect key="frame" x="16" y="234" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8Qs-xu-UL1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="19"/>
+                                <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz8-eh-jbG">
+                                <rect key="frame" x="16" y="263" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="98W-nD-mKe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.49803924560000001" green="0.49411767719999999" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U40-NB-sv3">
+                                <rect key="frame" x="190" y="321" width="221" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="agA-dG-h61"/>
+                                    <constraint firstAttribute="width" constant="221" id="oG5-90-ykL"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="btn_try_again">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EQx-Ky-WMD" firstAttribute="leading" secondItem="zqP-cg-V6K" secondAttribute="leadingMargin" id="2uG-Bq-fSH"/>
+                            <constraint firstAttribute="centerX" secondItem="EQx-Ky-WMD" secondAttribute="centerX" id="6jL-gZ-cxg"/>
+                            <constraint firstAttribute="centerX" secondItem="U40-NB-sv3" secondAttribute="centerX" id="FrW-Ps-hgi"/>
+                            <constraint firstAttribute="centerX" secondItem="yz8-eh-jbG" secondAttribute="centerX" id="IjP-VA-Dnn"/>
+                            <constraint firstItem="yz8-eh-jbG" firstAttribute="top" secondItem="EQx-Ky-WMD" secondAttribute="bottom" constant="8" id="N6q-4A-8bT"/>
+                            <constraint firstAttribute="centerX" secondItem="eU0-xe-v8F" secondAttribute="centerX" id="ZpY-37-VHb"/>
+                            <constraint firstItem="U40-NB-sv3" firstAttribute="top" secondItem="yz8-eh-jbG" secondAttribute="bottom" constant="37" id="gnt-MI-aiD"/>
+                            <constraint firstItem="eU0-xe-v8F" firstAttribute="top" secondItem="bVj-af-nB7" secondAttribute="bottom" constant="28" id="heB-VO-F0c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yz8-eh-jbG" secondAttribute="trailing" id="kS0-fy-O4r"/>
+                            <constraint firstItem="EQx-Ky-WMD" firstAttribute="top" secondItem="eU0-xe-v8F" secondAttribute="bottom" constant="42" id="wOW-yl-GGG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jEu-kG-6l2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2185" y="1198"/>
         </scene>
     </scenes>
     <resources>
         <image name="btn_blue_large_connect" width="1137" height="241"/>
-        <image name="chillhubisconnecting" width="699" height="450"/>
-        <image name="chillhubnotlocated" width="586" height="434"/>
-        <image name="errorconnectingtowifi" width="666" height="436"/>
+        <image name="btn_try_again" width="2273" height="482"/>
         <image name="icon_chillhub_circle_with_label_stacked" width="431" height="521"/>
-        <image name="nowifinetworksfound" width="632" height="438"/>
+        <image name="icon_wifi_error_not_found" width="990" height="990"/>
+        <image name="icon_wifi_error_somethingwentwrong" width="990" height="990"/>
+        <image name="icon_wifi_error_troubleconnecting" width="990" height="990"/>
         <image name="spinner_arrows_circle_bg_pulse_vfx_orange" width="736" height="714"/>
     </resources>
 </document>

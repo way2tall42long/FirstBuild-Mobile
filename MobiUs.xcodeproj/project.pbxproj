@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B2521151A001A6300148D67 /* STKSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2521141A001A6300148D67 /* STKSpinnerView.m */; };
 		5B3E180B1A41CC76004F1FA0 /* ProductMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E180A1A41CC76004F1FA0 /* ProductMainViewController.m */; };
+		5B7FB5541A4373C900553797 /* WifiCommissioningConnectingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FB5531A4373C900553797 /* WifiCommissioningConnectingViewController.m */; };
 		5B8C108A1A39EC2A00F481E6 /* ProductAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C10891A39EC2A00F481E6 /* ProductAddViewController.m */; };
 		5B99E07E1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B99E07D1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard */; };
 		5B99E0811A1A5D10005FB881 /* WifiCommissioningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99E0801A1A5D10005FB881 /* WifiCommissioningViewController.m */; };
@@ -29,7 +30,6 @@
 		5BC3647B1A2E25A800D03B9C /* splashvideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = 5BC3647A1A2E25A800D03B9C /* splashvideo.mov */; };
 		5BC3647E1A2F637800D03B9C /* FSTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3647D1A2F637800D03B9C /* FSTDevice.m */; };
 		5BC364811A2F63C200D03B9C /* FSTToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC364801A2F63C200D03B9C /* FSTToken.m */; };
-		5BC364871A2FAA5E00D03B9C /* WifiCommissioningWaitForChillHubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC364861A2FAA5E00D03B9C /* WifiCommissioningWaitForChillHubViewController.m */; };
 		5BC3648A1A2FAC1A00D03B9C /* FSTMilkyWeigh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC364891A2FAC1A00D03B9C /* FSTMilkyWeigh.m */; };
 		5BC3648D1A3112EE00D03B9C /* FSTBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3648C1A3112EE00D03B9C /* FSTBackgroundLayer.m */; };
 		5BC364971A3260E200D03B9C /* FSTChillHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC364961A3260E200D03B9C /* FSTChillHub.m */; };
@@ -65,6 +65,8 @@
 		5B2521141A001A6300148D67 /* STKSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKSpinnerView.m; sourceTree = "<group>"; };
 		5B3E18091A41CC76004F1FA0 /* ProductMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductMainViewController.h; sourceTree = "<group>"; };
 		5B3E180A1A41CC76004F1FA0 /* ProductMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductMainViewController.m; sourceTree = "<group>"; };
+		5B7FB5521A4373C900553797 /* WifiCommissioningConnectingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiCommissioningConnectingViewController.h; sourceTree = "<group>"; };
+		5B7FB5531A4373C900553797 /* WifiCommissioningConnectingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiCommissioningConnectingViewController.m; sourceTree = "<group>"; };
 		5B8C10871A39324C00F481E6 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		5B8C10881A39EC2A00F481E6 /* ProductAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductAddViewController.h; sourceTree = "<group>"; };
 		5B8C10891A39EC2A00F481E6 /* ProductAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductAddViewController.m; sourceTree = "<group>"; };
@@ -105,8 +107,6 @@
 		5BC3647D1A2F637800D03B9C /* FSTDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTDevice.m; sourceTree = "<group>"; };
 		5BC3647F1A2F63C200D03B9C /* FSTToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTToken.h; sourceTree = "<group>"; };
 		5BC364801A2F63C200D03B9C /* FSTToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTToken.m; sourceTree = "<group>"; };
-		5BC364851A2FAA5E00D03B9C /* WifiCommissioningWaitForChillHubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiCommissioningWaitForChillHubViewController.h; sourceTree = "<group>"; };
-		5BC364861A2FAA5E00D03B9C /* WifiCommissioningWaitForChillHubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiCommissioningWaitForChillHubViewController.m; sourceTree = "<group>"; };
 		5BC364881A2FAC1A00D03B9C /* FSTMilkyWeigh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTMilkyWeigh.h; sourceTree = "<group>"; };
 		5BC364891A2FAC1A00D03B9C /* FSTMilkyWeigh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTMilkyWeigh.m; sourceTree = "<group>"; };
 		5BC3648B1A3112EE00D03B9C /* FSTBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTBackgroundLayer.h; sourceTree = "<group>"; };
@@ -299,8 +299,8 @@
 				5B99E0831A1AA63F005FB881 /* WifiCommissioningNetworkListViewController.m */,
 				5B99E0881A1E9CFF005FB881 /* WifiCommissioningErrorViewController.h */,
 				5B99E0891A1E9CFF005FB881 /* WifiCommissioningErrorViewController.m */,
-				5BC364851A2FAA5E00D03B9C /* WifiCommissioningWaitForChillHubViewController.h */,
-				5BC364861A2FAA5E00D03B9C /* WifiCommissioningWaitForChillHubViewController.m */,
+				5B7FB5521A4373C900553797 /* WifiCommissioningConnectingViewController.h */,
+				5B7FB5531A4373C900553797 /* WifiCommissioningConnectingViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -613,7 +613,6 @@
 				5BC364811A2F63C200D03B9C /* FSTToken.m in Sources */,
 				5BF9482F19EC15E300CB8BCF /* MenuViewController.m in Sources */,
 				5BC5A1CD19EF6584009C93B1 /* FBTUser.m in Sources */,
-				5BC364871A2FAA5E00D03B9C /* WifiCommissioningWaitForChillHubViewController.m in Sources */,
 				5BC5A1D019EF6638009C93B1 /* Constants.m in Sources */,
 				5B99E0871A1AA744005FB881 /* FSTNetwork.m in Sources */,
 				5BC5A1C219EF5E79009C93B1 /* FBTAuthenticationViewController.m in Sources */,
@@ -621,6 +620,7 @@
 				5BBB0B8A19F1CC5D001D5DF1 /* CFShareCircleView.m in Sources */,
 				5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */,
 				5BC3649D1A32661B00D03B9C /* FSTProduct.m in Sources */,
+				5B7FB5541A4373C900553797 /* WifiCommissioningConnectingViewController.m in Sources */,
 				5BBB0B9A19F1DE8C001D5DF1 /* ScaleViewController.m in Sources */,
 				5B99E08A1A1E9CFF005FB881 /* WifiCommissioningErrorViewController.m in Sources */,
 				5B2521151A001A6300148D67 /* STKSpinnerView.m in Sources */,

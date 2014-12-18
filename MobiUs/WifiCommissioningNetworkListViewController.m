@@ -7,6 +7,7 @@
 //
 
 #import "WifiCommissioningNetworkListViewController.h"
+#import "WifiCommissioningConnectingViewController.h"
 #import <RestKit.h>
 #import "FSTNetwork.h"
 
@@ -61,6 +62,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // intercept the segue to the embedded container controller
+    NSString * segueName = segue.identifier;
+    if ([segueName isEqualToString: @"segueConnectingToChillHub"]) {
+        WifiCommissioningConnectingViewController * connectingController = (WifiCommissioningConnectingViewController *) [segue destinationViewController];
+        connectingController.device = self.device;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated

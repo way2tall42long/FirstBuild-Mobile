@@ -12,6 +12,7 @@
 #import "FSTToken.h"
 #import "FSTDevice.h"
 #import "FBTUser.h"
+#import "WifiCommissioningNetworkListViewController.h"
 
 @interface WifiCommissioningViewController ()
 
@@ -122,8 +123,8 @@
     [[RKObjectManager sharedManager] getObjectsAtPath:@"/"
                                            parameters:nil
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                  FSTDevice *device = mappingResult.array[0];
-                                                  NSLog(@"UUID %@", device.uuid);
+                                                  self.device = mappingResult.array[0];
+                                                  NSLog(@"UUID %@", self.device.uuid);
                                                   [self segueToNetworks];
                                                   //[self performSegueWithIdentifier:@"segueDisplayList" sender:self];
                                               }
@@ -144,6 +145,16 @@
                                                   }
                                                   self.checkForAPTries++;
                                               }];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // intercept the segue to the embedded container controller
+    NSString * segueName = segue.identifier;
+    if ([segueName isEqualToString: @"segueDisplayList"]) {
+        WifiCommissioningNetworkListViewController * networkController = (WifiCommissioningNetworkListViewController *) [segue destinationViewController];
+        networkController.device = self.device;
+    }
 }
 
 - (void)segueToNetworks

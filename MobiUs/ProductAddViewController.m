@@ -41,10 +41,14 @@
     }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
-    
-    cell.backgroundColor = UIColorFromRGB(0x00B5CC);
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    //cell.backgroundColor = UIColorFromRGB(0x00B5CC);
     return cell;
     
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.backgroundColor = UIColorFromRGB(0x00B5CC);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -57,7 +61,8 @@
     //self.view.backgroundColor = UIColorFromRGB(0x00B5CC);
     self.navigationController.navigationBar.alpha = 1;
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.backgroundColor = UIColorFromRGB(0xD7D9DA);
+    //self.navigationController.navigationBar.backgroundColor = UIColorFromRGB(0xD7D9DA);
+    //self.tableView.backgroundColor =UIColorFromRGB(0xD7D9DA);
 
 }
 

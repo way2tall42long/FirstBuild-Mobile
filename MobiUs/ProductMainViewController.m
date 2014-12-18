@@ -151,36 +151,6 @@
     [UIView commitAnimations];
 }
 
-//
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//    return self.products.count;
-//}
-//
-//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    ProductCollectionViewCell *productCell =
-//    [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-//    
-//    productCell.layer.cornerRadius = 10;
-//    productCell.layer.masksToBounds = YES;
-//    
-//    return productCell;
-//}
-//
-//#pragma mark <UICollectionViewDelegate>
-//
-//- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    FSTProduct * product = self.products[indexPath.row];
-//    NSLog(@"selected %@", product.identifier);
-//    
-//    if ([product isKindOfClass:[FSTChillHub class]])
-//    {
-//        [self performSegueWithIdentifier:@"segueChillHub" sender:product];
-//    }
-//    
-//}
-
 /*
 #pragma mark - Navigation
 

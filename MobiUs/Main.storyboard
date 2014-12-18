@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -12,6 +11,7 @@
             <string>PTSans-NarrowBold</string>
         </mutableArray>
         <mutableArray key="PT_Sans-Narrow-Web-Regular.ttf">
+            <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
@@ -138,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M38-qo-hbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2476" y="601"/>
+            <point key="canvasLocation" x="2576" y="645"/>
         </scene>
         <!--Mobi Navigation Controller-->
         <scene sceneID="sz5-Lr-6cD">
@@ -282,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zc-uB-pe6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616" y="718"/>
+            <point key="canvasLocation" x="560" y="538"/>
         </scene>
         <!--ProductCollectionViewController-->
         <scene sceneID="K6v-Wk-Vcm">
@@ -382,7 +382,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1428" y="529"/>
+            <point key="canvasLocation" x="1340" y="376.5"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="wPy-96-W5c">
@@ -393,7 +393,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UBs-M1-EYQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Uwb-Ae-fEZ">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="44" width="568" height="485"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -427,19 +427,63 @@
         <scene sceneID="fqg-0B-fS7">
             <objects>
                 <viewController id="L2E-QF-ZY6" customClass="ProductAddViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hJS-bR-voH">
+                        <rect key="frame" x="0.0" y="44" width="568" height="485"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="2rf-Dw-gvB">
+                            <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chillhub" id="9hq-ln-vqf">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9hq-ln-vqf" id="ye9-Rr-jFT">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_plus_bare" translatesAutoresizingMaskIntoConstraints="NO" id="HdR-AC-umU">
+                                            <rect key="frame" x="-8" y="0.0" width="46" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="wwX-Ee-mre"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ChillHub" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOY-Ay-6O7">
+                                            <rect key="frame" x="52" y="11" width="508" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="djV-HG-SbX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="19"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="sOY-Ay-6O7" firstAttribute="leading" secondItem="HdR-AC-umU" secondAttribute="trailing" constant="14" id="1zd-lf-3V4"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="sOY-Ay-6O7" secondAttribute="trailing" id="7wN-RR-OYG"/>
+                                        <constraint firstAttribute="bottom" secondItem="HdR-AC-umU" secondAttribute="bottom" id="9tS-L7-9Va"/>
+                                        <constraint firstItem="HdR-AC-umU" firstAttribute="leadingMargin" secondItem="ye9-Rr-jFT" secondAttribute="leading" id="Dzy-f9-rvj"/>
+                                        <constraint firstItem="HdR-AC-umU" firstAttribute="top" secondItem="ye9-Rr-jFT" secondAttribute="top" id="Vwh-4g-EJb"/>
+                                        <constraint firstAttribute="centerY" secondItem="sOY-Ay-6O7" secondAttribute="centerY" id="beF-Np-GVe"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cXR-UM-Ibc" kind="show" id="cPM-Uq-Uiz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                    </tableView>
                     <navigationItem key="navigationItem" id="Cdo-kD-Iao">
-                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="g3R-ys-YaI">
-                            <color key="tintColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
-                            <connections>
-                                <action selector="revealToggle:" destination="L2E-QF-ZY6" id="cBb-kR-Uhg"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="xC1-TX-hZc"/>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cy1-Nv-JC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208" y="-564.5"/>
+            <point key="canvasLocation" x="2284" y="-299.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="q8B-7a-PMg">
@@ -462,6 +506,7 @@
     </scenes>
     <resources>
         <image name="btn_blue_large_with_field_plus_add_product" width="1315" height="431"/>
+        <image name="btn_plus_bare" width="344" height="344"/>
         <image name="icon_chevron_blue" width="28" height="47"/>
         <image name="icon_chillhub_circle_with_label_stacked" width="431" height="521"/>
         <image name="reveal-icon" width="22" height="17"/>
@@ -469,7 +514,7 @@
         <image name="teardrop" width="33" height="97"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MoZ-40-MKS"/>
+        <segue reference="IRJ-Qz-t2I"/>
         <segue reference="npd-rX-YGc"/>
     </inferredMetricsTieBreakers>
 </document>

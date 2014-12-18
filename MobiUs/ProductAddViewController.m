@@ -17,9 +17,47 @@
 
 @implementation ProductAddViewController
 
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    switch (indexPath.row) {
+        case 0:
+            CellIdentifier = @"chillhub";
+            break;
+            
+        default:
+            break;
+    }
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
+    
+    cell.backgroundColor = UIColorFromRGB(0x00B5CC);
+    return cell;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 46;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.noProductsNoticeView setHidden:NO];
+    //self.view.backgroundColor = UIColorFromRGB(0x00B5CC);
+    self.navigationController.navigationBar.alpha = 1;
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.backgroundColor = UIColorFromRGB(0xD7D9DA);
 
 }
 

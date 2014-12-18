@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProductAddViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIView *noProductsNoticeView;
+@interface ProductAddViewController : UITableViewController
+
 @end

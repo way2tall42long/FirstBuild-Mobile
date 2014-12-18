@@ -23,8 +23,6 @@
 		5BBB0B8A19F1CC5D001D5DF1 /* CFShareCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B8719F1CC5D001D5DF1 /* CFShareCircleView.m */; };
 		5BBB0B8B19F1CC5D001D5DF1 /* CFSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B8919F1CC5D001D5DF1 /* CFSharer.m */; };
 		5BBB0B9A19F1DE8C001D5DF1 /* ScaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B9919F1DE8C001D5DF1 /* ScaleViewController.m */; };
-		5BBB0BA119F1E8D7001D5DF1 /* SousVideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0BA019F1E8D7001D5DF1 /* SousVideViewController.m */; };
-		5BBB0BA319F1E96B001D5DF1 /* SousVide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBB0BA219F1E96B001D5DF1 /* SousVide.storyboard */; };
 		5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */; };
 		5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */; };
 		5BC364791A2D019300D03B9C /* splashvideo.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 5BC364761A2CF9EF00D03B9C /* splashvideo.m4v */; };
@@ -42,8 +40,6 @@
 		5BC5A1CD19EF6584009C93B1 /* FBTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1CC19EF6584009C93B1 /* FBTUser.m */; };
 		5BC5A1D019EF6638009C93B1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1CF19EF6638009C93B1 /* Constants.m */; };
 		5BD467CD1A35ED54009BAC36 /* FirebaseShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD467CC1A35ED54009BAC36 /* FirebaseShared.m */; };
-		5BF9482519EC155700CB8BCF /* LineCook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF9482419EC155700CB8BCF /* LineCook.storyboard */; };
-		5BF9482819EC158100CB8BCF /* LineCookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9482719EC158100CB8BCF /* LineCookViewController.m */; };
 		5BF9482B19EC15A000CB8BCF /* ChillHubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9482A19EC15A000CB8BCF /* ChillHubViewController.m */; };
 		5BF9482D19EC15BB00CB8BCF /* ChillHub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF9482C19EC15BB00CB8BCF /* ChillHub.storyboard */; };
 		5BF9482F19EC15E300CB8BCF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9482E19EC15E300CB8BCF /* MenuViewController.m */; };
@@ -99,9 +95,6 @@
 		5BBB0B8919F1CC5D001D5DF1 /* CFSharer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFSharer.m; sourceTree = "<group>"; };
 		5BBB0B9819F1DE8C001D5DF1 /* ScaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleViewController.h; sourceTree = "<group>"; };
 		5BBB0B9919F1DE8C001D5DF1 /* ScaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleViewController.m; sourceTree = "<group>"; };
-		5BBB0B9F19F1E8D7001D5DF1 /* SousVideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SousVideViewController.h; sourceTree = "<group>"; };
-		5BBB0BA019F1E8D7001D5DF1 /* SousVideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SousVideViewController.m; sourceTree = "<group>"; };
-		5BBB0BA219F1E96B001D5DF1 /* SousVide.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SousVide.storyboard; sourceTree = "<group>"; };
 		5BBFACFD19E495FC00E42575 /* ProductCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewController.h; sourceTree = "<group>"; };
 		5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewController.m; sourceTree = "<group>"; };
 		5BBFAD0019E4965500E42575 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
@@ -134,9 +127,6 @@
 		5BC5A1CF19EF6638009C93B1 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		5BD467CB1A35ED54009BAC36 /* FirebaseShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseShared.h; sourceTree = "<group>"; };
 		5BD467CC1A35ED54009BAC36 /* FirebaseShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseShared.m; sourceTree = "<group>"; };
-		5BF9482419EC155700CB8BCF /* LineCook.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LineCook.storyboard; sourceTree = "<group>"; };
-		5BF9482619EC158100CB8BCF /* LineCookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineCookViewController.h; sourceTree = "<group>"; };
-		5BF9482719EC158100CB8BCF /* LineCookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineCookViewController.m; sourceTree = "<group>"; };
 		5BF9482919EC15A000CB8BCF /* ChillHubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChillHubViewController.h; sourceTree = "<group>"; };
 		5BF9482A19EC15A000CB8BCF /* ChillHubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChillHubViewController.m; sourceTree = "<group>"; };
 		5BF9482C19EC15BB00CB8BCF /* ChillHub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChillHub.storyboard; sourceTree = "<group>"; };
@@ -342,8 +332,6 @@
 				5BC5A1BC19EF5E6B009C93B1 /* Authentication */,
 				67926FFA19EDDA4B00E346C2 /* Shared */,
 				5B3F1C9A19E8845400303242 /* Main */,
-				5BBB0B9B19F1E88B001D5DF1 /* SousVide */,
-				5BF9481E19EC152000CB8BCF /* LineCook */,
 				5B3F1C9919E8843900303242 /* ChillHub */,
 				5B9EF0F119DEEE1000E8D9F1 /* Supporting Files */,
 			);
@@ -381,40 +369,6 @@
 				5B9EF10C19DEEE1100E8D9F1 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5BBB0B9B19F1E88B001D5DF1 /* SousVide */ = {
-			isa = PBXGroup;
-			children = (
-				5BBB0B9E19F1E8AB001D5DF1 /* model */,
-				5BBB0B9D19F1E8A3001D5DF1 /* controllers */,
-				5BBB0B9C19F1E89B001D5DF1 /* views */,
-			);
-			name = SousVide;
-			sourceTree = "<group>";
-		};
-		5BBB0B9C19F1E89B001D5DF1 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				5BBB0BA219F1E96B001D5DF1 /* SousVide.storyboard */,
-			);
-			name = views;
-			sourceTree = "<group>";
-		};
-		5BBB0B9D19F1E8A3001D5DF1 /* controllers */ = {
-			isa = PBXGroup;
-			children = (
-				5BBB0B9F19F1E8D7001D5DF1 /* SousVideViewController.h */,
-				5BBB0BA019F1E8D7001D5DF1 /* SousVideViewController.m */,
-			);
-			name = controllers;
-			sourceTree = "<group>";
-		};
-		5BBB0B9E19F1E8AB001D5DF1 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = model;
 			sourceTree = "<group>";
 		};
 		5BC3648E1A3249EA00D03B9C /* views */ = {
@@ -485,40 +439,6 @@
 				5BC5A1BE19EF5E79009C93B1 /* FBTAuthenticationViewController.m */,
 			);
 			name = controllers;
-			sourceTree = "<group>";
-		};
-		5BF9481E19EC152000CB8BCF /* LineCook */ = {
-			isa = PBXGroup;
-			children = (
-				5BF9482319EC154100CB8BCF /* views */,
-				5BF9482019EC152E00CB8BCF /* controllers */,
-				5BF9481F19EC152800CB8BCF /* model */,
-			);
-			name = LineCook;
-			sourceTree = "<group>";
-		};
-		5BF9481F19EC152800CB8BCF /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = model;
-			sourceTree = "<group>";
-		};
-		5BF9482019EC152E00CB8BCF /* controllers */ = {
-			isa = PBXGroup;
-			children = (
-				5BF9482619EC158100CB8BCF /* LineCookViewController.h */,
-				5BF9482719EC158100CB8BCF /* LineCookViewController.m */,
-			);
-			name = controllers;
-			sourceTree = "<group>";
-		};
-		5BF9482319EC154100CB8BCF /* views */ = {
-			isa = PBXGroup;
-			children = (
-				5BF9482419EC155700CB8BCF /* LineCook.storyboard */,
-			);
-			name = views;
 			sourceTree = "<group>";
 		};
 		67926FFA19EDDA4B00E346C2 /* Shared */ = {
@@ -626,9 +546,7 @@
 				5BC5A1C619EF6314009C93B1 /* Authentication.storyboard in Resources */,
 				5BF9482D19EC15BB00CB8BCF /* ChillHub.storyboard in Resources */,
 				5BF9483119EC15F900CB8BCF /* Main.storyboard in Resources */,
-				5BF9482519EC155700CB8BCF /* LineCook.storyboard in Resources */,
 				5BC3647B1A2E25A800D03B9C /* splashvideo.mov in Resources */,
-				5BBB0BA319F1E96B001D5DF1 /* SousVide.storyboard in Resources */,
 				5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */,
 				5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */,
 				5BC364791A2D019300D03B9C /* splashvideo.m4v in Resources */,
@@ -702,14 +620,12 @@
 				5B99E0811A1A5D10005FB881 /* WifiCommissioningViewController.m in Sources */,
 				5BBB0B8A19F1CC5D001D5DF1 /* CFShareCircleView.m in Sources */,
 				5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */,
-				5BF9482819EC158100CB8BCF /* LineCookViewController.m in Sources */,
 				5BC3649D1A32661B00D03B9C /* FSTProduct.m in Sources */,
 				5BBB0B9A19F1DE8C001D5DF1 /* ScaleViewController.m in Sources */,
 				5B99E08A1A1E9CFF005FB881 /* WifiCommissioningErrorViewController.m in Sources */,
 				5B2521151A001A6300148D67 /* STKSpinnerView.m in Sources */,
 				5BBB0B8B19F1CC5D001D5DF1 /* CFSharer.m in Sources */,
 				5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */,
-				5BBB0BA119F1E8D7001D5DF1 /* SousVideViewController.m in Sources */,
 				5B9EF0F419DEEE1000E8D9F1 /* main.m in Sources */,
 				5B8C108A1A39EC2A00F481E6 /* ProductAddViewController.m in Sources */,
 				6743AE1F19E30E46000D9CF3 /* MobiNavigationController.m in Sources */,

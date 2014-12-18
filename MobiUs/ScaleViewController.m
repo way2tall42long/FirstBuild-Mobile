@@ -41,7 +41,7 @@
         if (rawVal != [NSNull null])
         {
             NSDictionary* val = rawVal;
-            float percentageLeft = [(NSNumber *)[val objectForKey:@"weight"] doubleValue];
+            float percentageLeft = [(NSNumber *)[val objectForKey:@"weight"] doubleValue]/100;
             [[self spinnerView] setProgress:percentageLeft animated:YES];
         }
         NSLog(@"%@ -> %@", snapshot.key, snapshot.value);

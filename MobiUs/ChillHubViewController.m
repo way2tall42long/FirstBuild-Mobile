@@ -85,9 +85,9 @@
     
     [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    Firebase *attachmentsRef = [self.product.firebaseRef childByAppendingPath:DATAMAPPING_ATTACHMENTS];
+    //Firebase *attachmentsRef = [self.product.firebaseRef childByAppendingPath:DATAMAPPING_ATTACHMENTS];
     
-    [attachmentsRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+    [self.product.firebaseRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         if ([snapshot.key isEqualToString:DATAMAPPING_MILKY_WEIGH])
         {
             for (FDataSnapshot* scale in snapshot.children) {

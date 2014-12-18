@@ -69,7 +69,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
     
     Firebase *chillhubsRemRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices/chillhubs"];
     [chillhubsRemRef observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
-        for (int i=self.products.count-1; i>-1; i--)
+        for (long i=self.products.count-1; i>-1; i--)
         {
             FSTChillHub *chillhub = [self.products objectAtIndex:i];
             if ([chillhub.identifier isEqualToString:snapshot.key])
@@ -78,6 +78,10 @@ static NSString * const reuseIdentifier = @"ProductCell";
                 [self.productCollection reloadData];
                 break;
             }
+        }
+        if (self.products.count == 0)
+        {
+            [self.delegate noItemsInCollection];
         }
     }];
 }

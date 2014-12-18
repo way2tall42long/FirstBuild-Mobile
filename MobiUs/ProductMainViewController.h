@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductCollectionViewController.h"
 
-@interface ProductMainViewController : UIViewController
+@interface ProductMainViewController : UIViewController <ProductCollectionViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *noProductsView;
 @property (strong, nonatomic) IBOutlet UIView *productsCollectionView;

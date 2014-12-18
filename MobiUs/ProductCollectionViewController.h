@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ProductCollectionViewDelegate <NSObject>
+
+@required
+
+- (void) noItemsInCollection;
+
+@end
+
 @interface ProductCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
-// TODO: use dictionary
+@property (weak) id <ProductCollectionViewDelegate> delegate;
 @property (strong, nonatomic) NSMutableArray *productImages;
 @property (strong, nonatomic) NSMutableArray *productLabels;
 @property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;

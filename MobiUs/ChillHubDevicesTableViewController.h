@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FSTChillHubDevice.h"
+#import "FSTChillHub.h"
 
 @interface ChillHubDevicesTableViewController : UITableViewController
-@property (strong, nonatomic) FSTChillHubDevice * chillhub;
+@property (strong, nonatomic) FSTChillHub * chillhub;
+@property (strong, nonatomic) NSMutableArray *products;
+@property (nonatomic) BOOL haveFirebaseBinding;
 @end

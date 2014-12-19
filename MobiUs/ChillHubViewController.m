@@ -48,18 +48,15 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.destinationViewController isKindOfClass:[ScaleViewController class]] )
+    if ([segue.identifier isEqualToString:@"segueDevices"])
     {
-        ScaleViewController* scale = (ScaleViewController*) segue.destinationViewController;
-        scale.milkyWeigh = (FSTMilkyWeigh*)((CFSharer*) sender).product;
-    }
-    else if ([segue.identifier isEqualToString:@"segueDevices"])
-    {
-        ChillHubDevicesTableViewController * devicesController = (ChillHubDevicesTableViewController *) [segue destinationViewController];
-        devicesController.chillhub = (FSTChillHub*)self.product;
+        self.destinationController = (ChillHubDevicesTableViewController *) [segue destinationViewController];
+        //devicesController.chillhub = (FSTChillHub*)self.product;
     }
    
 }
+
+
 
 //- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
 //    NSLog(@"Selected sharer: %@", sharer.name);
@@ -78,6 +75,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
 //    self.shareCircleView = [[CFShareCircleView alloc] initWithFrame:self.view.bounds];
 //    self.shareCircleView.delegate = self;
 //    [self.view addSubview:self.shareCircleView];
@@ -88,7 +86,7 @@
     //TODO: figure out whats going on with the observers -- it isn't correct
     [super viewWillAppear:animated];
     //[self.shareCircleView removeAllAccessories];
-    
+    self.destinationController.chillhub = (FSTChillHub*)self.product;
     [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
 }

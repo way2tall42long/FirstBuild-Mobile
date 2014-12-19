@@ -56,7 +56,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
         [self.navigationController.navigationBar addGestureRecognizer:revealViewController.panGestureRecognizer];
     }
    
-   
+    //TODO: support multiple device types
     Firebase *chillhubsAddRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices/chillhubs"];
     [chillhubsAddRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
                 FSTChillHub* chillhub = [FSTChillHub new];
@@ -93,7 +93,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
-    //TODO: clean up for other controllers
+    //TODO: support other products
     RBStoryboardLink *destination = segue.destinationViewController;
     MobiNavigationController *rvc = (MobiNavigationController *)destination.scene;
     ChillHubViewController *vc = (ChillHubViewController*)rvc.topViewController;

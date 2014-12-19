@@ -8,35 +8,59 @@
 
 #import "ChillHubDevicesTableViewController.h"
 #import "FSTMilkyWeigh.h"
+#import "ScaleViewController.h"
 
 @interface ChillHubDevicesTableViewController ()
+
+
 
 @end
 
 @implementation ChillHubDevicesTableViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.products = [[NSMutableArray alloc] init];
+    self.haveFirebaseBinding = NO;
     //Firebase *attachmentsRef = [self.product.firebaseRef childByAppendingPath:DATAMAPPING_ATTACHMENTS];
     
-    [self.chillhub.firebaseRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-        if ([snapshot.key isEqualToString:DATAMAPPING_MILKY_WEIGH])
-        {
-            for (FDataSnapshot* scale in snapshot.children) {
-                FSTMilkyWeigh* scaleData = [FSTMilkyWeigh new];
-                scaleData.identifier = scale.key;
-                scaleData.firebaseRef = scale.ref;
-                //[self.shareCircleView addAccessoryWithDevice:scaleData withType:CFSharerTypeMilkScale];
-            }
-        }
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    FSTChillHubDevice* deviceSelected = (FSTChillHubDevice*)sender;
+    if ([segue.destinationViewController isKindOfClass:[ScaleViewController class]] )
+    {
+        ScaleViewController* scale = (ScaleViewController*) segue.destinationViewController;
+        scale.milkyWeigh = (FSTMilkyWeigh*)deviceSelected;
+    }
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    //TODO: is this is hack? not sure the correct way to work around this, but viewDidLoad
+    //is being called before the prepareForSegue's which are setting the ChillHub properties
+    //on the viewcontrollers, therefore its empty. viewWillAppear is called after all the
+    //segues are loaded, but its called multiple times and we only one to create the observer one time
+    if (!self.haveFirebaseBinding)
+    {
         
-    }];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+        [self.chillhub.firebaseRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+            if ([snapshot.key isEqualToString:DATAMAPPING_MILKY_WEIGH])
+            {
+                for (FDataSnapshot* scale in snapshot.children) {
+                    FSTMilkyWeigh* milkyWeigh = [FSTMilkyWeigh new];
+                    milkyWeigh.identifier = scale.key;
+                    milkyWeigh.firebaseRef = scale.ref;
+                    [self.products addObject:milkyWeigh];
+                    [self.tableView reloadData];
+                }
+            }
+            
+            }];
+        self.haveFirebaseBinding = YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,26 +71,36 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    return 1;
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.products.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    //TODO: support multiple product types
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"milkyWeighCell" forIndexPath:indexPath];
+    
     
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FSTChillHubDevice * product = self.products[indexPath.row];
+    NSLog(@"selected %@", product.identifier);
+    
+    if ([product isKindOfClass:[FSTMilkyWeigh class]])
+    {
+        [self performSegueWithIdentifier:@"segueMilkyWeigh" sender:product];
+    }
+}
+
 
 /*
 // Override to support conditional editing of the table view.

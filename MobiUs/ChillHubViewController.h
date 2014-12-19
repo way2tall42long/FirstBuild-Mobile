@@ -31,8 +31,9 @@
 #import <UIKit/UIKit.h>
 #import "CFShareCircleView.h"
 #import "FSTChillHub.h"
+#import "ChillHubDevicesTableViewController.h"
 
 @interface ChillHubViewController : UIViewController  
 @property (strong, nonatomic) FSTChillHub* product;
-
+@property (strong, nonatomic) ChillHubDevicesTableViewController* destinationController;
 @end

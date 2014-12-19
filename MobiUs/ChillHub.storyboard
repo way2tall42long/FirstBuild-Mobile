@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONNECTED TO MY CHILLHUB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7Y-oI-kwt">
-                                <rect key="frame" x="16" y="37" width="568" height="21"/>
+                                <rect key="frame" x="16" y="5" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="XPv-BR-dx0"/>
                                 </constraints>
@@ -53,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5c6-nL-efZ">
-                                <rect key="frame" x="16" y="71" width="568" height="465"/>
+                                <rect key="frame" x="16" y="46" width="568" height="490"/>
                                 <connections>
                                     <segue destination="v0e-D7-gki" kind="embed" identifier="segueDevices" id="R8D-Ro-EdL"/>
                                 </connections>
@@ -61,10 +61,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5c6-nL-efZ" firstAttribute="top" secondItem="V7Y-oI-kwt" secondAttribute="bottom" constant="13" id="18M-Bh-sOa"/>
+                            <constraint firstItem="5c6-nL-efZ" firstAttribute="top" secondItem="V7Y-oI-kwt" secondAttribute="bottom" constant="20" id="18M-Bh-sOa"/>
                             <constraint firstItem="1R5-yY-vgi" firstAttribute="top" secondItem="5c6-nL-efZ" secondAttribute="bottom" id="2Qz-OP-yLr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5c6-nL-efZ" secondAttribute="trailing" id="Dsp-EJ-dvS"/>
-                            <constraint firstItem="V7Y-oI-kwt" firstAttribute="top" secondItem="PhJ-rR-KaF" secondAttribute="bottom" constant="37" id="WvP-Hm-RQg"/>
+                            <constraint firstItem="V7Y-oI-kwt" firstAttribute="top" secondItem="PhJ-rR-KaF" secondAttribute="bottom" constant="5" id="WvP-Hm-RQg"/>
                             <constraint firstItem="5c6-nL-efZ" firstAttribute="leading" secondItem="kLN-dV-h28" secondAttribute="leadingMargin" id="Xen-M9-b1x"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V7Y-oI-kwt" secondAttribute="trailing" id="kwf-2T-V2W"/>
                             <constraint firstAttribute="centerX" secondItem="V7Y-oI-kwt" secondAttribute="centerX" id="yl3-sD-QKJ"/>
@@ -84,21 +84,22 @@
             </objects>
             <point key="canvasLocation" x="721" y="422"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Chill Hub Devices Table View Controller-->
         <scene sceneID="REm-gG-mMH">
             <objects>
-                <tableViewController id="v0e-D7-gki" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xgf-cy-YXt">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="465"/>
+                <tableViewController id="v0e-D7-gki" customClass="ChillHubDevicesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xgf-cy-YXt">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="490"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="9ep-9R-Fs3">
                             <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reusableCell" id="wpL-9x-xFB">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="milkyWeighCell" id="wpL-9x-xFB">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wpL-9x-xFB" id="wmu-Kf-fAF">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -110,14 +111,14 @@
                                                 <constraint firstAttribute="height" constant="44" id="nR6-cO-NFB"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MilkyWeigh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehP-hz-imm">
-                                            <rect key="frame" x="70" y="-2" width="490" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MilkyWeigh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehP-hz-imm">
+                                            <rect key="frame" x="70" y="-3" width="490" height="26"/>
                                             <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="20"/>
                                             <color key="textColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Always know when to buy milk." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21s-2q-CrA">
-                                            <rect key="frame" x="70" y="22" width="487" height="17.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Always know when to buy milk." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21s-2q-CrA">
+                                            <rect key="frame" x="70" y="23" width="487" height="20"/>
                                             <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="15"/>
                                             <color key="textColor" red="0.49803924560000001" green="0.49411767719999999" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
@@ -140,9 +141,6 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="G9T-YQ-eHl" kind="show" id="Ldj-rP-6fC"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -150,6 +148,9 @@
                             <outlet property="delegate" destination="v0e-D7-gki" id="V3S-wV-sAb"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="G9T-YQ-eHl" kind="show" identifier="segueMilkyWeigh" id="Mbi-zU-540"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ZL-Fc-R5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,7 +165,7 @@
                         <viewControllerLayoutGuide type="bottom" id="yW3-2D-GTn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fZ5-JG-L8z">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="465"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="490"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="milk-background" translatesAutoresizingMaskIntoConstraints="NO" id="N4g-99-Uds">

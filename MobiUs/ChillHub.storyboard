@@ -206,6 +206,11 @@
                             <constraint firstAttribute="centerY" secondItem="Uaw-Kr-ZPK" secondAttribute="centerY" id="YA7-qU-Lxz"/>
                             <constraint firstAttribute="centerX" secondItem="N4g-99-Uds" secondAttribute="centerX" id="wXQ-3k-Ace"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Uaw-Kr-ZPK"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="2rQ-Ow-qVw">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="KAw-wK-WPf">

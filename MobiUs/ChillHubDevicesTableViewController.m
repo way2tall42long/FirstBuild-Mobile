@@ -86,7 +86,7 @@
     
     //TODO: support multiple product types
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"milkyWeighCell" forIndexPath:indexPath];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }

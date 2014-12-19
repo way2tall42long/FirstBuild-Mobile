@@ -58,12 +58,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.view.backgroundColor = UIColorFromRGB(0x00B5CC);
     self.navigationController.navigationBar.alpha = 1;
     self.navigationController.navigationBar.translucent = NO;
-    //self.navigationController.navigationBar.backgroundColor = UIColorFromRGB(0xD7D9DA);
-    //self.tableView.backgroundColor =UIColorFromRGB(0xD7D9DA);
-
 }
 
 - (void)didReceiveMemoryWarning {

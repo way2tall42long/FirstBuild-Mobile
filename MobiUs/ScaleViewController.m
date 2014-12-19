@@ -30,14 +30,9 @@
 
 - (void)viewDidLoad
 {
-  
+    //TODO: cleanup references
     [super viewDidLoad];
 
-    
-}
-
-- (void) viewWillAppear:(BOOL)animated
-{
     [self.milkyWeigh.firebaseRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         id rawVal = snapshot.value;
         if (rawVal != [NSNull null])
@@ -48,6 +43,11 @@
         }
         NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
     }];
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    
 }
 
 @end

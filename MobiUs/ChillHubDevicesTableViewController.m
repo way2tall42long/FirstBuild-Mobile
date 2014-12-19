@@ -59,6 +59,19 @@
             }
             
             }];
+        
+        [[self.chillhub.firebaseRef childByAppendingPath:@"milkyWeighs"] observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
+            for (long i=self.products.count-1; i>-1; i--)
+            {
+                FSTMilkyWeigh* milkyWeigh = [self.products objectAtIndex:i];
+                if ([milkyWeigh.identifier isEqualToString:snapshot.key])
+                {
+                    [self.products removeObject:milkyWeigh];
+                    [self.tableView reloadData];
+                    break;
+                }
+            }
+        }];
         self.haveFirebaseBinding = YES;
     }
 }

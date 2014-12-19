@@ -29,6 +29,7 @@
 //
 
 #import "ChillHubViewController.h"
+#import "ChillHubDevicesTableViewController.h"
 #import "CFSharer.h"
 #import "FBTUser.h"
 #import "FSTMilkyWeigh.h"
@@ -51,6 +52,11 @@
     {
         ScaleViewController* scale = (ScaleViewController*) segue.destinationViewController;
         scale.milkyWeigh = (FSTMilkyWeigh*)((CFSharer*) sender).product;
+    }
+    else if ([segue.identifier isEqualToString:@"segueDevices"])
+    {
+        ChillHubDevicesTableViewController * devicesController = (ChillHubDevicesTableViewController *) [segue destinationViewController];
+        devicesController.chillhub = (FSTChillHub*)self.product;
     }
    
 }
@@ -84,23 +90,8 @@
     //[self.shareCircleView removeAllAccessories];
     
     [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
-    //Firebase *attachmentsRef = [self.product.firebaseRef childByAppendingPath:DATAMAPPING_ATTACHMENTS];
-    
-    [self.product.firebaseRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-        if ([snapshot.key isEqualToString:DATAMAPPING_MILKY_WEIGH])
-        {
-            for (FDataSnapshot* scale in snapshot.children) {
-                FSTMilkyWeigh* scaleData = [FSTMilkyWeigh new];
-                scaleData.identifier = scale.key;
-                scaleData.firebaseRef = scale.ref;
-                //[self.shareCircleView addAccessoryWithDevice:scaleData withType:CFSharerTypeMilkScale];
-            }
-        }
 
-    }];
 }
-
 
 #pragma mark state preservation / restoration
 

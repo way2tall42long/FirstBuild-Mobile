@@ -29,7 +29,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o7O-Gz-QS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-105" y="515"/>
+            <point key="canvasLocation" x="-101" y="422"/>
         </scene>
         <!--Chill Hub View Controller-->
         <scene sceneID="NSR-3o-z3g">
@@ -55,7 +55,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5c6-nL-efZ">
                                 <rect key="frame" x="16" y="71" width="568" height="465"/>
                                 <connections>
-                                    <segue destination="v0e-D7-gki" kind="embed" id="R8D-Ro-EdL"/>
+                                    <segue destination="v0e-D7-gki" kind="embed" identifier="segueDevices" id="R8D-Ro-EdL"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -98,7 +98,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wpL-9x-xFB">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reusableCell" id="wpL-9x-xFB">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wpL-9x-xFB" id="wmu-Kf-fAF">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -110,14 +110,14 @@
                                                 <constraint firstAttribute="height" constant="44" id="nR6-cO-NFB"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MilkyWeigh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehP-hz-imm">
-                                            <rect key="frame" x="70" y="-3" width="490" height="26"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MilkyWeigh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehP-hz-imm">
+                                            <rect key="frame" x="70" y="-2" width="490" height="24"/>
                                             <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="20"/>
                                             <color key="textColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Always know when to buy milk." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21s-2q-CrA">
-                                            <rect key="frame" x="70" y="23" width="487" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Always know when to buy milk." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21s-2q-CrA">
+                                            <rect key="frame" x="70" y="22" width="487" height="17.5"/>
                                             <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="15"/>
                                             <color key="textColor" red="0.49803924560000001" green="0.49411767719999999" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>

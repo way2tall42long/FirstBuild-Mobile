@@ -35,6 +35,7 @@
 #import "FSTMilkyWeigh.h"
 #import "ScaleViewController.h"
 #import "FirebaseShared.h"
+#import "MilkGallonClippingView.h"
 
 #import <SWRevealViewController.h>
 #import <Firebase/Firebase.h>
@@ -75,7 +76,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    
+    
 //    self.shareCircleView = [[CFShareCircleView alloc] initWithFrame:self.view.bounds];
 //    self.shareCircleView.delegate = self;
 //    [self.view addSubview:self.shareCircleView];

@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "STKSpinnerView.h"
 #import "FSTMilkyWeigh.h"
+#import "MilkGallonClippingView.h"
 
 @interface ScaleViewController : UIViewController
-@property (strong, nonatomic) IBOutlet STKSpinnerView *spinnerView;
-@property (strong, nonatomic) FSTMilkyWeigh *milkyWeigh;
 
+@property (strong, nonatomic) FSTMilkyWeigh *milkyWeigh;
+@property (strong, nonatomic) IBOutlet UIImageView *milkJugView;
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (strong, nonatomic) IBOutlet UIView *whiteView;
 
 @end

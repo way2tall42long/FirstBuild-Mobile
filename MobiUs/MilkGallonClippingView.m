@@ -19,12 +19,15 @@
     UIColor* strokeColor = UIColorFromRGB(0x717073);
     UIColor* strokeColor1 = UIColorFromRGB(0x717073);
     UIColor* strokeColor2 = UIColorFromRGB(0x717073);
+    UIColor* strokeColor3 = UIColorFromRGB(0x717073);
     UIBezierPath* path = [UIBezierPath bezierPath];
     UIBezierPath* path1 = [UIBezierPath bezierPath];
     UIBezierPath* path2 = [UIBezierPath bezierPath];
+    UIBezierPath* path3 = [UIBezierPath bezierPath];
     path.lineWidth = 7.88;
     path1.lineWidth = 7.88;
     path2.lineWidth = 7.88;
+    path3.lineWidth = 3.94;
     self.clippingPath = path;
 
     [path moveToPoint: CGPointMake(207,176)];
@@ -83,6 +86,15 @@
     [strokeColor2 setStroke];
     //path2.lineWidth = 0.5;
     [path2 stroke];
+    
+    //UIColor* strokeColor3 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
+    //UIBezierPath* path3 = [UIBezierPath bezierPath];
+    [path3 moveToPoint: CGPointMake(79,24)];
+    [path3 addCurveToPoint: CGPointMake(103,21) controlPoint1: CGPointMake(86,22) controlPoint2: CGPointMake(94,21)];
+    [path3 addCurveToPoint: CGPointMake(128,24) controlPoint1: CGPointMake(112,21) controlPoint2: CGPointMake(121,22)];
+    [strokeColor3 setStroke];
+    //path3.lineWidth = 0.5;
+    [path3 stroke];
     
 }
 

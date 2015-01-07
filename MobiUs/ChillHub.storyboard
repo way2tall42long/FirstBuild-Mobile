@@ -180,7 +180,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CD2120EA-3831-4EC5-BF76-BB96FA745A0F" translatesAutoresizingMaskIntoConstraints="NO" id="N4g-99-Uds">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7E8617AE-D0EF-4B4F-8489-ADF14B64FBE3" translatesAutoresizingMaskIntoConstraints="NO" id="N4g-99-Uds">
                                 <rect key="frame" x="238" y="238" width="125" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="kOI-SL-HyX"/>
@@ -235,40 +235,39 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_milkyweigh_no_milk-2" translatesAutoresizingMaskIntoConstraints="NO" id="4bo-J1-yJb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="436"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPC-Q3-8g3">
-                                <rect key="frame" x="240" y="132" width="114" height="157"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPC-Q3-8g3" userLabel="whiteView">
+                                <rect key="frame" x="192" y="54" width="216" height="329"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccf-xT-q3K" customClass="MilkGallonClippingView">
+                                <rect key="frame" x="192" y="54" width="216" height="329"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="157" id="Jr7-6Q-gLT"/>
-                                    <constraint firstAttribute="width" constant="114" id="sv8-MP-0dx"/>
+                                    <constraint firstAttribute="width" constant="216" id="4gd-Ka-McM"/>
+                                    <constraint firstAttribute="height" constant="329" id="R7E-Vb-fdr"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_milkyweigh_with_milk_nobg" translatesAutoresizingMaskIntoConstraints="NO" id="T01-dJ-UCA">
-                                <rect key="frame" x="235" y="121" width="130" height="194"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="00I-Ix-h94"/>
-                                    <constraint firstAttribute="height" constant="194" id="StU-Ss-GlV"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="T01-dJ-UCA" secondAttribute="centerY" id="1In-Ro-qbn"/>
-                            <constraint firstAttribute="centerX" secondItem="T01-dJ-UCA" secondAttribute="centerX" id="GtT-Rh-yaC"/>
+                            <constraint firstItem="mPC-Q3-8g3" firstAttribute="width" secondItem="ccf-xT-q3K" secondAttribute="width" id="Ft2-b8-eLy"/>
                             <constraint firstAttribute="trailing" secondItem="4bo-J1-yJb" secondAttribute="trailing" id="Lzu-18-4Op"/>
                             <constraint firstItem="4bo-J1-yJb" firstAttribute="leading" secondItem="ZZI-K1-5Zk" secondAttribute="leading" id="UIH-TO-wgN"/>
+                            <constraint firstItem="mPC-Q3-8g3" firstAttribute="height" secondItem="ccf-xT-q3K" secondAttribute="height" id="V22-rA-vla"/>
+                            <constraint firstAttribute="centerX" secondItem="mPC-Q3-8g3" secondAttribute="centerX" id="WHx-Du-JSm"/>
                             <constraint firstItem="4bo-J1-yJb" firstAttribute="top" secondItem="Mae-iv-taP" secondAttribute="bottom" id="XrS-Am-YZf"/>
+                            <constraint firstAttribute="centerY" secondItem="ccf-xT-q3K" secondAttribute="centerY" id="b9q-ei-saZ"/>
                             <constraint firstAttribute="centerX" secondItem="4bo-J1-yJb" secondAttribute="centerX" id="ekh-t3-cI4"/>
-                            <constraint firstItem="T01-dJ-UCA" firstAttribute="centerX" secondItem="mPC-Q3-8g3" secondAttribute="centerX" constant="3" id="iNV-rr-3rh"/>
                             <constraint firstAttribute="centerY" secondItem="4bo-J1-yJb" secondAttribute="centerY" id="k8s-Lt-yPP"/>
                             <constraint firstItem="m71-jD-W88" firstAttribute="top" secondItem="4bo-J1-yJb" secondAttribute="bottom" id="nGd-eF-azi"/>
-                            <constraint firstItem="T01-dJ-UCA" firstAttribute="centerY" secondItem="mPC-Q3-8g3" secondAttribute="centerY" constant="7.5" id="ois-TV-PCw"/>
+                            <constraint firstAttribute="centerY" secondItem="mPC-Q3-8g3" secondAttribute="centerY" id="oQb-vx-xCD"/>
+                            <constraint firstAttribute="centerX" secondItem="ccf-xT-q3K" secondAttribute="centerX" id="z1M-F8-4b8"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="backgroundView" destination="4bo-J1-yJb" id="Qwq-1v-2Lt"/>
-                        <outlet property="milkJugView" destination="T01-dJ-UCA" id="GDG-n3-a4A"/>
+                        <outlet property="clippingView" destination="ccf-xT-q3K" id="ZO3-Zk-8VP"/>
                         <outlet property="whiteView" destination="mPC-Q3-8g3" id="Nh8-dI-rJv"/>
                     </connections>
                 </viewController>
@@ -278,7 +277,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CD2120EA-3831-4EC5-BF76-BB96FA745A0F" width="658" height="728">
+        <image name="7E8617AE-D0EF-4B4F-8489-ADF14B64FBE3" width="658" height="728">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -24304,7 +24303,6 @@ AAAAAAAV/Jw
 </mutableData>
         </image>
         <image name="bg_milkyweigh_no_milk-2" width="2671" height="3814"/>
-        <image name="bg_milkyweigh_with_milk_nobg" width="2105" height="3290"/>
         <image name="icon_chevron_blue_right" width="28" height="47"/>
         <image name="icon_milkyweigh_item" width="483" height="450"/>
         <image name="reveal-icon" width="22" height="17"/>

@@ -19,5 +19,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (strong, nonatomic) IBOutlet UIView *whiteView; //view that lays in the white behind the jug
 @property (strong, nonatomic) IBOutlet MilkGallonClippingView *clippingView; //view that draws and clips the white view
+@property (strong, nonatomic) IBOutlet UIView *whiteFillView;
 @property (strong, nonatomic) IBOutlet SCSiriWaveformView *waveView;
 @end

@@ -23,41 +23,28 @@ float amplitude;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)loadMilkJug
+- (void)loadMilkJugWithPercent: (float)percent
 {
-    
     amplitude = .5;
-    
+   // [[self.whiteView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     //create a clipping mask in the shape of the path in the milk gallon
     CAShapeLayer *mask = [CAShapeLayer layer];
     mask.path = self.clippingView.clippingPath.CGPath  ;
     self.whiteView.layer.mask = mask;
-    
-    //create the view with the same dimensions as the clipping view, this will hold the "white" object which
-    //will be clipped by the clipping bezier path. since we are drawing the "milk" from the bottom we need to reverse
-    //the y origin and grow the box negative
-    UIView * whiteFillView = [[UIView alloc]initWithFrame:CGRectMake(0, self.clippingView.bounds.size.height, self.clippingView.bounds.size.width, 0)];
-    whiteFillView.backgroundColor = [UIColor whiteColor];
-    [self.whiteView addSubview:whiteFillView];
 
-    
-    //create a wave view that sits on the top of the milk. we need to start that box just above the top of the milk
-    //and the height should be the same proportion below it. the wave view centers the wave it draws.
-    self.waveView = [[SCSiriWaveformView alloc]initWithFrame:CGRectMake(0, self.clippingView.bounds.size.height, self.clippingView.bounds.size.width, 24)];
-    self.waveView.backgroundColor = [UIColor clearColor];
-    [self.whiteView addSubview:self.waveView];
-    
     //add it to the run loop for animation
     CADisplayLink *displaylink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateMeters)];
     [displaylink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     [self.waveView setWaveColor:[UIColor whiteColor]];
    
     [UIView animateWithDuration:.8f animations:^{
-        whiteFillView.frame =CGRectMake(0, self.clippingView.bounds.size.height, self.clippingView.bounds.size.width, -160);
-        self.waveView.frame =CGRectMake(0, self.clippingView.bounds.size.height-172, self.clippingView.bounds.size.width, 24);
+        int increments = self.clippingView.bounds.size.height/100;
+        self.whiteFillView.frame =CGRectMake(0, self.clippingView.bounds.size.height, self.clippingView.bounds.size.width, -(increments*percent)); //160
+        self.waveView.frame =CGRectMake(0, self.clippingView.bounds.size.height-(increments*percent+12), self.clippingView.bounds.size.width, 24); //172
     } completion:^(BOOL finished) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             amplitude = 0;
+            [displaylink removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
         });
     }];
 }
@@ -71,15 +58,27 @@ float amplitude;
 {
     //TODO: cleanup references
     [super viewDidLoad];
-   
     
+    //create the view with the same dimensions as the clipping view, this will hold the "white" object which
+    //will be clipped by the clipping bezier path. since we are drawing the "milk" from the bottom we need to reverse
+    //the y origin and grow the box negative
+    self.whiteFillView = [[UIView alloc]initWithFrame:CGRectMake(0, self.clippingView.bounds.size.height, self.clippingView.bounds.size.width, 0)];
+    self.whiteFillView.backgroundColor = [UIColor whiteColor];
+    [self.whiteView addSubview:self.whiteFillView];
+    
+    //create a wave view that sits on the top of the milk. we need to start that box just above the top of the milk
+    //and the height should be the same proportion below it. the wave view centers the wave it draws.
+    self.waveView = [[SCSiriWaveformView alloc]initWithFrame:CGRectMake(0, self.clippingView.bounds.size.height, self.clippingView.bounds.size.width, 24)];
+    self.waveView.backgroundColor = [UIColor clearColor];
+    [self.whiteView addSubview:self.waveView];
+
     [self.milkyWeigh.firebaseRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         id rawVal = snapshot.value;
         if (rawVal != [NSNull null])
         {
             NSDictionary* val = rawVal;
-            float percentageLeft = [(NSNumber *)[val objectForKey:@"weight"] doubleValue]/100;
-            [self loadMilkJug];
+            float percentageLeft = [(NSNumber *)[val objectForKey:@"weight"] doubleValue];
+            [self loadMilkJugWithPercent:percentageLeft];
             //self.emptyClippingMask
             //[[self spinnerView] setProgress:percentageLeft animated:YES];
         }

@@ -11,7 +11,7 @@
 @interface SCSiriWaveformView ()
 
 @property (nonatomic, assign) CGFloat phase;
-@property (nonatomic, assign) CGFloat amplitude;
+//@property (nonatomic, assign) CGFloat amplitude;
 
 @end
 
@@ -45,7 +45,7 @@
     self.frequency = .5f;
     
     self.amplitude = .5f;
-    self.idleAmplitude = 0.01f;
+    self.idleAmplitude = 0.0f;
     
     self.numberOfWaves = 1;
     self.phaseShift = -0.15f;

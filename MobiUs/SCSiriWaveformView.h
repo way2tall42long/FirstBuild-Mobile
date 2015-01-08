@@ -53,7 +53,7 @@
 /*
  * The current amplitude
  */
-@property (nonatomic, assign, readonly) CGFloat amplitude;
+@property (nonatomic, assign) CGFloat amplitude;
 
 /*
  * The lines are joined stepwise, the more dense you draw, the more CPU power is used.

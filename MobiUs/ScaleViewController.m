@@ -15,6 +15,9 @@
 
 @implementation ScaleViewController
 
+float amplitude;
+
+
 - (IBAction)backButton:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -23,7 +26,8 @@
 - (void)loadMilkJug
 {
     
-   
+    amplitude = .5;
+    
     //create a clipping mask in the shape of the path in the milk gallon
     CAShapeLayer *mask = [CAShapeLayer layer];
     mask.path = self.clippingView.clippingPath.CGPath  ;
@@ -47,17 +51,19 @@
     CADisplayLink *displaylink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateMeters)];
     [displaylink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     [self.waveView setWaveColor:[UIColor whiteColor]];
-    
-    [UIView animateWithDuration:1.2f animations:^{
+   
+    [UIView animateWithDuration:.8f animations:^{
         whiteFillView.frame =CGRectMake(0, self.clippingView.bounds.size.height, self.clippingView.bounds.size.width, -160);
         self.waveView.frame =CGRectMake(0, self.clippingView.bounds.size.height-172, self.clippingView.bounds.size.width, 24);
     } completion:^(BOOL finished) {
-        //
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            amplitude = 0;
+        });
     }];
 }
 - (void)updateMeters
 {
-    [self.waveView updateWithLevel:.5];
+    [self.waveView updateWithLevel:amplitude];
 }
 
 

@@ -9,9 +9,7 @@
 #import "ScaleViewController.h"
 #import "FirebaseShared.h"
 
-
 #import <Firebase/Firebase.h>
-
 
 @implementation ScaleViewController
 
@@ -26,21 +24,21 @@ float amplitude;
 - (void)loadMilkJugWithPercent: (float)percent
 {
     amplitude = .5;
-   // [[self.whiteView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+   
     //create a clipping mask in the shape of the path in the milk gallon
     CAShapeLayer *mask = [CAShapeLayer layer];
     mask.path = self.clippingView.clippingPath.CGPath  ;
     self.whiteView.layer.mask = mask;
 
     //add it to the run loop for animation
-    CADisplayLink *displaylink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateMeters)];
+    CADisplayLink *displaylink = [CADisplayLink displayLinkWithTarget:self selector:@selector(animateMilkWave)];
     [displaylink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     [self.waveView setWaveColor:[UIColor whiteColor]];
    
     [UIView animateWithDuration:.8f animations:^{
         int increments = self.clippingView.bounds.size.height/100;
-        self.whiteFillView.frame =CGRectMake(0, self.clippingView.bounds.size.height, self.clippingView.bounds.size.width, -(increments*percent)); //160
-        self.waveView.frame =CGRectMake(0, self.clippingView.bounds.size.height-(increments*percent+12), self.clippingView.bounds.size.width, 24); //172
+        self.whiteFillView.frame =CGRectMake(0, self.clippingView.bounds.size.height, self.clippingView.bounds.size.width, -(increments*percent));
+        self.waveView.frame =CGRectMake(0, self.clippingView.bounds.size.height-(increments*percent+12), self.clippingView.bounds.size.width, 24);
     } completion:^(BOOL finished) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             amplitude = 0;
@@ -48,11 +46,11 @@ float amplitude;
         });
     }];
 }
-- (void)updateMeters
+
+- (void)animateMilkWave
 {
     [self.waveView updateWithLevel:amplitude];
 }
-
 
 - (void)viewDidLoad
 {

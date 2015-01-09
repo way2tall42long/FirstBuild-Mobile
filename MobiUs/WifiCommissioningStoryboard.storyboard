@@ -120,7 +120,7 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="TbV-3f-Ecf" customClass="MobiNavigationController" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hbQ-Jo-5Xz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hbQ-Jo-5Xz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

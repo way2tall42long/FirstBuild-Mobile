@@ -35,6 +35,7 @@ float amplitude;
     [displaylink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     [self.waveView setWaveColor:[UIColor whiteColor]];
    
+    //fill in the jug and then stop the wave effect upon completion
     [UIView animateWithDuration:.8f animations:^{
         int increments = self.clippingView.bounds.size.height/100;
         self.whiteFillView.frame =CGRectMake(0, self.clippingView.bounds.size.height, self.clippingView.bounds.size.width, -(increments*percent));

@@ -269,7 +269,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CWo-Xf-Hwj">
-                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="P5F-UX-ctC">
+                        <barButtonItem key="rightBarButtonItem" image="reveal-icon" id="P5F-UX-ctC">
                             <color key="tintColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="revealButtonClick:" destination="Uf1-wD-krg" id="dsZ-zF-534"/>
@@ -469,8 +469,8 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="key-FJ-Dlc">
-                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="ELj-5P-vlj">
-                            <color key="tintColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
+                        <barButtonItem key="rightBarButtonItem" image="reveal-icon" id="ELj-5P-vlj">
+                            <color key="tintColor" red="0.0" green="0.70980392156862748" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="revealButtonClick:" destination="dJA-hw-Leo" id="Mbv-cn-mP3"/>
                             </connections>
@@ -561,6 +561,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MoZ-40-MKS"/>
-        <segue reference="uL2-Kk-aJq"/>
+        <segue reference="PJp-Cw-9Jf"/>
     </inferredMetricsTieBreakers>
 </document>

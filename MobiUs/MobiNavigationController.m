@@ -26,6 +26,8 @@
 
     [imageView setCenter:superCenter];
     [self.navigationBar addSubview:imageView];
+    //self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
+    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0x00B5CC)];
 
 }
 

@@ -16,7 +16,7 @@
 
 @end
 
-@interface ProductCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ProductCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak) id <ProductCollectionViewDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UICollectionView *productCollection;
 @property (strong, nonatomic) NSMutableArray *products;

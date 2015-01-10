@@ -89,9 +89,6 @@ static NSString * const reuseIdentifier = @"ProductCell";
     ProductCollectionViewCell *productCell =
         [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
-    productCell.layer.cornerRadius = 10;
-    productCell.layer.masksToBounds = YES;
- 
     return productCell;
 }
 
@@ -107,6 +104,18 @@ static NSString * const reuseIdentifier = @"ProductCell";
         [self performSegueWithIdentifier:@"segueChillHub" sender:product];
     }
 
+}
+
+- (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //TODO: I've missed some margin or something on the parent view and am compensating with making
+    //it a little larger than the actual
+    return CGSizeMake(self.view.bounds.size.width+10, 150);
+}
+
+- (UIEdgeInsets) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

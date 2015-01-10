@@ -352,29 +352,9 @@
                             <outlet property="delegate" destination="vMY-F1-92f" id="Uz1-DG-Xah"/>
                         </connections>
                     </collectionView>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="dKG-W7-d8L"/>
-                        <barButtonItem systemItem="add" id="gNq-33-523">
-                            <color key="tintColor" red="0.93725496529999996" green="0.40000003579999999" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
-                            <connections>
-                                <action selector="addProductSelector:" destination="vMY-F1-92f" id="WLB-6y-CUB"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="uFY-5F-dkF"/>
-                        <barButtonItem systemItem="search" id="Qd5-st-jmp">
-                            <color key="tintColor" red="0.93725496529999996" green="0.40000003579999999" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="sy4-5k-FuY"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="SWf-iQ-ZyW">
-                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" style="plain" id="h8V-Aq-wDG">
-                            <color key="tintColor" red="0.11372549831867218" green="0.70980393886566162" blue="0.79215693473815918" alpha="1" colorSpace="deviceRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <toolbarItems/>
                     <connections>
-                        <outlet property="addProductButton" destination="gNq-33-523" id="h4F-GK-ZF8"/>
                         <outlet property="productCollection" destination="h3X-C2-8Es" id="qsO-XY-k8R"/>
-                        <outlet property="revealButtonItem" destination="h8V-Aq-wDG" id="V1u-tl-B4u"/>
                         <segue destination="sZO-RU-ozf" kind="custom" identifier="segueChillHub" customClass="SWRevealViewControllerSeguePushController" id="1Dx-g3-3f3"/>
                         <segue destination="dJA-hw-Leo" kind="show" identifier="segueAddProducts" id="Ucb-Xj-qPs"/>
                     </connections>

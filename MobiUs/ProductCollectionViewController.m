@@ -24,37 +24,9 @@
 
 static NSString * const reuseIdentifier = @"ProductCell";
 
-- (IBAction)addProductSelector:(id)sender {
-    
-//    NSArray *productsToAdd = [NSArray arrayWithObjects:@"ChillHub", @"SousVide", @"LineCook", @"MicroKitchen", nil];
-//    
-//    [ActionSheetStringPicker showPickerWithTitle:@"Add Device" rows:productsToAdd initialSelection:0
-//                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-//                                           NSLog(@"Picker: %@", picker);
-//                                           NSLog(@"Selected Index: %tu", selectedIndex);
-//                                           NSLog(@"Selected Value: %@", selectedValue);
-//                                           if ([selectedValue isEqualToString:@"ChillHub"])
-//                                           {
-//                                               [self performSegueWithIdentifier:@"segueWifiCommissioning" sender:self];
-//                                           }
-//                                       }
-//                                     cancelBlock:^(ActionSheetStringPicker *picker) {
-//                                         NSLog(@"Block Picker Canceled");
-//                                     }
-//                                          origin:sender];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.products = [[NSMutableArray alloc] init];
-
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.revealButtonItem setTarget: revealViewController];
-        [self.revealButtonItem setAction: @selector( revealToggle: )];
-        [self.navigationController.navigationBar addGestureRecognizer:revealViewController.panGestureRecognizer];
-    }
    
     //TODO: support multiple device types
     Firebase *chillhubsAddRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices/chillhubs"];

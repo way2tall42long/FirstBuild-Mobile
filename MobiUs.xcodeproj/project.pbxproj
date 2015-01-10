@@ -10,6 +10,8 @@
 		5B174DD51A5DB94700A00505 /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B174DD41A5DB94700A00505 /* SCSiriWaveformView.m */; };
 		5B174DD81A5DE1DE00A00505 /* MilkGallonStand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B174DD71A5DE1DE00A00505 /* MilkGallonStand.m */; };
 		5B174DDB1A5F40C500A00505 /* ProductAddWrapperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B174DDA1A5F40C500A00505 /* ProductAddWrapperViewController.m */; };
+		5B174DE01A60717000A00505 /* FirstBuildAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B174DDF1A60717000A00505 /* FirstBuildAssets.xcassets */; };
+		5B174DE21A6092EE00A00505 /* splashvideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5B174DE11A6092D400A00505 /* splashvideo.mp4 */; };
 		5B2521151A001A6300148D67 /* STKSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2521141A001A6300148D67 /* STKSpinnerView.m */; };
 		5B3E180B1A41CC76004F1FA0 /* ProductMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E180A1A41CC76004F1FA0 /* ProductMainViewController.m */; };
 		5B7FB5541A4373C900553797 /* WifiCommissioningConnectingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FB5531A4373C900553797 /* WifiCommissioningConnectingViewController.m */; };
@@ -32,7 +34,6 @@
 		5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */; };
 		5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */; };
 		5BC364791A2D019300D03B9C /* splashvideo.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 5BC364761A2CF9EF00D03B9C /* splashvideo.m4v */; };
-		5BC3647B1A2E25A800D03B9C /* splashvideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = 5BC3647A1A2E25A800D03B9C /* splashvideo.mov */; };
 		5BC3647E1A2F637800D03B9C /* FSTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3647D1A2F637800D03B9C /* FSTDevice.m */; };
 		5BC364811A2F63C200D03B9C /* FSTToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC364801A2F63C200D03B9C /* FSTToken.m */; };
 		5BC3648A1A2FAC1A00D03B9C /* FSTMilkyWeigh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC364891A2FAC1A00D03B9C /* FSTMilkyWeigh.m */; };
@@ -72,6 +73,8 @@
 		5B174DD71A5DE1DE00A00505 /* MilkGallonStand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MilkGallonStand.m; sourceTree = "<group>"; };
 		5B174DD91A5F40C500A00505 /* ProductAddWrapperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductAddWrapperViewController.h; sourceTree = "<group>"; };
 		5B174DDA1A5F40C500A00505 /* ProductAddWrapperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductAddWrapperViewController.m; sourceTree = "<group>"; };
+		5B174DDF1A60717000A00505 /* FirstBuildAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FirstBuildAssets.xcassets; sourceTree = "<group>"; };
+		5B174DE11A6092D400A00505 /* splashvideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashvideo.mp4; sourceTree = "<group>"; };
 		5B2521131A001A6300148D67 /* STKSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKSpinnerView.h; sourceTree = "<group>"; };
 		5B2521141A001A6300148D67 /* STKSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKSpinnerView.m; sourceTree = "<group>"; };
 		5B3E18091A41CC76004F1FA0 /* ProductMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductMainViewController.h; sourceTree = "<group>"; };
@@ -367,8 +370,10 @@
 			isa = PBXGroup;
 			children = (
 				5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */,
+				5B174DDF1A60717000A00505 /* FirstBuildAssets.xcassets */,
 				5BC364761A2CF9EF00D03B9C /* splashvideo.m4v */,
 				5BC3647A1A2E25A800D03B9C /* splashvideo.mov */,
+				5B174DE11A6092D400A00505 /* splashvideo.mp4 */,
 				67926FF119ED8BA000E346C2 /* PT_Sans-Narrow-Web-Regular.ttf */,
 				5B8C10871A39324C00F481E6 /* fontawesome-webfont.ttf */,
 				67926FF819EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf */,
@@ -571,8 +576,9 @@
 				5BC5A1C619EF6314009C93B1 /* Authentication.storyboard in Resources */,
 				5BF9482D19EC15BB00CB8BCF /* ChillHub.storyboard in Resources */,
 				5BF9483119EC15F900CB8BCF /* Main.storyboard in Resources */,
-				5BC3647B1A2E25A800D03B9C /* splashvideo.mov in Resources */,
+				5B174DE01A60717000A00505 /* FirstBuildAssets.xcassets in Resources */,
 				5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */,
+				5B174DE21A6092EE00A00505 /* splashvideo.mp4 in Resources */,
 				5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */,
 				5BC364791A2D019300D03B9C /* splashvideo.m4v in Resources */,
 				67926FF919EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf in Resources */,

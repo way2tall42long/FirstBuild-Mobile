@@ -72,7 +72,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r80-gY-9Up">
-                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="DOG-QV-963">
+                        <barButtonItem key="rightBarButtonItem" image="reveal-icon" id="DOG-QV-963">
                             <color key="tintColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="revealToggle:" destination="qoT-VR-agl" id="eFy-X6-zz2"/>

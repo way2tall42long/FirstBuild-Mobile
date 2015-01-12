@@ -120,7 +120,7 @@
 
 - (IBAction)revealToggle:(id)sender
 {
-    [self.revealViewController revealToggle:sender];
+    [self.revealViewController rightRevealToggle:sender];
 }
 
 - (void)applicationFinishedRestoringState

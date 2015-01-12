@@ -12,6 +12,7 @@
 		5B174DDB1A5F40C500A00505 /* ProductAddWrapperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B174DDA1A5F40C500A00505 /* ProductAddWrapperViewController.m */; };
 		5B174DE01A60717000A00505 /* FirstBuildAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B174DDF1A60717000A00505 /* FirstBuildAssets.xcassets */; };
 		5B174DE21A6092EE00A00505 /* splashvideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5B174DE11A6092D400A00505 /* splashvideo.mp4 */; };
+		5B174DE61A64266100A00505 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B8C10871A39324C00F481E6 /* fontawesome-webfont.ttf */; };
 		5B2521151A001A6300148D67 /* STKSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2521141A001A6300148D67 /* STKSpinnerView.m */; };
 		5B3E180B1A41CC76004F1FA0 /* ProductMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E180A1A41CC76004F1FA0 /* ProductMainViewController.m */; };
 		5B7FB5541A4373C900553797 /* WifiCommissioningConnectingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FB5531A4373C900553797 /* WifiCommissioningConnectingViewController.m */; };
@@ -581,6 +582,7 @@
 				5B174DE21A6092EE00A00505 /* splashvideo.mp4 in Resources */,
 				5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */,
 				5BC364791A2D019300D03B9C /* splashvideo.m4v in Resources */,
+				5B174DE61A64266100A00505 /* fontawesome-webfont.ttf in Resources */,
 				67926FF919EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf in Resources */,
 				5B99E07E1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard in Resources */,
 			);

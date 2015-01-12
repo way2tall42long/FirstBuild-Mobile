@@ -16,14 +16,31 @@
             <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
         </mutableArray>
+        <mutableArray key="fontawesome-webfont.ttf">
+            <string>FontAwesome</string>
+            <string>FontAwesome</string>
+            <string>FontAwesome</string>
+            <string>FontAwesome</string>
+        </mutableArray>
     </customFonts>
     <scenes>
         <!--Reveal View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="rightViewRevealWidth">
+                            <integer key="value" value="-53"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="toggleAnimationType">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="toggleAnimationDuration">
+                            <real key="value" value="0.80000000000000004"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="RBl-RV-zfF" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="lcJ-Qb-sF6"/>
+                        <segue destination="RBl-RV-zfF" kind="custom" identifier="sw_right" customClass="SWRevealViewControllerSegueSetController" id="lcJ-Qb-sF6"/>
                         <segue destination="wIO-cl-fNE" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="MoZ-40-MKS"/>
                     </connections>
                 </viewController>
@@ -46,16 +63,33 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="aei-i2-A6q" id="Y4r-VH-wKH">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARm-9e-Aha">
-                                            <rect key="frame" x="16" y="4" width="164" height="35"/>
-                                            <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARm-9e-Aha">
+                                            <rect key="frame" x="162" y="8" width="44" height="28"/>
+                                            <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="21"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_left_arrow_gray" translatesAutoresizingMaskIntoConstraints="NO" id="5lv-qG-aPO">
+                                            <rect key="frame" x="63" y="13" width="25" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="HnS-S0-mxH"/>
+                                                <constraint firstAttribute="width" constant="25" id="Nl4-gr-Q2n"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsU-Wc-69Q">
+                                            <rect key="frame" x="128" y="10" width="22" height="24"/>
+                                            <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="23"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="5lv-qG-aPO" secondAttribute="centerY" id="QBY-Cb-wot"/>
+                                        <constraint firstItem="rsU-Wc-69Q" firstAttribute="leading" secondItem="Y4r-VH-wKH" secondAttribute="leadingMargin" constant="120" id="URj-re-Fd9"/>
+                                        <constraint firstAttribute="centerY" secondItem="rsU-Wc-69Q" secondAttribute="centerY" id="beV-eH-JNx"/>
+                                        <constraint firstItem="ARm-9e-Aha" firstAttribute="leading" secondItem="rsU-Wc-69Q" secondAttribute="trailing" constant="12" id="dyA-EF-0wX"/>
                                         <constraint firstAttribute="centerY" secondItem="ARm-9e-Aha" secondAttribute="centerY" id="o3i-vg-2UB"/>
-                                        <constraint firstItem="ARm-9e-Aha" firstAttribute="leading" secondItem="Y4r-VH-wKH" secondAttribute="leadingMargin" constant="8" id="xJJ-Cs-BI4"/>
+                                        <constraint firstItem="5lv-qG-aPO" firstAttribute="leading" secondItem="Y4r-VH-wKH" secondAttribute="leadingMargin" constant="55" id="vs1-FX-JxT"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -68,20 +102,37 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="981-sZ-xjd" id="EFz-ie-kB6">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add New Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJD-qF-2Rr">
-                                            <rect key="frame" x="16" y="4" width="164" height="35"/>
-                                            <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvL-ah-CK3">
+                                            <rect key="frame" x="128" y="10" width="19" height="24"/>
+                                            <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="23"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJD-qF-2Rr">
+                                            <rect key="frame" x="163" y="8" width="128" height="28"/>
+                                            <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="21"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_left_arrow_gray" translatesAutoresizingMaskIntoConstraints="NO" id="HEg-N2-t9w">
+                                            <rect key="frame" x="63" y="13" width="25" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="Usg-GE-1OK"/>
+                                                <constraint firstAttribute="width" constant="25" id="nhZ-QK-jMd"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="SJD-qF-2Rr" firstAttribute="leading" secondItem="EFz-ie-kB6" secondAttribute="leadingMargin" constant="8" id="AyV-fg-gkx"/>
+                                        <constraint firstAttribute="centerY" secondItem="HEg-N2-t9w" secondAttribute="centerY" id="99v-BG-8wY"/>
+                                        <constraint firstItem="HEg-N2-t9w" firstAttribute="leading" secondItem="EFz-ie-kB6" secondAttribute="leadingMargin" constant="55" id="ThY-gT-1nU"/>
+                                        <constraint firstAttribute="centerY" secondItem="EvL-ah-CK3" secondAttribute="centerY" id="Wh5-CP-7Tf"/>
+                                        <constraint firstItem="EvL-ah-CK3" firstAttribute="leading" secondItem="EFz-ie-kB6" secondAttribute="leadingMargin" constant="120" id="YJA-9p-znA"/>
+                                        <constraint firstItem="SJD-qF-2Rr" firstAttribute="leading" secondItem="EvL-ah-CK3" secondAttribute="trailing" constant="16" id="gtM-Ze-Bmt"/>
                                         <constraint firstAttribute="centerY" secondItem="SJD-qF-2Rr" secondAttribute="centerY" id="j4Y-id-10N"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="YOg-WN-cug" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="GrA-Tt-mV2"/>
+                                    <segue destination="YOg-WN-cug" kind="custom" identifier="" customClass="SWRevealViewControllerSeguePushController" id="GrA-Tt-mV2"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settings" id="oBq-zc-eN5">
@@ -90,16 +141,41 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oBq-zc-eN5" id="omd-MH-Pq0">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqS-Tx-NsA">
-                                            <rect key="frame" x="16" y="4" width="79" height="35"/>
-                                            <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTV-68-VLM">
+                                            <rect key="frame" x="128" y="16" width="12" height="14"/>
+                                            <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtM-D0-Y4z">
+                                            <rect key="frame" x="135" y="10" width="20" height="24"/>
+                                            <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="23"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqS-Tx-NsA">
+                                            <rect key="frame" x="163" y="8" width="62" height="28"/>
+                                            <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="21"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_left_arrow_gray" translatesAutoresizingMaskIntoConstraints="NO" id="0sw-k7-dql">
+                                            <rect key="frame" x="63" y="13" width="25" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="4ru-yU-ZrE"/>
+                                                <constraint firstAttribute="height" constant="18" id="7eb-rh-TtG"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="nqS-Tx-NsA" firstAttribute="leading" secondItem="omd-MH-Pq0" secondAttribute="leadingMargin" constant="8" id="VRA-0I-rbw"/>
+                                        <constraint firstItem="iTV-68-VLM" firstAttribute="leading" secondItem="omd-MH-Pq0" secondAttribute="leadingMargin" constant="120" id="2oy-zT-v7M"/>
+                                        <constraint firstItem="nqS-Tx-NsA" firstAttribute="leading" secondItem="UtM-D0-Y4z" secondAttribute="trailing" constant="8" id="EHB-PX-63s"/>
+                                        <constraint firstItem="iTV-68-VLM" firstAttribute="top" secondItem="UtM-D0-Y4z" secondAttribute="bottom" constant="-18" id="ZNs-HC-nzX"/>
                                         <constraint firstAttribute="centerY" secondItem="nqS-Tx-NsA" secondAttribute="centerY" id="gsh-W4-NWK"/>
+                                        <constraint firstAttribute="centerY" secondItem="UtM-D0-Y4z" secondAttribute="centerY" id="iHv-HE-CiH"/>
+                                        <constraint firstItem="0sw-k7-dql" firstAttribute="leading" secondItem="omd-MH-Pq0" secondAttribute="leadingMargin" constant="55" id="mig-Sv-Rqh"/>
+                                        <constraint firstAttribute="centerY" secondItem="0sw-k7-dql" secondAttribute="centerY" id="orm-g7-s6n"/>
+                                        <constraint firstItem="UtM-D0-Y4z" firstAttribute="leading" secondItem="iTV-68-VLM" secondAttribute="trailing" constant="-4" id="rhb-ka-Yjo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -214,7 +290,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no products" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-rU-8hw">
-                                        <rect key="frame" x="237.5" y="278" width="125.5" height="21"/>
+                                        <rect key="frame" x="238" y="278" width="126" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="QDh-wX-wWe"/>
                                         </constraints>
@@ -543,6 +619,7 @@
     </scenes>
     <resources>
         <image name="btn_blue_large_with_field_plus_add_product" width="1315" height="431"/>
+        <image name="btn_left_arrow_gray" width="40" height="67"/>
         <image name="btn_plus_bare" width="344" height="344"/>
         <image name="cell_chillhub_product" width="1217" height="463"/>
         <image name="icon_chevron_blue_right" width="28" height="47"/>

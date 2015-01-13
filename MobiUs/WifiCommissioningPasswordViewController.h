@@ -10,6 +10,8 @@
 #import "FSTNetwork.h"
 
 @interface WifiCommissioningPasswordViewController : UIViewController
+
+@property (nonatomic, assign) id delegate;
 @property (strong, nonatomic) IBOutlet UILabel *networkLabel;
 
 @property (strong, nonatomic) IBOutlet UITextField *passwordText;

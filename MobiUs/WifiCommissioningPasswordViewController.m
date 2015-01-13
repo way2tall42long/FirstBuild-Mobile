@@ -43,12 +43,18 @@
 }
 
 - (IBAction)buttonActionConnect:(id)sender {
-    WifiCommissioningNetworkListViewController *parentController = (WifiCommissioningNetworkListViewController*)self.parentViewController;
+    WifiCommissioningNetworkListViewController *parentController = (WifiCommissioningNetworkListViewController*)self.delegate;
     parentController.selectedNetwork.passphrase = self.passwordText.text;
+    [self dismissViewControllerAnimated:YES completion:^{
+         [parentController performSegueWithIdentifier:@"segueConnectingToChillHub" sender:self];
+    }];
+   
+}
+
+- (IBAction)cancelButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
         nil;
     }];
-    [parentController performSegueWithIdentifier:@"segueConnectingToChillHub" sender:self];
 }
 
 /*

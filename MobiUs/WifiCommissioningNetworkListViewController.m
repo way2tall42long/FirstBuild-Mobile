@@ -70,6 +70,7 @@
     {
         WifiCommissioningPasswordViewController *connectingController = (WifiCommissioningPasswordViewController*) [segue destinationViewController];
         connectingController.network = self.selectedNetwork;
+        connectingController.delegate = self;
     }
 }
 

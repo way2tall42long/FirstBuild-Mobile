@@ -10,4 +10,5 @@
 
 @interface WifiCommissioningNetworksTableViewController : UITableViewController
 @property (nonatomic, strong) NSArray *networks;
+- (void)loadNetworks;
 @end

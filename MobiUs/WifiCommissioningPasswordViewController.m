@@ -7,6 +7,7 @@
 //
 
 #import "WifiCommissioningPasswordViewController.h"
+#import "WifiCommissioningNetworkListViewController.h"
 
 @interface WifiCommissioningPasswordViewController ()
 
@@ -26,16 +27,29 @@
     }
     translucentUnderlayment.layer.masksToBounds = YES;
     [self.view addSubview:translucentUnderlayment];
-    
+    [self.view sendSubviewToBack:translucentUnderlayment];
    // [self.view addSubview:passwordView];
     // Do any additional setup after loading the view.
 }
 
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.networkLabel.text = self.network.ssid;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)buttonActionConnect:(id)sender {
+    WifiCommissioningNetworkListViewController *parentController = (WifiCommissioningNetworkListViewController*)self.parentViewController;
+    parentController.selectedNetwork.passphrase = self.passwordText.text;
+    [self dismissViewControllerAnimated:YES completion:^{
+        nil;
+    }];
+    [parentController performSegueWithIdentifier:@"segueConnectingToChillHub" sender:self];
+}
 
 /*
 #pragma mark - Navigation

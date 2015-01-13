@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "FSTDevice.h"
+#import "FSTNetwork.h"
 
 @interface WifiCommissioningNetworkListViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 @property (strong, nonatomic) IBOutlet UIPickerView *networkListPickerView;
 //@property (nonatomic, strong) NSArray *networks;
 @property (strong, nonatomic) IBOutlet UITextField *passwordInput;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonRefreshNetworkList;
-@property (strong, nonatomic) IBOutlet FSTDevice *device;
+@property (strong, nonatomic) IBOutlet FSTDevice *device; //TODO: checkout why this is outlet
+@property (strong, nonatomic) FSTNetwork* selectedNetwork;
 @end

@@ -10,6 +10,8 @@
 #import "WifiCommissioningConnectingViewController.h"
 #import <RestKit.h>
 #import "FSTNetwork.h"
+#import "WifiCommissioningNetworksTableViewController.h"
+#import "WifiCommissioningPasswordViewController.h"
 
 @interface WifiCommissioningNetworkListViewController ()
 
@@ -17,9 +19,6 @@
 
 @implementation WifiCommissioningNetworkListViewController
 
-- (IBAction)buttonRefreshNetworksClick:(id)sender {
-//    [self loadNetworks];
-}
 
 - (IBAction)buttonCancel:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:true];
@@ -43,6 +42,10 @@
 //                                            [self performSegueWithIdentifier:@"segueErrorConnectingWifi" sender:self];
 //                                        }];
 }
+- (IBAction)refreshNetworkAction:(id)sender {
+    WifiCommissioningNetworksTableViewController* listController = (WifiCommissioningNetworksTableViewController*)self.childViewControllers[0];
+    [listController loadNetworks];
+}
 
 
 
@@ -57,6 +60,16 @@
     if ([segueName isEqualToString: @"segueConnectingToChillHub"]) {
         WifiCommissioningConnectingViewController * connectingController = (WifiCommissioningConnectingViewController *) [segue destinationViewController];
         connectingController.device = self.device;
+    }
+//    } else if ([segueName isEqualToString:@"embeddedListSegue"])
+//    {
+//        WifiCommissioningNetworksTableViewController *connectingController = (WifiCommissioningNetworksTableViewController*) [segue destinationViewController];
+//        
+//    }
+    else if ([segueName isEqualToString:@"passwordSegue"])
+    {
+        WifiCommissioningPasswordViewController *connectingController = (WifiCommissioningPasswordViewController*) [segue destinationViewController];
+        connectingController.network = self.selectedNetwork;
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "WifiCommissioningNetworksTableViewController.h"
+#import "WifiCommissioningNetworkListViewController.h"
 #import "WifiCommissioningNetworkTableViewCell.h"
 #import <RestKit.h>
 #import "FSTNetwork.h"
@@ -73,6 +74,12 @@
     return cell;
 }
 
+ -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WifiCommissioningNetworkListViewController* parentController = (WifiCommissioningNetworkListViewController*)self.parentViewController;
+    parentController.selectedNetwork = _networks[indexPath.item];
+    [parentController performSegueWithIdentifier:@"passwordSegue" sender:self];
+}
 
 /*
 // Override to support conditional editing of the table view.

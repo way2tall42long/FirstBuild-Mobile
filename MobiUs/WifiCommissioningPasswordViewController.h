@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FSTNetwork.h"
 
 @interface WifiCommissioningPasswordViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *networkLabel;
 
+@property (strong, nonatomic) IBOutlet UITextField *passwordText;
+@property (strong, nonatomic) FSTNetwork* network;
 @end

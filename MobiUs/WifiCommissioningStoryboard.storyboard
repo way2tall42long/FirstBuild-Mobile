@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbV-3f-Ecf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sGM-DW-oHT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="PT_Sans-Narrow-Web-Regular.ttf">
+            <string>PTSans-Narrow</string>
+            <string>PTSans-Narrow</string>
+            <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
@@ -24,10 +27,10 @@
                         <viewControllerLayoutGuide type="bottom" id="NQb-YG-6A5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0x8-PE-aGT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner_arrows_circle_bg_pulse_vfx_orange" translatesAutoresizingMaskIntoConstraints="NO" id="HGx-kp-sFe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="spinner_arrows_circle_bg_pulse_vfx_orange" translatesAutoresizingMaskIntoConstraints="NO" id="HGx-kp-sFe">
                                 <rect key="frame" x="180" y="97" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Lt6-1R-cgv"/>
@@ -35,7 +38,7 @@
                                     <constraint firstAttribute="width" constant="240" id="m3r-vb-tvd"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for your ChillHUB,  One moment please..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxg-gB-1B4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Searching for your ChillHUB,  One moment please..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxg-gB-1B4">
                                 <rect key="frame" x="180" y="253" width="243" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="AeY-id-2AK"/>
@@ -59,8 +62,6 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="lzj-p0-gE1"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchingIcon" destination="HGx-kp-sFe" id="cEX-G6-2Xp"/>
                         <segue destination="d1J-l3-I4c" kind="show" identifier="segueSearchTimeout" id="xfo-fr-DxU"/>
@@ -113,21 +114,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mB8-7D-iwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2281" y="343"/>
+            <point key="canvasLocation" x="3049" y="1055"/>
         </scene>
         <!--Mobi Navigation Controller-->
         <scene sceneID="gIb-Cs-8Wd">
             <objects>
-                <navigationController navigationBarHidden="YES" id="TbV-3f-Ecf" customClass="MobiNavigationController" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                <navigationController id="TbV-3f-Ecf" customClass="MobiNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hbQ-Jo-5Xz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.84313732389999996" green="0.85098046059999999" blue="0.85490202900000001" alpha="1" colorSpace="deviceRGB"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="sGM-DW-oHT" kind="relationship" relationship="rootViewController" id="Unc-6m-cJr"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xp-KA-kiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,10 +139,10 @@
                         <viewControllerLayoutGuide type="bottom" id="THa-CY-uhP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Kho-Cg-gDa">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please switch networks to ChillHub in your device settings. A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2e-06-D2W">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please switch networks to ChillHub in your device settings. A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2e-06-D2W">
                                 <rect key="frame" x="177" y="177" width="246" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="05E-HG-jKP"/>
@@ -156,7 +153,7 @@
                                 <color key="textColor" red="0.5372549295425415" green="0.53333336114883423" blue="0.54901963472366333" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slD-nl-YOC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slD-nl-YOC">
                                 <rect key="frame" x="202" y="224" width="196" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="Od0-UO-tmM"/>
@@ -169,7 +166,7 @@
                                     <segue destination="y2k-4c-Ymt" kind="show" id="3bW-ts-Aml"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_chillhub_circle_with_label_stacked" translatesAutoresizingMaskIntoConstraints="NO" id="Br5-yj-tJg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_chillhub_circle_with_label_stacked" translatesAutoresizingMaskIntoConstraints="NO" id="Br5-yj-tJg">
                                 <rect key="frame" x="180" y="33" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="4B6-8U-qzD"/>
@@ -188,12 +185,31 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WSe-8j-snZ"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oie-Xb-3mS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-458" y="343"/>
         </scene>
-        <!--Select Network-->
+        <!--Wifi Commissioning Password View Controller-->
+        <scene sceneID="tGT-O4-sfI">
+            <objects>
+                <viewController id="cTK-BS-uEg" customClass="WifiCommissioningPasswordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NPI-fX-fbm"/>
+                        <viewControllerLayoutGuide type="bottom" id="CUO-1j-9dY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TMO-sG-1ld">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4c-y7-NhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2369" y="-547"/>
+        </scene>
+        <!--Wifi Commissioning Network List View Controller-->
         <scene sceneID="m4M-8R-lqQ">
             <objects>
                 <viewController id="HA7-R5-9d8" customClass="WifiCommissioningNetworkListViewController" sceneMemberID="viewController">
@@ -202,47 +218,79 @@
                         <viewControllerLayoutGuide type="bottom" id="Y0O-2z-fHU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8x9-ai-JMQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUE-xb-kDJ">
-                                <rect key="frame" x="168" y="126" width="250" height="216"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MjL-cs-0YB">
+                                <rect key="frame" x="0.0" y="277" width="600" height="215"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="LsF-Xe-ptg"/>
-                                    <constraint firstAttribute="height" constant="300" id="iNj-zv-MCy"/>
+                                    <constraint firstAttribute="height" constant="128" id="K6c-BK-jRI"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="K6c-BK-jRI"/>
+                                    </mask>
+                                </variation>
                                 <connections>
-                                    <outlet property="dataSource" destination="HA7-R5-9d8" id="lIk-sM-C9M"/>
-                                    <outlet property="delegate" destination="HA7-R5-9d8" id="NuX-im-VT1"/>
+                                    <segue destination="CoJ-XP-YE8" kind="embed" id="Uuq-6Z-lUQ"/>
                                 </connections>
-                            </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OeO-7H-1GV">
-                                <rect key="frame" x="211" y="401" width="179" height="30"/>
+                            </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_chillhub_circle_with_label_stacked" translatesAutoresizingMaskIntoConstraints="NO" id="eRT-QM-bI9">
+                                <rect key="frame" x="180" y="33" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="179" id="eB6-r6-9dI"/>
+                                    <constraint firstAttribute="width" constant="240" id="8rJ-6C-xUU"/>
+                                    <constraint firstAttribute="height" constant="128" id="ee4-kh-uvP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Got It!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4E-Y1-L5O">
+                                <rect key="frame" x="0.0" y="171" width="600" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="lII-Vn-Udn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="30"/>
+                                <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ChillHub connected now ready for WiFI. Please select a wireless network:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-FE-jiL">
+                                <rect key="frame" x="166" y="219" width="269" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="eeT-Ua-toe"/>
+                                    <constraint firstAttribute="width" constant="269" id="hV5-P5-P1R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="17"/>
+                                <color key="textColor" red="0.45098042488098145" green="0.44313728809356689" blue="0.458823561668396" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDY-32-F1f">
+                                <rect key="frame" x="0.0" y="492" width="600" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="CeP-lF-Fge"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OeO-7H-1GV" firstAttribute="top" secondItem="UUE-xb-kDJ" secondAttribute="bottom" constant="8" id="BdL-5e-4DW"/>
-                            <constraint firstAttribute="centerX" secondItem="OeO-7H-1GV" secondAttribute="centerX" id="HFa-qy-7be"/>
-                            <constraint firstItem="UUE-xb-kDJ" firstAttribute="top" secondItem="uNx-bl-hr5" secondAttribute="bottom" constant="20" id="fft-h1-kRo"/>
-                            <constraint firstAttribute="centerX" secondItem="UUE-xb-kDJ" secondAttribute="centerX" constant="7" id="xRl-i0-k1m"/>
+                            <constraint firstItem="d4E-Y1-L5O" firstAttribute="top" secondItem="eRT-QM-bI9" secondAttribute="bottom" constant="10" id="5Wf-Y3-P6N"/>
+                            <constraint firstAttribute="trailing" secondItem="d4E-Y1-L5O" secondAttribute="trailing" id="7i1-lu-Rm9"/>
+                            <constraint firstAttribute="trailing" secondItem="aDY-32-F1f" secondAttribute="trailing" id="BOI-RZ-eYQ"/>
+                            <constraint firstItem="aDY-32-F1f" firstAttribute="top" secondItem="MjL-cs-0YB" secondAttribute="bottom" id="HDb-o3-wtl"/>
+                            <constraint firstAttribute="centerX" secondItem="eRT-QM-bI9" secondAttribute="centerX" id="LZy-eR-aoc"/>
+                            <constraint firstItem="MjL-cs-0YB" firstAttribute="top" secondItem="uNx-bl-hr5" secondAttribute="bottom" constant="277" id="Qhd-F6-Hq3"/>
+                            <constraint firstItem="aDY-32-F1f" firstAttribute="leading" secondItem="8x9-ai-JMQ" secondAttribute="leading" id="Ral-58-yBs"/>
+                            <constraint firstItem="BZM-FE-jiL" firstAttribute="top" secondItem="d4E-Y1-L5O" secondAttribute="bottom" constant="16" id="UBe-uu-Hqu"/>
+                            <constraint firstAttribute="centerX" secondItem="MjL-cs-0YB" secondAttribute="centerX" id="XJY-ps-srt"/>
+                            <constraint firstItem="Y0O-2z-fHU" firstAttribute="top" secondItem="aDY-32-F1f" secondAttribute="bottom" id="b2p-6a-qH0"/>
+                            <constraint firstAttribute="centerX" secondItem="aDY-32-F1f" secondAttribute="centerX" id="bIJ-0g-POR"/>
+                            <constraint firstAttribute="centerX" secondItem="d4E-Y1-L5O" secondAttribute="centerX" id="gud-pq-nU6"/>
+                            <constraint firstItem="eRT-QM-bI9" firstAttribute="top" secondItem="uNx-bl-hr5" secondAttribute="bottom" constant="33" id="hKC-aj-LI8"/>
+                            <constraint firstAttribute="centerX" secondItem="BZM-FE-jiL" secondAttribute="centerX" id="heY-8r-eW7"/>
+                            <constraint firstItem="MjL-cs-0YB" firstAttribute="width" secondItem="8x9-ai-JMQ" secondAttribute="width" id="tZK-dC-tPU"/>
+                            <constraint firstItem="d4E-Y1-L5O" firstAttribute="leading" secondItem="8x9-ai-JMQ" secondAttribute="leading" id="uES-Ll-WbN"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="dPR-YC-ADh"/>
-                        <barButtonItem systemItem="refresh" id="gLc-E5-iPp">
-                            <connections>
-                                <action selector="buttonRefreshNetworksClick:" destination="HA7-R5-9d8" id="p7g-BI-YoU"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="KCZ-9K-HP1"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Select Network" id="vsE-ob-ag5">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="vsE-ob-ag5">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="CHV-OA-qtg">
                             <connections>
                                 <action selector="buttonCancel:" destination="HA7-R5-9d8" id="4Ng-wh-4HB"/>
@@ -251,22 +299,69 @@
                         <barButtonItem key="rightBarButtonItem" title="Connect" id="tOO-os-XXY">
                             <connections>
                                 <action selector="buttonConnectClick:" destination="HA7-R5-9d8" id="d8y-Yb-Bqz"/>
-                                <segue destination="l9F-Za-k3K" kind="show" identifier="segueConnectingToChillHub" id="Ubl-XG-WdW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="buttonRefreshNetworkList" destination="gLc-E5-iPp" id="89Y-zn-p0x"/>
-                        <outlet property="networkListPickerView" destination="UUE-xb-kDJ" id="JVO-J6-Odv"/>
-                        <outlet property="passwordInput" destination="OeO-7H-1GV" id="nw2-yB-0gT"/>
                         <segue destination="win-8B-cbK" kind="show" identifier="segueErrorNetworks" id="bSn-Ac-lvd"/>
                         <segue destination="l7O-cQ-qgb" kind="show" identifier="segueErrorConnectingWifi" id="MgO-R0-9eK"/>
+                        <segue destination="cTK-BS-uEg" kind="presentation" identifier="seguePassword" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="mYW-fj-F8p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVc-LX-ePA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1313" y="343"/>
+        </scene>
+        <!--Wifi Commissioning Networks Table View Controller-->
+        <scene sceneID="eWZ-Vv-jbH">
+            <objects>
+                <tableViewController id="CoJ-XP-YE8" customClass="WifiCommissioningNetworksTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Iv3-7G-ilE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Qe3-yA-dQL">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NetworkCell" id="vGM-dU-M4b" customClass="WifiCommissioningNetworkTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vGM-dU-M4b" id="tBv-OL-sjP">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="millenFalco_1974" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuO-tO-k9S">
+                                            <rect key="frame" x="18" y="9" width="574" height="26"/>
+                                            <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="NuO-tO-k9S" firstAttribute="leading" secondItem="tBv-OL-sjP" secondAttribute="leadingMargin" constant="10" id="22I-WU-dXb"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="NuO-tO-k9S" secondAttribute="trailing" id="EzS-rF-ZhI"/>
+                                        <constraint firstAttribute="centerY" secondItem="NuO-tO-k9S" secondAttribute="centerY" id="jEO-JG-a8h"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="NuO-tO-k9S" id="aIk-wd-Hcc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CoJ-XP-YE8" id="cge-ve-lW3"/>
+                            <outlet property="delegate" destination="CoJ-XP-YE8" id="Aef-S5-udB"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ag-mu-kMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2320" y="342.5"/>
         </scene>
         <!--Wifi Commissioning Error View Controller-->
         <scene sceneID="vxu-TO-hNe">
@@ -277,17 +372,17 @@
                         <viewControllerLayoutGuide type="bottom" id="EjR-rg-Mrf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4w2-yp-XZF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_wifi_error_not_found" translatesAutoresizingMaskIntoConstraints="NO" id="rWo-0T-7qc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_wifi_error_not_found" translatesAutoresizingMaskIntoConstraints="NO" id="rWo-0T-7qc">
                                 <rect key="frame" x="250" y="92" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="9Ao-8P-Set"/>
                                     <constraint firstAttribute="width" constant="100" id="Pff-HG-Hcp"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTw-o9-QpE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTw-o9-QpE">
                                 <rect key="frame" x="16" y="234" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="uAl-Fa-RVg"/>
@@ -296,7 +391,7 @@
                                 <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCQ-0h-EYt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCQ-0h-EYt">
                                 <rect key="frame" x="16" y="263" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ioo-3y-7k0"/>
@@ -305,7 +400,7 @@
                                 <color key="textColor" red="0.49803924560546875" green="0.49411767721176147" blue="0.5058823823928833" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzn-yE-QLu">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzn-yE-QLu">
                                 <rect key="frame" x="190" y="321" width="221" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="cpl-rB-DUR"/>
@@ -344,17 +439,17 @@
                         <viewControllerLayoutGuide type="bottom" id="X8u-CO-eb4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zZa-Ff-srE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_wifi_error_somethingwentwrong" translatesAutoresizingMaskIntoConstraints="NO" id="OjC-LH-1cL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_wifi_error_somethingwentwrong" translatesAutoresizingMaskIntoConstraints="NO" id="OjC-LH-1cL">
                                 <rect key="frame" x="250" y="92" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="O9V-n9-rb5"/>
                                     <constraint firstAttribute="height" constant="100" id="mu5-zl-h0m"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ais-pj-MYg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ais-pj-MYg">
                                 <rect key="frame" x="16" y="234" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="h2C-4m-lL9"/>
@@ -363,7 +458,7 @@
                                 <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCW-G1-12Y">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCW-G1-12Y">
                                 <rect key="frame" x="16" y="263" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Hwn-Nb-0Lb"/>
@@ -372,7 +467,7 @@
                                 <color key="textColor" red="0.49803924560000001" green="0.49411767719999999" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8f-hS-i1c">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8f-hS-i1c">
                                 <rect key="frame" x="190" y="321" width="221" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="221" id="5YO-MX-JRd"/>
@@ -411,17 +506,17 @@
                         <viewControllerLayoutGuide type="bottom" id="dzY-nm-xdX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zqP-cg-V6K">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_wifi_error_troubleconnecting" translatesAutoresizingMaskIntoConstraints="NO" id="eU0-xe-v8F">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_wifi_error_troubleconnecting" translatesAutoresizingMaskIntoConstraints="NO" id="eU0-xe-v8F">
                                 <rect key="frame" x="250" y="92" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Q56-ju-5Ek"/>
                                     <constraint firstAttribute="height" constant="100" id="uDx-hz-NnT"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQx-Ky-WMD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQx-Ky-WMD">
                                 <rect key="frame" x="16" y="234" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8Qs-xu-UL1"/>
@@ -430,7 +525,7 @@
                                 <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz8-eh-jbG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz8-eh-jbG">
                                 <rect key="frame" x="16" y="263" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="98W-nD-mKe"/>
@@ -439,7 +534,7 @@
                                 <color key="textColor" red="0.49803924560000001" green="0.49411767719999999" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U40-NB-sv3">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U40-NB-sv3">
                                 <rect key="frame" x="190" y="321" width="221" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="agA-dG-h61"/>
@@ -468,6 +563,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEu-kG-6l2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2185" y="1198"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qfC-O2-AcL">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="iM2-Af-ISA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HmY-JW-UIG"/>
+                        <viewControllerLayoutGuide type="bottom" id="tyJ-xM-KMH"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PnN-IG-Qjx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Geq-74-XMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

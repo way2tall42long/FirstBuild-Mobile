@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MobiNavigationController : UINavigationController
-
+@property (nonatomic,strong)UIView *logoView;
 @end

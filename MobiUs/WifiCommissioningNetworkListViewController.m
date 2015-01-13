@@ -18,47 +18,33 @@
 @implementation WifiCommissioningNetworkListViewController
 
 - (IBAction)buttonRefreshNetworksClick:(id)sender {
-    [self loadNetworks];
+//    [self loadNetworks];
 }
 
 - (IBAction)buttonCancel:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:true];
 }
 - (IBAction)buttonConnectClick:(id)sender {
-    NSInteger row;
-    FSTNetwork* networkToJoin = [FSTNetwork new];
-    
-    row = [self.networkListPickerView selectedRowInComponent:0];
-    networkToJoin= [self.networks objectAtIndex:row];
-    networkToJoin.state = @"client";
-    networkToJoin.passphrase = self.passwordInput.text;
-    [[RKObjectManager sharedManager] postObject:networkToJoin path:@"/networks"
-                                     parameters:nil
-                                        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                            [self performSegueWithIdentifier:@"segueConnectingToChillHub" sender:self];
-
-                                        }
-                                        failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                            [self performSegueWithIdentifier:@"segueErrorConnectingWifi" sender:self];
-                                        }];
+    [self performSegueWithIdentifier:@"seguePassword" sender:self];
+//    NSInteger row;
+//    FSTNetwork* networkToJoin = [FSTNetwork new];
+//    
+//    row = [self.networkListPickerView selectedRowInComponent:0];
+//    networkToJoin= [self.networks objectAtIndex:row];
+//    networkToJoin.state = @"client";
+//    networkToJoin.passphrase = self.passwordInput.text;
+//    [[RKObjectManager sharedManager] postObject:networkToJoin path:@"/networks"
+//                                     parameters:nil
+//                                        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+//                                            [self performSegueWithIdentifier:@"segueConnectingToChillHub" sender:self];
+//
+//                                        }
+//                                        failure:^(RKObjectRequestOperation *operation, NSError *error) {
+//                                            [self performSegueWithIdentifier:@"segueErrorConnectingWifi" sender:self];
+//                                        }];
 }
 
-- (void)loadNetworks
-{
-    [[RKObjectManager sharedManager] getObjectsAtPath:@"/networks"
-                                           parameters:nil
-                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                  _networks = mappingResult.array;
-                                                  [_networkListPickerView reloadAllComponents];
-                                                  if (_networks.count==0)
-                                                  {
-                                                      [self performSegueWithIdentifier:@"segueErrorNetworks" sender:self];
-                                                  }
-                                              }
-                                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                  [self performSegueWithIdentifier:@"segueErrorNetworks" sender:self];
-                                              }];
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -77,7 +63,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self loadNetworks];
+    //[self loadNetworks];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,29 +71,39 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    if (pickerView == _networkListPickerView)
-    {
-        FSTNetwork *network = _networks[row];
-        return network.ssid;
-    }
-    return @"";
-}
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    if (pickerView == _networkListPickerView)
-    {
-        return [_networks count];
-    }
-    return 0;
-}
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
-
+//-(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+//{
+//    if (pickerView == _networkListPickerView)
+//    {
+////        FSTNetwork *network = _networks[row];
+//        return network.ssid;
+//    }
+//    return @"";
+//}
+//
+//- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+//{
+//    if(pickerView == _networkListPickerView)
+//    {
+////        FSTNetwork *network = _networks[row];
+//    }
+//}
+//
+//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+//{
+//    if (pickerView == _networkListPickerView)
+//    {
+////        return [_networks count];
+//    }
+//    return 0;
+//}
+//
+//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+//{
+//    return 1;
+//}
+//
 
 @end

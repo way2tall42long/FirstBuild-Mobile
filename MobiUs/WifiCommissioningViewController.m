@@ -12,6 +12,7 @@
 #import "FSTToken.h"
 #import "FSTDevice.h"
 #import "FBTUser.h"
+#import "MobiNavigationController.h"
 #import "WifiCommissioningNetworkListViewController.h"
 
 @interface WifiCommissioningViewController ()
@@ -42,13 +43,15 @@
     //[self.searchingIcon.layer addAnimation:scaleAnimation forKey:@"scale"];
     [self.searchingIcon.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
     // Do any additional setup after loading the view.
+    MobiNavigationController* nav = (MobiNavigationController*)self.navigationController;
+    nav.logoView.hidden = YES;
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     self.checkForAPTries = 0;
     [self checkForConnectivity];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -105,7 +108,7 @@
     RKResponseDescriptor *deviceResponseDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:deviceResponseMapping
                                                  method:RKRequestMethodAny
-                                            pathPattern:@"/"
+                                            pathPattern:@"/root"
                                                 keyPath:nil
                                             statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
@@ -120,7 +123,7 @@
 
 - (void)checkForConnectivity
 {
-    [[RKObjectManager sharedManager] getObjectsAtPath:@"/"
+    [[RKObjectManager sharedManager] getObjectsAtPath:@"/root"
                                            parameters:nil
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   self.device = mappingResult.array[0];

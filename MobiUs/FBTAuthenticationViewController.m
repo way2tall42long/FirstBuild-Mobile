@@ -65,7 +65,7 @@
     [self.view sendSubviewToBack:self.backgroundMovie.view];
     [self.backgroundMovie play];
     
-    //TODO: switch to https://github.com/ivoleko/ILTranslucentView for a non hacked version, also allows you to change translucency alpha
+    //TODO: is there a more proper way to do this?
     UIToolbar *translucentUnderlayment = [[UIToolbar alloc] init];
     [translucentUnderlayment setFrame:self.controlView.bounds];
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {

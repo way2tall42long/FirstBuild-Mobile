@@ -61,11 +61,6 @@
         WifiCommissioningConnectingViewController * connectingController = (WifiCommissioningConnectingViewController *) [segue destinationViewController];
         connectingController.device = self.device;
     }
-//    } else if ([segueName isEqualToString:@"embeddedListSegue"])
-//    {
-//        WifiCommissioningNetworksTableViewController *connectingController = (WifiCommissioningNetworksTableViewController*) [segue destinationViewController];
-//        
-//    }
     else if ([segueName isEqualToString:@"passwordSegue"])
     {
         WifiCommissioningPasswordViewController *connectingController = (WifiCommissioningPasswordViewController*) [segue destinationViewController];

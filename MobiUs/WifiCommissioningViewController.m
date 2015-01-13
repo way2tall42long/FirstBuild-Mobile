@@ -65,7 +65,7 @@
     
     // networks GET|POST response
     RKObjectMapping *networkResponseMapping = [RKObjectMapping mappingForClass:[FSTNetwork class]];
-    [networkResponseMapping addAttributeMappingsFromArray:@[@"ssid",@"security_mode",@"state",@"passphrase"]];
+    [networkResponseMapping addAttributeMappingsFromArray:@[@"ssid",@"passphrase"]];
     RKResponseDescriptor *responseDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:networkResponseMapping
                                                  method:RKRequestMethodAny
@@ -76,7 +76,7 @@
     
     // networks POST
     RKObjectMapping *networkRequestMapping = [RKObjectMapping requestMapping]; // objectClass == NSMutableDictionary
-    [networkRequestMapping addAttributeMappingsFromArray:@[@"ssid",@"security_mode",@"state",@"passphrase"]];
+    [networkRequestMapping addAttributeMappingsFromArray:@[@"ssid",@"passphrase"]];
     RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor
                                               requestDescriptorWithMapping:networkRequestMapping
                                               objectClass:[FSTNetwork class]
@@ -108,7 +108,7 @@
     RKResponseDescriptor *deviceResponseDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:deviceResponseMapping
                                                  method:RKRequestMethodAny
-                                            pathPattern:@"/root"
+                                            pathPattern:@"/"
                                                 keyPath:nil
                                             statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
@@ -123,7 +123,7 @@
 
 - (void)checkForConnectivity
 {
-    [[RKObjectManager sharedManager] getObjectsAtPath:@"/root"
+    [[RKObjectManager sharedManager] getObjectsAtPath:@"/"
                                            parameters:nil
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   self.device = mappingResult.array[0];

@@ -11,7 +11,6 @@
 		5B174DD81A5DE1DE00A00505 /* MilkGallonStand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B174DD71A5DE1DE00A00505 /* MilkGallonStand.m */; };
 		5B174DDB1A5F40C500A00505 /* ProductAddWrapperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B174DDA1A5F40C500A00505 /* ProductAddWrapperViewController.m */; };
 		5B174DE01A60717000A00505 /* FirstBuildAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B174DDF1A60717000A00505 /* FirstBuildAssets.xcassets */; };
-		5B174DE21A6092EE00A00505 /* splashvideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5B174DE11A6092D400A00505 /* splashvideo.mp4 */; };
 		5B174DE61A64266100A00505 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B8C10871A39324C00F481E6 /* fontawesome-webfont.ttf */; };
 		5B2521151A001A6300148D67 /* STKSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2521141A001A6300148D67 /* STKSpinnerView.m */; };
 		5B3E180B1A41CC76004F1FA0 /* ProductMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E180A1A41CC76004F1FA0 /* ProductMainViewController.m */; };
@@ -33,9 +32,9 @@
 		5BBB0B8A19F1CC5D001D5DF1 /* CFShareCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B8719F1CC5D001D5DF1 /* CFShareCircleView.m */; };
 		5BBB0B8B19F1CC5D001D5DF1 /* CFSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B8919F1CC5D001D5DF1 /* CFSharer.m */; };
 		5BBB0B9A19F1DE8C001D5DF1 /* ScaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B9919F1DE8C001D5DF1 /* ScaleViewController.m */; };
+		5BBC7A771A65BD8A00A79080 /* splashvideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC7A761A65BD7200A79080 /* splashvideo.mp4 */; };
 		5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */; };
 		5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */; };
-		5BC364791A2D019300D03B9C /* splashvideo.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 5BC364761A2CF9EF00D03B9C /* splashvideo.m4v */; };
 		5BC3647E1A2F637800D03B9C /* FSTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3647D1A2F637800D03B9C /* FSTDevice.m */; };
 		5BC364811A2F63C200D03B9C /* FSTToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC364801A2F63C200D03B9C /* FSTToken.m */; };
 		5BC3648A1A2FAC1A00D03B9C /* FSTMilkyWeigh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC364891A2FAC1A00D03B9C /* FSTMilkyWeigh.m */; };
@@ -78,7 +77,6 @@
 		5B174DD91A5F40C500A00505 /* ProductAddWrapperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductAddWrapperViewController.h; sourceTree = "<group>"; };
 		5B174DDA1A5F40C500A00505 /* ProductAddWrapperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductAddWrapperViewController.m; sourceTree = "<group>"; };
 		5B174DDF1A60717000A00505 /* FirstBuildAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FirstBuildAssets.xcassets; sourceTree = "<group>"; };
-		5B174DE11A6092D400A00505 /* splashvideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashvideo.mp4; sourceTree = "<group>"; };
 		5B2521131A001A6300148D67 /* STKSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKSpinnerView.h; sourceTree = "<group>"; };
 		5B2521141A001A6300148D67 /* STKSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKSpinnerView.m; sourceTree = "<group>"; };
 		5B3E18091A41CC76004F1FA0 /* ProductMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductMainViewController.h; sourceTree = "<group>"; };
@@ -121,6 +119,7 @@
 		5BBB0B8919F1CC5D001D5DF1 /* CFSharer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFSharer.m; sourceTree = "<group>"; };
 		5BBB0B9819F1DE8C001D5DF1 /* ScaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleViewController.h; sourceTree = "<group>"; };
 		5BBB0B9919F1DE8C001D5DF1 /* ScaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleViewController.m; sourceTree = "<group>"; };
+		5BBC7A761A65BD7200A79080 /* splashvideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashvideo.mp4; sourceTree = "<group>"; };
 		5BBFACFD19E495FC00E42575 /* ProductCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewController.h; sourceTree = "<group>"; };
 		5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewController.m; sourceTree = "<group>"; };
 		5BBFAD0019E4965500E42575 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
@@ -388,8 +387,8 @@
 				5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */,
 				5B174DDF1A60717000A00505 /* FirstBuildAssets.xcassets */,
 				5BC364761A2CF9EF00D03B9C /* splashvideo.m4v */,
+				5BBC7A761A65BD7200A79080 /* splashvideo.mp4 */,
 				5BC3647A1A2E25A800D03B9C /* splashvideo.mov */,
-				5B174DE11A6092D400A00505 /* splashvideo.mp4 */,
 				67926FF119ED8BA000E346C2 /* PT_Sans-Narrow-Web-Regular.ttf */,
 				5B8C10871A39324C00F481E6 /* fontawesome-webfont.ttf */,
 				67926FF819EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf */,
@@ -594,9 +593,8 @@
 				5BF9483119EC15F900CB8BCF /* Main.storyboard in Resources */,
 				5B174DE01A60717000A00505 /* FirstBuildAssets.xcassets in Resources */,
 				5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */,
-				5B174DE21A6092EE00A00505 /* splashvideo.mp4 in Resources */,
+				5BBC7A771A65BD8A00A79080 /* splashvideo.mp4 in Resources */,
 				5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */,
-				5BC364791A2D019300D03B9C /* splashvideo.m4v in Resources */,
 				5B174DE61A64266100A00505 /* fontawesome-webfont.ttf in Resources */,
 				67926FF919EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf in Resources */,
 				5B99E07E1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard in Resources */,
@@ -807,8 +805,8 @@
 			baseConfigurationReference = 8E41CC8E45B35A1D2EC877B4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: General Electric Company, Inc. (2MMJ9338P2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: General Electric Company, Inc. (2MMJ9338P2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -819,7 +817,7 @@
 				INFOPLIST_FILE = MobiUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MobiUs;
-				PROVISIONING_PROFILE = "8b8e26c3-a41d-4069-a3fb-c675aa96ce57";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -828,8 +826,8 @@
 			baseConfigurationReference = 7C32915B6E0C4545E2A923B7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: General Electric Company, Inc. (2MMJ9338P2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: General Electric Company, Inc. (2MMJ9338P2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -840,7 +838,7 @@
 				INFOPLIST_FILE = MobiUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MobiUs;
-				PROVISIONING_PROFILE = "8b8e26c3-a41d-4069-a3fb-c675aa96ce57";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

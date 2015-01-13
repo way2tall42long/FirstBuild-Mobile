@@ -56,7 +56,7 @@
     //TODO: don't play the movie if we are auto logging in
     self.backgroundMovie = [[MPMoviePlayerController alloc] initWithContentURL:
                             [NSURL fileURLWithPath: [[NSBundle mainBundle]
-                                                     pathForResource:@"splashvideo" ofType:@"m4v"]]];
+                                                     pathForResource:@"splashvideo" ofType:@"mp4"]]];
     
     self.backgroundMovie.scalingMode = MPMovieScalingModeAspectFill;
     [self.backgroundMovie.view setFrame:[[UIScreen mainScreen] bounds]];

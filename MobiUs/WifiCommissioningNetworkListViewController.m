@@ -22,10 +22,7 @@
 - (IBAction)buttonCancel:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:true];
 }
-- (IBAction)buttonConnectClick:(id)sender {
-    [self performSegueWithIdentifier:@"seguePassword" sender:self];
-    
-}
+
 - (IBAction)refreshNetworkAction:(id)sender {
     WifiCommissioningNetworksTableViewController* listController = (WifiCommissioningNetworksTableViewController*)self.childViewControllers[0];
     [listController loadNetworks];

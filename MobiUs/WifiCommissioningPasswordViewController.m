@@ -17,9 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   // UIView *passwordView = [[UIView alloc] initWithFrame:CGRectMake(30, 30, self.view.bounds.size.width-60, self.view.bounds.size.height-60)];
-    //passwordView.backgroundColor = [UIColor redColor];
+
     UIToolbar *translucentUnderlayment = [[UIToolbar alloc] init];
     [translucentUnderlayment setFrame:self.view.bounds];
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
@@ -28,10 +26,7 @@
     translucentUnderlayment.layer.masksToBounds = YES;
     [self.view addSubview:translucentUnderlayment];
     [self.view sendSubviewToBack:translucentUnderlayment];
-   // [self.view addSubview:passwordView];
-    // Do any additional setup after loading the view.
 }
-
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -56,15 +51,5 @@
         nil;
     }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

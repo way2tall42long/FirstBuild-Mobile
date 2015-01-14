@@ -459,11 +459,6 @@
                                 <action selector="buttonCancel:" destination="HA7-R5-9d8" id="4Ng-wh-4HB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Connect" id="tOO-os-XXY">
-                            <connections>
-                                <action selector="buttonConnectClick:" destination="HA7-R5-9d8" id="d8y-Yb-Bqz"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -749,6 +744,6 @@
         <image name="spinner_arrows_circle_bg_pulse_vfx_orange" width="736" height="714"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yk8-bb-HGD"/>
+        <segue reference="MgO-R0-9eK"/>
     </inferredMetricsTieBreakers>
 </document>

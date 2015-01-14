@@ -13,7 +13,6 @@
 
 @property (nonatomic, assign) id delegate;
 @property (strong, nonatomic) IBOutlet UILabel *networkLabel;
-
 @property (strong, nonatomic) IBOutlet UITextField *passwordText;
 @property (strong, nonatomic) FSTNetwork* network;
 @end

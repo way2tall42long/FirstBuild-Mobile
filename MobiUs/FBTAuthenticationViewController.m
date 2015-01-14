@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad
 {
-    //TODO: this needs major help
+    //TODO: fix this... mostly temporary
     [super viewDidLoad];
     NSArray *accounts;
     
@@ -48,8 +48,6 @@
         {
             self.usernameTextField.text = @"hi@hi.com";
             self.passwordTextField.text = @"hi";
-            //[self.loginActivityIndicator startAnimating];
-            //[self loginWithUsernameAndLoadMainApp:account havingPassword:password];
         }
     }
 

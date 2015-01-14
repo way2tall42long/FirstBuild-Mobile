@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.hidesBackButton=YES;
     // Do any additional setup after loading the view.
 }
 
@@ -24,11 +25,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)buttonBack:(id)sender {
-    [self.navigationController popViewControllerAnimated:true];
-}
-- (IBAction)buttonCancel:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:true];
+- (IBAction)tryAgainClick:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

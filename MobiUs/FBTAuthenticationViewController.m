@@ -98,7 +98,7 @@
     [self.passwordTextField resignFirstResponder];
     [self.loginActivityIndicator startAnimating];
     
-    Firebase *authRef = [FirebaseShared sharedInstance];
+    Firebase *authRef = [[FirebaseShared sharedInstance] firebaseRootReference];
     
     [authRef createUser:self.usernameTextField.text  password:self.passwordTextField.text withCompletionBlock:^(NSError *error) {
          if (error != nil) {

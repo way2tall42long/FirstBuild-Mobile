@@ -90,15 +90,15 @@
                         <viewControllerLayoutGuide type="bottom" id="I3L-h8-Xg1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SbM-Py-sSl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Hix-KM-2po">
-                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <rect key="frame" x="290" y="258" width="20" height="20"/>
                                 <color key="color" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting ChillHub to your WiFi" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcU-2M-5BB">
-                                <rect key="frame" x="180" y="224" width="243" height="42"/>
+                                <rect key="frame" x="180" y="192" width="243" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="hQp-HF-Fdy"/>
                                     <constraint firstAttribute="width" constant="243" id="lwd-80-LUb"/>
@@ -124,7 +124,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="aNE-ZG-K4f" kind="show" identifier="segueFound" id="Moe-KV-XBF"/>
@@ -135,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="2369" y="343"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="n0v-UC-P1T">
             <objects>
-                <viewController id="aNE-ZG-K4f" sceneMemberID="viewController">
+                <viewController id="aNE-ZG-K4f" customClass="WifiCommissioningFoundViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CX4-fC-Pdi"/>
                         <viewControllerLayoutGuide type="bottom" id="ft5-9p-vdI"/>
@@ -147,8 +147,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnM-lu-efA">
-                                <rect key="frame" x="16" y="290" width="568" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnM-lu-efA">
+                                <rect key="frame" x="16" y="258" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -162,24 +162,19 @@
                             <constraint firstAttribute="centerY" secondItem="SnM-lu-efA" secondAttribute="centerY" id="oek-k7-DjA"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="cpd-lD-mka">
+                        <barButtonItem key="leftBarButtonItem" title="OK" id="xZE-NK-azO">
+                            <connections>
+                                <action selector="okClick:" destination="aNE-ZG-K4f" id="jAo-V6-i3n"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kee-W0-5WC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3197" y="343"/>
-        </scene>
-        <!--Mobi Navigation Controller-->
-        <scene sceneID="gIb-Cs-8Wd">
-            <objects>
-                <navigationController id="TbV-3f-Ecf" customClass="MobiNavigationController" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hbQ-Jo-5Xz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.84313732389999996" green="0.85098046059999999" blue="0.85490202900000001" alpha="1" colorSpace="deviceRGB"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Xp-KA-kiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1355" y="311"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8Gl-oc-rQX">
@@ -579,6 +574,9 @@
                                 <state key="normal" title="Button" image="btn_try_again">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tryAgainClick:" destination="d1J-l3-I4c" eventType="touchUpInside" id="KEU-Wk-Ukz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -646,6 +644,9 @@
                                 <state key="normal" title="Button" image="btn_try_again">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tryAgainClick:" destination="win-8B-cbK" eventType="touchUpInside" id="gGP-Si-SiI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -676,17 +677,17 @@
                         <viewControllerLayoutGuide type="bottom" id="dzY-nm-xdX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zqP-cg-V6K">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_wifi_error_troubleconnecting" translatesAutoresizingMaskIntoConstraints="NO" id="eU0-xe-v8F">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_wifi_error_troubleconnecting" translatesAutoresizingMaskIntoConstraints="NO" id="eU0-xe-v8F">
                                 <rect key="frame" x="250" y="92" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Q56-ju-5Ek"/>
                                     <constraint firstAttribute="height" constant="100" id="uDx-hz-NnT"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQx-Ky-WMD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQx-Ky-WMD">
                                 <rect key="frame" x="16" y="234" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8Qs-xu-UL1"/>
@@ -695,7 +696,7 @@
                                 <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz8-eh-jbG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz8-eh-jbG">
                                 <rect key="frame" x="16" y="263" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="98W-nD-mKe"/>
@@ -704,7 +705,7 @@
                                 <color key="textColor" red="0.49803924560000001" green="0.49411767719999999" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U40-NB-sv3">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U40-NB-sv3">
                                 <rect key="frame" x="190" y="321" width="221" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="agA-dG-h61"/>
@@ -713,6 +714,9 @@
                                 <state key="normal" title="Button" image="btn_try_again">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tryAgainClick:" destination="l7O-cQ-qgb" eventType="touchUpInside" id="qoT-ZZ-IsT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -492,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EiV-CA-Qd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3314" y="-607.5"/>
+            <point key="canvasLocation" x="3362" y="-454"/>
         </scene>
         <!--Mobi Navigation Controller-->
         <scene sceneID="2z4-mr-q5p">
@@ -562,7 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMj-KT-1gU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1755" y="-541"/>
+            <point key="canvasLocation" x="1747" y="-477"/>
         </scene>
         <!--Product Add View Controller-->
         <scene sceneID="fqg-0B-fS7">
@@ -644,7 +644,7 @@
         <image name="teardrop" width="33" height="97"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IRJ-Qz-t2I"/>
         <segue reference="uL2-Kk-aJq"/>
+        <segue reference="MoZ-40-MKS"/>
     </inferredMetricsTieBreakers>
 </document>

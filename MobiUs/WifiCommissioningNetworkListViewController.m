@@ -35,20 +35,25 @@
     [super viewDidLoad];
 }
 
+- (void) connectToWifi
+{
+    [[RKObjectManager sharedManager] postObject:self.selectedNetwork path:@"/networks"
+                                     parameters:nil
+                                        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                            [self performSegueWithIdentifier:@"segueConnectingToChillHub" sender:self];
+                                            
+                                        }
+                                        failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                            [self performSegueWithIdentifier:@"segueErrorConnectingWifi" sender:self];
+                                            
+                                        }];
+   
+}
+
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // intercept the segue to the embedded container controller
     NSString * segueName = segue.identifier;
     if ([segueName isEqualToString: @"segueConnectingToChillHub"]) {
-        [[RKObjectManager sharedManager] postObject:self.selectedNetwork path:@"/networks"
-                                         parameters:nil
-                                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                [self performSegueWithIdentifier:@"segueConnectingToChillHub" sender:self];
-                                                
-                                            }
-                                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                [self performSegueWithIdentifier:@"segueErrorConnectingWifi" sender:self];
-                                            }];
         WifiCommissioningConnectingViewController * connectingController = (WifiCommissioningConnectingViewController *) [segue destinationViewController];
         connectingController.device = self.device;
     }

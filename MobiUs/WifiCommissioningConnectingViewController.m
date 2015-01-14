@@ -20,38 +20,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
-   
+    
+}
+- (IBAction)cancelSearch:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:true];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
     // Do any additional setup after loading the view.
-    Firebase *addRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices/chillhubs"];
-    [addRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-        //NSLOG(@"UUID )
-        //        [self.products addObject:chillhub];
-        //        [self.productCollection reloadData];
-        //         [self.navigationController popViewControllerAnimated:YES];
+    Firebase *addRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:[@"devices/chillhubs/" stringByAppendingString:self.device.uuid]];
+    [addRef removeAllObservers];
+    [addRef observeSingleEventOfType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        [self performSegueWithIdentifier:@"segueFound" sender:self];
     }];
+    
+    // cancel after a minute
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [addRef removeAllObservers];
+        [self performSegueWithIdentifier:@"segueNotFound" sender:self];
+    });
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

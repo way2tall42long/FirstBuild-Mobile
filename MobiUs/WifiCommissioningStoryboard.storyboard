@@ -117,13 +117,55 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="bZ6-lE-oWD"/>
+                    <navigationItem key="navigationItem" id="bZ6-lE-oWD">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Qms-ha-rkI">
+                            <connections>
+                                <action selector="cancelSearch:" destination="l9F-Za-k3K" id="xWH-ed-QjX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="aNE-ZG-K4f" kind="show" identifier="segueFound" id="Moe-KV-XBF"/>
+                        <segue destination="l7O-cQ-qgb" kind="show" identifier="segueNotFound" id="Yk8-bb-HGD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mB8-7D-iwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2369" y="343"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="n0v-UC-P1T">
+            <objects>
+                <viewController id="aNE-ZG-K4f" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CX4-fC-Pdi"/>
+                        <viewControllerLayoutGuide type="bottom" id="ft5-9p-vdI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="10C-hF-c3l">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnM-lu-efA">
+                                <rect key="frame" x="16" y="290" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SnM-lu-efA" firstAttribute="leading" secondItem="10C-hF-c3l" secondAttribute="leadingMargin" id="BVp-mD-3ma"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SnM-lu-efA" secondAttribute="trailing" id="GuU-4a-nNE"/>
+                            <constraint firstAttribute="centerX" secondItem="SnM-lu-efA" secondAttribute="centerX" id="Isi-P6-9yQ"/>
+                            <constraint firstAttribute="centerY" secondItem="SnM-lu-efA" secondAttribute="centerY" id="oek-k7-DjA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kee-W0-5WC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3197" y="343"/>
         </scene>
         <!--Mobi Navigation Controller-->
         <scene sceneID="gIb-Cs-8Wd">
@@ -634,17 +676,17 @@
                         <viewControllerLayoutGuide type="bottom" id="dzY-nm-xdX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zqP-cg-V6K">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_wifi_error_troubleconnecting" translatesAutoresizingMaskIntoConstraints="NO" id="eU0-xe-v8F">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_wifi_error_troubleconnecting" translatesAutoresizingMaskIntoConstraints="NO" id="eU0-xe-v8F">
                                 <rect key="frame" x="250" y="92" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Q56-ju-5Ek"/>
                                     <constraint firstAttribute="height" constant="100" id="uDx-hz-NnT"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQx-Ky-WMD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQx-Ky-WMD">
                                 <rect key="frame" x="16" y="234" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8Qs-xu-UL1"/>
@@ -653,7 +695,7 @@
                                 <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz8-eh-jbG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz8-eh-jbG">
                                 <rect key="frame" x="16" y="263" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="98W-nD-mKe"/>
@@ -662,7 +704,7 @@
                                 <color key="textColor" red="0.49803924560000001" green="0.49411767719999999" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U40-NB-sv3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U40-NB-sv3">
                                 <rect key="frame" x="190" y="321" width="221" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="agA-dG-h61"/>
@@ -692,24 +734,6 @@
             </objects>
             <point key="canvasLocation" x="2185" y="1198"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="qfC-O2-AcL">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="iM2-Af-ISA" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HmY-JW-UIG"/>
-                        <viewControllerLayoutGuide type="bottom" id="tyJ-xM-KMH"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PnN-IG-Qjx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Geq-74-XMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="btn_blue_large_connect" width="1137" height="241"/>
@@ -720,4 +744,7 @@
         <image name="icon_wifi_error_troubleconnecting" width="990" height="990"/>
         <image name="spinner_arrows_circle_bg_pulse_vfx_orange" width="736" height="714"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Yk8-bb-HGD"/>
+    </inferredMetricsTieBreakers>
 </document>

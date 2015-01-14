@@ -13,4 +13,5 @@
 @interface WifiCommissioningNetworkListViewController : UIViewController
 @property (strong, nonatomic) FSTDevice *device; 
 @property (strong, nonatomic) FSTNetwork* selectedNetwork;
+- (void) connectToWifi;
 @end

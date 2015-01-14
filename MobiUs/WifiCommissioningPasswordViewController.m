@@ -46,7 +46,7 @@
     WifiCommissioningNetworkListViewController *parentController = (WifiCommissioningNetworkListViewController*)self.delegate;
     parentController.selectedNetwork.passphrase = self.passwordText.text;
     [self dismissViewControllerAnimated:YES completion:^{
-         [parentController performSegueWithIdentifier:@"segueConnectingToChillHub" sender:self];
+         [parentController connectToWifi];
     }];
    
 }

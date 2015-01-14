@@ -133,7 +133,7 @@
                                               }
                                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                                   //try again
-                                                  if (self.checkForAPTries < 5)
+                                                  if (self.checkForAPTries < 3)
                                                   {
                                                       NSLog(@"attempting search again...");
                                                       [NSTimer scheduledTimerWithTimeInterval:3.0

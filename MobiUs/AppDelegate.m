@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Firebase/Firebase.h>
+#import <RKMIMETypes.h>
 
 @interface AppDelegate ()
 
@@ -24,8 +25,8 @@
     NSURL *baseURL = [NSURL URLWithString:@"http://192.168.10.1:80"];
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
     self.objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
-    
-  
+    [[self.objectManager HTTPClient] setDefaultHeader:@"content-type" value:RKMIMETypeJSON];
+    self.objectManager.requestSerializationMIMEType = RKMIMETypeJSON;
     return YES;
 }
 

@@ -11,6 +11,7 @@
 #import "FirebaseShared.h"
 #import <Firebase/Firebase.h>
 
+
 @interface WifiCommissioningConnectingViewController ()
 
 @end
@@ -19,15 +20,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
+   
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    
     // Do any additional setup after loading the view.
     Firebase *addRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices/chillhubs"];
     [addRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         //NSLOG(@"UUID )
-//        [self.products addObject:chillhub];
-//        [self.productCollection reloadData];
-//         [self.navigationController popViewControllerAnimated:YES];
+        //        [self.products addObject:chillhub];
+        //        [self.productCollection reloadData];
+        //         [self.navigationController popViewControllerAnimated:YES];
     }];
-   
 }
 
 - (void)didReceiveMemoryWarning {

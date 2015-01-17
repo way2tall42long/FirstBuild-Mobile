@@ -65,7 +65,6 @@
                                               }];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     WifiCommissioningNetworkTableViewCell *cell = (WifiCommissioningNetworkTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"NetworkCell" forIndexPath:indexPath];

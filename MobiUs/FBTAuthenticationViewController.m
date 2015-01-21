@@ -11,6 +11,9 @@
 #import <SSKeychain.h>
 #import "FirebaseShared.h"
 #import "FBTUser.h"
+#import <GoogleOpenSource/GoogleOpenSource.h>
+#import <FacebookSDK/FacebookSDK.h>
+
 
 @interface FBTAuthenticationViewController ()
 
@@ -18,11 +21,60 @@
 
 @implementation FBTAuthenticationViewController
 
+- (void)finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error
+{
+     Firebase *authRef = [[FirebaseShared sharedInstance] firebaseRootReference];
+    FBTUser *user = [FBTUser sharedInstance];
+    NSLog(@"Received error %@ and auth object %@",error, auth);
+    [authRef authWithOAuthProvider:@"google" token:auth.accessToken
+           withCompletionBlock:^(NSError *error, FAuthData *authData) {
+               if (error) {
+                   // Error authenticating with Firebase with OAuth token
+               } else {
+                   // User is now logged in!
+                   NSLog(@"Successfully logged in! %@", authData);
+                   user.rootContainer = [@"/users/" stringByAppendingString:authData.uid];
+                   [[FirebaseShared sharedInstance] setUserBaseReference:[authRef childByAppendingPath:user.rootContainer]];
+                  
+                   Firebase *userConnectedRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"connected"];
+                   [userConnectedRef setValue:@YES];
+                   [userConnectedRef onDisconnectRemoveValue];
+                   
+                   //[SSKeychain setPassword:password forService:@"firebase" account:username];
+                   [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+                   [self performSegueWithIdentifier:@"main" sender:self];
+
+               }
+           }];
+}
+
+-(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
+{
+    NSLog(@"ok");
+}
 
 - (void)viewDidLoad
 {
+    
     //TODO: fix this... mostly temporary
     [super viewDidLoad];
+    self.facebookLoginView.delegate = self;
+    //[self initGoogle];
+    
+        GPPSignIn *signIn = [GPPSignIn sharedInstance];
+        //signIn.shouldFetchGooglePlusUser = YES;
+        signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
+    
+        // You previously set kClientId in the "Initialize the Google+ client" step
+        signIn.clientID = @"523108828656-nuardro4852mn2g66a8mg9ukj2ld4tf6.apps.googleusercontent.com";;
+    
+        // Uncomment one of these two statements for the scope you chose in the previous step
+        //signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
+       signIn.scopes = @[ @"profile" ];            // "profile" scope
+        //signIn.scopes = @[];
+        // Optional: declare signIn.actions, see "app activities"
+        signIn.delegate = self;
+    [signIn trySilentAuthentication];
     NSArray *accounts;
     
     [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
@@ -69,7 +121,7 @@
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
         [translucentUnderlayment setAlpha:0.9];
     }
-    translucentUnderlayment.layer.cornerRadius = 5;
+    //translucentUnderlayment.layer.cornerRadius = 5;
     translucentUnderlayment.layer.masksToBounds = YES;
     [self.controlView addSubview:translucentUnderlayment];
     [self.controlView sendSubviewToBack:translucentUnderlayment];
@@ -83,10 +135,57 @@
 
 - (IBAction)signInButtonPressed:(id)sender;
 {
-    [self.usernameTextField resignFirstResponder];
-    [self.passwordTextField resignFirstResponder];
-    [self.loginActivityIndicator startAnimating];
-    [self loginWithUsernameAndLoadMainApp:self.usernameTextField.text havingPassword:self.passwordTextField.text];
+    Firebase *authRef = [[FirebaseShared sharedInstance] firebaseRootReference];
+    FBTUser *user = [FBTUser sharedInstance];    // Open a session showing the user the login UI
+    [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"] allowLoginUI:YES
+                                  completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+                                      if (error) {
+                                          NSLog(@"Facebook login failed. Error: %@", error);
+                                      } else if (state == FBSessionStateOpen) {
+                                          NSString *accessToken = session.accessTokenData.accessToken;
+                                          [authRef authWithOAuthProvider:@"facebook" token:accessToken
+                                                      withCompletionBlock:^(NSError *error, FAuthData *authData) {
+                                                          if (error) {
+                                                              // Error authenticating with Firebase with OAuth token
+                                                          } else {
+                                                              // User is now logged in!
+                                                              NSLog(@"Successfully logged in! %@", authData);
+                                                              user.rootContainer = [@"/users/" stringByAppendingString:authData.uid];
+                                                              [[FirebaseShared sharedInstance] setUserBaseReference:[authRef childByAppendingPath:user.rootContainer]];
+                                                              
+                                                              Firebase *userConnectedRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"connected"];
+                                                              [userConnectedRef setValue:@YES];
+                                                              [userConnectedRef onDisconnectRemoveValue];
+                                                              
+                                                              //[SSKeychain setPassword:password forService:@"firebase" account:username];
+                                                              [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+                                                              [self performSegueWithIdentifier:@"main" sender:self];
+                                                              
+                                                          }
+
+                                                      }];
+                                      }
+                                  }];
+//    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+//    //signIn.shouldFetchGooglePlusUser = YES;
+//    signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
+//    
+//    // You previously set kClientId in the "Initialize the Google+ client" step
+//    signIn.clientID = @"523108828656-nuardro4852mn2g66a8mg9ukj2ld4tf6.apps.googleusercontent.com";;
+//    
+//    // Uncomment one of these two statements for the scope you chose in the previous step
+//    //signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
+//   signIn.scopes = @[ @"profile" ];            // "profile" scope
+//    //signIn.scopes = @[];
+//    // Optional: declare signIn.actions, see "app activities"
+//    signIn.delegate = self;
+//    [signIn authenticate];
+//    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+//    
+//    [self.usernameTextField resignFirstResponder];
+//    [self.passwordTextField resignFirstResponder];
+//    [self.loginActivityIndicator startAnimating];
+//    [self loginWithUsernameAndLoadMainApp:self.usernameTextField.text havingPassword:self.passwordTextField.text];
 }
 
 

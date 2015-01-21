@@ -8,12 +8,14 @@ pod 'SWRevealViewController'
 pod 'RestKit'
 pod 'SSKeychain'
 pod 'ActionSheetPicker-3.0'
+pod 'google-plus-ios-sdk'
+pod 'Facebook-iOS-SDK'
 
-target 'MobiUs' do
+target 'FirstBuild' do
 
 end
 
-target 'MobiUsTests' do
+target 'FirstBuildTests' do
 
 end
 

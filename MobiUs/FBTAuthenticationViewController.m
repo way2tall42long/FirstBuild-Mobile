@@ -29,41 +29,97 @@
     signIn.clientID = @"523108828656-nuardro4852mn2g66a8mg9ukj2ld4tf6.apps.googleusercontent.com";;
     signIn.scopes = @[ @"profile" ];
     signIn.delegate = self;
-    [signIn trySilentAuthentication];
+   // [signIn trySilentAuthentication];
 }
 
 - (void)finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error
 {
     Firebase *authRef = [[FirebaseShared sharedInstance] firebaseRootReference];
-    FBTUser *user = [FBTUser sharedInstance];
-    NSLog(@"Received error %@ and auth object %@",error, auth);
-    [authRef authWithOAuthProvider:@"google" token:auth.accessToken
-           withCompletionBlock:^(NSError *error, FAuthData *authData) {
-               if (error) {
-                   // Error authenticating with Firebase with OAuth token
-               } else {
-                   // User is now logged in!
-                   NSLog(@"Successfully logged in! %@", authData);
-                   user.rootContainer = [@"/users/" stringByAppendingString:authData.uid];
-                   [[FirebaseShared sharedInstance] setUserBaseReference:[authRef childByAppendingPath:user.rootContainer]];
-                  
-                   Firebase *userConnectedRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"connected"];
-                   [userConnectedRef setValue:@YES];
-                   [userConnectedRef onDisconnectRemoveValue];
-                   
-                   //[SSKeychain setPassword:password forService:@"firebase" account:username];
-                   [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
-                   [self performSegueWithIdentifier:@"main" sender:self];
+    [Firebase goOnline];
+    if (!error)
+    {
+        [authRef authWithOAuthProvider:@"google" token:auth.accessToken
+               withCompletionBlock:^(NSError *error, FAuthData *authData) {
+                   if (error) {
+                       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Google+ Login Failed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                       [alert show];
+                   } else {
+                       [self loadMainAppWithUidString:authData.uid];
+                   }
+               }];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Google+ Authentication Failed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
+}
 
-               }
-           }];
+- (void)didDisconnectWithError:(NSError *)error
+{
+    
 }
 
 #pragma mark FBLoginViewDelegate
 
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
 {
-    NSLog(@"ok");
+    Firebase *authRef = [[FirebaseShared sharedInstance] firebaseRootReference];
+    [Firebase goOnline];
+    NSString *fbAccessToken = [FBSession activeSession].accessTokenData.accessToken;
+    [authRef authWithOAuthProvider:@"facebook" token:fbAccessToken
+               withCompletionBlock:^(NSError *error, FAuthData *authData) {
+                   if (error) {
+                       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Facebook Login Failed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                       [alert show];
+                   } else {
+                       [self loadMainAppWithUidString:authData.uid];
+                   }
+               }];
+}
+
+-(void)loginView:(FBLoginView *)loginView handleError:(NSError *)error
+{
+    // Handle possible errors that can occur during login
+    NSString *alertMessage, *alertTitle;
+    
+    // If the user should perform an action outside of you app to recover,
+    // the SDK will provide a message for the user, you just need to surface it.
+    // This conveniently handles cases like Facebook password change or unverified Facebook accounts.
+    if ([FBErrorUtility shouldNotifyUserForError:error]) {
+        alertTitle = @"Facebook error";
+        alertMessage = [FBErrorUtility userMessageForError:error];
+        
+        // This code will handle session closures that happen outside of the app
+        // You can take a look at our error handling guide to know more about it
+        // https://developers.facebook.com/docs/ios/errors
+    } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession) {
+        alertTitle = @"Session Error";
+        alertMessage = @"Your current session is no longer valid. Please log in again.";
+        
+        // If the user has cancelled a login, we will do nothing.
+        // You can also choose to show the user a message if cancelling login will result in
+        // the user not being able to complete a task they had initiated in your app
+        // (like accessing FB-stored information or posting to Facebook)
+    } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
+        NSLog(@"user cancelled login");
+        
+        // For simplicity, this sample handles other errors with a generic message
+        // You can checkout our error handling guide for more detailed information
+        // https://developers.facebook.com/docs/ios/errors
+    } else {
+        alertTitle  = @"Something went wrong";
+        alertMessage = @"Please try again later.";
+        NSLog(@"Unexpected error:%@", error);
+    }
+    
+    if (alertMessage) {
+        [[[UIAlertView alloc] initWithTitle:alertTitle
+                                    message:alertMessage
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+    }
 }
 
 
@@ -95,6 +151,22 @@
     translucentUnderlayment.layer.masksToBounds = YES;
     [self.controlView addSubview:translucentUnderlayment];
     [self.controlView sendSubviewToBack:translucentUnderlayment];
+
+}
+
+- (void) loadMainAppWithUidString: (NSString*) uid
+{
+    FBTUser *user = [FBTUser sharedInstance];
+    Firebase *authRef = [[FirebaseShared sharedInstance] firebaseRootReference];
+    
+    user.rootContainer = [@"/users/" stringByAppendingString:uid];
+    [[FirebaseShared sharedInstance] setUserBaseReference:[authRef childByAppendingPath:user.rootContainer]];
+    
+    Firebase *userConnectedRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"connected1"];
+    [userConnectedRef setValue:@YES];
+    [userConnectedRef onDisconnectRemoveValue];
+    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    [self performSegueWithIdentifier:@"main" sender:self];
 
 }
 

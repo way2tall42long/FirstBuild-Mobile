@@ -37,12 +37,21 @@
 #import <Firebase/Firebase.h>
 #import "FirebaseShared.h"
 #import <RBStoryboardLink.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import <GooglePlus/GooglePlus.h>
 #import "ProductAddViewController.h"
 
 @implementation SWUITableViewCell
 @end
 
 @implementation MenuViewController
+
+typedef NS_ENUM(NSInteger, FSTMenuOptions) {
+    kHome,
+    kAddNewProduct,
+    kSettings,
+    kLogout
+};
 
 #pragma mark - Table view data source
 
@@ -54,23 +63,27 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     switch (indexPath.row) {
-        case 0:
+        case kHome:
             CellIdentifier = @"home";
             break;
             
-        case 1:
+        case kAddNewProduct:
             CellIdentifier = @"addNewProduct";
             break;
         
-        case 2:
+        case kSettings:
             CellIdentifier = @"settings";
+            break;
+            
+        case kLogout:
+            CellIdentifier = @"logout";
             break;
             
         default:
@@ -81,6 +94,20 @@
     
     return cell;
 
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == kLogout)
+    {
+        Firebase* ref =[[FirebaseShared sharedInstance] firebaseRootReference];
+         //TODO consider putting this in the authenication handler
+        [[GPPSignIn sharedInstance] signOut];
+        [[FBSession activeSession] closeAndClearTokenInformation];
+        [ref unauth];
+        [Firebase goOffline];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 #pragma mark state preservation / restoration

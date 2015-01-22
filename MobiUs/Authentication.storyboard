@@ -51,9 +51,6 @@
                                     <constraint firstAttribute="centerX" secondItem="yNJ-MY-ueE" secondAttribute="centerX" id="qYn-gQ-KvP"/>
                                     <constraint firstAttribute="centerX" secondItem="0Vk-ZJ-0TQ" secondAttribute="centerX" id="sPc-LR-ThT"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="backgroundTap:" destination="91T-Df-jik" eventType="touchDown" id="krZ-jf-Cip"/>
-                                </connections>
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="miw-gV-7qZ">
                                 <rect key="frame" x="290" y="245" width="20" height="20"/>

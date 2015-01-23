@@ -100,13 +100,7 @@ typedef NS_ENUM(NSInteger, FSTMenuOptions) {
 {
     if (indexPath.row == kLogout)
     {
-        Firebase* ref =[[FirebaseShared sharedInstance] firebaseRootReference];
-         //TODO consider putting this in the authenication handler
-        [[GPPSignIn sharedInstance] signOut];
-        [[FBSession activeSession] closeAndClearTokenInformation];
-        [ref unauth];
-        [Firebase goOffline];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.menuSelectionDelegate menuLogoutSelected];
     }
 }
 

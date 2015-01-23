@@ -17,6 +17,7 @@
 		5B4486CD1A656E0300B12E56 /* WifiCommissioningNetworkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4486CC1A656E0300B12E56 /* WifiCommissioningNetworkTableViewCell.m */; };
 		5B7FB5541A4373C900553797 /* WifiCommissioningConnectingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FB5531A4373C900553797 /* WifiCommissioningConnectingViewController.m */; };
 		5B7FB5581A43C6DF00553797 /* ChillHubDevicesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FB5571A43C6DF00553797 /* ChillHubDevicesTableViewController.m */; };
+		5B8858191A72F63B00F22325 /* UILabel+MultiLineAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8858181A72F63B00F22325 /* UILabel+MultiLineAutoSize.m */; };
 		5B8C108A1A39EC2A00F481E6 /* ProductAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C10891A39EC2A00F481E6 /* ProductAddViewController.m */; };
 		5B99E07E1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B99E07D1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard */; };
 		5B99E0811A1A5D10005FB881 /* WifiCommissioningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99E0801A1A5D10005FB881 /* WifiCommissioningViewController.m */; };
@@ -88,6 +89,8 @@
 		5B7FB5531A4373C900553797 /* WifiCommissioningConnectingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiCommissioningConnectingViewController.m; sourceTree = "<group>"; };
 		5B7FB5561A43C6DF00553797 /* ChillHubDevicesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChillHubDevicesTableViewController.h; sourceTree = "<group>"; };
 		5B7FB5571A43C6DF00553797 /* ChillHubDevicesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChillHubDevicesTableViewController.m; sourceTree = "<group>"; };
+		5B8858171A72F63B00F22325 /* UILabel+MultiLineAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+MultiLineAutoSize.h"; sourceTree = "<group>"; };
+		5B8858181A72F63B00F22325 /* UILabel+MultiLineAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+MultiLineAutoSize.m"; sourceTree = "<group>"; };
 		5B8C10871A39324C00F481E6 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		5B8C10881A39EC2A00F481E6 /* ProductAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductAddViewController.h; sourceTree = "<group>"; };
 		5B8C10891A39EC2A00F481E6 /* ProductAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductAddViewController.m; sourceTree = "<group>"; };
@@ -429,6 +432,8 @@
 				5BC3648C1A3112EE00D03B9C /* FSTBackgroundLayer.m */,
 				5B2521131A001A6300148D67 /* STKSpinnerView.h */,
 				5B2521141A001A6300148D67 /* STKSpinnerView.m */,
+				5B8858171A72F63B00F22325 /* UILabel+MultiLineAutoSize.h */,
+				5B8858181A72F63B00F22325 /* UILabel+MultiLineAutoSize.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 				5BC3647E1A2F637800D03B9C /* FSTDevice.m in Sources */,
 				5BC364971A3260E200D03B9C /* FSTChillHub.m in Sources */,
 				5B3E180B1A41CC76004F1FA0 /* ProductMainViewController.m in Sources */,
+				5B8858191A72F63B00F22325 /* UILabel+MultiLineAutoSize.m in Sources */,
 				5B174DDB1A5F40C500A00505 /* ProductAddWrapperViewController.m in Sources */,
 				5B99E0841A1AA63F005FB881 /* WifiCommissioningNetworkListViewController.m in Sources */,
 				5BBC7A7A1A66F7F100A79080 /* WifiCommissioningFoundViewController.m in Sources */,

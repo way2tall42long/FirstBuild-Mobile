@@ -104,7 +104,9 @@ CG_INLINE BOOL isIPhone4()
         self.cancelAction = cancelActionOrNil;
         self.presentFromRect = CGRectZero;
         self.popoverBackgroundViewClass = nil;
-
+        self.supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
+                                                                                     supportedInterfaceOrientationsForWindow:
+                                                                                             [UIApplication sharedApplication].keyWindow];
         if ( [origin isKindOfClass:[UIBarButtonItem class]] )
             self.barButtonItem = origin;
         else if ( [origin isKindOfClass:[UIView class]] )
@@ -235,7 +237,7 @@ CG_INLINE BOOL isIPhone4()
     if (!_customButtons) {
         _customButtons = [[NSMutableArray alloc] init];
     }
-    
+
     return _customButtons;
 }
 
@@ -247,7 +249,7 @@ CG_INLINE BOOL isIPhone4()
         value = @0;
     NSDictionary *buttonDetails = @{
             kButtonTitle : title,
-            kActionType  : @(Value),
+            kActionType  : @(ActionTypeValue),
             kButtonValue : value
     };
     [self.customButtons addObject:buttonDetails];
@@ -261,7 +263,7 @@ CG_INLINE BOOL isIPhone4()
         block = (^{});
     NSDictionary *buttonDetails = @{
                                     kButtonTitle : title,
-                                    kActionType  : @(Block),
+                                    kActionType  : @(ActionTypeBlock),
                                     kButtonValue : [block copy]
                                     };
     [self.customButtons addObject:buttonDetails];
@@ -275,7 +277,7 @@ CG_INLINE BOOL isIPhone4()
         target = [NSNull null];
     NSDictionary *buttonDetails = @{
                                     kButtonTitle : title,
-                                    kActionType  : @(Selector),
+                                    kActionType  : @(ActionTypeSelector),
                                     kActionTarget: target,
                                     kButtonValue : [NSValue valueWithPointer:selector]
                                     };
@@ -290,10 +292,10 @@ CG_INLINE BOOL isIPhone4()
 
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
-    
+
     ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
     switch (actionType) {
-        case Value: {
+        case ActionTypeValue: {
             NSAssert([self.pickerView respondsToSelector:@
                     selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
             NSInteger buttonValue = [buttonDetails[kButtonValue] integerValue];
@@ -307,16 +309,16 @@ CG_INLINE BOOL isIPhone4()
             }
             break;
         }
-            
-        case Block: {
+
+        case ActionTypeBlock: {
             ActionBlock actionBlock = buttonDetails[kButtonValue];
             [self dismissPicker];
             if (actionBlock)
-                actionBlock(); 
+                actionBlock();
             break;
         }
 
-        case Selector: {
+        case ActionTypeSelector: {
             SEL selector = [buttonDetails[kButtonValue] pointerValue];
             id target    = buttonDetails[kActionTarget];
             [self dismissPicker];
@@ -328,7 +330,7 @@ CG_INLINE BOOL isIPhone4()
             }
             break;
         }
-            
+
         default:
             NSAssert(false, @"Unknown action type");
             break;
@@ -338,6 +340,12 @@ CG_INLINE BOOL isIPhone4()
 // Allow the user to specify a custom cancel button
 - (void)setCancelButton:(UIBarButtonItem *)button
 {
+    if (!button)
+    {
+        self.hideCancel = YES;
+        return;
+    }
+
     if ( [button.customView isKindOfClass:[UIButton class]] )
     {
         UIButton *uiButton = (UIButton *) button.customView;
@@ -566,11 +574,7 @@ CG_INLINE BOOL isIPhone4()
 
 - (void) didRotate:(NSNotification *)notification
 {
-    UIInterfaceOrientationMask supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
-                                                     supportedInterfaceOrientationsForWindow:
-                                                     [UIApplication sharedApplication].keyWindow];
-
-    if (OrientationMaskSupportsOrientation(supportedInterfaceOrientations, DEVICE_ORIENTATION))
+    if (OrientationMaskSupportsOrientation(self.supportedInterfaceOrientations, DEVICE_ORIENTATION))
         [self dismissPicker];
 }
 
@@ -607,7 +611,7 @@ CG_INLINE BOOL isIPhone4()
     if (self.popoverBackgroundViewClass) {
             [self.popOverController setPopoverBackgroundViewClass:self.popoverBackgroundViewClass];
     }
-    
+
     [self presentPopover:_popOverController];
 }
 

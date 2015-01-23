@@ -20,8 +20,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    
     //setup restkit, by default the first object manager is the shared singleton accessible everywhere
     // initialize AFNetworking HTTPClient and setup shared object manager
     NSURL *baseURL = [NSURL URLWithString:@"http://192.168.10.1:80"];

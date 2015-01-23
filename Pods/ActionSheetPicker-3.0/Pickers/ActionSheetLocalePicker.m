@@ -178,14 +178,21 @@
         string = [[NSTimeZone localTimeZone] name];
 
     NSArray *array = [string componentsSeparatedByString:@"/"];
-
-    if (array.count == 2)
+    if (array.count == 1)
+    {
+        // Unknown time zone - appeared only in travis builds.
+        self.selectedContinent = _continents[0];
+        self.selectedCity = [self getCitiesByContinent:self.selectedContinent][0];
+    }
+    else if (array.count == 2)
     {
         self.selectedContinent = array[0];
         self.selectedCity = array[1];
     }
     else
+    {
         assert(NO);
+    }
 
 }
 
@@ -373,7 +380,7 @@
     
     ActionType actionType = (ActionType) [buttonDetails[kActionType] intValue];
     switch (actionType) {
-        case Value: {
+        case ActionTypeValue: {
             id itemValue = buttonDetails[kButtonValue];
             if ( [itemValue isKindOfClass:[NSTimeZone class]] )
             {
@@ -385,8 +392,8 @@
             break;
         }
             
-        case Block:
-        case Selector:
+        case ActionTypeBlock:
+        case ActionTypeSelector:
             [super customButtonPressed:sender];
             break;
         default:

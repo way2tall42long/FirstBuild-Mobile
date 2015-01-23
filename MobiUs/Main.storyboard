@@ -323,12 +323,12 @@
                                             <constraint firstAttribute="height" constant="16" id="d79-MW-wVY"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no products" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-rU-8hw">
-                                        <rect key="frame" x="238" y="278" width="126" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no products" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-rU-8hw">
+                                        <rect key="frame" x="0.0" y="269" width="600" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="QDh-wX-wWe"/>
+                                            <constraint firstAttribute="height" constant="30" id="QDh-wX-wWe"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="26"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -337,6 +337,7 @@
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="Jgl-rU-8hw" secondAttribute="centerX" id="55f-S8-IdQ"/>
                                     <constraint firstItem="sET-fH-K4D" firstAttribute="top" secondItem="Jgl-rU-8hw" secondAttribute="bottom" constant="58" id="6gP-3H-uck"/>
+                                    <constraint firstItem="Jgl-rU-8hw" firstAttribute="leading" secondItem="2x5-UL-K7c" secondAttribute="leading" id="Es8-Ux-ox7"/>
                                     <constraint firstItem="sET-fH-K4D" firstAttribute="top" secondItem="8d7-sW-YGV" secondAttribute="bottom" constant="-72" id="Nmy-Xy-2wj"/>
                                     <constraint firstAttribute="centerX" secondItem="sET-fH-K4D" secondAttribute="centerX" id="TSR-xT-FRN"/>
                                     <constraint firstItem="8d7-sW-YGV" firstAttribute="leading" secondItem="sET-fH-K4D" secondAttribute="trailing" constant="-152" id="ieM-Ls-my2"/>
@@ -344,6 +345,7 @@
                                     <constraint firstItem="9wt-fe-RKf" firstAttribute="leading" secondItem="2x5-UL-K7c" secondAttribute="leading" id="pQ9-Av-Nbu"/>
                                     <constraint firstAttribute="trailing" secondItem="9wt-fe-RKf" secondAttribute="trailing" id="qso-Hh-If7"/>
                                     <constraint firstItem="9wt-fe-RKf" firstAttribute="top" secondItem="2x5-UL-K7c" secondAttribute="top" constant="5" id="uMO-Oo-L3F"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jgl-rU-8hw" secondAttribute="trailing" id="zsG-RU-z5e"/>
                                 </constraints>
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wtl-TS-6Zk">
@@ -502,7 +504,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UBs-M1-EYQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Uwb-Ae-fEZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="490"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="476"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -545,31 +547,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7N-vn-kjC">
-                                <rect key="frame" x="0.0" y="110" width="600" height="490"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7N-vn-kjC">
+                                <rect key="frame" x="0.0" y="60" width="600" height="476"/>
+                                <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
                                     <segue destination="L2E-QF-ZY6" kind="embed" id="jwt-sZ-PWb"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Select a product below to set-up and add it to your home screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhr-bm-7Kd">
-                                <rect key="frame" x="0.0" y="64" width="600" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a product below to set-up and add it to your home screen" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mhr-bm-7Kd">
+                                <rect key="frame" x="16" y="0.0" width="568" height="60"/>
                                 <color key="backgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="6Xw-SU-2qn"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="6Xw-SU-2qn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="r7N-vn-kjC" firstAttribute="leading" secondItem="Pvn-iy-rW3" secondAttribute="leading" id="3Mg-Td-Fgl"/>
-                            <constraint firstAttribute="trailing" secondItem="Mhr-bm-7Kd" secondAttribute="trailing" id="3dl-aM-tU1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mhr-bm-7Kd" secondAttribute="trailing" id="3dl-aM-tU1"/>
                             <constraint firstAttribute="trailing" secondItem="r7N-vn-kjC" secondAttribute="trailing" id="H1O-Tq-vql"/>
                             <constraint firstItem="NqU-tM-NCh" firstAttribute="top" secondItem="r7N-vn-kjC" secondAttribute="bottom" id="MGr-vn-cOo"/>
                             <constraint firstItem="r7N-vn-kjC" firstAttribute="top" secondItem="Mhr-bm-7Kd" secondAttribute="bottom" id="ast-JD-N3s"/>
                             <constraint firstItem="Mhr-bm-7Kd" firstAttribute="top" secondItem="i3G-0q-yjo" secondAttribute="bottom" id="doB-pc-gVR"/>
-                            <constraint firstItem="Mhr-bm-7Kd" firstAttribute="leading" secondItem="Pvn-iy-rW3" secondAttribute="leading" id="nN3-XR-Ldg"/>
+                            <constraint firstItem="Mhr-bm-7Kd" firstAttribute="leading" secondItem="Pvn-iy-rW3" secondAttribute="leadingMargin" id="nN3-XR-Ldg"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -581,6 +585,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lblHeader" destination="Mhr-bm-7Kd" id="PL7-kf-Rc3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMj-KT-1gU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -591,7 +598,7 @@
             <objects>
                 <viewController id="L2E-QF-ZY6" customClass="ProductAddViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hJS-bR-voH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="490"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="476"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
@@ -666,7 +673,7 @@
         <image name="teardrop" width="33" height="97"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IRJ-Qz-t2I"/>
-        <segue reference="uL2-Kk-aJq"/>
+        <segue reference="MoZ-40-MKS"/>
+        <segue reference="PJp-Cw-9Jf"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -29,7 +29,7 @@
     signIn.clientID = @"523108828656-nuardro4852mn2g66a8mg9ukj2ld4tf6.apps.googleusercontent.com";;
     signIn.scopes = @[ @"profile" ];
     signIn.delegate = self;
-   // [signIn trySilentAuthentication];
+    [signIn trySilentAuthentication];
 }
 
 - (void)finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error
@@ -63,6 +63,10 @@
 #pragma mark FBLoginViewDelegate
 
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
+{
+}
+
+-(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
     Firebase *authRef = [[FirebaseShared sharedInstance] firebaseRootReference];
     [Firebase goOnline];
@@ -167,12 +171,26 @@
     [userConnectedRef onDisconnectRemoveValue];
     [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
     [self performSegueWithIdentifier:@"main" sender:self];
-
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark FSTApplicationMenuDelegate
+
+- (void)menuLogoutSelected
+{
+    Firebase* ref =[[FirebaseShared sharedInstance] firebaseRootReference];
+    Firebase *userConnectedRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"notconnected"];
+    [userConnectedRef setValue:@YES];
+    [userConnectedRef onDisconnectRemoveValue];
+    [[GPPSignIn sharedInstance] signOut];
+    [[FBSession activeSession] closeAndClearTokenInformation];
+    [ref unauth];
+    [Firebase goOffline];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

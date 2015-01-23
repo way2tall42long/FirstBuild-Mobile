@@ -10,10 +10,12 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <GooglePlus/GooglePlus.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "MenuViewController.h"
 
 @class GPPSignInButton;
 
-@interface FBTAuthenticationViewController : UIViewController <GPPSignInDelegate,FBLoginViewDelegate>
+
+@interface FBTAuthenticationViewController : UIViewController <GPPSignInDelegate,FBLoginViewDelegate,FSTApplicationMenuDelegate>
 
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loginActivityIndicator;
 @property (strong, nonatomic) MPMoviePlayerController *backgroundMovie;

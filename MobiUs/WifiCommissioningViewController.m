@@ -26,22 +26,38 @@
     [super viewDidLoad];
     [self configureRestKit];
 //    
-    CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    scaleAnimation.duration = 1;
-    scaleAnimation.repeatCount = HUGE_VAL;
-    scaleAnimation.autoreverses = NO;
-    scaleAnimation.fromValue = [NSNumber numberWithFloat:.4];
-    scaleAnimation.toValue = [NSNumber numberWithFloat:1];
+//    CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+//    scaleAnimation.duration = 1;
+//    scaleAnimation.repeatCount = HUGE_VAL;
+//    scaleAnimation.autoreverses = NO;
+//    scaleAnimation.fromValue = [NSNumber numberWithFloat:.4];
+//    scaleAnimation.toValue = [NSNumber numberWithFloat:1];
+//    
+//    CABasicAnimation* rotationAnimation;
+//    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+//    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * 1 * 1 ];
+//    rotationAnimation.duration = 2;
+//    rotationAnimation.cumulative = YES;
+//    rotationAnimation.repeatCount = HUGE_VAL;
+//    
+//    //[self.searchingIcon.layer addAnimation:scaleAnimation forKey:@"scale"];
+//    [self.searchingIcon.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    NSMutableArray *imgListArray = [NSMutableArray array];
+    for (int i=11; i <= 33; i++) {
+        NSString *strImgeName = [NSString stringWithFormat:@"pulsing rings_%05d.png", i];
+        UIImage *image = [UIImage imageNamed:strImgeName];
+        if (!image) {
+            NSLog(@"Could not load image named: %@", strImgeName);
+        }
+        else {
+            [imgListArray addObject:image];
+        }
+    }
     
-    CABasicAnimation* rotationAnimation;
-    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * 1 * 1 ];
-    rotationAnimation.duration = 2;
-    rotationAnimation.cumulative = YES;
-    rotationAnimation.repeatCount = HUGE_VAL;
+    [self.searchingIcon setAnimationImages:imgListArray];
+    [self.searchingIcon setAnimationDuration:.75];
+    [self.searchingIcon startAnimating];
     
-    //[self.searchingIcon.layer addAnimation:scaleAnimation forKey:@"scale"];
-    [self.searchingIcon.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
     // Do any additional setup after loading the view.
     MobiNavigationController* nav = (MobiNavigationController*)self.navigationController;
     nav.logoView.hidden = YES;

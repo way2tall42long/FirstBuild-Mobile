@@ -22,7 +22,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //setup restkit, by default the first object manager is the shared singleton accessible everywhere
     // initialize AFNetworking HTTPClient and setup shared object manager
-    NSURL *baseURL = [NSURL URLWithString:@"http://192.168.10.1:80"];
+    //move url to contstants
+    //NSURL *baseURL = [NSURL URLWithString:@"http://192.168.10.1:80"];
+    NSURL *baseURL = [NSURL URLWithString:@"http://127.0.0.1:3001"];
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
     self.objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
     [[self.objectManager HTTPClient] setDefaultHeader:@"content-type" value:RKMIMETypeJSON];

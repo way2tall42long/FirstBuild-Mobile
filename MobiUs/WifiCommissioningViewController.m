@@ -124,7 +124,7 @@
     RKResponseDescriptor *deviceResponseDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:deviceResponseMapping
                                                  method:RKRequestMethodAny
-                                            pathPattern:@"/"
+                                            pathPattern:@"/root"
                                                 keyPath:nil
                                             statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
@@ -139,7 +139,7 @@
 
 - (void)checkForConnectivity
 {
-    [[RKObjectManager sharedManager] getObjectsAtPath:@"/"
+    [[RKObjectManager sharedManager] getObjectsAtPath:@"/root"
                                            parameters:nil
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   self.device = mappingResult.array[0];

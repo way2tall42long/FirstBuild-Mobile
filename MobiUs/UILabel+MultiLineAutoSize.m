@@ -10,7 +10,7 @@
 
 @implementation UILabel (MultiLineAutoSize)
 
-
+//make sure label is set to clip and not word wrap!
 - (void)adjustFontSizeToFitMultiLine {
     UIFont *font = self.font;
     CGSize size = self.frame.size;
@@ -27,7 +27,6 @@
         
         CGSize labelSize = textRect.size;
         
-        
         if(labelSize.height <= size.height)
         {
             self.font = font;
@@ -37,7 +36,8 @@
     }
     // set the font to the minimum size anyway
     self.font = font;
-    [self setNeedsLayout]; }
+    [self setNeedsLayout];
+}
 
 
 @end

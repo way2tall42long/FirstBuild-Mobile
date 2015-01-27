@@ -10,6 +10,7 @@
 #import "WifiCommissioningConnectingViewController.h"
 #import <RestKit.h>
 #import "FSTNetwork.h"
+#import "UILabel+MultiLineAutoSize.h"
 #import "WifiCommissioningNetworksTableViewController.h"
 #import "WifiCommissioningPasswordViewController.h"
 
@@ -30,6 +31,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.lblConnected adjustFontSizeToFitMultiLine];
 }
 
 - (void) connectToWifi
@@ -62,11 +69,6 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    //[self loadNetworks];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

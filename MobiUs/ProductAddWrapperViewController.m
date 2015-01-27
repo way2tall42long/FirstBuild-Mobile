@@ -18,13 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Do any additional setup after loading the view.
 }
 
-- (void)viewDidAppear:(BOOL)animated
+-(void)viewWillAppear:(BOOL)animated
 {
-    [self.lblHeader adjustFontSizeToFitMultiLine];
+     [self.lblHeader adjustFontSizeToFitMultiLine];
 }
 
 - (void)didReceiveMemoryWarning {

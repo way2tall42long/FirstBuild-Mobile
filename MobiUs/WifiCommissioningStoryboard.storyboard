@@ -382,14 +382,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDY-32-F1f">
                                 <rect key="frame" x="0.0" y="492" width="600" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refresh Network List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhh-LC-5Fw">
-                                        <rect key="frame" x="195" y="7" width="169" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Refresh Network List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhh-LC-5Fw">
+                                        <rect key="frame" x="195" y="6" width="169" height="30"/>
                                         <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="23"/>
                                         <color key="textColor" red="0.0" green="0.70980392160000005" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AL2-Gk-EyR">
-                                        <rect key="frame" x="381" y="11" width="19" height="22.5"/>
+                                        <rect key="frame" x="381" y="11" width="19" height="23"/>
                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.70980392160000005" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
@@ -420,12 +420,12 @@
                                     <constraint firstAttribute="width" secondItem="pxo-Us-36K" secondAttribute="width" id="wjI-97-SJW"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ChillHub connected now ready for WiFI. Please select a wireless network:" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-FE-jiL">
-                                <rect key="frame" x="0.0" y="219" width="600" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ChillHub connected now ready for WiFI. Please select a wireless network:" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-FE-jiL">
+                                <rect key="frame" x="50" y="203" width="500" height="66"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="eeT-Ua-toe"/>
+                                    <constraint firstAttribute="height" constant="66" id="eeT-Ua-toe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="24"/>
                                 <color key="textColor" red="0.45098042488098145" green="0.44313728809356689" blue="0.458823561668396" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -439,14 +439,14 @@
                             <constraint firstAttribute="centerX" secondItem="eRT-QM-bI9" secondAttribute="centerX" id="LZy-eR-aoc"/>
                             <constraint firstItem="MjL-cs-0YB" firstAttribute="top" secondItem="uNx-bl-hr5" secondAttribute="bottom" constant="277" id="Qhd-F6-Hq3"/>
                             <constraint firstItem="aDY-32-F1f" firstAttribute="leading" secondItem="8x9-ai-JMQ" secondAttribute="leading" id="Ral-58-yBs"/>
-                            <constraint firstItem="BZM-FE-jiL" firstAttribute="top" secondItem="d4E-Y1-L5O" secondAttribute="bottom" constant="16" id="UBe-uu-Hqu"/>
+                            <constraint firstItem="BZM-FE-jiL" firstAttribute="top" secondItem="d4E-Y1-L5O" secondAttribute="bottom" id="UBe-uu-Hqu"/>
                             <constraint firstAttribute="centerX" secondItem="MjL-cs-0YB" secondAttribute="centerX" id="XJY-ps-srt"/>
                             <constraint firstItem="Y0O-2z-fHU" firstAttribute="top" secondItem="aDY-32-F1f" secondAttribute="bottom" id="b2p-6a-qH0"/>
                             <constraint firstAttribute="centerX" secondItem="aDY-32-F1f" secondAttribute="centerX" id="bIJ-0g-POR"/>
                             <constraint firstAttribute="centerX" secondItem="d4E-Y1-L5O" secondAttribute="centerX" id="gud-pq-nU6"/>
                             <constraint firstItem="eRT-QM-bI9" firstAttribute="top" secondItem="uNx-bl-hr5" secondAttribute="bottom" constant="33" id="hKC-aj-LI8"/>
                             <constraint firstAttribute="centerX" secondItem="BZM-FE-jiL" secondAttribute="centerX" id="heY-8r-eW7"/>
-                            <constraint firstAttribute="width" secondItem="BZM-FE-jiL" secondAttribute="width" id="qjT-MI-RjQ"/>
+                            <constraint firstAttribute="width" secondItem="BZM-FE-jiL" secondAttribute="width" multiplier="1.2" id="qjT-MI-RjQ"/>
                             <constraint firstItem="MjL-cs-0YB" firstAttribute="width" secondItem="8x9-ai-JMQ" secondAttribute="width" id="tZK-dC-tPU"/>
                             <constraint firstItem="d4E-Y1-L5O" firstAttribute="leading" secondItem="8x9-ai-JMQ" secondAttribute="leading" id="uES-Ll-WbN"/>
                         </constraints>
@@ -462,6 +462,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="lblConnected" destination="BZM-FE-jiL" id="Bc1-Nr-TLx"/>
                         <segue destination="win-8B-cbK" kind="show" identifier="segueErrorNetworks" id="bSn-Ac-lvd"/>
                         <segue destination="l7O-cQ-qgb" kind="show" identifier="segueErrorConnectingWifi" id="MgO-R0-9eK"/>
                         <segue destination="cTK-BS-uEg" kind="presentation" identifier="passwordSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="mYW-fj-F8p"/>
@@ -575,7 +576,7 @@
                         <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.70980392160000005" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Qe3-yA-dQL">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="66" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                         </view>

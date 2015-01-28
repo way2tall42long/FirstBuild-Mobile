@@ -25,23 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureRestKit];
-//    
-//    CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-//    scaleAnimation.duration = 1;
-//    scaleAnimation.repeatCount = HUGE_VAL;
-//    scaleAnimation.autoreverses = NO;
-//    scaleAnimation.fromValue = [NSNumber numberWithFloat:.4];
-//    scaleAnimation.toValue = [NSNumber numberWithFloat:1];
-//    
-//    CABasicAnimation* rotationAnimation;
-//    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-//    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * 1 * 1 ];
-//    rotationAnimation.duration = 2;
-//    rotationAnimation.cumulative = YES;
-//    rotationAnimation.repeatCount = HUGE_VAL;
-//    
-//    //[self.searchingIcon.layer addAnimation:scaleAnimation forKey:@"scale"];
-//    [self.searchingIcon.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+
     NSMutableArray *imgListArray = [NSMutableArray array];
     for (int i=11; i <= 33; i++) {
         NSString *strImgeName = [NSString stringWithFormat:@"pulsing rings_%05d.png", i];
@@ -58,7 +42,6 @@
     [self.searchingIcon setAnimationDuration:.75];
     [self.searchingIcon startAnimating];
     
-    // Do any additional setup after loading the view.
     MobiNavigationController* nav = (MobiNavigationController*)self.navigationController;
     nav.logoView.hidden = YES;
     
@@ -151,8 +134,9 @@
                                                   //try again
                                                   if (self.checkForAPTries < 3)
                                                   {
+                                                      
                                                       NSLog(@"attempting search again...");
-                                                      [NSTimer scheduledTimerWithTimeInterval:3.0
+                                                      self.searchTimer = [NSTimer scheduledTimerWithTimeInterval:3.0
                                                                                        target:self
                                                                                      selector:@selector(checkForConnectivity)
                                                                                      userInfo:nil
@@ -164,6 +148,13 @@
                                                   }
                                                   self.checkForAPTries++;
                                               }];
+}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.searchTimer invalidate];
+    self.searchTimer = nil;
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -382,13 +382,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDY-32-F1f">
                                 <rect key="frame" x="0.0" y="492" width="600" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Refresh Network List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhh-LC-5Fw">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refresh Network List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhh-LC-5Fw">
                                         <rect key="frame" x="195" y="6" width="169" height="30"/>
                                         <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="23"/>
                                         <color key="textColor" red="0.0" green="0.70980392160000005" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AL2-Gk-EyR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AL2-Gk-EyR">
                                         <rect key="frame" x="381" y="11" width="19" height="22.5"/>
                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.70980392160000005" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
@@ -634,16 +634,16 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We couldn't find your product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jTw-o9-QpE">
-                                <rect key="frame" x="16" y="337" width="568" height="30"/>
+                                <rect key="frame" x="16" y="337" width="568" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="uAl-Fa-RVg"/>
+                                    <constraint firstAttribute="height" constant="40" id="uAl-Fa-RVg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="31"/>
                                 <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzn-yE-QLu">
-                                <rect key="frame" x="190" y="433" width="221" height="45"/>
+                                <rect key="frame" x="190" y="443" width="221" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="cpl-rB-DUR"/>
                                     <constraint firstAttribute="width" constant="221" id="gSA-cv-caZ"/>
@@ -656,7 +656,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jCQ-0h-EYt">
-                                <rect key="frame" x="16" y="375" width="568" height="21"/>
+                                <rect key="frame" x="16" y="385" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ioo-3y-7k0"/>
                                 </constraints>
@@ -704,16 +704,16 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We could not find any networks to connect to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ais-pj-MYg">
-                                <rect key="frame" x="16" y="337" width="568" height="35"/>
+                                <rect key="frame" x="16" y="337" width="568" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="h2C-4m-lL9"/>
+                                    <constraint firstAttribute="height" constant="40" id="h2C-4m-lL9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="31"/>
                                 <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure you have a wifi network nearby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SCW-G1-12Y">
-                                <rect key="frame" x="16" y="380" width="568" height="21"/>
+                                <rect key="frame" x="16" y="385" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Hwn-Nb-0Lb"/>
                                 </constraints>
@@ -722,7 +722,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8f-hS-i1c">
-                                <rect key="frame" x="190" y="438" width="221" height="45"/>
+                                <rect key="frame" x="190" y="443" width="221" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="221" id="5YO-MX-JRd"/>
                                     <constraint firstAttribute="height" constant="45" id="yoc-fw-li0"/>
@@ -774,16 +774,16 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're having a problem communicating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EQx-Ky-WMD">
-                                <rect key="frame" x="16" y="337" width="568" height="30"/>
+                                <rect key="frame" x="16" y="337" width="568" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="8Qs-xu-UL1"/>
+                                    <constraint firstAttribute="height" constant="40" id="8Qs-xu-UL1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="31"/>
                                 <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure it's turned on and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yz8-eh-jbG">
-                                <rect key="frame" x="16" y="375" width="568" height="21"/>
+                                <rect key="frame" x="16" y="385" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="98W-nD-mKe"/>
                                 </constraints>
@@ -792,7 +792,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U40-NB-sv3">
-                                <rect key="frame" x="190" y="433" width="221" height="45"/>
+                                <rect key="frame" x="190" y="443" width="221" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="agA-dG-h61"/>
                                     <constraint firstAttribute="width" constant="221" id="oG5-90-ykL"/>

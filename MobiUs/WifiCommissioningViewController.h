@@ -12,5 +12,6 @@
 @interface WifiCommissioningViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *searchingIcon;
 @property NSInteger checkForAPTries;
-@property (strong, nonatomic) IBOutlet FSTDevice *device;
+@property (strong, nonatomic) FSTDevice *device;
+@property (strong, nonatomic) NSTimer* searchTimer;
 @end

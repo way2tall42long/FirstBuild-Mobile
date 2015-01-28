@@ -67,8 +67,6 @@ static NSString * const reuseIdentifier = @"ProductCell";
 {
     //TODO: support other products
     RBStoryboardLink *destination = segue.destinationViewController;
-//    MobiNavigationController *rvc = (MobiNavigationController *)destination.scene;
-//    ChillHubViewController *vc = (ChillHubViewController*)rvc.topViewController;
     ChillHubViewController *vc = (ChillHubViewController*)destination.scene;
     vc.product = sender;
 }
@@ -79,7 +77,6 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
     return 1;
 }
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.products.count;

@@ -28,8 +28,9 @@
     [self.view sendSubviewToBack:translucentUnderlayment];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     self.networkLabel.text = self.network.ssid;
 }
 - (void)didReceiveMemoryWarning {

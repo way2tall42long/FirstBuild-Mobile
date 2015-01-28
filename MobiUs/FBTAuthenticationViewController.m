@@ -145,17 +145,18 @@
     [self.view addSubview:self.backgroundMovie.view];
     [self.view sendSubviewToBack:self.backgroundMovie.view];
     [self.backgroundMovie play];
-    
-    //TODO: is there a more proper way to do this?
-    UIToolbar *translucentUnderlayment = [[UIToolbar alloc] init];
-    [translucentUnderlayment setFrame:self.controlView.bounds];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    //TODO: replace with proper translucent underlayment, this does not work on larger width screens.
+    UIToolbar *translucentUnderlayment = [[UIToolbar alloc] initWithFrame:self.controlView.bounds];
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
         [translucentUnderlayment setAlpha:0.9];
     }
-    translucentUnderlayment.layer.masksToBounds = YES;
     [self.controlView addSubview:translucentUnderlayment];
     [self.controlView sendSubviewToBack:translucentUnderlayment];
-
 }
 
 - (void) loadMainAppWithUidString: (NSString*) uid

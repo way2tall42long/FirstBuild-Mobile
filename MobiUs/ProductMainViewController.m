@@ -19,9 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        // Do any additional setup after loading the view.
-    [[self.buttonAddProduct imageView] setContentMode: UIViewContentModeScaleAspectFit];
-    [self.buttonAddProduct setImage:[UIImage imageNamed:@"btn_blue_large_with_field_plus_add_product"] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

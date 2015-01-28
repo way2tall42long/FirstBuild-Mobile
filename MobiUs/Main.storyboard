@@ -22,6 +22,7 @@
         </mutableArray>
         <mutableArray key="fontawesome-webfont.ttf">
             <string>FontAwesome</string>
+            <string>FontAwesome</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -283,7 +284,21 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAw-Kc-0oW" userLabel="add">
                                                 <rect key="frame" x="0.0" y="0.0" width="168" height="150"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23T-CU-Ghx">
+                                                        <rect key="frame" x="-84" y="-75" width="336" height="300"/>
+                                                        <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="32"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.098039224743843079" green="0.53333336114883423" blue="0.59215688705444336" alpha="1" colorSpace="deviceRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" secondItem="23T-CU-Ghx" secondAttribute="height" multiplier="0.5" id="7Bp-xx-bty"/>
+                                                    <constraint firstAttribute="centerY" secondItem="23T-CU-Ghx" secondAttribute="centerY" id="OMe-Ed-vs7"/>
+                                                    <constraint firstAttribute="centerX" secondItem="23T-CU-Ghx" secondAttribute="centerX" id="esq-xQ-NQN"/>
+                                                    <constraint firstAttribute="width" secondItem="23T-CU-Ghx" secondAttribute="width" multiplier="0.5" id="rMq-DW-IWk"/>
+                                                </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD PRODUCT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7cH-x5-NP2">
                                                 <rect key="frame" x="198" y="58" width="402" height="35"/>
@@ -304,6 +319,17 @@
                                             <constraint firstAttribute="centerY" secondItem="iAw-Kc-0oW" secondAttribute="centerY" id="tPz-Bg-y3W"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGR-GB-4jh">
+                                        <rect key="frame" x="0.0" y="10" width="600" height="150"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="YOg-WN-cug" kind="show" id="8yk-ZM-Efx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -312,11 +338,15 @@
                                     <constraint firstAttribute="centerX" secondItem="AHa-eC-xOW" secondAttribute="centerX" id="70x-HB-VH1"/>
                                     <constraint firstItem="AHa-eC-xOW" firstAttribute="width" secondItem="2x5-UL-K7c" secondAttribute="width" id="A1g-ih-sZE"/>
                                     <constraint firstItem="Jgl-rU-8hw" firstAttribute="leading" secondItem="2x5-UL-K7c" secondAttribute="leading" id="Es8-Ux-ox7"/>
+                                    <constraint firstItem="AHa-eC-xOW" firstAttribute="width" secondItem="zGR-GB-4jh" secondAttribute="width" id="IDT-Zd-Msl"/>
+                                    <constraint firstItem="AHa-eC-xOW" firstAttribute="centerX" secondItem="zGR-GB-4jh" secondAttribute="centerX" id="M0D-HK-j7H"/>
                                     <constraint firstItem="sET-fH-K4D" firstAttribute="top" secondItem="8d7-sW-YGV" secondAttribute="bottom" constant="-72" id="Nmy-Xy-2wj"/>
                                     <constraint firstAttribute="centerX" secondItem="sET-fH-K4D" secondAttribute="centerX" id="TSR-xT-FRN"/>
+                                    <constraint firstItem="AHa-eC-xOW" firstAttribute="height" secondItem="zGR-GB-4jh" secondAttribute="height" id="eC6-O5-jbg"/>
                                     <constraint firstItem="AHa-eC-xOW" firstAttribute="top" secondItem="2x5-UL-K7c" secondAttribute="top" constant="10" id="iTB-H6-aor"/>
                                     <constraint firstItem="8d7-sW-YGV" firstAttribute="leading" secondItem="sET-fH-K4D" secondAttribute="trailing" constant="-152" id="ieM-Ls-my2"/>
                                     <constraint firstAttribute="bottom" secondItem="sET-fH-K4D" secondAttribute="bottom" id="jhL-CR-cCT"/>
+                                    <constraint firstItem="AHa-eC-xOW" firstAttribute="centerY" secondItem="zGR-GB-4jh" secondAttribute="centerY" id="mGV-kJ-FHI"/>
                                     <constraint firstAttribute="trailing" secondItem="Jgl-rU-8hw" secondAttribute="trailing" id="zsG-RU-z5e"/>
                                 </constraints>
                             </view>
@@ -643,7 +673,8 @@
         <image name="teardrop" width="33" height="97"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uL2-Kk-aJq"/>
         <segue reference="IRJ-Qz-t2I"/>
+        <segue reference="8yk-ZM-Efx"/>
+        <segue reference="uL2-Kk-aJq"/>
     </inferredMetricsTieBreakers>
 </document>

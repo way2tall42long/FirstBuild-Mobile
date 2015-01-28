@@ -57,11 +57,11 @@
                                                   [self.tableView reloadData];
                                                   if (_networks.count==0)
                                                   {
-                                                      [self performSegueWithIdentifier:@"segueErrorNetworks" sender:self];
+                                                      [self.parentViewController performSegueWithIdentifier:@"segueErrorNetworks" sender:self];
                                                   }
                                               }
                                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                  //[self performSegueWithIdentifier:@"segueErrorNetworks" sender:self];
+                                                  [self.parentViewController performSegueWithIdentifier:@"segueErrorNetworks" sender:self];
                                               }];
 }
 

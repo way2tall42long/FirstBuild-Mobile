@@ -149,13 +149,15 @@
 {
     FBTUser *user = [FBTUser sharedInstance];
     Firebase *authRef = [[FirebaseShared sharedInstance] firebaseRootReference];
-    
+    NSString *dateString = [NSDateFormatter localizedStringFromDate:[NSDate date]
+                                                          dateStyle:NSDateFormatterShortStyle
+                                                          timeStyle:NSDateFormatterFullStyle];
     user.rootContainer = [@"/users/" stringByAppendingString:uid];
     [[FirebaseShared sharedInstance] setUserBaseReference:[authRef childByAppendingPath:user.rootContainer]];
     
-    Firebase *userConnectedRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"connected1"];
-    [userConnectedRef setValue:@YES];
-    [userConnectedRef onDisconnectRemoveValue];
+    Firebase *userConnectedRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"lastConnected"];
+    [userConnectedRef setValue:dateString];
+    //TODO: add disconnect value set handler
     [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
     [self performSegueWithIdentifier:@"main" sender:self];
 }

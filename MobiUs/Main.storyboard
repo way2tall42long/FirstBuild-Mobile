@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="PT_Sans-Narrow-Web-Bold.ttf">
@@ -12,6 +14,7 @@
             <string>PTSans-NarrowBold</string>
         </mutableArray>
         <mutableArray key="PT_Sans-Narrow-Web-Regular.ttf">
+            <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
@@ -252,18 +255,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2x5-UL-K7c">
                                 <rect key="frame" x="0.0" y="60" width="600" height="476"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wt-fe-RKf">
-                                        <rect key="frame" x="0.0" y="5" width="600" height="120"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="dzA-sR-OhM"/>
-                                        </constraints>
-                                        <state key="normal" image="btn_blue_large_with_field_plus_add_product">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="dJA-hw-Leo" kind="show" id="PJp-Cw-9Jf"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad-robot-no-tear" translatesAutoresizingMaskIntoConstraints="NO" id="sET-fH-K4D">
                                         <rect key="frame" x="180" y="348" width="240" height="128"/>
                                         <constraints>
@@ -287,19 +278,45 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHa-eC-xOW" userLabel="addproductview">
+                                        <rect key="frame" x="0.0" y="10" width="600" height="150"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAw-Kc-0oW" userLabel="add">
+                                                <rect key="frame" x="0.0" y="0.0" width="168" height="150"/>
+                                                <color key="backgroundColor" red="0.098039224743843079" green="0.53333336114883423" blue="0.59215688705444336" alpha="1" colorSpace="deviceRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD PRODUCT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7cH-x5-NP2">
+                                                <rect key="frame" x="198" y="58" width="402" height="35"/>
+                                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="27"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.11372549830000001" green="0.70980393890000004" blue="0.79215693470000004" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="iAw-Kc-0oW" firstAttribute="height" secondItem="AHa-eC-xOW" secondAttribute="height" id="6c0-pd-p95"/>
+                                            <constraint firstItem="iAw-Kc-0oW" firstAttribute="leading" secondItem="AHa-eC-xOW" secondAttribute="leading" id="Bam-cG-zVI"/>
+                                            <constraint firstAttribute="trailing" secondItem="7cH-x5-NP2" secondAttribute="trailing" id="Cxx-Fs-RcP"/>
+                                            <constraint firstItem="iAw-Kc-0oW" firstAttribute="width" secondItem="AHa-eC-xOW" secondAttribute="width" multiplier="0.28" id="RYy-eA-rcp"/>
+                                            <constraint firstItem="7cH-x5-NP2" firstAttribute="leading" secondItem="iAw-Kc-0oW" secondAttribute="trailing" constant="30" id="ZLg-3Y-ohu"/>
+                                            <constraint firstAttribute="width" secondItem="AHa-eC-xOW" secondAttribute="height" multiplier="4:1" id="eac-Pr-BDX"/>
+                                            <constraint firstAttribute="centerY" secondItem="7cH-x5-NP2" secondAttribute="centerY" id="kE9-43-Vi5"/>
+                                            <constraint firstAttribute="centerY" secondItem="iAw-Kc-0oW" secondAttribute="centerY" id="tPz-Bg-y3W"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="Jgl-rU-8hw" secondAttribute="centerX" id="55f-S8-IdQ"/>
                                     <constraint firstItem="sET-fH-K4D" firstAttribute="top" secondItem="Jgl-rU-8hw" secondAttribute="bottom" constant="40" id="6gP-3H-uck"/>
+                                    <constraint firstAttribute="centerX" secondItem="AHa-eC-xOW" secondAttribute="centerX" id="70x-HB-VH1"/>
+                                    <constraint firstItem="AHa-eC-xOW" firstAttribute="width" secondItem="2x5-UL-K7c" secondAttribute="width" id="A1g-ih-sZE"/>
                                     <constraint firstItem="Jgl-rU-8hw" firstAttribute="leading" secondItem="2x5-UL-K7c" secondAttribute="leading" id="Es8-Ux-ox7"/>
                                     <constraint firstItem="sET-fH-K4D" firstAttribute="top" secondItem="8d7-sW-YGV" secondAttribute="bottom" constant="-72" id="Nmy-Xy-2wj"/>
                                     <constraint firstAttribute="centerX" secondItem="sET-fH-K4D" secondAttribute="centerX" id="TSR-xT-FRN"/>
+                                    <constraint firstItem="AHa-eC-xOW" firstAttribute="top" secondItem="2x5-UL-K7c" secondAttribute="top" constant="10" id="iTB-H6-aor"/>
                                     <constraint firstItem="8d7-sW-YGV" firstAttribute="leading" secondItem="sET-fH-K4D" secondAttribute="trailing" constant="-152" id="ieM-Ls-my2"/>
                                     <constraint firstAttribute="bottom" secondItem="sET-fH-K4D" secondAttribute="bottom" id="jhL-CR-cCT"/>
-                                    <constraint firstItem="9wt-fe-RKf" firstAttribute="leading" secondItem="2x5-UL-K7c" secondAttribute="leading" id="pQ9-Av-Nbu"/>
-                                    <constraint firstAttribute="trailing" secondItem="9wt-fe-RKf" secondAttribute="trailing" id="qso-Hh-If7"/>
-                                    <constraint firstItem="9wt-fe-RKf" firstAttribute="top" secondItem="2x5-UL-K7c" secondAttribute="top" constant="5" id="uMO-Oo-L3F"/>
                                     <constraint firstAttribute="trailing" secondItem="Jgl-rU-8hw" secondAttribute="trailing" id="zsG-RU-z5e"/>
                                 </constraints>
                             </view>
@@ -344,7 +361,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonAddProduct" destination="9wt-fe-RKf" id="qs3-SP-VaS"/>
                         <outlet property="loadingIndicator" destination="wtl-TS-6Zk" id="A1c-fM-4AO"/>
                         <outlet property="noProductsView" destination="2x5-UL-K7c" id="z7j-xS-SrB"/>
                         <outlet property="productsCollectionView" destination="wPv-AA-6k8" id="x1a-8M-Adv"/>
@@ -618,7 +634,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btn_blue_large_with_field_plus_add_product" width="1315" height="431"/>
         <image name="btn_left_arrow_gray" width="40" height="67"/>
         <image name="btn_plus_bare" width="344" height="344"/>
         <image name="cell_chillhub_product" width="1217" height="463"/>
@@ -628,7 +643,7 @@
         <image name="teardrop" width="33" height="97"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PJp-Cw-9Jf"/>
+        <segue reference="uL2-Kk-aJq"/>
         <segue reference="IRJ-Qz-t2I"/>
     </inferredMetricsTieBreakers>
 </document>

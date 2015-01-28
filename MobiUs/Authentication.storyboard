@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_screen_05" translatesAutoresizingMaskIntoConstraints="NO" id="VpZ-de-bwi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ti-5E-beY" customClass="UIControl">
                                 <rect key="frame" x="0.0" y="185" width="600" height="230"/>
                                 <subviews>
@@ -59,10 +62,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="VpZ-de-bwi" secondAttribute="centerY" id="1p4-bE-nnm"/>
                             <constraint firstAttribute="centerY" secondItem="miw-gV-7qZ" secondAttribute="centerY" constant="45" id="23O-vL-oZb"/>
                             <constraint firstAttribute="centerX" secondItem="0ti-5E-beY" secondAttribute="centerX" id="2I5-hZ-pek"/>
                             <constraint firstAttribute="centerX" secondItem="miw-gV-7qZ" secondAttribute="centerX" id="T1D-3u-zPF"/>
                             <constraint firstAttribute="trailing" secondItem="0ti-5E-beY" secondAttribute="trailing" id="ToP-fK-qKG"/>
+                            <constraint firstItem="VpZ-de-bwi" firstAttribute="width" secondItem="b1i-QC-OU2" secondAttribute="width" id="VJF-by-VQw"/>
+                            <constraint firstAttribute="centerX" secondItem="VpZ-de-bwi" secondAttribute="centerX" id="Wg4-4M-YrN"/>
+                            <constraint firstItem="VpZ-de-bwi" firstAttribute="height" secondItem="b1i-QC-OU2" secondAttribute="height" id="cyJ-B2-vA6"/>
                             <constraint firstItem="0ti-5E-beY" firstAttribute="leading" secondItem="b1i-QC-OU2" secondAttribute="leading" id="jpa-fY-r3i"/>
                             <constraint firstAttribute="centerY" secondItem="0ti-5E-beY" secondAttribute="centerY" id="rIK-VS-XJN"/>
                         </constraints>
@@ -103,6 +110,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="intro_screen_05" width="641" height="1146"/>
         <image name="logo_1b_orange" width="209" height="128"/>
     </resources>
 </document>

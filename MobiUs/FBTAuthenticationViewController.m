@@ -134,29 +134,15 @@
     [super viewDidLoad];
     self.facebookLoginView.delegate = self;
     [self initGoogleAuth];
-   
-    self.backgroundMovie = [[MPMoviePlayerController alloc] initWithContentURL:
-                            [NSURL fileURLWithPath: [[NSBundle mainBundle]
-                                                     pathForResource:@"splashvideo" ofType:@"mp4"]]];
-    
-    self.backgroundMovie.scalingMode = MPMovieScalingModeAspectFill;
-    [self.backgroundMovie.view setFrame:[[UIScreen mainScreen] bounds]];
-    [self.backgroundMovie setControlStyle:MPMovieControlStyleNone];
-    [self.view addSubview:self.backgroundMovie.view];
-    [self.view sendSubviewToBack:self.backgroundMovie.view];
-    [self.backgroundMovie play];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //TODO: replace with proper translucent underlayment, this does not work on larger width screens.
-    UIToolbar *translucentUnderlayment = [[UIToolbar alloc] initWithFrame:self.controlView.bounds];
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        [translucentUnderlayment setAlpha:0.9];
-    }
-    [self.controlView addSubview:translucentUnderlayment];
-    [self.controlView sendSubviewToBack:translucentUnderlayment];
+    UIView *alphaView = [[UIView alloc] initWithFrame:self.controlView.bounds];
+    alphaView.alpha = .6;
+    alphaView.backgroundColor = [UIColor whiteColor];
+    [self.controlView addSubview:alphaView];
+    [self.controlView sendSubviewToBack:alphaView];
 }
 
 - (void) loadMainAppWithUidString: (NSString*) uid
@@ -180,18 +166,10 @@
 }
 
 #pragma mark FSTApplicationMenuDelegate
-
+//TODO: implement - currently in MenuViewController
 - (void)menuLogoutSelected
 {
-    Firebase* ref =[[FirebaseShared sharedInstance] firebaseRootReference];
-    Firebase *userConnectedRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"notconnected"];
-    [userConnectedRef setValue:@YES];
-    [userConnectedRef onDisconnectRemoveValue];
-    [[GPPSignIn sharedInstance] signOut];
-    [[FBSession activeSession] closeAndClearTokenInformation];
-    [ref unauth];
-    [Firebase goOffline];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 

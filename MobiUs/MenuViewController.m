@@ -100,18 +100,9 @@ typedef NS_ENUM(NSInteger, FSTMenuOptions) {
 {
     if (indexPath.row == kLogout)
     {
-        //TODO: use the delegate
-        NSString *dateString = [NSDateFormatter localizedStringFromDate:[NSDate date]
-                                                              dateStyle:NSDateFormatterShortStyle
-                                                              timeStyle:NSDateFormatterFullStyle];
-        Firebase* ref =[[FirebaseShared sharedInstance] firebaseRootReference];
-        Firebase *userConnectedRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"notconnected"];
-        [userConnectedRef setValue:dateString];
-        [userConnectedRef onDisconnectRemoveValue];
+
         [[GPPSignIn sharedInstance] signOut];
         [[FBSession activeSession] closeAndClearTokenInformation];
-        [ref unauth];
-        [Firebase goOffline];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

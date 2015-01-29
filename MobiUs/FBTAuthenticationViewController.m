@@ -29,15 +29,16 @@
     signIn.clientID = @"523108828656-nuardro4852mn2g66a8mg9ukj2ld4tf6.apps.googleusercontent.com";;
     signIn.scopes = @[ @"profile" ];
     signIn.delegate = self;
+   
     [signIn trySilentAuthentication];
 }
 
 - (void)finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error
 {
     Firebase *authRef = [[FirebaseShared sharedInstance] firebaseRootReference];
-    [Firebase goOnline];
     if (!error)
     {
+         NSLog(@"logged in with google? %@", [GPPSignIn sharedInstance].authentication);
         [authRef authWithOAuthProvider:@"google" token:auth.accessToken
                withCompletionBlock:^(NSError *error, FAuthData *authData) {
                    if (error) {
@@ -69,7 +70,6 @@
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
     Firebase *authRef = [[FirebaseShared sharedInstance] firebaseRootReference];
-    [Firebase goOnline];
     NSString *fbAccessToken = [FBSession activeSession].accessTokenData.accessToken;
     [authRef authWithOAuthProvider:@"facebook" token:fbAccessToken
                withCompletionBlock:^(NSError *error, FAuthData *authData) {
@@ -156,8 +156,11 @@
     [[FirebaseShared sharedInstance] setUserBaseReference:[authRef childByAppendingPath:user.rootContainer]];
     
     Firebase *userConnectedRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"lastConnected"];
+    Firebase *userDisconnectedRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"disconnected"];
     [userConnectedRef setValue:dateString];
-    //TODO: add disconnect value set handler
+    [userDisconnectedRef setValue:@NO];
+    [userDisconnectedRef onDisconnectSetValue:@YES];
+    
     [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
     [self performSegueWithIdentifier:@"main" sender:self];
 }

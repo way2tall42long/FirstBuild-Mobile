@@ -55,7 +55,6 @@ float amplitude;
 
 - (void)viewDidLoad
 {
-    //TODO: cleanup references
     [super viewDidLoad];
     
     //create the view with the same dimensions as the clipping view, this will hold the "white" object which
@@ -83,6 +82,11 @@ float amplitude;
         }
         NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
     }];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.milkyWeigh.firebaseRef removeAllObservers];
 }
 
 - (void) viewWillAppear:(BOOL)animated

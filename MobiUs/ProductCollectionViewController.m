@@ -29,8 +29,8 @@ static NSString * const reuseIdentifier = @"ProductCell";
     self.products = [[NSMutableArray alloc] init];
    
     //TODO: support multiple device types
-    Firebase *chillhubsAddRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices/chillhubs"];
-    [chillhubsAddRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+    Firebase *chillhubsRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices/chillhubs"];
+    [chillhubsRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
                 FSTChillHub* chillhub = [FSTChillHub new];
                 chillhub.firebaseRef = snapshot.ref ;
                 chillhub.identifier = snapshot.key;
@@ -39,8 +39,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
                 [self.productCollection reloadData];
     }];
     
-    Firebase *chillhubsRemRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices/chillhubs"];
-    [chillhubsRemRef observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
+    [chillhubsRef observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
         for (long i=self.products.count-1; i>-1; i--)
         {
             FSTChillHub *chillhub = [self.products objectAtIndex:i];
@@ -57,6 +56,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
         }
     }];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

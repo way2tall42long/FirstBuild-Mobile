@@ -19,24 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // intercept the segue to the embedded container controller
-    NSString * segueName = segue.identifier;
-    if ([segueName isEqualToString: @"segueCollectionView"]) {
-        ProductCollectionViewController * productsCollection = (ProductCollectionViewController *) [segue destinationViewController];
-        productsCollection.delegate = self;
-    }
-}
-
-- (void)viewWillAppear:(BOOL)animated {
     //TODO: not sure if this is the correct pattern. we want to show the "no products"
     //found if there really aren't any products. since there is no timeout concept on the firebase
     //API then am not sure what the correct method is for detecting a network error.
@@ -72,16 +54,41 @@
             [self noItemsInCollection];
         }
     });
-
 }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // intercept the segue to the embedded container controller
+    NSString * segueName = segue.identifier;
+    if ([segueName isEqualToString: @"segueCollectionView"]) {
+        ProductCollectionViewController * productsCollection = (ProductCollectionViewController *) [segue destinationViewController];
+        productsCollection.delegate = self;
+    }
+}
+//
+//- (void)viewWillAppear:(BOOL)animated {
+//    
+//
+//}
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     
     return 1;
 }
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    Firebase * ref = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices"];
+    [ref removeAllObservers];
+}
+
 - (IBAction)revealButtonClick:(id)sender {
     [self.revealViewController rightRevealToggle:sender];
-    
 }
 
 - (void) noItemsInCollection

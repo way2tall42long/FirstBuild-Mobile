@@ -29,7 +29,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CFShareCircleView.h"
 #import "FSTChillHub.h"
 #import "ChillHubDevicesTableViewController.h"
 

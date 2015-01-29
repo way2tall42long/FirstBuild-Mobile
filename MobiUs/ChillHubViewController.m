@@ -30,7 +30,6 @@
 
 #import "ChillHubViewController.h"
 #import "ChillHubDevicesTableViewController.h"
-#import "CFSharer.h"
 #import "FBTUser.h"
 #import "FSTMilkyWeigh.h"
 #import "ScaleViewController.h"
@@ -41,7 +40,6 @@
 #import <Firebase/Firebase.h>
 
 @interface ChillHubViewController ()
-//@property (nonatomic, strong) CFShareCircleView *shareCircleView;
 
 @end
 
@@ -52,35 +50,13 @@
     if ([segue.identifier isEqualToString:@"segueDevices"])
     {
         self.destinationController = (ChillHubDevicesTableViewController *) [segue destinationViewController];
-        //devicesController.chillhub = (FSTChillHub*)self.product;
     }
    
 }
 
-
-
-//- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
-//    NSLog(@"Selected sharer: %@", sharer.name);
-//    
-//    if (sharer.type==CFSharerTypeMilkScale)
-//    {
-//        [self performSegueWithIdentifier:@"scale" sender:sharer];
-//    }
-//}
-//
-//- (void)shareCircleView:(CFShareCircleView *)shareCircleView didCancelSharer:(CFSharer *)sharer {
-//    NSLog(@"Share circle view was canceled.");
-//    [self.revealViewController revealToggle:self];
-//}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-//    self.shareCircleView = [[CFShareCircleView alloc] initWithFrame:self.view.bounds];
-//    self.shareCircleView.delegate = self;
-//    [self.view addSubview:self.shareCircleView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -91,31 +67,6 @@
     self.destinationController.chillhub = (FSTChillHub*)self.product;
     [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
-}
-
-#pragma mark state preservation / restoration
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
-{
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    
-//    // Save what you need here
-//    [coder encodeObject: _text forKey: @"text"];
-//    [coder encodeObject: _color forKey: @"color"];
-//
-//    [super encodeRestorableStateWithCoder:coder];
-}
-
-
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
-{
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    
-//    // Restore what you need here
-//    _color = [coder decodeObjectForKey: @"color"];
-//    _text = [coder decodeObjectForKey: @"text"];
-//    
-//    [super decodeRestorableStateWithCoder:coder];
 }
 
 - (IBAction)revealToggle:(id)sender

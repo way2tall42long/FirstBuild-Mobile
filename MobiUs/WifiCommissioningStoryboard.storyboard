@@ -594,7 +594,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vGM-dU-M4b" id="tBv-OL-sjP">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="millenFalco_1974" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuO-tO-k9S">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="millenFalco_1974" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuO-tO-k9S">
                                             <rect key="frame" x="18" y="9" width="574" height="26"/>
                                             <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -898,6 +898,6 @@
         <image name="icon_wifi_error_troubleconnecting" width="990" height="990"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MgO-R0-9eK"/>
+        <segue reference="Yk8-bb-HGD"/>
     </inferredMetricsTieBreakers>
 </document>

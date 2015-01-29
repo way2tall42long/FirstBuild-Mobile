@@ -52,14 +52,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGx-kp-sFe">
-                                <rect key="frame" x="51" y="33" width="500" height="267"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HGx-kp-sFe">
+                                <rect key="frame" x="50" y="33" width="500" height="267"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HGx-kp-sFe" secondAttribute="height" multiplier="15:8" id="56S-9D-Qze"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for your ChillHUB,  One moment please..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rxg-gB-1B4">
-                                <rect key="frame" x="2" y="328" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="328" width="600" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="xYT-s5-Jq3"/>
                                 </constraints>
@@ -71,7 +71,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rxg-gB-1B4" firstAttribute="width" secondItem="0x8-PE-aGT" secondAttribute="width" id="99g-OQ-lmz"/>
-                            <constraint firstAttribute="centerX" secondItem="rxg-gB-1B4" secondAttribute="centerX" constant="-1.5" id="W2S-10-frF"/>
+                            <constraint firstAttribute="centerX" secondItem="rxg-gB-1B4" secondAttribute="centerX" id="W2S-10-frF"/>
                             <constraint firstAttribute="centerX" secondItem="HGx-kp-sFe" secondAttribute="centerX" id="aKW-AP-l84"/>
                             <constraint firstAttribute="width" secondItem="HGx-kp-sFe" secondAttribute="width" multiplier="1.2" id="fUh-uJ-GAT"/>
                             <constraint firstItem="rxg-gB-1B4" firstAttribute="top" secondItem="HGx-kp-sFe" secondAttribute="bottom" constant="28" id="piw-cH-D5e"/>
@@ -102,27 +102,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Hix-KM-2po">
-                                <rect key="frame" x="290" y="258" width="20" height="20"/>
-                                <color key="color" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
-                            </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting ChillHub to your WiFi" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcU-2M-5BB">
-                                <rect key="frame" x="180" y="192" width="243" height="42"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="som-Lu-Qge">
+                                <rect key="frame" x="50" y="33" width="500" height="267"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="hQp-HF-Fdy"/>
-                                    <constraint firstAttribute="width" constant="243" id="lwd-80-LUb"/>
+                                    <constraint firstAttribute="width" secondItem="som-Lu-Qge" secondAttribute="height" multiplier="15:8" id="gA3-5F-Vwu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="17"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting ChillHub to your WiFi" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcU-2M-5BB">
+                                <rect key="frame" x="0.0" y="328" width="600" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="bx9-TM-D91"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="22"/>
                                 <color key="textColor" red="0.53725492949999998" green="0.53333336109999996" blue="0.54901963470000004" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Hix-KM-2po" firstAttribute="top" secondItem="JcU-2M-5BB" secondAttribute="bottom" constant="24" id="IVA-sb-nCd"/>
-                            <constraint firstAttribute="centerX" secondItem="Hix-KM-2po" secondAttribute="centerX" id="LyO-dG-QhT"/>
-                            <constraint firstAttribute="centerX" secondItem="JcU-2M-5BB" secondAttribute="centerX" constant="-1.5" id="qfE-3Q-Jjp"/>
-                            <constraint firstAttribute="centerY" secondItem="Hix-KM-2po" secondAttribute="centerY" id="r6a-Zj-aa7"/>
+                            <constraint firstItem="JcU-2M-5BB" firstAttribute="width" secondItem="SbM-Py-sSl" secondAttribute="width" id="AHr-z7-Fja"/>
+                            <constraint firstItem="som-Lu-Qge" firstAttribute="top" secondItem="6Zo-Vy-1ZX" secondAttribute="bottom" constant="33" id="SGb-lo-dff"/>
+                            <constraint firstAttribute="centerX" secondItem="JcU-2M-5BB" secondAttribute="centerX" id="Wrj-sm-Gdb"/>
+                            <constraint firstAttribute="width" secondItem="som-Lu-Qge" secondAttribute="width" multiplier="1.2" id="YFA-nV-PGP"/>
+                            <constraint firstAttribute="centerX" secondItem="som-Lu-Qge" secondAttribute="centerX" id="crG-43-9ER"/>
+                            <constraint firstItem="JcU-2M-5BB" firstAttribute="top" secondItem="som-Lu-Qge" secondAttribute="bottom" constant="28" id="o8D-sy-pTK"/>
+                            <constraint firstItem="som-Lu-Qge" firstAttribute="width" secondItem="som-Lu-Qge" secondAttribute="height" multiplier="15:8" id="q6t-HN-WUo"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -136,6 +140,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="searchingIcon" destination="som-Lu-Qge" id="HkT-vV-vFd"/>
                         <segue destination="l7O-cQ-qgb" kind="show" identifier="segueNotFound" id="Yk8-bb-HGD"/>
                         <segue destination="ByN-ot-ckP" kind="show" identifier="segueFound" id="Bns-nv-9Mu"/>
                     </connections>
@@ -254,7 +259,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7b-oh-N4o">
                                 <rect key="frame" x="0.0" y="70" width="600" height="280"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxd-UW-3oS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxd-UW-3oS">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="O3W-sW-aoh"/>
                                         </constraints>
@@ -386,13 +391,13 @@
                                 <rect key="frame" x="0.0" y="492" width="600" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refresh Network List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhh-LC-5Fw">
-                                        <rect key="frame" x="195" y="6" width="169" height="30"/>
+                                        <rect key="frame" x="195" y="7" width="169" height="30"/>
                                         <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="23"/>
                                         <color key="textColor" red="0.0" green="0.70980392160000005" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AL2-Gk-EyR">
-                                        <rect key="frame" x="381" y="11" width="19" height="22.5"/>
+                                        <rect key="frame" x="381" y="11" width="19" height="23"/>
                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.70980392160000005" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
@@ -496,39 +501,38 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Xn-H0-1d3">
-                                <rect key="frame" x="0.0" y="171" width="600" height="32"/>
+                                <rect key="frame" x="0.0" y="171" width="600" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Td0-g6-qjW"/>
+                                    <constraint firstAttribute="height" constant="50" id="Td0-g6-qjW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="24"/>
                                 <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ChillHUB is now connected." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGZ-Wb-4Kt">
-                                <rect key="frame" x="166" y="219" width="269" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ChillHUB is now connected." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gGZ-Wb-4Kt">
+                                <rect key="frame" x="0.0" y="237" width="600" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="269" id="PhB-HV-B49"/>
                                     <constraint firstAttribute="height" constant="50" id="qG1-oG-Urk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="PTSans-Narrow" family="PT Sans Narrow" pointSize="24"/>
                                 <color key="textColor" red="0.45098042490000001" green="0.44313728810000003" blue="0.45882356169999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_blue_large_blank" translatesAutoresizingMaskIntoConstraints="NO" id="EkF-ZX-Goa">
-                                <rect key="frame" x="180" y="290" width="240" height="51"/>
+                                <rect key="frame" x="180" y="470" width="240" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="3Eh-Vg-td5"/>
                                     <constraint firstAttribute="height" constant="51" id="6wa-al-the"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done! >" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-uU-zhA">
-                                <rect key="frame" x="180" y="290" width="240" height="51"/>
+                                <rect key="frame" x="180" y="470" width="240" height="51"/>
                                 <fontDescription key="fontDescription" name="PTSans-NarrowBold" family="PT Sans Narrow" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ha-Q0-n3G">
-                                <rect key="frame" x="180" y="290" width="240" height="51"/>
+                                <rect key="frame" x="180" y="470" width="240" height="51"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -540,19 +544,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EkF-ZX-Goa" firstAttribute="centerY" secondItem="ydZ-uU-zhA" secondAttribute="centerY" id="1DQ-81-g7H"/>
-                            <constraint firstItem="EkF-ZX-Goa" firstAttribute="top" secondItem="gGZ-Wb-4Kt" secondAttribute="bottom" constant="21" id="3p6-Iz-SiF"/>
                             <constraint firstItem="5ha-Q0-n3G" firstAttribute="height" secondItem="EkF-ZX-Goa" secondAttribute="height" id="8mM-Wp-nhh"/>
                             <constraint firstAttribute="trailing" secondItem="3Xn-H0-1d3" secondAttribute="trailing" id="9qP-UC-D61"/>
                             <constraint firstItem="EkF-ZX-Goa" firstAttribute="centerX" secondItem="ydZ-uU-zhA" secondAttribute="centerX" id="CdP-WA-Cs7"/>
                             <constraint firstAttribute="centerX" secondItem="gGZ-Wb-4Kt" secondAttribute="centerX" id="GwB-Ib-jTV"/>
                             <constraint firstAttribute="centerX" secondItem="EkF-ZX-Goa" secondAttribute="centerX" id="Hdd-c8-IA1"/>
                             <constraint firstItem="EkF-ZX-Goa" firstAttribute="width" secondItem="ydZ-uU-zhA" secondAttribute="width" id="RX0-UD-qpD"/>
+                            <constraint firstItem="etA-dd-hxl" firstAttribute="top" secondItem="EkF-ZX-Goa" secondAttribute="bottom" constant="15" id="Sg1-Bh-jxP"/>
                             <constraint firstItem="5ha-Q0-n3G" firstAttribute="width" secondItem="EkF-ZX-Goa" secondAttribute="width" id="Ydz-AX-FVs"/>
                             <constraint firstAttribute="centerX" secondItem="jee-XZ-gip" secondAttribute="centerX" id="aB5-Bv-PKo"/>
                             <constraint firstItem="3Xn-H0-1d3" firstAttribute="leading" secondItem="3lw-WW-meS" secondAttribute="leading" id="aXj-XU-Xsy"/>
                             <constraint firstItem="jee-XZ-gip" firstAttribute="top" secondItem="TaE-aM-gZ5" secondAttribute="bottom" constant="33" id="d9r-zj-mez"/>
                             <constraint firstAttribute="centerX" secondItem="5ha-Q0-n3G" secondAttribute="centerX" id="dee-yU-4AA"/>
                             <constraint firstItem="gGZ-Wb-4Kt" firstAttribute="top" secondItem="3Xn-H0-1d3" secondAttribute="bottom" constant="16" id="dyL-zH-yDN"/>
+                            <constraint firstItem="gGZ-Wb-4Kt" firstAttribute="width" secondItem="3lw-WW-meS" secondAttribute="width" id="ecv-QC-62H"/>
                             <constraint firstItem="EkF-ZX-Goa" firstAttribute="height" secondItem="ydZ-uU-zhA" secondAttribute="height" id="gSA-Mg-YrA"/>
                             <constraint firstItem="5ha-Q0-n3G" firstAttribute="top" secondItem="EkF-ZX-Goa" secondAttribute="top" id="qdC-Q7-nvs"/>
                             <constraint firstAttribute="centerX" secondItem="3Xn-H0-1d3" secondAttribute="centerX" id="xLj-Yc-EQg"/>

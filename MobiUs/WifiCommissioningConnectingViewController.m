@@ -20,6 +20,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSMutableArray *imgListArray = [NSMutableArray array];
+    for (int i=11; i <= 28; i++) {
+        NSString *strImgeName = [NSString stringWithFormat:@"searching_clouds_%05d.png", i];
+        UIImage *image = [UIImage imageNamed:strImgeName];
+        if (!image) {
+            NSLog(@"Could not load image named: %@", strImgeName);
+        }
+        else {
+            [imgListArray addObject:image];
+        }
+    }
+    [self.searchingIcon setAnimationImages:imgListArray];
+    [self.searchingIcon setAnimationDuration:.75];
+    [self.searchingIcon startAnimating];
     
 }
 - (IBAction)cancelSearch:(id)sender {

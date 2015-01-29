@@ -10,5 +10,6 @@
 #import "FSTDevice.h"
 
 @interface WifiCommissioningConnectingViewController : UIViewController
-@property (strong, nonatomic) IBOutlet FSTDevice *device;
+@property (strong, nonatomic) FSTDevice *device;
+@property (strong, nonatomic) IBOutlet UIImageView *searchingIcon;
 @end

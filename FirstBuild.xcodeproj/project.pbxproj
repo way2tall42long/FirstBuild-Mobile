@@ -32,7 +32,6 @@
 		5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EF10019DEEE1000E8D9F1 /* LaunchScreen.xib */; };
 		5B9EF10E19DEEE1100E8D9F1 /* MobiUsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF10D19DEEE1100E8D9F1 /* MobiUsTests.m */; };
 		5BA94D5B1A5C9EDE00F9AD79 /* MilkGallonClippingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA94D5A1A5C9EDE00F9AD79 /* MilkGallonClippingView.m */; };
-		5BBB0B8B19F1CC5D001D5DF1 /* CFSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B8919F1CC5D001D5DF1 /* CFSharer.m */; };
 		5BBB0B9A19F1DE8C001D5DF1 /* ScaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B9919F1DE8C001D5DF1 /* ScaleViewController.m */; };
 		5BBC7A771A65BD8A00A79080 /* splashvideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC7A761A65BD7200A79080 /* splashvideo.mp4 */; };
 		5BBC7A7A1A66F7F100A79080 /* WifiCommissioningFoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC7A791A66F7F100A79080 /* WifiCommissioningFoundViewController.m */; };
@@ -119,8 +118,6 @@
 		5B9EF12319DF08E700E8D9F1 /* MobiUs.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobiUs.pch; sourceTree = "<group>"; };
 		5BA94D591A5C9EDE00F9AD79 /* MilkGallonClippingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MilkGallonClippingView.h; sourceTree = "<group>"; };
 		5BA94D5A1A5C9EDE00F9AD79 /* MilkGallonClippingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MilkGallonClippingView.m; sourceTree = "<group>"; };
-		5BBB0B8819F1CC5D001D5DF1 /* CFSharer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFSharer.h; sourceTree = "<group>"; };
-		5BBB0B8919F1CC5D001D5DF1 /* CFSharer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFSharer.m; sourceTree = "<group>"; };
 		5BBB0B9819F1DE8C001D5DF1 /* ScaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleViewController.h; sourceTree = "<group>"; };
 		5BBB0B9919F1DE8C001D5DF1 /* ScaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleViewController.m; sourceTree = "<group>"; };
 		5BBC7A761A65BD7200A79080 /* splashvideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashvideo.mp4; sourceTree = "<group>"; };
@@ -289,8 +286,6 @@
 			children = (
 				5B174DD31A5DB94700A00505 /* SCSiriWaveformView.h */,
 				5B174DD41A5DB94700A00505 /* SCSiriWaveformView.m */,
-				5BBB0B8819F1CC5D001D5DF1 /* CFSharer.h */,
-				5BBB0B8919F1CC5D001D5DF1 /* CFSharer.m */,
 				5BF9482C19EC15BB00CB8BCF /* ChillHub.storyboard */,
 				5BA94D591A5C9EDE00F9AD79 /* MilkGallonClippingView.h */,
 				5BA94D5A1A5C9EDE00F9AD79 /* MilkGallonClippingView.m */,
@@ -687,7 +682,6 @@
 				5BBB0B9A19F1DE8C001D5DF1 /* ScaleViewController.m in Sources */,
 				5B99E08A1A1E9CFF005FB881 /* WifiCommissioningErrorViewController.m in Sources */,
 				5B2521151A001A6300148D67 /* STKSpinnerView.m in Sources */,
-				5BBB0B8B19F1CC5D001D5DF1 /* CFSharer.m in Sources */,
 				5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */,
 				5B9EF0F419DEEE1000E8D9F1 /* main.m in Sources */,
 				5B4486CD1A656E0300B12E56 /* WifiCommissioningNetworkTableViewCell.m in Sources */,

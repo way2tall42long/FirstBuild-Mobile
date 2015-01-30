@@ -12,5 +12,4 @@
 @interface ChillHubDevicesTableViewController : UITableViewController
 @property (strong, nonatomic) FSTChillHub * chillhub;
 @property (strong, nonatomic) NSMutableArray *products;
-@property (nonatomic) BOOL haveFirebaseBinding;
 @end

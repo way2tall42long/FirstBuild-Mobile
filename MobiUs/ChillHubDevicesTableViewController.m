@@ -12,19 +12,13 @@
 
 @interface ChillHubDevicesTableViewController ()
 
-
-
 @end
 
 @implementation ChillHubDevicesTableViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.products = [[NSMutableArray alloc] init];
-    self.haveFirebaseBinding = NO;
-    //Firebase *attachmentsRef = [self.product.firebaseRef childByAppendingPath:DATAMAPPING_ATTACHMENTS];
-    
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -39,28 +33,20 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    //TODO: is this is hack? not sure the correct way to work around this, but viewDidLoad
-    //is being called before the prepareForSegue's which are setting the ChillHub properties
-    //on the viewcontrollers, therefore its empty. viewWillAppear is called after all the
-    //segues are loaded, but its called multiple times and we only one to create the observer one time
-    if (!self.haveFirebaseBinding)
+    Firebase* ref = [self.chillhub.firebaseRef childByAppendingPath:@"milkyWeighs"];
     {
-        
-        [self.chillhub.firebaseRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-            if ([snapshot.key isEqualToString:DATAMAPPING_MILKY_WEIGH])
+        [ref observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
             {
-                for (FDataSnapshot* scale in snapshot.children) {
                     FSTMilkyWeigh* milkyWeigh = [FSTMilkyWeigh new];
-                    milkyWeigh.identifier = scale.key;
-                    milkyWeigh.firebaseRef = scale.ref;
+                    milkyWeigh.identifier = snapshot.key;
+                    milkyWeigh.firebaseRef = snapshot.ref;
                     [self.products addObject:milkyWeigh];
                     [self.tableView reloadData];
-                }
             }
             
             }];
         
-        [[self.chillhub.firebaseRef childByAppendingPath:@"milkyWeighs"] observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
+        [ref observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
             for (long i=self.products.count-1; i>-1; i--)
             {
                 FSTMilkyWeigh* milkyWeigh = [self.products objectAtIndex:i];
@@ -72,13 +58,13 @@
                 }
             }
         }];
-        self.haveFirebaseBinding = YES;
     }
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [self.chillhub.firebaseRef removeAllObservers];
+    [self.products removeAllObjects];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,6 +9,4 @@
 #import "FSTChillHub.h"
 
 @implementation FSTChillHub
-NSString *const DATAMAPPING_ATTACHMENTS = @"attachments";
-
 @end

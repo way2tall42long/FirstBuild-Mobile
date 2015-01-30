@@ -5,7 +5,6 @@
 //  Created by Myles Caley on 12/18/14.
 //  Copyright (c) 2014 FirstBuild. All rights reserved.
 //
-
 #import "ChillHubDevicesTableViewController.h"
 #import "FSTMilkyWeigh.h"
 #import "ScaleViewController.h"
@@ -33,38 +32,38 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    //TODO: consider using another pattern here ...
+    //putting the firebase setups stuff inside viewWillAppear
+    //because prepareForSegue in the parent controller loads after
+    //viewDidLoad
     Firebase* ref = [self.chillhub.firebaseRef childByAppendingPath:@"milkyWeighs"];
-    {
-        [ref observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-            {
-                    FSTMilkyWeigh* milkyWeigh = [FSTMilkyWeigh new];
-                    milkyWeigh.identifier = snapshot.key;
-                    milkyWeigh.firebaseRef = snapshot.ref;
-                    [self.products addObject:milkyWeigh];
-                    [self.tableView reloadData];
-            }
-            
-            }];
-        
-        [ref observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
-            for (long i=self.products.count-1; i>-1; i--)
-            {
-                FSTMilkyWeigh* milkyWeigh = [self.products objectAtIndex:i];
-                if ([milkyWeigh.identifier isEqualToString:snapshot.key])
-                {
-                    [self.products removeObject:milkyWeigh];
-                    [self.tableView reloadData];
-                    break;
-                }
-            }
-        }];
-    }
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [self.chillhub.firebaseRef removeAllObservers];
+    [ref removeAllObservers];
     [self.products removeAllObjects];
+    
+    [ref observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        {
+                FSTMilkyWeigh* milkyWeigh = [FSTMilkyWeigh new];
+                milkyWeigh.identifier = snapshot.key;
+                milkyWeigh.firebaseRef = snapshot.ref;
+                [self.products addObject:milkyWeigh];
+                [self.tableView reloadData];
+        }
+        
+    }];
+    
+    [ref observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
+        for (long i=self.products.count-1; i>-1; i--)
+        {
+            FSTMilkyWeigh* milkyWeigh = [self.products objectAtIndex:i];
+            if ([milkyWeigh.identifier isEqualToString:snapshot.key])
+            {
+                [self.products removeObject:milkyWeigh];
+                [self.tableView reloadData];
+                break;
+            }
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

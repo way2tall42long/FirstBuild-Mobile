@@ -51,19 +51,11 @@
     {
         self.destinationController = (ChillHubDevicesTableViewController *) [segue destinationViewController];
     }
-   
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //TODO: figure out whats going on with the observers -- it isn't correct
     [super viewWillAppear:animated];
-    //[self.shareCircleView removeAllAccessories];
     self.destinationController.chillhub = (FSTChillHub*)self.product;
     [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
@@ -73,13 +65,5 @@
 {
     [self.revealViewController rightRevealToggle:sender];
 }
-
-- (void)applicationFinishedRestoringState
-{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    // Call whatever function you need to visually restore
-}
-
 
 @end

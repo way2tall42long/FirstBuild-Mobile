@@ -23,9 +23,9 @@
     //found if there really aren't any products. since there is no timeout concept on the firebase
     //API then am not sure what the correct method is for detecting a network error.
     
-    //TODO: there is a delegate when there are no products left probably just need to use firebase or not
-    
     Firebase * ref = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices"];
+    [ref removeAllObservers];
+    
     BOOL __block hasProducts = NO;
     
     self.noProductsView.hidden = YES;
@@ -34,6 +34,8 @@
     [self hideNoProducts:YES];
     [self.loadingIndicator startAnimating];
     
+    //detect if we have any products/if the products are removed it is
+    //detected in the embeded collection view controller and we registered as a delegate
     [ref observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         [self.loadingIndicator stopAnimating];
         [self hideProducts:NO];
@@ -41,7 +43,7 @@
         hasProducts = YES;
     } withCancelBlock:^(NSError *error) {
         //TODO: if its really a permission error then we need to handle this differently
-        NSLog(@"%@",error.localizedDescription);
+        DLog(@"%@",error.localizedDescription);
         [self.loadingIndicator stopAnimating];
         [self hideNoProducts:NO];
     }];
@@ -61,6 +63,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // intercept the segue to the embedded container controller
@@ -70,21 +73,9 @@
         productsCollection.delegate = self;
     }
 }
-//
-//- (void)viewWillAppear:(BOOL)animated {
-//    
-//
-//}
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    
     return 1;
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    Firebase * ref = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices"];
-    [ref removeAllObservers];
 }
 
 - (IBAction)revealButtonClick:(id)sender {
@@ -155,15 +146,5 @@
     }
     [UIView commitAnimations];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

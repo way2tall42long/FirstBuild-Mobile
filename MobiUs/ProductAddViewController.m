@@ -8,8 +8,6 @@
 
 #import "ProductAddViewController.h"
 #import <SWRevealViewController.h>
-#import <Firebase/Firebase.h>
-#import "FirebaseShared.h"
 
 @interface ProductAddViewController ()
 
@@ -42,7 +40,6 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    //cell.backgroundColor = UIColorFromRGB(0x00B5CC);
     return cell;
     
 }
@@ -64,7 +61,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewWillAppear:(BOOL)animated

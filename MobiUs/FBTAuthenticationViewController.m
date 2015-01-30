@@ -1,9 +1,9 @@
 //
 //  FBTAuthenticationViewController.m
-//  iOS Firebase Template
+//  MobiUs
 //
-//  Created by Michael McDonald on 4/17/14.
-//  Copyright (c) 2014 Firebase. All rights reserved.
+//  Created by Myles Caley on 10/15/14.
+//  Copyright (c) 2014 FirstBuild. All rights reserved.
 //
 
 #import "FBTAuthenticationViewController.h"

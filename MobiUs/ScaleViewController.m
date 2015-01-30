@@ -15,12 +15,6 @@
 
 float amplitude;
 
-
-- (IBAction)backButton:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (void)loadMilkJugWithPercent: (float)percent
 {
     amplitude = .5;
@@ -70,6 +64,7 @@ float amplitude;
     self.waveView.backgroundColor = [UIColor clearColor];
     [self.whiteView addSubview:self.waveView];
 
+    [self.milkyWeigh.firebaseRef removeAllObservers];
     [self.milkyWeigh.firebaseRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         id rawVal = snapshot.value;
         if (rawVal != [NSNull null])
@@ -82,16 +77,6 @@ float amplitude;
         }
         NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
     }];
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [self.milkyWeigh.firebaseRef removeAllObservers];
-}
-
-- (void) viewWillAppear:(BOOL)animated
-{
-    
 }
 
 @end

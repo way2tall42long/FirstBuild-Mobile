@@ -9,7 +9,6 @@
 #import "ProductCollectionViewController.h"
 #import "ProductCollectionViewCell.h"
 #import <SWRevealViewController.h>
-#import <ActionSheetStringPicker.h>
 #import <RBStoryboardLink.h>
 #import "FirebaseShared.h"
 #import "FSTChillHub.h"
@@ -30,11 +29,12 @@ static NSString * const reuseIdentifier = @"ProductCell";
    
     //TODO: support multiple device types
     Firebase *chillhubsRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices/chillhubs"];
+    [chillhubsRef removeAllObservers];
+    
     [chillhubsRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
                 FSTChillHub* chillhub = [FSTChillHub new];
                 chillhub.firebaseRef = snapshot.ref ;
                 chillhub.identifier = snapshot.key;
-                chillhub.friendlyName = @"My ChillHub";
                 [self.products addObject:chillhub];
                 [self.productCollection reloadData];
     }];
@@ -57,7 +57,6 @@ static NSString * const reuseIdentifier = @"ProductCell";
     }];
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -66,6 +65,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
     //TODO: support other products
+    //TODO: highly coupled segue
     RBStoryboardLink *destination = segue.destinationViewController;
     ChillHubViewController *vc = (ChillHubViewController*)destination.scene;
     vc.product = sender;
@@ -115,33 +115,5 @@ static NSString * const reuseIdentifier = @"ProductCell";
 {
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

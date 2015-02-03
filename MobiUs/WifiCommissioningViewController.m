@@ -21,7 +21,6 @@
 
 @implementation WifiCommissioningViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureRestKit];

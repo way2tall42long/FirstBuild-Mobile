@@ -43,7 +43,6 @@
     
     MobiNavigationController* nav = (MobiNavigationController*)self.navigationController;
     nav.logoView.hidden = YES;
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated

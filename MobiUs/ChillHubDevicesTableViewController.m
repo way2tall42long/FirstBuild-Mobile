@@ -8,6 +8,7 @@
 #import "ChillHubDevicesTableViewController.h"
 #import "FSTMilkyWeigh.h"
 #import "ScaleViewController.h"
+#import "ChillHubDeviceTableViewCell.h"
 
 @interface ChillHubDevicesTableViewController ()
 
@@ -45,6 +46,19 @@
                 FSTMilkyWeigh* milkyWeigh = [FSTMilkyWeigh new];
                 milkyWeigh.identifier = snapshot.key;
                 milkyWeigh.firebaseRef = snapshot.ref;
+                id rawVal = snapshot.value;
+                if (rawVal != [NSNull null])
+                {
+                    NSDictionary* val = rawVal;
+                    if ( [(NSString*)[val objectForKey:@"status"] isEqualToString:@"connected"] )
+                    {
+                        milkyWeigh.online = YES;
+                    }
+                    else
+                    {
+                        milkyWeigh.online = NO;
+                    }
+                }
                 [self.products addObject:milkyWeigh];
                 [self.tableView reloadData];
         }
@@ -61,8 +75,35 @@
                 [self.tableView reloadData];
                 break;
             }
+            
         }
     }];
+    
+    [ref observeEventType:FEventTypeChildChanged withBlock:^(FDataSnapshot *snapshot) {
+        for (long i=self.products.count-1; i>-1; i--)
+        {
+            FSTChillHubDevice *chillhubDevice = [self.products objectAtIndex:i];
+            if ([chillhubDevice.identifier isEqualToString:snapshot.key])
+            {
+                id rawVal = snapshot.value;
+                if (rawVal != [NSNull null])
+                {
+                    NSDictionary* val = rawVal;
+                    if ( [(NSString*)[val objectForKey:@"status"] isEqualToString:@"connected"] )
+                    {
+                        chillhubDevice.online = YES;
+                    }
+                    else
+                    {
+                        chillhubDevice.online = NO;
+                    }
+                    [self.tableView reloadData];
+                }
+                break;
+            }
+        }
+    }];
+
     
 }
 
@@ -87,11 +128,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    //TODO: support multiple product types
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"milkyWeighCell" forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    ChillHubDeviceTableViewCell *productCell = [tableView dequeueReusableCellWithIdentifier:@"milkyWeighCell" forIndexPath:indexPath];
+    productCell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    return cell;
+    FSTProduct * product = self.products[indexPath.row];
+    if (product.online)
+    {
+        productCell.userInteractionEnabled = YES;
+        productCell.disabledView.hidden = YES;
+        productCell.detailsButton.hidden = NO;
+    }
+    else
+    {
+        productCell.userInteractionEnabled = NO;
+        productCell.disabledView.hidden = NO;
+        productCell.detailsButton.hidden = YES;
+    }
+    
+    return productCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -104,49 +158,5 @@
     }
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

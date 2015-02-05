@@ -131,13 +131,13 @@ static NSString * const reuseIdentifier = @"ProductCell";
     if (product.online)
     {
         productCell.userInteractionEnabled = YES;
-        productCell.offlineLabel.hidden = YES;
+        productCell.disabledView.hidden = YES;
         productCell.arrowButton.hidden = NO;
     }
     else
     {
         productCell.userInteractionEnabled = NO;
-        productCell.offlineLabel.hidden = NO;
+        productCell.disabledView.hidden = NO;
         productCell.arrowButton.hidden = YES;
     }
     

@@ -10,6 +10,9 @@
             <string>PTSans-Narrow</string>
             <string>PTSans-Narrow</string>
         </mutableArray>
+        <mutableArray key="fontawesome-webfont.ttf">
+            <string>FontAwesome</string>
+        </mutableArray>
     </customFonts>
     <scenes>
         <!--Mobi Navigation Controller-->
@@ -98,7 +101,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="milkyWeighCell" rowHeight="72" id="wpL-9x-xFB">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="milkyWeighCell" rowHeight="72" id="wpL-9x-xFB" customClass="ChillHubDeviceTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wpL-9x-xFB" id="wmu-Kf-fAF">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -132,8 +135,32 @@
                                             <color key="textColor" red="0.49803924560000001" green="0.49411767719999999" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view alpha="0.74999999999999978" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ten-dP-jhx" userLabel="disabledView">
+                                            <rect key="frame" x="5" y="5" width="590" height="62"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" offline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aFu-C0-cjg">
+                                                    <rect key="frame" x="250" y="19" width="91" height="24.5"/>
+                                                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="24"/>
+                                                    <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="aFu-C0-cjg" secondAttribute="centerY" id="1tR-XY-S20"/>
+                                                <constraint firstAttribute="centerX" secondItem="aFu-C0-cjg" secondAttribute="centerX" id="ffB-bQ-RVk"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Ten-dP-jhx" firstAttribute="leading" secondItem="wmu-Kf-fAF" secondAttribute="leading" constant="5" id="3Gx-nc-WEI"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ten-dP-jhx" secondAttribute="bottom" constant="5" id="6P2-qv-7Dc"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ten-dP-jhx" secondAttribute="trailing" constant="5" id="IYW-h7-tU7"/>
                                         <constraint firstItem="21s-2q-CrA" firstAttribute="top" secondItem="ehP-hz-imm" secondAttribute="bottom" id="SMD-71-A1r"/>
                                         <constraint firstItem="d0F-T4-Edg" firstAttribute="centerY" secondItem="ehP-hz-imm" secondAttribute="centerY" constant="11.5" id="V4T-Ya-92P"/>
                                         <constraint firstItem="ehP-hz-imm" firstAttribute="leading" secondItem="d0F-T4-Edg" secondAttribute="trailing" constant="5" id="VgZ-hA-vSk"/>
@@ -144,8 +171,13 @@
                                         <constraint firstItem="d0F-T4-Edg" firstAttribute="top" secondItem="wmu-Kf-fAF" secondAttribute="top" constant="16" id="ea1-Xd-who"/>
                                         <constraint firstItem="21s-2q-CrA" firstAttribute="leading" secondItem="d0F-T4-Edg" secondAttribute="trailing" constant="5" id="pFy-yS-P0p"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ehP-hz-imm" secondAttribute="trailing" id="vLJ-da-8hu"/>
+                                        <constraint firstItem="Ten-dP-jhx" firstAttribute="top" secondItem="wmu-Kf-fAF" secondAttribute="top" constant="5" id="zZ4-th-F48"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detailsButton" destination="ajt-Fv-kEa" id="6yK-XU-570"/>
+                                    <outlet property="disabledView" destination="Ten-dP-jhx" id="Twa-g8-Lri"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

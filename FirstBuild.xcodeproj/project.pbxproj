@@ -47,6 +47,7 @@
 		5BC5A1C619EF6314009C93B1 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC5A1C519EF6314009C93B1 /* Authentication.storyboard */; };
 		5BC5A1CD19EF6584009C93B1 /* FBTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1CC19EF6584009C93B1 /* FBTUser.m */; };
 		5BC5A1D019EF6638009C93B1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A1CF19EF6638009C93B1 /* Constants.m */; };
+		5BC7C7B41A83CD06003DA2F3 /* ChillHubDeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC7C7B31A83CD06003DA2F3 /* ChillHubDeviceTableViewCell.m */; };
 		5BCDFBF21A64CFA6006E6055 /* WifiCommissioningPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDFBF11A64CFA6006E6055 /* WifiCommissioningPasswordViewController.m */; };
 		5BCDFBF51A65584A006E6055 /* WifiCommissioningNetworksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDFBF41A65584A006E6055 /* WifiCommissioningNetworksTableViewController.m */; };
 		5BD467CD1A35ED54009BAC36 /* FirebaseShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD467CC1A35ED54009BAC36 /* FirebaseShared.m */; };
@@ -148,6 +149,8 @@
 		5BC5A1CC19EF6584009C93B1 /* FBTUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTUser.m; sourceTree = "<group>"; };
 		5BC5A1CE19EF65C3009C93B1 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		5BC5A1CF19EF6638009C93B1 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		5BC7C7B21A83CD06003DA2F3 /* ChillHubDeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChillHubDeviceTableViewCell.h; sourceTree = "<group>"; };
+		5BC7C7B31A83CD06003DA2F3 /* ChillHubDeviceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChillHubDeviceTableViewCell.m; sourceTree = "<group>"; };
 		5BCDFBF01A64CFA6006E6055 /* WifiCommissioningPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiCommissioningPasswordViewController.h; sourceTree = "<group>"; };
 		5BCDFBF11A64CFA6006E6055 /* WifiCommissioningPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiCommissioningPasswordViewController.m; sourceTree = "<group>"; };
 		5BCDFBF31A65584A006E6055 /* WifiCommissioningNetworksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiCommissioningNetworksTableViewController.h; sourceTree = "<group>"; };
@@ -274,6 +277,8 @@
 				5BBB0B9919F1DE8C001D5DF1 /* ScaleViewController.m */,
 				5B7FB5561A43C6DF00553797 /* ChillHubDevicesTableViewController.h */,
 				5B7FB5571A43C6DF00553797 /* ChillHubDevicesTableViewController.m */,
+				5BC7C7B21A83CD06003DA2F3 /* ChillHubDeviceTableViewCell.h */,
+				5BC7C7B31A83CD06003DA2F3 /* ChillHubDeviceTableViewCell.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -672,6 +677,7 @@
 				5BC5A1C219EF5E79009C93B1 /* FBTAuthenticationViewController.m in Sources */,
 				5B99E0811A1A5D10005FB881 /* WifiCommissioningViewController.m in Sources */,
 				5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */,
+				5BC7C7B41A83CD06003DA2F3 /* ChillHubDeviceTableViewCell.m in Sources */,
 				5BC3649D1A32661B00D03B9C /* FSTProduct.m in Sources */,
 				5B7FB5541A4373C900553797 /* WifiCommissioningConnectingViewController.m in Sources */,
 				5BBB0B9A19F1DE8C001D5DF1 /* ScaleViewController.m in Sources */,

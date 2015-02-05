@@ -448,21 +448,38 @@
                                                         <constraint firstAttribute="height" constant="1" id="xzY-97-UKr"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" offline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EaB-cC-aHl">
-                                                    <rect key="frame" x="5" y="5" width="91" height="25"/>
-                                                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="24"/>
-                                                    <color key="textColor" red="0.44313728810000003" green="0.43921571970000001" blue="0.45098042490000001" alpha="1" colorSpace="deviceRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view alpha="0.74999999999999978" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5V-YD-rVy" userLabel="disabledView">
+                                                    <rect key="frame" x="5" y="7" width="400" height="188"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" offline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EaB-cC-aHl">
+                                                            <rect key="frame" x="155" y="82" width="91" height="25"/>
+                                                            <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="24"/>
+                                                            <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="centerX" secondItem="EaB-cC-aHl" secondAttribute="centerX" id="ORt-fB-AIH"/>
+                                                        <constraint firstAttribute="centerY" secondItem="EaB-cC-aHl" secondAttribute="centerY" id="lXC-0L-MVB"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="W5V-YD-rVy" firstAttribute="leading" secondItem="JbY-xN-gKZ" secondAttribute="leading" constant="5" id="16I-zo-tYd"/>
                                                 <constraint firstItem="bE5-ta-nM8" firstAttribute="leading" secondItem="JbY-xN-gKZ" secondAttribute="leading" constant="10" id="8if-eC-Wiz"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZUX-yh-19O" secondAttribute="trailing" constant="10" id="Bbf-kI-Kid"/>
-                                                <constraint firstItem="EaB-cC-aHl" firstAttribute="leading" secondItem="JbY-xN-gKZ" secondAttribute="leading" constant="5" id="H64-JX-oF3"/>
                                                 <constraint firstAttribute="trailing" secondItem="bLO-D7-gFv" secondAttribute="trailing" id="OIM-PL-9FF"/>
-                                                <constraint firstItem="EaB-cC-aHl" firstAttribute="top" secondItem="JbY-xN-gKZ" secondAttribute="top" constant="5" id="R9P-tB-lQN"/>
+                                                <constraint firstAttribute="bottom" secondItem="W5V-YD-rVy" secondAttribute="bottom" constant="5" id="RjE-7f-Z1B"/>
                                                 <constraint firstAttribute="centerY" secondItem="bE5-ta-nM8" secondAttribute="centerY" id="Tyo-Wo-Nuz"/>
+                                                <constraint firstItem="W5V-YD-rVy" firstAttribute="top" secondItem="bLO-D7-gFv" secondAttribute="bottom" constant="5" id="Xvu-rM-2aW"/>
+                                                <constraint firstItem="ZUX-yh-19O" firstAttribute="leading" secondItem="W5V-YD-rVy" secondAttribute="trailing" constant="5" id="eYR-K3-OYA"/>
                                                 <constraint firstItem="bLO-D7-gFv" firstAttribute="leading" secondItem="JbY-xN-gKZ" secondAttribute="leading" id="fS1-Gw-aNO"/>
                                                 <constraint firstAttribute="centerY" secondItem="ZUX-yh-19O" secondAttribute="centerY" id="sBj-Qh-0jc"/>
                                                 <constraint firstItem="bLO-D7-gFv" firstAttribute="top" secondItem="JbY-xN-gKZ" secondAttribute="top" constant="1" id="ybH-zb-rIn"/>
@@ -480,8 +497,8 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="arrowButton" destination="ZUX-yh-19O" id="qol-s7-mrP"/>
+                                    <outlet property="disabledView" destination="W5V-YD-rVy" id="6Ky-fN-zM8"/>
                                     <outlet property="mainView" destination="JbY-xN-gKZ" id="4NY-wY-BXf"/>
-                                    <outlet property="offlineLabel" destination="EaB-cC-aHl" id="yvr-4C-rpM"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

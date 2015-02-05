@@ -35,6 +35,21 @@ static NSString * const reuseIdentifier = @"ProductCell";
                 FSTChillHub* chillhub = [FSTChillHub new];
                 chillhub.firebaseRef = snapshot.ref ;
                 chillhub.identifier = snapshot.key;
+                id rawVal = snapshot.value;
+                if (rawVal != [NSNull null])
+                {
+                    NSDictionary* val = rawVal;
+                    if ( [(NSString*)[val objectForKey:@"status"] isEqualToString:@"connected"] )
+                    {
+                        chillhub.online = YES;
+                    }
+                    else
+                    {
+                        chillhub.online = NO;
+                    }
+                    [self.productCollection reloadData];
+                }
+
                 [self.products addObject:chillhub];
                 [self.productCollection reloadData];
     }];
@@ -53,6 +68,31 @@ static NSString * const reuseIdentifier = @"ProductCell";
         if (self.products.count == 0)
         {
             [self.delegate noItemsInCollection];
+        }
+    }];
+    
+    [chillhubsRef observeEventType:FEventTypeChildChanged withBlock:^(FDataSnapshot *snapshot) {
+        for (long i=self.products.count-1; i>-1; i--)
+        {
+            FSTChillHub *chillhub = [self.products objectAtIndex:i];
+            if ([chillhub.identifier isEqualToString:snapshot.key])
+            {
+                id rawVal = snapshot.value;
+                if (rawVal != [NSNull null])
+                {
+                    NSDictionary* val = rawVal;
+                    if ( [(NSString*)[val objectForKey:@"status"] isEqualToString:@"connected"] )
+                    {
+                        chillhub.online = YES;
+                    }
+                    else
+                    {
+                        chillhub.online = NO;
+                    }
+                    [self.productCollection reloadData];
+                }
+                break;
+            }
         }
     }];
 }
@@ -86,7 +126,21 @@ static NSString * const reuseIdentifier = @"ProductCell";
     
     ProductCollectionViewCell *productCell =
         [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-
+    
+    FSTProduct * product = self.products[indexPath.row];
+    if (product.online)
+    {
+        productCell.userInteractionEnabled = YES;
+        productCell.offlineLabel.hidden = YES;
+        productCell.arrowButton.hidden = NO;
+    }
+    else
+    {
+        productCell.userInteractionEnabled = NO;
+        productCell.offlineLabel.hidden = NO;
+        productCell.arrowButton.hidden = YES;
+    }
+    
     return productCell;
 }
 

@@ -72,8 +72,6 @@ float amplitude;
             NSDictionary* val = rawVal;
             float percentageLeft = [(NSNumber *)[val objectForKey:@"weight"] doubleValue];
             [self loadMilkJugWithPercent:percentageLeft];
-            //self.emptyClippingMask
-            //[[self spinnerView] setProgress:percentageLeft animated:YES];
         }
         NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
     }];

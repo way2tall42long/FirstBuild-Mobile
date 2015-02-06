@@ -9,7 +9,7 @@
 #import "WifiCommissioningViewController.h"
 #import <RestKit.h>
 #import "FSTNetwork.h"
-#import "FSTToken.h"
+#import "FSTDeviceAuth.h"
 #import "FSTDevice.h"
 #import "FBTUser.h"
 #import "MobiNavigationController.h"
@@ -81,21 +81,23 @@
                                               method:RKRequestMethodPOST];
     
     // token POST request
-    RKObjectMapping *tokenRequestMapping = [RKObjectMapping requestMapping]; // objectClass == NSMutableDictionary
-    [tokenRequestMapping addAttributeMappingsFromArray:@[@"token"]];
-    RKRequestDescriptor *tokenRequestDescriptor = [RKRequestDescriptor
-                                              requestDescriptorWithMapping:tokenRequestMapping
-                                              objectClass:[FSTToken class]
+    RKObjectMapping *authRequestMapping = [RKObjectMapping requestMapping]; // objectClass == NSMutableDictionary
+    [authRequestMapping addAttributeMappingsFromArray:@[@"token"]];
+    [authRequestMapping addAttributeMappingsFromArray:@[@"url"]];
+    RKRequestDescriptor *authRequestDescriptor = [RKRequestDescriptor
+                                              requestDescriptorWithMapping:authRequestMapping
+                                              objectClass:[FSTDeviceAuth class]
                                               rootKeyPath:nil
                                               method:RKRequestMethodPOST];
     
     // token POST response
-    RKObjectMapping *tokenResponseMapping = [RKObjectMapping mappingForClass:[FSTToken class]];
-    [tokenResponseMapping addAttributeMappingsFromArray:@[@"token"]];
-    RKResponseDescriptor *tokenResponseDescriptor =
+    RKObjectMapping *authResponseMapping = [RKObjectMapping mappingForClass:[FSTDeviceAuth class]];
+    [authResponseMapping addAttributeMappingsFromArray:@[@"token"]];
+    [authResponseMapping addAttributeMappingsFromArray:@[@"url"]];
+    RKResponseDescriptor *authResponseDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:networkResponseMapping
                                                  method:RKRequestMethodAny
-                                            pathPattern:@"/token"
+                                            pathPattern:@"/auth"
                                                 keyPath:nil
                                             statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
@@ -105,22 +107,22 @@
     RKResponseDescriptor *deviceResponseDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:deviceResponseMapping
                                                  method:RKRequestMethodAny
-                                            pathPattern:@"/root"
+                                            pathPattern:@"/"
                                                 keyPath:nil
                                             statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
     [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
     [[RKObjectManager sharedManager] addResponseDescriptor:deviceResponseDescriptor];
     [[RKObjectManager sharedManager] addRequestDescriptor:requestDescriptor];
-    [[RKObjectManager sharedManager] addRequestDescriptor:tokenRequestDescriptor];
-    [[RKObjectManager sharedManager] addResponseDescriptor:tokenResponseDescriptor];
+    [[RKObjectManager sharedManager] addRequestDescriptor:authRequestDescriptor];
+    [[RKObjectManager sharedManager] addResponseDescriptor:authResponseDescriptor];
 
 }
 
 
 - (void)checkForConnectivity
 {
-    [[RKObjectManager sharedManager] getObjectsAtPath:@"/root"
+    [[RKObjectManager sharedManager] getObjectsAtPath:@"/"
                                            parameters:nil
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   self.device = mappingResult.array[0];
@@ -167,12 +169,13 @@
 
 - (void)segueToNetworks
 {
-    FSTToken* token = [FSTToken new];
+    FSTDeviceAuth* auth = [FSTDeviceAuth new];
     FBTUser *user = [FBTUser sharedInstance];
     
-    token.token = user.token;
+    auth.token = user.token;
+    auth.url = FirebaseUrl;
     
-    [[RKObjectManager sharedManager] postObject:token path:@"/token"
+    [[RKObjectManager sharedManager] postObject:auth path:@"/auth"
                                      parameters:nil
                                         success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                             [self performSegueWithIdentifier:@"segueDisplayList" sender:self];

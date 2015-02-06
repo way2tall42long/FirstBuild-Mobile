@@ -28,7 +28,7 @@
 typedef NS_ENUM(NSInteger, FSTMenuOptions) {
     kHome,
     kAddNewProduct,
-    kSettings,
+  //  kSettings,
     kLogout
 };
 
@@ -42,7 +42,7 @@ typedef NS_ENUM(NSInteger, FSTMenuOptions) {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -56,10 +56,10 @@ typedef NS_ENUM(NSInteger, FSTMenuOptions) {
         case kAddNewProduct:
             CellIdentifier = @"addNewProduct";
             break;
-        
-        case kSettings:
-            CellIdentifier = @"settings";
-            break;
+//        
+//        case kSettings:
+//            CellIdentifier = @"settings";
+//            break;
             
         case kLogout:
             CellIdentifier = @"logout";

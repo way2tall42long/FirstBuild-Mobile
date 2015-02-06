@@ -139,7 +139,7 @@
                                             <rect key="frame" x="5" y="5" width="590" height="62"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" offline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aFu-C0-cjg">
-                                                    <rect key="frame" x="250" y="19" width="91" height="24.5"/>
+                                                    <rect key="frame" x="250" y="19" width="91" height="25"/>
                                                     <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="24"/>
                                                     <color key="textColor" red="0.94117653369999998" green="0.40000003579999999" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>

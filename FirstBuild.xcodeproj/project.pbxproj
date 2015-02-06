@@ -29,7 +29,6 @@
 		5B9EF0F719DEEE1000E8D9F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF0F619DEEE1000E8D9F1 /* AppDelegate.m */; };
 		5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */; };
 		5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EF10019DEEE1000E8D9F1 /* LaunchScreen.xib */; };
-		5B9EF10E19DEEE1100E8D9F1 /* MobiUsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF10D19DEEE1100E8D9F1 /* MobiUsTests.m */; };
 		5BA94D5B1A5C9EDE00F9AD79 /* MilkGallonClippingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA94D5A1A5C9EDE00F9AD79 /* MilkGallonClippingView.m */; };
 		5BBB0B9A19F1DE8C001D5DF1 /* ScaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBB0B9919F1DE8C001D5DF1 /* ScaleViewController.m */; };
 		5BBC7A771A65BD8A00A79080 /* splashvideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC7A761A65BD7200A79080 /* splashvideo.mp4 */; };
@@ -37,7 +36,7 @@
 		5BBFACFF19E495FC00E42575 /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFACFE19E495FC00E42575 /* ProductCollectionViewController.m */; };
 		5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFAD0119E4965500E42575 /* ProductCollectionViewCell.m */; };
 		5BC3647E1A2F637800D03B9C /* FSTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3647D1A2F637800D03B9C /* FSTDevice.m */; };
-		5BC364811A2F63C200D03B9C /* FSTToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC364801A2F63C200D03B9C /* FSTToken.m */; };
+		5BC364811A2F63C200D03B9C /* FSTDeviceAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC364801A2F63C200D03B9C /* FSTDeviceAuth.m */; };
 		5BC3648A1A2FAC1A00D03B9C /* FSTMilkyWeigh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC364891A2FAC1A00D03B9C /* FSTMilkyWeigh.m */; };
 		5BC3648D1A3112EE00D03B9C /* FSTBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3648C1A3112EE00D03B9C /* FSTBackgroundLayer.m */; };
 		5BC364971A3260E200D03B9C /* FSTChillHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC364961A3260E200D03B9C /* FSTChillHub.m */; };
@@ -59,16 +58,6 @@
 		67926FF919EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67926FF819EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf */; };
 		F260351313DF1394D6FCA9DD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B446C5B84ADBDC6A8F7CC7 /* libPods.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5B9EF10819DEEE1100E8D9F1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B9EF0E619DEEE1000E8D9F1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5B9EF0ED19DEEE1000E8D9F1;
-			remoteInfo = MobiUs;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		18B446C5B84ADBDC6A8F7CC7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +98,6 @@
 		5B9EF0F619DEEE1000E8D9F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5B9EF10119DEEE1000E8D9F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5B9EF10719DEEE1100E8D9F1 /* MobiUsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobiUsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9EF10C19DEEE1100E8D9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B9EF10D19DEEE1100E8D9F1 /* MobiUsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobiUsTests.m; sourceTree = "<group>"; };
 		5B9EF11D19DEFEF000E8D9F1 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -129,8 +117,8 @@
 		5BC3647A1A2E25A800D03B9C /* splashvideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = splashvideo.mov; sourceTree = "<group>"; };
 		5BC3647C1A2F637800D03B9C /* FSTDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTDevice.h; sourceTree = "<group>"; };
 		5BC3647D1A2F637800D03B9C /* FSTDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTDevice.m; sourceTree = "<group>"; };
-		5BC3647F1A2F63C200D03B9C /* FSTToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTToken.h; sourceTree = "<group>"; };
-		5BC364801A2F63C200D03B9C /* FSTToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTToken.m; sourceTree = "<group>"; };
+		5BC3647F1A2F63C200D03B9C /* FSTDeviceAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTDeviceAuth.h; sourceTree = "<group>"; };
+		5BC364801A2F63C200D03B9C /* FSTDeviceAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTDeviceAuth.m; sourceTree = "<group>"; };
 		5BC364881A2FAC1A00D03B9C /* FSTMilkyWeigh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTMilkyWeigh.h; sourceTree = "<group>"; };
 		5BC364891A2FAC1A00D03B9C /* FSTMilkyWeigh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTMilkyWeigh.m; sourceTree = "<group>"; };
 		5BC3648B1A3112EE00D03B9C /* FSTBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTBackgroundLayer.h; sourceTree = "<group>"; };
@@ -176,13 +164,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F260351313DF1394D6FCA9DD /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B9EF10419DEEE1100E8D9F1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,8 +303,8 @@
 				5B99E0861A1AA744005FB881 /* FSTNetwork.m */,
 				5BC3647C1A2F637800D03B9C /* FSTDevice.h */,
 				5BC3647D1A2F637800D03B9C /* FSTDevice.m */,
-				5BC3647F1A2F63C200D03B9C /* FSTToken.h */,
-				5BC364801A2F63C200D03B9C /* FSTToken.m */,
+				5BC3647F1A2F63C200D03B9C /* FSTDeviceAuth.h */,
+				5BC364801A2F63C200D03B9C /* FSTDeviceAuth.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -366,7 +347,6 @@
 			isa = PBXGroup;
 			children = (
 				5B9EF0EE19DEEE1000E8D9F1 /* FirstBuild.app */,
-				5B9EF10719DEEE1100E8D9F1 /* MobiUsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -512,9 +492,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5B9EF0ED19DEEE1000E8D9F1 /* FirstBuild */ = {
+		5B9EF0ED19DEEE1000E8D9F1 /* firstbuild */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B9EF11119DEEE1100E8D9F1 /* Build configuration list for PBXNativeTarget "FirstBuild" */;
+			buildConfigurationList = 5B9EF11119DEEE1100E8D9F1 /* Build configuration list for PBXNativeTarget "firstbuild" */;
 			buildPhases = (
 				90A2294181725FA5C4BA2631 /* Check Pods Manifest.lock */,
 				5B9EF0EA19DEEE1000E8D9F1 /* Sources */,
@@ -526,28 +506,10 @@
 			);
 			dependencies = (
 			);
-			name = FirstBuild;
+			name = firstbuild;
 			productName = MobiUs;
 			productReference = 5B9EF0EE19DEEE1000E8D9F1 /* FirstBuild.app */;
 			productType = "com.apple.product-type.application";
-		};
-		5B9EF10619DEEE1100E8D9F1 /* FirstBuildTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5B9EF11419DEEE1100E8D9F1 /* Build configuration list for PBXNativeTarget "FirstBuildTests" */;
-			buildPhases = (
-				5B9EF10319DEEE1100E8D9F1 /* Sources */,
-				5B9EF10419DEEE1100E8D9F1 /* Frameworks */,
-				5B9EF10519DEEE1100E8D9F1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5B9EF10919DEEE1100E8D9F1 /* PBXTargetDependency */,
-			);
-			name = FirstBuildTests;
-			productName = MobiUsTests;
-			productReference = 5B9EF10719DEEE1100E8D9F1 /* MobiUsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -561,11 +523,6 @@
 					5B9EF0ED19DEEE1000E8D9F1 = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = 2MMJ9338P2;
-					};
-					5B9EF10619DEEE1100E8D9F1 = {
-						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = 2MMJ9338P2;
-						TestTargetID = 5B9EF0ED19DEEE1000E8D9F1;
 					};
 				};
 			};
@@ -582,8 +539,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5B9EF0ED19DEEE1000E8D9F1 /* FirstBuild */,
-				5B9EF10619DEEE1100E8D9F1 /* FirstBuildTests */,
+				5B9EF0ED19DEEE1000E8D9F1 /* firstbuild */,
 			);
 		};
 /* End PBXProject section */
@@ -605,13 +561,6 @@
 				5B88581C1A7310DB00F22325 /* PT_Sans-Narrow-Web-Regular.ttf in Resources */,
 				5B88581B1A7308DF00F22325 /* Animations.xcassets in Resources */,
 				5B99E07E1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B9EF10519DEEE1100E8D9F1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,7 +615,7 @@
 				5B99E0841A1AA63F005FB881 /* WifiCommissioningNetworkListViewController.m in Sources */,
 				5BBC7A7A1A66F7F100A79080 /* WifiCommissioningFoundViewController.m in Sources */,
 				5BD467CD1A35ED54009BAC36 /* FirebaseShared.m in Sources */,
-				5BC364811A2F63C200D03B9C /* FSTToken.m in Sources */,
+				5BC364811A2F63C200D03B9C /* FSTDeviceAuth.m in Sources */,
 				5BF9482F19EC15E300CB8BCF /* MenuViewController.m in Sources */,
 				5BCDFBF51A65584A006E6055 /* WifiCommissioningNetworksTableViewController.m in Sources */,
 				5BCDFBF21A64CFA6006E6055 /* WifiCommissioningPasswordViewController.m in Sources */,
@@ -695,23 +644,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B9EF10319DEEE1100E8D9F1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5B9EF10E19DEEE1100E8D9F1 /* MobiUsTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5B9EF10919DEEE1100E8D9F1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5B9EF0ED19DEEE1000E8D9F1 /* FirstBuild */;
-			targetProxy = 5B9EF10819DEEE1100E8D9F1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5B9EF10019DEEE1000E8D9F1 /* LaunchScreen.xib */ = {
@@ -743,7 +676,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: myles caley (2ZHVCY7QDD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: myles caley (2ZHVCY7QDD)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -763,7 +696,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "b459e17b-ef4f-467e-b18c-d5295045b7f4";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -787,7 +720,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: myles caley (2ZHVCY7QDD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: myles caley (2ZHVCY7QDD)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -800,7 +733,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "b459e17b-ef4f-467e-b18c-d5295045b7f4";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -824,7 +757,7 @@
 				INFOPLIST_FILE = MobiUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = FirstBuild;
-				PROVISIONING_PROFILE = "b459e17b-ef4f-467e-b18c-d5295045b7f4";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -845,47 +778,7 @@
 				INFOPLIST_FILE = MobiUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = FirstBuild;
-				PROVISIONING_PROFILE = "b459e17b-ef4f-467e-b18c-d5295045b7f4";
-			};
-			name = Release;
-		};
-		5B9EF11519DEEE1100E8D9F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MobiUsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = MobiUsTests;
 				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobiUs.app/MobiUs";
-			};
-			name = Debug;
-		};
-		5B9EF11619DEEE1100E8D9F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MobiUsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = MobiUsTests;
-				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobiUs.app/MobiUs";
 			};
 			name = Release;
 		};
@@ -901,20 +794,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B9EF11119DEEE1100E8D9F1 /* Build configuration list for PBXNativeTarget "FirstBuild" */ = {
+		5B9EF11119DEEE1100E8D9F1 /* Build configuration list for PBXNativeTarget "firstbuild" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B9EF11219DEEE1100E8D9F1 /* Debug */,
 				5B9EF11319DEEE1100E8D9F1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5B9EF11419DEEE1100E8D9F1 /* Build configuration list for PBXNativeTarget "FirstBuildTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5B9EF11519DEEE1100E8D9F1 /* Debug */,
-				5B9EF11619DEEE1100E8D9F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

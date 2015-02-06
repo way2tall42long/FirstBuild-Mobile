@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FSTToken : NSObject
+@interface FSTDeviceAuth : NSObject
 @property (nonatomic, strong) NSString *token;
+@property (nonatomic, strong) NSString *url;
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 FirstBuild. All rights reserved.
 //
 
-#import "FSTToken.h"
+#import "FSTDeviceAuth.h"
 
-@implementation FSTToken
+@implementation FSTDeviceAuth
 @end

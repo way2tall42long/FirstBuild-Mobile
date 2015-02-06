@@ -45,6 +45,8 @@
                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Google+ Login Failed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                        [alert show];
                    } else {
+                       FBTUser* user = [FBTUser sharedInstance];
+                       user.token = authData.token;
                        [self loadMainAppWithUidString:authData.uid];
                    }
                }];
@@ -77,6 +79,8 @@
                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Facebook Login Failed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                        [alert show];
                    } else {
+                       FBTUser* user = [FBTUser sharedInstance];
+                       user.token = authData.token;
                        [self loadMainAppWithUidString:authData.uid];
                    }
                }];

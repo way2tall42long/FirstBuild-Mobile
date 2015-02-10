@@ -34,7 +34,6 @@
         _rootContainer = [dict valueForKey:@"rootContainer"];
         _token = [dict valueForKey:@"token"];
     }
-    
     return self;
 }
 

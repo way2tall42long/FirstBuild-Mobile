@@ -15,23 +15,6 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Mobi Navigation Controller-->
-        <scene sceneID="S7K-wb-Xi7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VIX-hJ-imH" customClass="MobiNavigationController" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Crw-Y2-QAq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.84313732389999996" green="0.85098046059999999" blue="0.85490202900000001" alpha="1" colorSpace="deviceRGB"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="uHO-Cd-AZ0">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o7O-Gz-QS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-101" y="422"/>
-        </scene>
         <!--Chill Hub View Controller-->
         <scene sceneID="NSR-3o-z3g">
             <objects>

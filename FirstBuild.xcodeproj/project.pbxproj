@@ -98,8 +98,6 @@
 		5B9EF0F619DEEE1000E8D9F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5B9EF0FE19DEEE1000E8D9F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5B9EF10119DEEE1000E8D9F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5B9EF10C19DEEE1100E8D9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B9EF10D19DEEE1100E8D9F1 /* MobiUsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobiUsTests.m; sourceTree = "<group>"; };
 		5B9EF11D19DEFEF000E8D9F1 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		5B9EF12319DF08E700E8D9F1 /* MobiUs.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobiUs.pch; sourceTree = "<group>"; };
 		5BA94D591A5C9EDE00F9AD79 /* MilkGallonClippingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MilkGallonClippingView.h; sourceTree = "<group>"; };
@@ -336,7 +334,6 @@
 			isa = PBXGroup;
 			children = (
 				5B9EF0EF19DEEE1000E8D9F1 /* Products */,
-				5B9EF10A19DEEE1100E8D9F1 /* MobiUsTests */,
 				5B9EF0F019DEEE1000E8D9F1 /* FirstBuild */,
 				4B157123A66C0AD779C63B95 /* Pods */,
 				CBE251472FAFD71676539304 /* Frameworks */,
@@ -380,23 +377,6 @@
 				5B9EF0F219DEEE1000E8D9F1 /* Info.plist */,
 				5B9EF0F319DEEE1000E8D9F1 /* main.m */,
 				5B9EF12319DF08E700E8D9F1 /* MobiUs.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5B9EF10A19DEEE1100E8D9F1 /* MobiUsTests */ = {
-			isa = PBXGroup;
-			children = (
-				5B9EF10D19DEEE1100E8D9F1 /* MobiUsTests.m */,
-				5B9EF10B19DEEE1100E8D9F1 /* Supporting Files */,
-			);
-			path = MobiUsTests;
-			sourceTree = "<group>";
-		};
-		5B9EF10B19DEEE1100E8D9F1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5B9EF10C19DEEE1100E8D9F1 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

@@ -6,6 +6,10 @@
 	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIcons</key>
+	<dict/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>com.firstbuild.firstbuild</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -15,7 +19,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.4</string>
+	<string>1.5</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -38,7 +42,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>1</string>
 	<key>FacebookAppID</key>
 	<string>762534773834740</string>
 	<key>FacebookDisplayName</key>
@@ -50,8 +54,6 @@
 		<string>PT_Sans-Narrow-Web-Regular.ttf</string>
 		<string>PT_Sans-Narrow-Web-Bold.ttf</string>
 	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>Authentication</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Authentication</string>
 	<key>UIRequiredDeviceCapabilities</key>

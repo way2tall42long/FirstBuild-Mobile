@@ -162,19 +162,15 @@ static NSString * const reuseIdentifier = @"ProductCell";
     {
         [self performSegueWithIdentifier:@"segueChillHub" sender:product];
     }
-
 }
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
     [self.collectionView.collectionViewLayout invalidateLayout];
 }
 
 - (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    NSLog(@"LOAD view: %f, frame: %f , screen: %f", self.view.bounds.size.width, self.view.frame.size.width,  [[UIScreen mainScreen] applicationFrame].size.width);
-
     return CGSizeMake([[UIScreen mainScreen] bounds].size.width, 150);
 }
 

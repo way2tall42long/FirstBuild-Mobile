@@ -140,15 +140,15 @@
     [self initGoogleAuth];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    self.controlView.backgroundColor = [UIColor redColor];
-    UIView *alphaView = [[UIView alloc] initWithFrame:self.controlView.bounds];
-    alphaView.alpha = .6;
-    alphaView.backgroundColor = [UIColor whiteColor];
-    [self.controlView addSubview:alphaView];
-    [self.controlView sendSubviewToBack:alphaView];
-}
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    self.controlView.backgroundColor = [UIColor redColor];
+//    UIView *alphaView = [[UIView alloc] initWithFrame:self.controlView.bounds];
+//    alphaView.alpha = .6;
+//    alphaView.backgroundColor = [UIColor whiteColor];
+//    [self.controlView addSubview:alphaView];
+//    [self.controlView sendSubviewToBack:alphaView];
+//}
 
 - (void) loadMainAppWithUidString: (NSString*) uid
 {

@@ -142,6 +142,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    self.controlView.backgroundColor = [UIColor redColor];
     UIView *alphaView = [[UIView alloc] initWithFrame:self.controlView.bounds];
     alphaView.alpha = .6;
     alphaView.backgroundColor = [UIColor whiteColor];

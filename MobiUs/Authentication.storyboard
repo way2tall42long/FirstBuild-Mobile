@@ -22,6 +22,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ti-5E-beY" customClass="UIControl">
                                 <rect key="frame" x="0.0" y="185" width="600" height="230"/>
                                 <subviews>
+                                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88m-Sq-asK">
+                                        <rect key="frame" x="0.0" y="1" width="600" height="230"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_1b_orange" translatesAutoresizingMaskIntoConstraints="NO" id="rF0-df-q8q">
                                         <rect key="frame" x="275" y="20" width="50" height="37"/>
                                         <constraints>
@@ -46,11 +50,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="88m-Sq-asK" secondAttribute="centerY" constant="-0.5" id="2PG-ii-5Gk"/>
                                     <constraint firstItem="rF0-df-q8q" firstAttribute="top" secondItem="0ti-5E-beY" secondAttribute="top" constant="20" id="3hL-sH-0Ww"/>
                                     <constraint firstItem="yNJ-MY-ueE" firstAttribute="top" secondItem="0ti-5E-beY" secondAttribute="top" constant="100" id="Ceh-tB-0eF"/>
                                     <constraint firstAttribute="centerX" secondItem="rF0-df-q8q" secondAttribute="centerX" id="Pns-iA-TlN"/>
                                     <constraint firstItem="0Vk-ZJ-0TQ" firstAttribute="top" secondItem="yNJ-MY-ueE" secondAttribute="bottom" constant="8" id="UrN-aT-4az"/>
+                                    <constraint firstItem="88m-Sq-asK" firstAttribute="height" secondItem="0ti-5E-beY" secondAttribute="height" id="VrQ-cE-iC8"/>
                                     <constraint firstAttribute="height" constant="230" id="W0Y-lT-BTJ"/>
+                                    <constraint firstItem="88m-Sq-asK" firstAttribute="width" secondItem="0ti-5E-beY" secondAttribute="width" id="hfb-q1-Fih"/>
+                                    <constraint firstAttribute="centerX" secondItem="88m-Sq-asK" secondAttribute="centerX" id="pjD-zd-Ooe"/>
                                     <constraint firstAttribute="centerX" secondItem="yNJ-MY-ueE" secondAttribute="centerX" id="qYn-gQ-KvP"/>
                                     <constraint firstAttribute="centerX" secondItem="0Vk-ZJ-0TQ" secondAttribute="centerX" id="sPc-LR-ThT"/>
                                 </constraints>

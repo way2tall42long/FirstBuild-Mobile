@@ -99,6 +99,11 @@ static NSString * const reuseIdentifier = @"ProductCell";
     self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.collectionView.collectionViewLayout invalidateLayout];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -169,7 +174,6 @@ static NSString * const reuseIdentifier = @"ProductCell";
 {
     
     NSLog(@"LOAD view: %f, frame: %f , screen: %f", self.view.bounds.size.width, self.view.frame.size.width,  [[UIScreen mainScreen] applicationFrame].size.width);
-   
 
     return CGSizeMake([[UIScreen mainScreen] bounds].size.width, 150);
 }

@@ -95,6 +95,13 @@ static NSString * const reuseIdentifier = @"ProductCell";
             }
         }
     }];
+    
+    self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.collectionView.collectionViewLayout invalidateLayout];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -155,14 +162,16 @@ static NSString * const reuseIdentifier = @"ProductCell";
     {
         [self performSegueWithIdentifier:@"segueChillHub" sender:product];
     }
+}
 
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    [self.collectionView.collectionViewLayout invalidateLayout];
 }
 
 - (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //TODO: I've missed some margin or something on the parent view and am compensating with making
-    //it a little larger than the actual
-    return CGSizeMake(self.view.bounds.size.width+10, 150);
+    return CGSizeMake([[UIScreen mainScreen] bounds].size.width, 150);
 }
 
 - (UIEdgeInsets) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section

@@ -11,11 +11,11 @@ pod 'ActionSheetPicker-3.0'
 pod 'google-plus-ios-sdk'
 pod 'Facebook-iOS-SDK'
 
-target 'FirstBuild' do
+#target 'FirstBuild' do
 
-end
+#end
 
-target 'FirstBuildTests' do
+#target 'FirstBuildTests' do
 
-end
+#end
 

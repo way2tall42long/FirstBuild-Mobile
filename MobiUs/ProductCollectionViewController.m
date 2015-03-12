@@ -12,6 +12,7 @@
 #import <RBStoryboardLink.h>
 #import "FirebaseShared.h"
 #import "FSTChillHub.h"
+#import "FSTParagon.h"
 #import "ChillHubViewController.h"
 #import "MobiNavigationController.h"
 
@@ -22,36 +23,48 @@
 @implementation ProductCollectionViewController
 
 static NSString * const reuseIdentifier = @"ProductCell";
+static NSString * const reuseIdentifierParagon = @"ProductCellParagon";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.products = [[NSMutableArray alloc] init];
    
+    [self configureFirebaseDevices];
+    
+    //TODO real paragaon stuff
+    FSTParagon* paragon = [FSTParagon new];
+    [self.products addObject:paragon];
+    
+    self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+}
+
+-(void)configureFirebaseDevices
+{
     //TODO: support multiple device types
     Firebase *chillhubsRef = [[[FirebaseShared sharedInstance] userBaseReference] childByAppendingPath:@"devices/chillhubs"];
     [chillhubsRef removeAllObservers];
     
     [chillhubsRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-                FSTChillHub* chillhub = [FSTChillHub new];
-                chillhub.firebaseRef = snapshot.ref ;
-                chillhub.identifier = snapshot.key;
-                id rawVal = snapshot.value;
-                if (rawVal != [NSNull null])
-                {
-                    NSDictionary* val = rawVal;
-                    if ( [(NSString*)[val objectForKey:@"status"] isEqualToString:@"connected"] )
-                    {
-                        chillhub.online = YES;
-                    }
-                    else
-                    {
-                        chillhub.online = NO;
-                    }
-                    [self.productCollection reloadData];
-                }
-
-                [self.products addObject:chillhub];
-                [self.productCollection reloadData];
+        FSTChillHub* chillhub = [FSTChillHub new];
+        chillhub.firebaseRef = snapshot.ref ;
+        chillhub.identifier = snapshot.key;
+        id rawVal = snapshot.value;
+        if (rawVal != [NSNull null])
+        {
+            NSDictionary* val = rawVal;
+            if ( [(NSString*)[val objectForKey:@"status"] isEqualToString:@"connected"] )
+            {
+                chillhub.online = YES;
+            }
+            else
+            {
+                chillhub.online = NO;
+            }
+            [self.productCollection reloadData];
+        }
+        
+        [self.products addObject:chillhub];
+        [self.productCollection reloadData];
     }];
     
     [chillhubsRef observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
@@ -95,8 +108,6 @@ static NSString * const reuseIdentifier = @"ProductCell";
             }
         }
     }];
-    
-    self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -131,10 +142,21 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    ProductCollectionViewCell *productCell =
-        [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     FSTProduct * product = self.products[indexPath.row];
+    ProductCollectionViewCell *productCell;
+    
+    if ([product isKindOfClass:[FSTChillHub class]])
+    {
+        productCell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    }
+    else if ([product isKindOfClass:[FSTParagon class]])
+    {
+        //TODO: temp code...
+        product.online = YES;
+        productCell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifierParagon forIndexPath:indexPath];
+    }
+    
     if (product.online)
     {
         productCell.userInteractionEnabled = YES;

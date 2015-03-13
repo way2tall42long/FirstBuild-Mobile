@@ -10,7 +10,7 @@ PODS:
     - RKValueTransformers (~> 1.1.0)
   - RBStoryboardLink (0.1.0)
   - RestKit (0.24.0):
-    - RestKit/Core
+    - RestKit/Core (= 0.24.0)
   - RestKit/Core (0.24.0):
     - RestKit/CoreData
     - RestKit/Network
@@ -60,4 +60,4 @@ SPEC CHECKSUMS:
   SWRevealViewController: f6d80638b8e12323e87ac79562345403a799cb77
   TransitionKit: 6a6f3ddda38ae758778aa889dcb930e4f8d64edc
 
-COCOAPODS: 0.34.2
+COCOAPODS: 0.35.0

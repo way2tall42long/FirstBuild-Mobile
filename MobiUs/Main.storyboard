@@ -178,6 +178,12 @@
                     <view key="view" contentMode="scaleToFill" id="0pg-JD-Mhk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="476"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q6w-mr-tpK">
+                                <rect key="frame" x="-217" y="-214" width="600" height="476"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <userDefinedRuntimeAttributes>
@@ -187,7 +193,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M38-qo-hbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2536" y="873"/>
+            <point key="canvasLocation" x="2573" y="1297"/>
+        </scene>
+        <!--Storyboard Link-->
+        <scene sceneID="tjj-Ew-KcD">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" id="lhL-8p-Ygk" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ihD-du-QRK"/>
+                        <viewControllerLayoutGuide type="bottom" id="DZO-xX-x2Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NiN-yg-S5j">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="476"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffd-yO-llu">
+                                <rect key="frame" x="-217" y="-214" width="600" height="476"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="Paragon"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="needsTopLayoutGuide" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRD-tt-Q2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2558" y="626"/>
         </scene>
         <!--Mobi Navigation Controller-->
         <scene sceneID="sz5-Lr-6cD">
@@ -579,6 +613,7 @@
                         <outlet property="productCollection" destination="h3X-C2-8Es" id="qsO-XY-k8R"/>
                         <segue destination="sZO-RU-ozf" kind="show" identifier="segueChillHub" id="1Dx-g3-3f3"/>
                         <segue destination="dJA-hw-Leo" kind="show" identifier="segueAddProducts" id="Ucb-Xj-qPs"/>
+                        <segue destination="lhL-8p-Ygk" kind="show" identifier="segueParagon" id="zVb-95-6Ce"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42e-Tx-aPV" userLabel="First Responder" sceneMemberID="firstResponder"/>

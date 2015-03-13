@@ -31,7 +31,7 @@ static NSString * const reuseIdentifierParagon = @"ProductCellParagon";
    
     [self configureFirebaseDevices];
     
-    //TODO real paragaon stuff
+    //TODO real paragon stuff
     FSTParagon* paragon = [FSTParagon new];
     [self.products addObject:paragon];
     
@@ -122,11 +122,17 @@ static NSString * const reuseIdentifierParagon = @"ProductCellParagon";
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
-    //TODO: support other products
-    //TODO: highly coupled segue
     RBStoryboardLink *destination = segue.destinationViewController;
-    ChillHubViewController *vc = (ChillHubViewController*)destination.scene;
-    vc.product = sender;
+    
+    if ([sender isKindOfClass:[FSTParagon class]])
+    {
+        //TODO: set product in the view
+    }
+    else if ([sender isKindOfClass:[FSTChillHub class]])
+    {
+        ChillHubViewController *vc = (ChillHubViewController*)destination.scene;
+        vc.product = sender;
+    }
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -183,6 +189,10 @@ static NSString * const reuseIdentifierParagon = @"ProductCellParagon";
     if ([product isKindOfClass:[FSTChillHub class]])
     {
         [self performSegueWithIdentifier:@"segueChillHub" sender:product];
+    }
+    if ([product isKindOfClass:[FSTParagon class]])
+    {
+        [self performSegueWithIdentifier:@"segueParagon" sender:product];
     }
 }
 

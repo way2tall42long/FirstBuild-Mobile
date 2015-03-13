@@ -21,6 +21,8 @@
 		5B88581C1A7310DB00F22325 /* PT_Sans-Narrow-Web-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67926FF119ED8BA000E346C2 /* PT_Sans-Narrow-Web-Regular.ttf */; };
 		5B8C108A1A39EC2A00F481E6 /* ProductAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C10891A39EC2A00F481E6 /* ProductAddViewController.m */; };
 		5B99DFC51AB1EB2D00247034 /* FSTParagon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99DFC41AB1EB2D00247034 /* FSTParagon.m */; };
+		5B99DFC71AB1F2E400247034 /* Paragon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B99DFC61AB1F2E400247034 /* Paragon.storyboard */; };
+		5B99E0111AB32DA100247034 /* ParagonEngineeringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99E0101AB32DA100247034 /* ParagonEngineeringViewController.m */; };
 		5B99E07E1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B99E07D1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard */; };
 		5B99E0811A1A5D10005FB881 /* WifiCommissioningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99E0801A1A5D10005FB881 /* WifiCommissioningViewController.m */; };
 		5B99E0841A1AA63F005FB881 /* WifiCommissioningNetworkListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B99E0831A1AA63F005FB881 /* WifiCommissioningNetworkListViewController.m */; };
@@ -84,6 +86,9 @@
 		5B8C10891A39EC2A00F481E6 /* ProductAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductAddViewController.m; sourceTree = "<group>"; };
 		5B99DFC31AB1EB2D00247034 /* FSTParagon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTParagon.h; sourceTree = "<group>"; };
 		5B99DFC41AB1EB2D00247034 /* FSTParagon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTParagon.m; sourceTree = "<group>"; };
+		5B99DFC61AB1F2E400247034 /* Paragon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Paragon.storyboard; sourceTree = "<group>"; };
+		5B99E00F1AB32DA100247034 /* ParagonEngineeringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParagonEngineeringViewController.h; sourceTree = "<group>"; };
+		5B99E0101AB32DA100247034 /* ParagonEngineeringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParagonEngineeringViewController.m; sourceTree = "<group>"; };
 		5B99E07D1A1A593F005FB881 /* WifiCommissioningStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WifiCommissioningStoryboard.storyboard; sourceTree = "<group>"; };
 		5B99E07F1A1A5D10005FB881 /* WifiCommissioningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiCommissioningViewController.h; sourceTree = "<group>"; };
 		5B99E0801A1A5D10005FB881 /* WifiCommissioningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiCommissioningViewController.m; sourceTree = "<group>"; };
@@ -300,6 +305,7 @@
 		5B99DFC11AB1EA2F00247034 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				5B99DFC61AB1F2E400247034 /* Paragon.storyboard */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -307,6 +313,8 @@
 		5B99DFC21AB1EA3500247034 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5B99E00F1AB32DA100247034 /* ParagonEngineeringViewController.h */,
+				5B99E0101AB32DA100247034 /* ParagonEngineeringViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -570,6 +578,7 @@
 				5BF9483119EC15F900CB8BCF /* Main.storyboard in Resources */,
 				5B174DE01A60717000A00505 /* FirstBuildAssets.xcassets in Resources */,
 				5B9EF10219DEEE1000E8D9F1 /* LaunchScreen.xib in Resources */,
+				5B99DFC71AB1F2E400247034 /* Paragon.storyboard in Resources */,
 				5B9EF0FF19DEEE1000E8D9F1 /* Images.xcassets in Resources */,
 				5B174DE61A64266100A00505 /* fontawesome-webfont.ttf in Resources */,
 				67926FF919EDCB6F00E346C2 /* PT_Sans-Narrow-Web-Bold.ttf in Resources */,
@@ -641,6 +650,7 @@
 				5BC5A1C219EF5E79009C93B1 /* FBTAuthenticationViewController.m in Sources */,
 				5B99E0811A1A5D10005FB881 /* WifiCommissioningViewController.m in Sources */,
 				5BBFAD0219E4965500E42575 /* ProductCollectionViewCell.m in Sources */,
+				5B99E0111AB32DA100247034 /* ParagonEngineeringViewController.m in Sources */,
 				5BC7C7B41A83CD06003DA2F3 /* ChillHubDeviceTableViewCell.m in Sources */,
 				5BC3649D1A32661B00D03B9C /* FSTProduct.m in Sources */,
 				5B7FB5541A4373C900553797 /* WifiCommissioningConnectingViewController.m in Sources */,
@@ -692,8 +702,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: General Electric Company, Inc. (2MMJ9338P2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: General Electric Company, Inc. (2MMJ9338P2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: myles caley (2ZHVCY7QDD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: myles caley (2ZHVCY7QDD)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -737,8 +747,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: General Electric Company, Inc. (2MMJ9338P2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: General Electric Company, Inc. (2MMJ9338P2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: myles caley (2ZHVCY7QDD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: myles caley (2ZHVCY7QDD)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -764,8 +774,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: General Electric Company, Inc. (2MMJ9338P2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: General Electric Company, Inc. (2MMJ9338P2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: myles caley (2ZHVCY7QDD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: myles caley (2ZHVCY7QDD)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -787,8 +797,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: General Electric Company, Inc. (2MMJ9338P2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: General Electric Company, Inc. (2MMJ9338P2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: myles caley (2ZHVCY7QDD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: myles caley (2ZHVCY7QDD)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

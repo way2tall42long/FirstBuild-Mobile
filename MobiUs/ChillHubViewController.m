@@ -33,6 +33,9 @@
 #import "FBTUser.h"
 #import "FSTMilkyWeigh.h"
 #import "ScaleViewController.h"
+#import "MeateorViewController.h"
+#import "SelectionViewController.h"
+#import "FSTMeateor.h"
 #import "FirebaseShared.h"
 #import "MilkGallonClippingView.h"
 

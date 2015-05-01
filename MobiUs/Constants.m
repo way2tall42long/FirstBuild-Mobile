@@ -7,8 +7,8 @@
 //
 
 #ifdef DEBUG
-    NSString *const FirebaseUrl = @"https://mobius-firstbuild.firebaseio.com/";
+    NSString *const FirebaseUrl = @"https://firstbuild-sandbox.firebaseio.com/";
 #else
-    NSString *const FirebaseUrl = @"https://firstbuild.firebaseio.com/";
+    NSString *const FirebaseUrl = @"https://firstbuild-sandbox.firebaseio.com/";
 #endif
 

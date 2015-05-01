@@ -136,8 +136,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.facebookLoginView.delegate = self;
-    [self initGoogleAuth];
+    Firebase *authRef = [[FirebaseShared sharedInstance] firebaseRootReference];
+    
+    [authRef authUser:@"coordinated-furniture@firebase.com" password:@"tonayuju" withCompletionBlock:^(NSError *error, FAuthData *authData) {
+    //    [authRef authWithCustomToken:@"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2IjowLCJkIjp7InByb3ZpZGVyIjoicGFzc3dvcmQiLCJ1aWQiOiJzaW1wbGVsb2dpbjo5MyJ9LCJpYXQiOjE0MjcyMjQwOTF9.5M8lIIskqEcOP9W7xshWf7mwcTs3L-8iEnzjNVpPOMc" withCompletionBlock:^(NSError *error, FAuthData *authData) {
+        FBTUser* user = [FBTUser sharedInstance];
+        user.token = authData.token;
+        [self loadMainAppWithUidString:authData.uid];
+    }];
+   
+
+//    self.facebookLoginView.delegate = self;
+//    [self initGoogleAuth];
 }
 
 - (void) loadMainAppWithUidString: (NSString*) uid

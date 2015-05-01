@@ -9,6 +9,8 @@
 #import "FSTMilkyWeigh.h"
 #import "ScaleViewController.h"
 #import "ChillHubDeviceTableViewCell.h"
+#import "FSTMeateor.h"
+#import "MeateorViewController.h"
 
 @interface ChillHubDevicesTableViewController ()
 
@@ -29,6 +31,17 @@
         ScaleViewController* scale = (ScaleViewController*) segue.destinationViewController;
         scale.milkyWeigh = (FSTMilkyWeigh*)deviceSelected;
     }
+    else if ([segue.destinationViewController isKindOfClass:[MeateorViewController class]] )
+    {
+        MeateorViewController* Status = (MeateorViewController*) segue.destinationViewController;
+        Status.meateor = (FSTMeateor*)deviceSelected;
+    }
+//***************NOT SURE IF THIS NEEDS TO BE ADDED*****************************
+//    else if ([segue.destinationViewController isKindOfClass:[ScaleViewController class]] )
+//    {
+//        ScaleViewController* scale = (ScaleViewController*) segue.destinationViewController;
+//        scale.milkyWeigh = (FSTMilkyWeigh*)deviceSelected;
+//    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -37,7 +50,7 @@
     //putting the firebase setups stuff inside viewWillAppear
     //because prepareForSegue in the parent controller loads after
     //viewDidLoad
-    Firebase* ref = [self.chillhub.firebaseRef childByAppendingPath:@"milkyWeighs"];
+/*    Firebase* ref = [self.chillhub.firebaseRef childByAppendingPath:@"milkyWeighs"];
     [ref removeAllObservers];
     [self.products removeAllObjects];
     
@@ -102,8 +115,80 @@
                 break;
             }
         }
+    }]; */
+/***************************************************************
+ *************************MEATeor stuff*************************
+ **************************************************************/
+    //TODO: consider using another pattern here ...
+    //putting the firebase setups stuff inside viewWillAppear
+    //because prepareForSegue in the parent controller loads after
+    //viewDidLoad
+    Firebase* ref = [self.chillhub.firebaseRef childByAppendingPath:@"MEATeor"];
+    [ref removeAllObservers];
+    [self.products removeAllObjects];
+    
+    [ref observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        {
+            FSTMeateor* meateor = [FSTMeateor new];
+            meateor.identifier = snapshot.key;
+            meateor.firebaseRef = snapshot.ref;
+            id rawVal = snapshot.value;
+            if (rawVal != [NSNull null])
+            {
+                NSDictionary* val = rawVal;
+                if ( [(NSString*)[val objectForKey:@"status"] isEqualToString:@"connected"] )
+                {
+                    meateor.online = YES;
+                }
+                else
+                {
+                    meateor.online = NO;
+                }
+            }
+            [self.products addObject:meateor];
+            [self.tableView reloadData];
+        }
+        
     }];
-
+    
+    [ref observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
+        for (long i=self.products.count-1; i>-1; i--)
+        {
+            FSTMeateor* meateor = [self.products objectAtIndex:i];
+            if ([meateor.identifier isEqualToString:snapshot.key])
+            {
+                [self.products removeObject:meateor];
+                [self.tableView reloadData];
+                break;
+            }
+            
+        }
+    }];
+    
+    [ref observeEventType:FEventTypeChildChanged withBlock:^(FDataSnapshot *snapshot) {
+        for (long i=self.products.count-1; i>-1; i--)
+        {
+            FSTChillHubDevice *chillhubDevice = [self.products objectAtIndex:i];
+            if ([chillhubDevice.identifier isEqualToString:snapshot.key])
+            {
+                id rawVal = snapshot.value;
+                if (rawVal != [NSNull null])
+                {
+                    NSDictionary* val = rawVal;
+                    if ( [(NSString*)[val objectForKey:@"status"] isEqualToString:@"connected"] )
+                    {
+                        chillhubDevice.online = YES;
+                    }
+                    else
+                    {
+                        chillhubDevice.online = NO;
+                    }
+                    [self.tableView reloadData];
+                }
+                break;
+            }
+        }
+    }];
     
 }
 
@@ -128,7 +213,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ChillHubDeviceTableViewCell *productCell = [tableView dequeueReusableCellWithIdentifier:@"milkyWeighCell" forIndexPath:indexPath];
+    ChillHubDeviceTableViewCell *productCell = [tableView dequeueReusableCellWithIdentifier:@"meateor" forIndexPath:indexPath];
     productCell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     FSTProduct * product = self.products[indexPath.row];
@@ -152,9 +237,9 @@
     FSTChillHubDevice * product = self.products[indexPath.row];
     NSLog(@"selected %@", product.identifier);
     
-    if ([product isKindOfClass:[FSTMilkyWeigh class]])
+    if ([product isKindOfClass:[FSTMeateor class]])
     {
-        [self performSegueWithIdentifier:@"segueMilkyWeigh" sender:product];
+        [self performSegueWithIdentifier:@"segueMeateor" sender:product];
     }
 }
 
